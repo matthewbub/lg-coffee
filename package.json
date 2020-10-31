@@ -1,0 +1,25 @@
+{
+  "name": "coffee-menu",
+  "version": "1.0.0",
+  "description": "coffee menu styled web app for business transactions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hi-matbub/coffee-menu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hi-matbub/coffee-menu/issues"
+  },
+  "homepage": "https://github.com/hi-matbub/coffee-menu#readme",
+  "dependencies": {
+    "next": "^10.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
