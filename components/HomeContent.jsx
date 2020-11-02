@@ -21,7 +21,7 @@ const ProductCard = (props) => {
 
   return (
     <section className="product_card_v m-1">
-      <a className="no-link" href="/" ref={hoverRef}>
+      <a className="no-link" href={props.productPath} ref={hoverRef}>
         {isHovered ? (
           <div
             className="product_image"
@@ -74,7 +74,7 @@ const HomeContent = (props) => {
               productTitle={i.productTitle}
               productDescription={i.productDescription}
               productPrice={i.productPrice}
-              productPath={i.productSku}
+              productPath={"/view-product" + i.productSku}
               productBgIsLight={i.productBgIsLight}
             />
           ))}

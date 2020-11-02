@@ -56,7 +56,7 @@ exports.data = {
       productTitle: "Bunns In The Void",
       productDescription: "Holographic Sticker, This thing is bad ass",
       productPrice: "$2.87",
-      productSku: "/Bun/VS_",
+      productSku: "/bun_vs_",
       productBgIsLight: "true",
     },
     {
@@ -65,7 +65,7 @@ exports.data = {
       productTitle: "Lady In The Void",
       productDescription: "Holographic Sticker, This thing is bad ass",
       productPrice: "$2.87",
-      productSku: "/Lad/VS_",
+      productSku: "/lad_vs_",
       productBgIsLight: false,
     },
   ],
