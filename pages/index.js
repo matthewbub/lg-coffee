@@ -1,11 +1,6 @@
-import { useState } from "react";
-import { HomeContent } from "../components/HomeContent";
-import {
-  Header,
-  Footer,
-  Container,
-  FormContainer,
-} from "../components/layout.jsx";
+import { HomeContent } from "../components/home_content";
+
+import { Header, Footer } from "../components/layout.jsx";
 
 const HomePage = (props) => {
   return (

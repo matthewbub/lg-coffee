@@ -69,27 +69,30 @@ const Header = (props) => {
 const Footer = (props) => {
   const date = new Date();
   const year = date.getFullYear();
+
   return (
     <div className="container mt-5 mb-4 dark_mode">
       <ul className="nav justify-content-center">
         <li className="nav-item">
-          <a className="nav-link active" href="#">
+          <a className="nav-link text-light" href="#">
             Contact
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <a className="nav-link text-light" href="#">
             Collections
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <a className="nav-link text-light" href="#">
             FAQ
           </a>
         </li>
       </ul>
       <div className="d-flex justify-content-center">
-        <span style={{ fontSize: ".75em" }}>{year}</span>
+        <span style={{ fontSize: ".75em" }} className="text-light">
+          {year}
+        </span>
       </div>
     </div>
   );
