@@ -5,7 +5,7 @@ const ProductCard = (props) => {
 
   let dom = {};
 
-  !props.lightText
+  props.productBgIsLight
     ? (dom = {
         title: "product_title",
         hoverTitle: "big_title",
@@ -46,41 +46,38 @@ const ProductCard = (props) => {
   );
 };
 
-const HomeContent = () => {
+const HomeContent = (props) => {
+  const products = props.data.products;
+  const hero = props.data.store.hero;
   return (
     <div>
-      <div className="fluid-container position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-        <div className="col-md-5 p-lg-5 mx-auto my-5">
-          <h1 className="display-4 font-weight-normal">Punny headline</h1>
-          <p className="lead font-weight-normal">
-            And an even wittier subheading to boot. Jumpstart your marketing
-            efforts with this example based on Apple’s marketing pages.
-          </p>
-          <a className="btn btn-outline-secondary" href="#">
-            Coming soon
+      <div
+        style={{ backgroundImage: `url("${hero.heroImage}")` }}
+        className="fluid-container hero_image"
+      >
+        <div className="">
+          <h1 className="font-weight-bold">{hero.heroHeadline}</h1>
+          <p className="font-weight-normal">{hero.heroSubHeadline}</p>
+          <a className="btn btn-outline-dark" href={hero.heroPath}>
+            {hero.heroButton}
           </a>
         </div>
-        <div className="product-device shadow-sm d-none d-md-block" />
-        <div className="product-device product-device-2 shadow-sm d-none d-md-block" />
       </div>
 
       <div className="container">
-        <div className="d-flex">
-          <ProductCard
-            imagePath="/front_page_bunns@2x.png"
-            imagePathHovered="/front_page_bunns_hover@2x.png"
-            productTitle="Bunns In The Void"
-            productDescription="Holographic Sticker, This thing is bad ass"
-            productPrice="$2.87"
-          />
-          <ProductCard
-            imagePath="/front_page_lady@2x.png"
-            imagePathHovered="/front_page_lady_hover@2x.png"
-            productTitle="Lady In The Void"
-            lightText={true}
-            productDescription="Holographic Sticker, This thing is bad ass"
-            productPrice="$2.87"
-          />
+        <div className="d-flex products_wrapper">
+          {products.map((i) => (
+            <ProductCard
+              key={i.productSku}
+              imagePath={i.imagePath}
+              imagePathHovered={i.imagePathHovered}
+              productTitle={i.productTitle}
+              productDescription={i.productDescription}
+              productPrice={i.productPrice}
+              productPath={i.productSku}
+              productBgIsLight={i.productBgIsLight}
+            />
+          ))}
         </div>
       </div>
     </div>

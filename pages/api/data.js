@@ -7,5 +7,5 @@ export default function handler(req, res) {
   // fake db call
   setTimeout(() => {
     res.end(JSON.stringify(data));
-  }, 3000);
+  }, 1000);
 }

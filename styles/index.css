@@ -1,6 +1,8 @@
 html,
-body {
-  background: #181818;
+body,
+main,
+.dark_mode {
+  background: #0c0b07 !important;
 }
 
 .product_card {
@@ -16,6 +18,10 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 0.5em;
+}
+
+.products_wrapper:nth-child(even) h4 h3 p {
+  color: #fff !important;
 }
 
 .product_title {
@@ -46,7 +52,23 @@ body {
   color: inherit;
 }
 
-@media screen and (max-width: 768px) and (min-width: 0) {
+.hero_image {
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 5em 5em;
+}
+
+@media screen and (max-width: 858px) and (min-width: 0) {
+  .hero_image {
+    justify-content: flex-start;
+    padding: 2em;
+    background-position: right;
+  }
 }
 
 @media screen and (min-width: 768px) {

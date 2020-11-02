@@ -1,21 +1,42 @@
-const Header = (props) => {
+import { useRouter } from "next/router";
+
+const NavLink = (props) => {
+  let current;
+  props.current === props.path ? (current = "active") : null;
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      {props.logo_img ? (
-        <a className="navbar-brand" href="/">
+    <li className={current + " nav-item"}>
+      <a className="nav-link" style={props.style} href={props.path}>
+        {props.title}{" "}
+        <span className="sr-only"> {current ? "(current)" : null}</span>
+      </a>
+    </li>
+  );
+};
+
+const Header = (props) => {
+  const router = useRouter();
+  console.log(router.query);
+
+  const { store } = props.data;
+  const style = store.nav.style;
+  return (
+    <nav style={style.nav} className="navbar navbar-expand-lg sticky-top">
+      {store.logo ? (
+        <a className="navbar-brand text-light" href="/">
           <img
-            src="/docs/4.5/assets/brand/bootstrap-solid.svg"
+            src={store.logo}
             width="30"
             height="30"
             className="d-inline-block align-top"
             alt=""
             loading="lazy"
           />
-          Bootstrap
+          {}
         </a>
       ) : (
-        <a className="navbar-brand" href="#">
-          Navbar
+        <a className="navbar-brand text-light" href="#">
+          {store.storeName}
         </a>
       )}
       <button
@@ -31,32 +52,25 @@ const Header = (props) => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-          <li className="nav-item active">
-            <a className="nav-link" href="/">
-              Home <span className="sr-only">(current)</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/login">
-              Login
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/">
-              Pricing
-            </a>
-          </li>
+          {store.nav.links.map((i) => (
+            <NavLink
+              current={props.current}
+              title={i.title}
+              path={i.path}
+              style={style.link}
+            />
+          ))}
         </ul>
       </div>
     </nav>
   );
 };
 
-const Footer = () => {
+const Footer = (props) => {
   const date = new Date();
   const year = date.getFullYear();
   return (
-    <div className="container mt-5 mb-4">
+    <div className="container mt-5 mb-4 dark_mode">
       <ul className="nav justify-content-center">
         <li className="nav-item">
           <a className="nav-link active" href="#">
@@ -82,7 +96,7 @@ const Footer = () => {
 };
 
 const Container = (props) => {
-  return <div className="container"> {props.children} </div>;
+  return <div className="container dark_mode"> {props.children} </div>;
 };
 
 const FormContainer = (props) => {

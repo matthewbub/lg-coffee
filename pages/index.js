@@ -7,12 +7,12 @@ import {
   FormContainer,
 } from "../components/layout.jsx";
 
-const HomePage = () => {
+const HomePage = (props) => {
   return (
     <main>
-      <Header />
-      <HomeContent />
-      <Footer />
+      <Header data={props.data} current={"/"} />
+      <HomeContent data={props.data} />
+      <Footer data={props.data} />
     </main>
   );
 };
