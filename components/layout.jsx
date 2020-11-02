@@ -2,24 +2,24 @@ const Header = (props) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       {props.logo_img ? (
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="/">
           <img
             src="/docs/4.5/assets/brand/bootstrap-solid.svg"
             width="30"
             height="30"
-            class="d-inline-block align-top"
+            className="d-inline-block align-top"
             alt=""
             loading="lazy"
           />
           Bootstrap
         </a>
       ) : (
-        <a class="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           Navbar
         </a>
       )}
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarNav"
@@ -27,33 +27,23 @@ const Header = (props) => {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span className="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Home <span class="sr-only">(current)</span>
+      <div className="collapse navbar-collapse" id="navbarNav">
+        <ul className="navbar-nav">
+          <li className="nav-item active">
+            <a className="nav-link" href="/">
+              Home <span className="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Features
+          <li className="nav-item">
+            <a className="nav-link" href="/login">
+              Login
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
+          <li className="nav-item">
+            <a className="nav-link" href="/">
               Pricing
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-            >
-              Disabled
             </a>
           </li>
         </ul>
@@ -66,20 +56,20 @@ const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
   return (
-    <div className="container">
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">
+    <div className="container mt-5 mb-4">
+      <ul className="nav justify-content-center">
+        <li className="nav-item">
+          <a className="nav-link active" href="#">
             Contact
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li className="nav-item">
+          <a className="nav-link" href="#">
             Collections
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li className="nav-item">
+          <a className="nav-link" href="#">
             FAQ
           </a>
         </li>

@@ -105,7 +105,7 @@ const AccountSettingsForm = (props) => {
               </label>
             </div>
             <button type="submit" className="btn btn-danger">
-            🚨 &nbsp; Delete Account 🚨 
+              🚨 &nbsp; Delete Account 🚨
             </button>
           </form>
         </details>

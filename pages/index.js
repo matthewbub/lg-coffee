@@ -1,6 +1,5 @@
-import { SignInForm, SignUpForm } from "../components/forms.jsx";
-import { CreateProductForm } from "../components/CreateProductForm";
-import { AccountSettingsForm } from "../components/AccountSettingsForm";
+import { useState } from "react";
+import { HomeContent } from "../components/HomeContent";
 import {
   Header,
   Footer,
@@ -12,25 +11,7 @@ const HomePage = () => {
   return (
     <main>
       <Header />
-      <div className="container">
-        <h1>Forms</h1>
-      </div>
-      <FormContainer>
-        <SignInForm />
-      </FormContainer>
-
-      <FormContainer>
-        <SignUpForm />
-      </FormContainer>
-
-      <FormContainer>
-        <CreateProductForm />
-      </FormContainer>
-
-      <FormContainer>
-        <AccountSettingsForm />
-      </FormContainer>
-
+      <HomeContent />
       <Footer />
     </main>
   );
