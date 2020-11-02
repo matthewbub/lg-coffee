@@ -40,11 +40,11 @@ exports.data = {
       col: [
         {
           title: "Contact",
-          link: "/contact",
+          link: "mailto:support@visionspeaks.art",
         },
         {
-          title: "Contact",
-          link: "/contact",
+          title: "FAQ",
+          link: "/faq",
         },
       ],
     },
@@ -58,6 +58,11 @@ exports.data = {
       productPrice: "$2.87",
       productSku: "/bun_vs_",
       productBgIsLight: "true",
+      productImages: [
+        "/bunns_in_the_void_TRANSP.png",
+        "/bunns_001.png",
+        "/bunns_002.png",
+      ],
     },
     {
       imagePath: "/front_page_lady@2x.png",
@@ -67,6 +72,11 @@ exports.data = {
       productPrice: "$2.87",
       productSku: "/lad_vs_",
       productBgIsLight: false,
+      productImages: [
+        "/lady_in_the_void_TRANSP.png",
+        "/lady_001.png",
+        "/lady_002.png",
+      ],
     },
   ],
 };
