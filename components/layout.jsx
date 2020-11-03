@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-
 const NavLink = (props) => {
   let current;
   props.current === props.path ? (current = "active") : null;
@@ -15,9 +13,6 @@ const NavLink = (props) => {
 };
 
 const Header = (props) => {
-  const router = useRouter();
-  console.log(router.query);
-
   const { store } = props.data;
   const style = store.nav.style;
   return (
@@ -35,7 +30,7 @@ const Header = (props) => {
           {}
         </a>
       ) : (
-        <a className="navbar-brand text-light" href="#">
+        <a className="navbar-brand text-light" href="/">
           {store.storeName}
         </a>
       )}
