@@ -1,4 +1,5 @@
-import { useHover } from "../utils/helpers";
+import { useHover } from "../utils/hover";
+import store from "../utils/store";
 
 const ProductCard = (props) => {
   const [hoverRef, isHovered] = useHover();
@@ -15,7 +16,11 @@ const ProductCard = (props) => {
 
   return (
     <section className="product_card_v m-1">
-      <a className="no-link" href={props.productPath} ref={hoverRef}>
+      <a
+        className="no-link"
+        href={store.URL + props.productPath}
+        ref={hoverRef}
+      >
         <div
           className="product_image"
           style={{ backgroundImage: `url("${props.imagePath}")` }}
