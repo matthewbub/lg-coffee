@@ -11,7 +11,7 @@ main,
 
 .product_image {
   height: 350px;
-  width: 300px;
+  width: 250px;
   background-position: bottom;
   background-size: cover;
   display: flex;
@@ -22,7 +22,6 @@ main,
 
 .products_wrapper {
   overflow-x: scroll;
-  /* overflow-y: scroll; */
   max-width: 100%;
 }
 
@@ -97,6 +96,11 @@ main,
   align-items: flex-start;
   justify-content: space-between;
   padding: 2em 0 4em 0;
+}
+
+.btn-group,
+.qty_submit {
+  width: 160px;
 }
 
 @media screen and (max-width: 768px) and (min-width: 0) {

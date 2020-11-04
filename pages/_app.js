@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/default_text.css";
 import "../styles/index.css";
+import "../styles/animations.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 // This default export is required in a new `pages/_app.js` file.

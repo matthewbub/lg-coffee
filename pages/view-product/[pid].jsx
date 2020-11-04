@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { Header, Footer } from "../../components/layout";
-import { QtyControl } from '../../components/controllers/qty_control';
+import { QtyControl } from "../../components/controllers/qty_control";
 
 const ProductPreview = (props) => {
   const [primaryImage, setPrimaryImage] = useState(
@@ -62,7 +62,7 @@ const ViewProduct = (props) => {
                 </div>
                 <div className="align-self-end p-sm-3 d-flex flex-column align-items-end">
                   <p className="product_view_price">{product.productPrice}</p>
-                  <QtyControl product={product}/>
+                  <QtyControl product={product} />
                 </div>
               </section>
             </div>

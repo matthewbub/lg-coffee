@@ -1,34 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Alert } from "./alerts";
 
 const QtyControl = (props) => {
-  
+  const [count, setCount] = useState(1);
+  const [alert, setAlert] = useState(null);
 
-  const [count, setCount] = useState(0);
   const handleCount = (operator) => {
-    if (operator === "+") return setCount(count + 1)
-    else {
-      if (count === 0) return
-      setCount(count - 1)      
-    }
-    
-  }
+    if (count === 0) return;
+    if (operator === "+") return setCount(count + 1);
+    else if (operator === "-") return setCount(count - 1);
+    else
+      return setAlert({
+        status: "danger",
+        message: "Unknown error occured. Try again later.",
+      });
+  };
 
   const handleSubmit = () => {
-    //post req
-    console.log(count)
-
-  }
+    if (count === 0)
+      return setAlert({ status: "warning", message: "Nothing to add!" });
+    else {
+      setAlert({
+        status: "success",
+        message: "Successfully added products to cart!",
+      });
+      setTimeout(() => {
+        setAlert(null);
+      }, 3000);
+    }
+  };
 
   return (
-    <div className="d-flex flex-column">
+    <div className="d-flex flex-column align-items-end">
       <div className="btn-group">
-        <button className="btn btn-outline-dark p-1 pr-3 pl-3" style={{height: 'fit-content'}} onClick={() => handleCount("-")}>-</button>
-        <p className="d-flex pr-3 pl-3" style={{height: 'fit-content'}}>{count}</p>
-        <button className="btn btn-outline-dark p-1 pr-3 pl-3" style={{height: 'fit-content'}} onClick={() => handleCount("+")}>+</button>      
+        <button
+          className="btn btn-outline-dark p-1 pr-3 pl-3"
+          style={{ height: "fit-content" }}
+          onClick={() => handleCount("-")}
+        >
+          -
+        </button>
+        <p className="d-flex pr-3 pl-3" style={{ height: "fit-content" }}>
+          {count}
+        </p>
+        <button
+          className="btn btn-outline-dark p-1 pr-3 pl-3"
+          style={{ height: "fit-content" }}
+          onClick={() => handleCount("+")}
+        >
+          +
+        </button>
       </div>
-      <button className="btn btn-outline-dark" onClick={handleSubmit}>Add To Cart</button> 
+      <button
+        className="btn btn-outline-dark qty_submit"
+        onClick={handleSubmit}
+      >
+        Add To Cart
+      </button>
+      <div style={{ height: "100px" }}>
+        {alert ? <Alert status={alert} /> : null}
+      </div>
     </div>
   );
-}
+};
 
-export { QtyControl }
+export { QtyControl };

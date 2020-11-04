@@ -7,21 +7,21 @@ const ProductCard = (props) => {
 
   props.productBgIsLight
     ? (dom = {
-        title: "font-weight-bold"
+        title: "font-weight-bold",
       })
     : (dom = {
-        title: "text-light font-weight-bold"
+        title: "text-light font-weight-bold",
       });
 
   return (
     <section className="product_card_v m-1">
-      <a className="no-link" href={props.productPath} ref={hoverRef}>       
+      <a className="no-link" href={props.productPath} ref={hoverRef}>
         <div
           className="product_image"
           style={{ backgroundImage: `url("${props.imagePath}")` }}
         >
           <h2 className={dom.title}>{props.productTitle}</h2>
-        </div>       
+        </div>
       </a>
     </section>
   );
