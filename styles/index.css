@@ -20,6 +20,12 @@ main,
   padding: 0.5em;
 }
 
+.products_wrapper {
+  overflow-x: scroll;
+  /* overflow-y: scroll; */
+  max-width: 100%;
+}
+
 .products_wrapper:nth-child(even) h4 h3 p {
   color: #fff !important;
 }
