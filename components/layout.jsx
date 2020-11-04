@@ -31,7 +31,7 @@ const Header = (props) => {
         </a>
       ) : (
         <a className="navbar-brand text-light" href="/">
-          {store.storeName}
+          { store.storeName }
         </a>
       )}
       <button
@@ -42,13 +42,14 @@ const Header = (props) => {
         aria-controls="navbarNav"
         aria-expanded="false"
         aria-label="Toggle navigation"
-      >
+      > 
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           {store.nav.links.map((i) => (
             <NavLink
+              key={i.path}
               current={props.current}
               title={i.title}
               path={i.path}

@@ -1,23 +1,26 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { Header, Footer } from "../../components/layout";
+import { QtyControl } from '../../components/controllers/qty_control';
 
 const ProductPreview = (props) => {
-  const [primaryImage, setPrimaryImage] = useState(props.product.productImages[0]);
-  
+  const [primaryImage, setPrimaryImage] = useState(
+    props.product.productImages[0]
+  );
+
   const handlePrimaryImageToggle = (i) => {
-    return setPrimaryImage(i)
-  }
+    return setPrimaryImage(i);
+  };
   return (
     <section className="col-md-6 col-sm-12 bg-light pid_section">
-      <img
-        className="main_img"
-        src={primaryImage}
-        alt={"product image"}
-      />
+      <img className="main_img" src={primaryImage} alt={"product image"} />
       <div className="img_previews">
         {props.product.productImages.map((i) => (
-          <button className="img_preview_button" onClick={() => handlePrimaryImageToggle(i)}>
+          <button
+            key={i}
+            className="img_preview_button"
+            onClick={() => handlePrimaryImageToggle(i)}
+          >
             <img src={i} alt={"product image"} />
           </button>
         ))}
@@ -49,7 +52,7 @@ const ViewProduct = (props) => {
         <div className="fluid-container bg-light pt-5 pb-5">
           <div className="container">
             <div className="row">
-              <ProductPreview product={product}/>
+              <ProductPreview product={product} />
               <section className="col-md-6 col-sm-12 bg-light pid_section">
                 <div className="p-sm-3">
                   <h2 className="product_view_title">{product.productTitle}</h2>
@@ -59,7 +62,7 @@ const ViewProduct = (props) => {
                 </div>
                 <div className="align-self-end p-sm-3 d-flex flex-column align-items-end">
                   <p className="product_view_price">{product.productPrice}</p>
-                  <button className="btn btn-outline-dark">Add To Cart</button>
+                  <QtyControl product={product}/>
                 </div>
               </section>
             </div>

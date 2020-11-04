@@ -7,40 +7,21 @@ const ProductCard = (props) => {
 
   props.productBgIsLight
     ? (dom = {
-        title: "product_title",
-        hoverTitle: "big_title",
-        text: "product_text",
-        price: "product_text align-self-end product_price",
+        title: "font-weight-bold"
       })
     : (dom = {
-        title: "text-light product_title",
-        hoverTitle: "text-light big_title",
-        text: "text-light product_text",
-        price: "text-light product_text align-self-end product_price",
+        title: "text-light font-weight-bold"
       });
 
   return (
     <section className="product_card_v m-1">
-      <a className="no-link" href={props.productPath} ref={hoverRef}>
-        {isHovered ? (
-          <div
-            className="product_image"
-            style={{ backgroundImage: `url("${props.imagePathHovered}")` }}
-          >
-            <div className="holdstill">
-              <h3 className={dom.title}>{props.productTitle}</h3>
-              <p className={dom.text}>{props.productDescription}</p>
-            </div>
-            <h4 className={dom.price}>{props.productPrice}</h4>
-          </div>
-        ) : (
-          <div
-            className="product_image"
-            style={{ backgroundImage: `url("${props.imagePath}")` }}
-          >
-            <h3 className={dom.title}>{props.productTitle}</h3>
-          </div>
-        )}
+      <a className="no-link" href={props.productPath} ref={hoverRef}>       
+        <div
+          className="product_image"
+          style={{ backgroundImage: `url("${props.imagePath}")` }}
+        >
+          <h2 className={dom.title}>{props.productTitle}</h2>
+        </div>       
       </a>
     </section>
   );
