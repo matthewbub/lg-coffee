@@ -1,6 +1,7 @@
 import { Header, Footer, FormContainer } from "../components/layout";
 import CheckoutForm from "../components/checkout_form";
 import Wrapper from "../utils/wrapper";
+import Router from "next/router";
 
 const Checkout = (props) => {
   return (
