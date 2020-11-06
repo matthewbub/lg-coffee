@@ -9,7 +9,8 @@
     "start": "next start",
     "test": "jest --watch",
     "test:ci": "jest --ci",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --config .prettierrc --write \"**/*.{js,jsx}\"",
+    "lint": "eslint  --cache \"**/*.{js,jsx,ts,tsx}\""
   },
   "repository": {
     "type": "git",
@@ -31,21 +32,31 @@
     "bootstrap": "^4.5.3",
     "clsx": "^1.1.1",
     "cors": "^2.8.5",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "firebase": "^8.0.1",
+    "firebase-admin": "^9.3.0",
+    "js-cookie": "^2.2.1",
     "next": "^10.0.0",
     "next-google-fonts": "^1.2.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
-    "stripe": "^8.119.0"
+    "react-firebaseui": "^4.1.0",
+    "stripe": "^8.119.0",
+    "swr": "^0.3.8"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.1",
     "@types/react": "^16.9.55",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.6.3",

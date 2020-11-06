@@ -1,7 +1,7 @@
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { Header, Footer } from "../../components/layout";
-import { QtyControl } from "../../components/controllers/qty_control";
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import { Header, Footer } from '../../components/layout';
+import { QtyControl } from '../../components/controllers/qty_control';
 
 const ProductPreview = (props) => {
   const [primaryImage, setPrimaryImage] = useState(
@@ -12,16 +12,16 @@ const ProductPreview = (props) => {
     return setPrimaryImage(i);
   };
   return (
-    <section className="col-md-6 col-sm-12 bg-light pid_section">
-      <img className="main_img" src={primaryImage} alt={"product image"} />
-      <div className="img_previews">
+    <section className='col-md-6 col-sm-12 bg-light pid_section'>
+      <img className='main_img' src={primaryImage} alt={'product image'} />
+      <div className='img_previews'>
         {props.product.productImages.map((i) => (
           <button
             key={i}
-            className="img_preview_button"
+            className='img_preview_button'
             onClick={() => handlePrimaryImageToggle(i)}
           >
-            <img src={i} alt={"product image"} />
+            <img src={i} alt={'product image'} />
           </button>
         ))}
       </div>
@@ -38,7 +38,7 @@ const ViewProduct = (props) => {
   useEffect(() => {
     for (let i = 0; i < products.length; i++) {
       Object.keys(products[i]).map((y) =>
-        products[i].productSku === "/" + pid
+        products[i].productSku === '/' + pid
           ? setProduct(products[i])
           : "Whoops Looks like that product isn't avaiable right now."
       );
@@ -49,19 +49,19 @@ const ViewProduct = (props) => {
     return (
       <div>
         <Header data={props.data} />
-        <div className="fluid-container bg-light pt-5 pb-5">
-          <div className="container">
-            <div className="row">
+        <div className='fluid-container bg-light pt-5 pb-5'>
+          <div className='container'>
+            <div className='row'>
               <ProductPreview product={product} />
-              <section className="col-md-6 col-sm-12 bg-light pid_section">
-                <div className="p-sm-3">
-                  <h2 className="product_view_title">{product.productTitle}</h2>
-                  <p className="product_view_description">
+              <section className='col-md-6 col-sm-12 bg-light pid_section'>
+                <div className='p-sm-3'>
+                  <h2 className='product_view_title'>{product.productTitle}</h2>
+                  <p className='product_view_description'>
                     {product.productDescription}
                   </p>
                 </div>
-                <div className="align-self-end p-sm-3 d-flex flex-column align-items-end">
-                  <p className="product_view_price">{product.productPrice}</p>
+                <div className='align-self-end p-sm-3 d-flex flex-column align-items-end'>
+                  <p className='product_view_price'>{product.productPrice}</p>
                   <QtyControl product={product} />
                 </div>
               </section>

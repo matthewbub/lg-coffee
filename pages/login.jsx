@@ -1,5 +1,5 @@
-import { Header, Footer } from "../components/layout";
-import { cn } from "../utils/classNames";
+import { Header, Footer } from '../components/layout';
+import { cn } from '../utils/classNames';
 const dark = cn.darkForm;
 
 const LoginComponent = () => {
@@ -18,29 +18,29 @@ const LoginComponent = () => {
     <div className={dark.formWrapper}>
       <form onSubmit={handleFormSubmit} className={dark.form}>
         <h1 className={dark.h1}>Login</h1>
-        <label htmlFor="email" className={dark.label}>
+        <label htmlFor='email' className={dark.label}>
           Email
         </label>
         <input
-          type="email"
-          name="email"
-          placeholder="Email"
+          type='email'
+          name='email'
+          placeholder='Email'
           required
           className={dark.input}
         />
 
-        <label htmlFor="password" className={dark.label}>
+        <label htmlFor='password' className={dark.label}>
           Password
         </label>
         <input
-          type="password"
-          name="password"
-          placeholder="Password"
+          type='password'
+          name='password'
+          placeholder='Password'
           required
           className={dark.input}
         />
 
-        <button className={dark.button} type="submit">
+        <button className={dark.button} type='submit'>
           Log In
         </button>
       </form>
