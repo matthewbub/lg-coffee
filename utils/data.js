@@ -69,4 +69,7 @@ exports.data = {
       },
     ],
   },
+  styles: {
+    demo: 'demo',
+  },
 };
