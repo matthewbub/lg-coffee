@@ -1,10 +1,20 @@
 import { useState } from "react";
-import "../styles/default_text.css";
-import "../styles/index.css";
-import "../styles/animations.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "../styles/index.css";
+import "../styles/custom.css";
+import "../styles/animations.css";
 
-// This default export is required in a new `pages/_app.js` file.
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import Head from "next/head";
+
+const stripePromise = loadStripe(process.env.PUBLISHABLE_KEY);
+
+const StripeWrapper = ({ children }) => {
+  // Stripe security
+  return <Elements stripe={stripePromise}> {children} </Elements>;
+};
+
 export default function MyApp({ Component, pageProps }) {
   const [data, setData] = useState();
 
@@ -19,7 +29,19 @@ export default function MyApp({ Component, pageProps }) {
     .catch((error) => console.error(error));
 
   if (data !== undefined) {
-    return <Component data={data} {...pageProps} />;
+    return (
+      <StripeWrapper>
+        <Head>
+          <title>{data.StoreName}</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap" />
+        </Head>
+        <Component data={data} {...pageProps} />
+      </StripeWrapper>
+    );
   } else {
     return <div>Loading...</div>;
   }
