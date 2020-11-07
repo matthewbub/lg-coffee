@@ -1,33 +1,28 @@
+import PropTypes from 'prop-types';
 import PageWrapper from '../components/PageWrapper';
 
-const ProductCard = (props) => {
-  let dom = {};
+const ProductCard = ({productPath, imagePath, productTitle}) => (
+  <section className="product_card_v m-1">
+    <a className="no-link" href={productPath}>
+      <div
+        className="product_image"
+        style={{ backgroundImage: `url("${imagePath}")` }}
+      >
+        <h2 className='text-light font-weight-bold'>{productTitle}</h2>
+      </div>
+    </a>
+  </section>
+);
 
-  props.productBgIsLight
-    ? (dom = {
-        title: 'font-weight-bold',
-      })
-    : (dom = {
-        title: 'text-light font-weight-bold',
-      });
+ProductCard.propTypes = {
+  productPath: PropTypes.string.isRequired,
+  imagePath: PropTypes.string.isRequired,
+  productTitle: PropTypes.string.isRequired,
+}
 
-  return (
-    <section className="product_card_v m-1">
-      <a className="no-link" href={props.productPath}>
-        <div
-          className="product_image"
-          style={{ backgroundImage: `url("${props.imagePath}")` }}
-        >
-          <h2 className={dom.title}>{props.productTitle}</h2>
-        </div>
-      </a>
-    </section>
-  );
-};
-
-const HomeContent = (props) => {
-  const products = props.data.products;
-  const hero = props.data.hero;
+const HomeContent = ({data}) => {
+  const products = data.products;
+  const hero = data.hero;
   return (
     <div>
       <div
@@ -63,10 +58,18 @@ const HomeContent = (props) => {
   );
 };
 
+HomeContent.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
+
 const HomePage = ({ data }) => (
   <PageWrapper data={data}>
     <HomeContent data={data} />
   </PageWrapper>
 );
+
+HomePage.propTypes = {
+  data: PropTypes.shape({}).isRequired,
+};
 
 export default HomePage;

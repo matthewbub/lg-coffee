@@ -1,72 +1,92 @@
-import { Header, Footer } from '../components/layout';
 import Router from 'next/router';
-import { useState } from 'react';
-import axios from 'axios';
-
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import axios from 'axios';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+import PageWrapper from '../components/PageWrapper';
 
 const CheckoutError = ({ children }) => <>{children}</>;
 
-const BillingDetailsFields = () => {
-  return (
-    <div>
-      <label htmlFor="name">Name</label>
-      <input
+CheckoutError.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+const BillingDetailsFields = () => (
+  <>
+    <Form.Row>
+      <h1 className="text-light mt-5">Checkout</h1>
+      <Form.Control
+        className="bg-dark text-light mt-3"
         type="text"
         label="name"
         name="name"
         placeholder="Jane Doe"
         required
       />
-      <label htmlFor="email">Email</label>
-      <input
+
+      <Form.Control
+        className="bg-dark text-light mt-3"
         type="text"
         label="email"
         name="email"
         placeholder="jane.doe@example.com"
         required
       />
-      <label htmlFor="address">Address</label>
-      <input
+
+      <Form.Control
+        className="bg-dark text-light mt-3"
         type="text"
         label="address"
         name="address"
         placeholder="185 Berry St. Suite 550"
         required
       />
-      <label htmlFor="city">City</label>
-      <input
+
+      <Form.Control
+        className="bg-dark text-light mt-3"
         type="text"
         label="city"
         name="city"
         placeholder="San Francisco"
         required
       />
-      <label htmlFor="state">State</label>
-      <input type="text" label="state" name="state" placeholder="CA" required />
-      <label htmlFor="zip">ZIP</label>
-      <input type="text" label="zip" name="zip" placeholder="94103" required />
-    </div>
-  );
-};
 
-const SubmitButton = (props) => {
-  return (
-    <button
-      style={{
-        backgroundColor: `${(props) =>
-          props.disabled ? '#7795f8' : '#f6a4eb'}`,
-        boxShadow: `${(props) =>
-          props.disabled
-            ? 'none'
-            : '0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #ffb9f6;'}`,
-        opacity: `${(props) => (props.disabled ? 0.5 : 1)}`,
-      }}
-    >
-      Submit
-    </button>
-  );
-};
+      <Form.Control
+        className="bg-dark text-light mt-3"
+        type="text"
+        label="state"
+        name="state"
+        placeholder="CA"
+        required
+      />
+
+      <Form.Control
+        className="bg-dark text-light my-3"
+        type="text"
+        label="zip"
+        name="zip"
+        placeholder="94103"
+        required
+      />
+
+    </Form.Row>
+  </>
+);
+
+const SubmitButton = () => (
+  <Button
+    className="btn btn-outline-light align-self-end mt-3"
+    type="submit"
+  >
+    Submit
+  </Button>
+);
+
 
 const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
@@ -132,36 +152,43 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <div className="container">
-        <BillingDetailsFields />
-        <div className="StripeElement">
-          <CardElement options={cardElementOptions} />
-        </div>
+    <Container>
+      <Row className="d-flex justify-content-center">
+        <Col md={6}>
+          <Form onSubmit={handleFormSubmit}>
+            <BillingDetailsFields />
+            <div className="StripeElement">
+              <CardElement options={cardElementOptions} />
+            </div>
 
-        {checkoutError && <CheckoutError>{checkoutError}</CheckoutError>}
+            {checkoutError && <CheckoutError>{checkoutError}</CheckoutError>}
 
-        <SubmitButton disabled={isProcessing}>
-          {isProcessing ? 'Processing...' : `Pay $${price}`}
-        </SubmitButton>
-      </div>
-    </form>
+            <SubmitButton disabled={isProcessing}>
+              {isProcessing ? 'Processing...' : `Pay $${price}`}
+            </SubmitButton>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
-const Checkout = (props) => {
-  return (
-    <div>
-      <Header data={props.data} />
-      <div>
-        <CheckoutForm
-          price={287}
-          onSuccessfulCheckout={() => Router.push('/order-confirmation')}
-        />
-      </div>
-      <Footer data={props.data} />
-    </div>
-  );
+CheckoutForm.propTypes = {
+  price: PropTypes.number.isRequired,
+  onSuccessfulCheckout: PropTypes.shape({}).isRequired,
+};
+
+const Checkout = ({ data }) => (
+  <PageWrapper data={data}>
+    <CheckoutForm
+      price={287}
+      onSuccessfulCheckout={() => Router.push('/order-confirmation')}
+    />
+  </PageWrapper>
+);
+
+Checkout.propTypes = {
+  data: PropTypes.shape({}).isRequired,
 };
 
 export default Checkout;

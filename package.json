@@ -10,7 +10,10 @@
     "test": "jest --watch",
     "test:ci": "jest --ci",
     "prettier": "prettier --config .prettierrc --write \"**/*.{js,jsx}\"",
-    "lint": "eslint  --cache \"**/*.{js,jsx,ts,tsx}\""
+    "lint:fix": "eslint --fix \"**/*.{js,jsx}\"",
+    "lint:js": "eslint  --cache \"**/*.{js,jsx}\"",
+    "lint": "npm run lint:fix && npm run lint:js"
+
   },
   "repository": {
     "type": "git",
@@ -67,7 +70,8 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "npm run prettier"
+      "npm run prettier",
+      "npm run lint"
     ]
   },
   "husky": {
