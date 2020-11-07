@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+Array [
+  <nav
+    className="navbar navbar-expand-lg navbar-light bg-light sticky-top"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+    >
+      VisionSpeaks
+    </a>
+    <button
+      aria-controls="basic-navbar-nav"
+      aria-label="Toggle navigation"
+      className="navbar-toggler collapsed"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      aria-expanded={null}
+      className="navbar-collapse collapse"
+      id="basic-navbar-nav"
+    >
+      <div
+        className="mr-auto navbar-nav"
+        onKeyDown={[Function]}
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="/"
+          href="/"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          Products
+        </a>
+        <a
+          className="nav-link"
+          data-rb-event-key="/made-to-order"
+          href="/made-to-order"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          Made To Order
+        </a>
+        <a
+          className="nav-link"
+          data-rb-event-key="/about"
+          href="/about"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          About
+        </a>
+      </div>
+    </div>
+  </nav>,
+  <div>
+    <div
+      className="fluid-container hero_image"
+      style={
+        Object {
+          "backgroundImage": "url(\\"/heatpress.jpeg\\")",
+        }
+      }
+    >
+      <div
+        className=""
+      >
+        <h1
+          className="font-weight-bold"
+        >
+          Made To Order
+        </h1>
+        <p
+          className="font-weight-normal"
+        >
+          The highest quality work comes from custom work.
+        </p>
+        <a
+          className="btn btn-outline-dark"
+          href="/products"
+        >
+          Start Your Order
+        </a>
+      </div>
+    </div>
+    <div
+      className="container"
+    >
+      <div
+        className="d-flex products_wrapper"
+      >
+        <section
+          className="product_card_v m-1"
+        >
+          <a
+            className="no-link"
+            href="/view-product/bun_vs_"
+          >
+            <div
+              className="product_image"
+              style={
+                Object {
+                  "backgroundImage": "url(\\"/front_page_bunns@2x.png\\")",
+                }
+              }
+            >
+              <h2
+                className="text-light font-weight-bold"
+              >
+                Bunns In The Void
+              </h2>
+            </div>
+          </a>
+        </section>
+        <section
+          className="product_card_v m-1"
+        >
+          <a
+            className="no-link"
+            href="/view-product/lad_vs_"
+          >
+            <div
+              className="product_image"
+              style={
+                Object {
+                  "backgroundImage": "url(\\"/front_page_lady@2x.png\\")",
+                }
+              }
+            >
+              <h2
+                className="text-light font-weight-bold"
+              >
+                Lady In The Void
+              </h2>
+            </div>
+          </a>
+        </section>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="my-5 container-fluid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="d-flex justify-content-center col"
+      >
+        <span
+          className="text-light m-2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Contact
+        </span>
+        <span
+          className="text-light m-2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          FAQ
+        </span>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="d-flex justify-content-center col"
+      >
+        <span
+          className="text-light m-2"
+          style={
+            Object {
+              "fontSize": "12px",
+            }
+          }
+        >
+          2020
+        </span>
+      </div>
+    </div>
+  </div>,
+]
+`;

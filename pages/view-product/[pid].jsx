@@ -41,11 +41,9 @@ const ViewProduct = ({ data }) => {
 
   useEffect(() => {
     for (let i = 0; i < products.length; i + 1) {
-      Object.keys(products[i]).map(() =>
-        products[i].productSku === `/${pid}`
+      Object.keys(products[i]).map(() => (products[i].productSku === `/${pid}`
           ? setProduct(products[i])
-          : "Whoops Looks like that product isn't avaiable right now."
-      );
+          : "Whoops Looks like that product isn't avaiable right now."));
     }
   });
 
