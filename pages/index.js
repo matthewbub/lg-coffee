@@ -1,5 +1,4 @@
-import { Header, Footer } from '../components/layout.jsx';
-import StickyTopNavbar from '../components/StickyTopNavbar';
+import PageWrapper from '../components/PageWrapper';
 
 const ProductCard = (props) => {
   let dom = {};
@@ -13,10 +12,10 @@ const ProductCard = (props) => {
       });
 
   return (
-    <section className='product_card_v m-1'>
-      <a className='no-link' href={props.productPath}>
+    <section className="product_card_v m-1">
+      <a className="no-link" href={props.productPath}>
         <div
-          className='product_image'
+          className="product_image"
           style={{ backgroundImage: `url("${props.imagePath}")` }}
         >
           <h2 className={dom.title}>{props.productTitle}</h2>
@@ -33,19 +32,19 @@ const HomeContent = (props) => {
     <div>
       <div
         style={{ backgroundImage: `url("${hero.heroImage}")` }}
-        className='fluid-container hero_image'
+        className="fluid-container hero_image"
       >
-        <div className=''>
-          <h1 className='font-weight-bold'>{hero.heroHeadline}</h1>
-          <p className='font-weight-normal'>{hero.heroSubHeadline}</p>
-          <a className='btn btn-outline-dark' href={hero.heroPath}>
+        <div className="">
+          <h1 className="font-weight-bold">{hero.heroHeadline}</h1>
+          <p className="font-weight-normal">{hero.heroSubHeadline}</p>
+          <a className="btn btn-outline-dark" href={hero.heroPath}>
             {hero.heroButton}
           </a>
         </div>
       </div>
 
-      <div className='container'>
-        <div className='d-flex products_wrapper'>
+      <div className="container">
+        <div className="d-flex products_wrapper">
           {products.map((i) => (
             <ProductCard
               key={i.productSku}
@@ -64,14 +63,10 @@ const HomeContent = (props) => {
   );
 };
 
-const HomePage = ({ data }) => {
-  return (
-    <>
-      <StickyTopNavbar store={data.store} navigation={data.navigation} />
-      <HomeContent data={data} />
-      <Footer data={data} />
-    </>
-  );
-};
+const HomePage = ({ data }) => (
+  <PageWrapper data={data}>
+    <HomeContent data={data} />
+  </PageWrapper>
+);
 
 export default HomePage;

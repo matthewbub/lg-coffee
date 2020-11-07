@@ -57,18 +57,16 @@ exports.data = {
       path: '/about',
     },
   ],
-  footer: {
-    col: [
-      {
-        title: 'Contact',
-        link: 'mailto:support@visionspeaks.art',
-      },
-      {
-        title: 'FAQ',
-        link: '/faq',
-      },
-    ],
-  },
+  footer: [
+    {
+      title: 'Contact',
+      path: 'mailto:support@visionspeaks.art',
+    },
+    {
+      title: 'FAQ',
+      path: '/faq',
+    },
+  ],
   styles: {
     demo: 'demo',
   },

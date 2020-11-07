@@ -1,27 +1,25 @@
 import { useRouter } from 'next/router';
-import { useState, useEffect } from 'react';
-import { Header, Footer } from '../../components/layout';
-import { QtyControl } from '../../components/controllers/qty_control';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import PageWrapper from '../../components/PageWrapper';
+import QtyControl from '../../components/QtyControl';
 
-const ProductPreview = (props) => {
-  const [primaryImage, setPrimaryImage] = useState(
-    props.product.productImages[0]
-  );
+const ProductPreview = ({ product }) => {
+  const [primaryImage, setPrimaryImage] = useState(product.productImages[0]);
 
-  const handlePrimaryImageToggle = (i) => {
-    return setPrimaryImage(i);
-  };
+  const handlePrimaryImageToggle = (i) => setPrimaryImage(i);
   return (
-    <section className='col-md-6 col-sm-12 bg-light pid_section'>
-      <img className='main_img' src={primaryImage} alt={'product image'} />
-      <div className='img_previews'>
-        {props.product.productImages.map((i) => (
+    <section className="col-md-6 col-sm-12 bg-light pid_section">
+      <img className="main_img" src={primaryImage} alt="view product" />
+      <div className="img_previews">
+        {product.productImages.map((i) => (
           <button
+            type="button"
             key={i}
-            className='img_preview_button'
+            className="img_preview_button"
             onClick={() => handlePrimaryImageToggle(i)}
           >
-            <img src={i} alt={'product image'} />
+            <img src={i} alt="alt product views" />
           </button>
         ))}
       </div>
@@ -29,16 +27,22 @@ const ProductPreview = (props) => {
   );
 };
 
-const ViewProduct = (props) => {
+ProductPreview.propTypes = {
+  product: PropTypes.shape({
+    productImages: PropTypes.arrayOf.isRequired,
+  }).isRequired,
+};
+
+const ViewProduct = ({ data }) => {
   const router = useRouter();
   const { pid } = router.query;
   const [product, setProduct] = useState(null);
-  const products = props.data.products;
+  const { products } = data;
 
   useEffect(() => {
-    for (let i = 0; i < products.length; i++) {
-      Object.keys(products[i]).map((y) =>
-        products[i].productSku === '/' + pid
+    for (let i = 0; i < products.length; i + 1) {
+      Object.keys(products[i]).map(() =>
+        products[i].productSku === `/${pid}`
           ? setProduct(products[i])
           : "Whoops Looks like that product isn't avaiable right now."
       );
@@ -47,33 +51,34 @@ const ViewProduct = (props) => {
 
   if (product) {
     return (
-      <div>
-        <Header data={props.data} />
-        <div className='fluid-container bg-light pt-5 pb-5'>
-          <div className='container'>
-            <div className='row'>
+      <PageWrapper data={data}>
+        <div className="fluid-container bg-light pt-5 pb-5">
+          <div className="container">
+            <div className="row">
               <ProductPreview product={product} />
-              <section className='col-md-6 col-sm-12 bg-light pid_section'>
-                <div className='p-sm-3'>
-                  <h2 className='product_view_title'>{product.productTitle}</h2>
-                  <p className='product_view_description'>
+              <section className="col-md-6 col-sm-12 bg-light pid_section">
+                <div className="p-sm-3">
+                  <h2 className="product_view_title">{product.productTitle}</h2>
+                  <p className="product_view_description">
                     {product.productDescription}
                   </p>
                 </div>
-                <div className='align-self-end p-sm-3 d-flex flex-column align-items-end'>
-                  <p className='product_view_price'>{product.productPrice}</p>
+                <div className="align-self-end p-sm-3 d-flex flex-column align-items-end">
+                  <p className="product_view_price">{product.productPrice}</p>
                   <QtyControl product={product} />
                 </div>
               </section>
             </div>
           </div>
         </div>
-        <Footer data={props.data} />
-      </div>
+      </PageWrapper>
     );
-  } else {
-    return <div>Loading...</div>;
   }
+  return <div>Loading...</div>;
+};
+
+ViewProduct.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default ViewProduct;

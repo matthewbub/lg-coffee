@@ -7,45 +7,45 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
 const CheckoutError = ({ children }) => <>{children}</>;
 
-const BillingDetailsFields = (props) => {
+const BillingDetailsFields = () => {
   return (
     <div>
-      <label htmlFor='name'>Name</label>
+      <label htmlFor="name">Name</label>
       <input
-        type='text'
-        label='name'
-        name='name'
-        placeholder='Jane Doe'
+        type="text"
+        label="name"
+        name="name"
+        placeholder="Jane Doe"
         required
       />
-      <label htmlFor='email'>Email</label>
+      <label htmlFor="email">Email</label>
       <input
-        type='text'
-        label='email'
-        name='email'
-        placeholder='jane.doe@example.com'
+        type="text"
+        label="email"
+        name="email"
+        placeholder="jane.doe@example.com"
         required
       />
-      <label htmlFor='address'>Address</label>
+      <label htmlFor="address">Address</label>
       <input
-        type='text'
-        label='address'
-        name='address'
-        placeholder='185 Berry St. Suite 550'
+        type="text"
+        label="address"
+        name="address"
+        placeholder="185 Berry St. Suite 550"
         required
       />
-      <label htmlFor='city'>City</label>
+      <label htmlFor="city">City</label>
       <input
-        type='text'
-        label='city'
-        name='city'
-        placeholder='San Francisco'
+        type="text"
+        label="city"
+        name="city"
+        placeholder="San Francisco"
         required
       />
-      <label htmlFor='state'>State</label>
-      <input type='text' label='state' name='state' placeholder='CA' required />
-      <label htmlFor='zip'>ZIP</label>
-      <input type='text' label='zip' name='zip' placeholder='94103' required />
+      <label htmlFor="state">State</label>
+      <input type="text" label="state" name="state" placeholder="CA" required />
+      <label htmlFor="zip">ZIP</label>
+      <input type="text" label="zip" name="zip" placeholder="94103" required />
     </div>
   );
 };
@@ -133,9 +133,9 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
   return (
     <form onSubmit={handleFormSubmit}>
-      <div className='container'>
+      <div className="container">
         <BillingDetailsFields />
-        <div className='StripeElement'>
+        <div className="StripeElement">
           <CardElement options={cardElementOptions} />
         </div>
 

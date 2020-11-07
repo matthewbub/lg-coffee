@@ -1,4 +1,5 @@
-import React, { useEffect, useReducer, useState } from 'react';
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/index.css';
 import '../styles/custom.css';
@@ -20,30 +21,7 @@ StripeWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const StoreWrapper = ({ data, children }) => {
-  const [storeData, setData] = useReducer();
-
-  useEffect(() => {
-    data ? setData(data) : null;
-  });
-
-  return <>{children}</>;
-};
-
-export async function getStaticProps() {
-  const res = await fetch('/data');
-  const json = await res.json();
-
-  return {
-    props: {
-      data: json.data,
-    },
-  };
-}
-
-// export default MyApp
-
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   const [data, setData] = useState();
 
   const url = '/api/data';
@@ -54,6 +32,7 @@ export default function MyApp({ Component, pageProps }) {
     .then((responseJson) => {
       setData(responseJson);
     })
+    // eslint-disable-next-line no-console
     .catch((error) => console.error(error));
 
   if (data) {
@@ -62,17 +41,21 @@ export default function MyApp({ Component, pageProps }) {
         <Head>
           <title>{data.StoreName}</title>
           <meta
-            name='viewport'
-            content='initial-scale=1.0, width=device-width'
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
           />
-          <link href='https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap' />
+          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap" />
         </Head>
-        <StoreWrapper>
-          <Component data={data} {...pageProps} />
-        </StoreWrapper>
+        <Component data={data} {...pageProps} />
       </StripeWrapper>
     );
-  } else {
-    return <>loading</>;
   }
+  return <>loading</>;
 }
+
+MyApp.propTypes = {
+  Component: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
+  pageProps: PropTypes.shape({}).isRequired,
+};
+
+export default MyApp;
