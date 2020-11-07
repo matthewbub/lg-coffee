@@ -3,3 +3,4 @@ package-lock.json
 .DS_Store
 .next
 .eslintrc.json
+__tests__/

@@ -13,7 +13,8 @@
     "browser": true,
     "commonjs": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -27,5 +28,9 @@
       "version": "detect"
     }
   },
-  "plugins": []
+  "plugins": ["jest"],
+  "rules": {
+    "template-curly-spacing":"off",
+    "indent" : "off"
+  }
 }
