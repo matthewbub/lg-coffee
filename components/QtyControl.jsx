@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Alert from './Alert';
 
-const QtyControl = (props) => {
+const QtyControl = () => {
   const [count, setCount] = useState(1);
   const [alert, setAlert] = useState(null);
 
@@ -18,8 +18,7 @@ const QtyControl = (props) => {
   };
 
   const handleSubmit = () => {
-    if (count === 0)
-      setAlert({ status: 'warning', message: 'Nothing to add!' });
+    if (count === 0) setAlert({ status: 'warning', message: 'Nothing to add!' });
     else {
       setAlert({
         status: 'success',

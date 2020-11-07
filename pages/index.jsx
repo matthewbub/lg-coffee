@@ -1,14 +1,15 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import PageWrapper from '../components/PageWrapper';
 
-const ProductCard = ({productPath, imagePath, productTitle}) => (
+const ProductCard = ({ productPath, imagePath, productTitle }) => (
   <section className="product_card_v m-1">
     <a className="no-link" href={productPath}>
       <div
         className="product_image"
         style={{ backgroundImage: `url("${imagePath}")` }}
       >
-        <h2 className='text-light font-weight-bold'>{productTitle}</h2>
+        <h2 className="text-light font-weight-bold">{productTitle}</h2>
       </div>
     </a>
   </section>
@@ -18,11 +19,11 @@ ProductCard.propTypes = {
   productPath: PropTypes.string.isRequired,
   imagePath: PropTypes.string.isRequired,
   productTitle: PropTypes.string.isRequired,
-}
+};
 
-const HomeContent = ({data}) => {
-  const products = data.products;
-  const hero = data.hero;
+const HomeContent = ({ data }) => {
+  const { products } = data;
+  const { hero } = data;
   return (
     <div>
       <div
@@ -48,7 +49,7 @@ const HomeContent = ({data}) => {
               productTitle={i.productTitle}
               productDescription={i.productDescription}
               productPrice={i.productPrice}
-              productPath={'/view-product' + i.productSku}
+              productPath={`/view-product${i.productSku}`}
               productBgIsLight={i.productBgIsLight}
             />
           ))}
@@ -59,7 +60,18 @@ const HomeContent = ({data}) => {
 };
 
 HomeContent.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  data: PropTypes.shape({
+    products: PropTypes.shape({
+      map: PropTypes.func.isRequired,
+    }).isRequired,
+    hero: PropTypes.shape({
+      heroImage: PropTypes.string.isRequired,
+      heroHeadline: PropTypes.string.isRequired,
+      heroSubHeadline: PropTypes.string.isRequired,
+      heroPath: PropTypes.string.isRequired,
+      heroButton: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 const HomePage = ({ data }) => (

@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-vars */
 import Router from 'next/router';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -73,20 +75,15 @@ const BillingDetailsFields = () => (
         placeholder="94103"
         required
       />
-
     </Form.Row>
   </>
 );
 
 const SubmitButton = () => (
-  <Button
-    className="btn btn-outline-light align-self-end mt-3"
-    type="submit"
-  >
+  <Button className="btn btn-outline-light align-self-end mt-3" type="submit">
     Submit
   </Button>
 );
-
 
 const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
