@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import PageWrapper from '../components/PageWrapper';
+import PageWrapper from '../../components/PageWrapper';
 
 const CheckoutError = ({ children }) => <>{children}</>;
 
