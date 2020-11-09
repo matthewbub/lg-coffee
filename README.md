@@ -1,4 +1,4 @@
-# Coffee ☕
+# lgco ☕
 
 <p align="center">
   <a href="https://travis-ci.com/hi-matbub/coffee-menu.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" target="_blank">
@@ -14,6 +14,10 @@
   </a>
 </p>
 
-ECom Website using a JAM Stack and Stripe's API. 
+
+> Large Commerce</br>
+> Simple Solutions
+
+ECom platform using a JAM Stack and Stripe's API. 
 
 ## Warning everything here is subject to breaking change.
