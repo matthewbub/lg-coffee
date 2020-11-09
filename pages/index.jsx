@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import PageWrapper from '../components/PageWrapper';
 
 const ProductCard = ({ productPath, imagePath, productTitle }) => (
   <section className="product_card_v m-1">
-    <a className="no-link" href={productPath}>
+    <Link className="no-link" href={productPath}>
       <div
         className="product_image"
         style={{ backgroundImage: `url("${imagePath}")` }}
       >
         <h2 className="text-light font-weight-bold">{productTitle}</h2>
       </div>
-    </a>
+    </Link>
   </section>
 );
 
@@ -33,9 +34,9 @@ const HomeContent = ({ data }) => {
         <div className="">
           <h1 className="font-weight-bold">{hero.heroHeadline}</h1>
           <p className="font-weight-normal">{hero.heroSubHeadline}</p>
-          <a className="btn btn-outline-dark" href={hero.heroPath}>
+          <Link className="btn btn-outline-dark" href={hero.heroPath}>
             {hero.heroButton}
-          </a>
+          </Link>
         </div>
       </div>
 

@@ -84,8 +84,9 @@ Array [
           The highest quality work comes from custom work.
         </p>
         <a
-          className="btn btn-outline-dark"
           href="/products"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
         >
           Start Your Order
         </a>
@@ -100,48 +101,42 @@ Array [
         <section
           className="product_card_v m-1"
         >
-          <a
-            className="no-link"
-            href="/view-product/bun_vs_"
-          >
-            <div
-              className="product_image"
-              style={
-                Object {
-                  "backgroundImage": "url(\\"/front_page_bunns@2x.png\\")",
-                }
+          <div
+            className="product_image"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "backgroundImage": "url(\\"/front_page_bunns@2x.png\\")",
               }
+            }
+          >
+            <h2
+              className="text-light font-weight-bold"
             >
-              <h2
-                className="text-light font-weight-bold"
-              >
-                Bunns In The Void
-              </h2>
-            </div>
-          </a>
+              Bunns In The Void
+            </h2>
+          </div>
         </section>
         <section
           className="product_card_v m-1"
         >
-          <a
-            className="no-link"
-            href="/view-product/lad_vs_"
-          >
-            <div
-              className="product_image"
-              style={
-                Object {
-                  "backgroundImage": "url(\\"/front_page_lady@2x.png\\")",
-                }
+          <div
+            className="product_image"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "backgroundImage": "url(\\"/front_page_lady@2x.png\\")",
               }
+            }
+          >
+            <h2
+              className="text-light font-weight-bold"
             >
-              <h2
-                className="text-light font-weight-bold"
-              >
-                Lady In The Void
-              </h2>
-            </div>
-          </a>
+              Lady In The Void
+            </h2>
+          </div>
         </section>
       </div>
     </div>
