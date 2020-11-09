@@ -61,9 +61,7 @@ const HomeContent = ({ data }) => {
 
 HomeContent.propTypes = {
   data: PropTypes.shape({
-    products: PropTypes.shape({
-      map: PropTypes.func.isRequired,
-    }).isRequired,
+    products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
     hero: PropTypes.shape({
       heroImage: PropTypes.string.isRequired,
       heroHeadline: PropTypes.string.isRequired,

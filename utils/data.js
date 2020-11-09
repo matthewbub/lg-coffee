@@ -4,6 +4,30 @@ exports.data = {
     dateCreated: '08/2020',
     storeName: 'VisionSpeaks',
     logo: '/logo.png',
+    info: {
+      faq: [
+        {
+          q: 'Do you make custom products?',
+          a: 'Yes',
+        },
+        {
+          q: 'How long will it take to recieve my purchase?',
+          a: 'Unless otherwise stated, All orders go out via Priority Mail.',
+        },
+        {
+          q: 'What is your policy on refunds?',
+          a: 'At this time, we are unable to honor refunds.',
+        },
+        {
+          q:
+            "I never received my purchase or something isn't right with my order. What can I do?",
+          a: 'Reach out to support@visionspeaks.art.',
+        },
+      ],
+      about: `
+        VisionSpeaks is a custom art collective.
+      `,
+    },
   },
   products: [
     {
@@ -50,11 +74,11 @@ exports.data = {
     },
     {
       title: 'Made To Order',
-      path: '/made-to-order',
+      path: '/info/made-to-order',
     },
     {
       title: 'About',
-      path: '/about',
+      path: '/info/about',
     },
   ],
   footer: [
@@ -64,7 +88,7 @@ exports.data = {
     },
     {
       title: 'FAQ',
-      path: '/faq',
+      path: '/info/faq',
     },
   ],
   styles: {

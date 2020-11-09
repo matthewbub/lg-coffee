@@ -1,7 +1,10 @@
+/* eslint-disable no-console */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 import Alert from './Alert';
 
-const QtyControl = () => {
+const QtyControl = ({ sku }) => {
   const [count, setCount] = useState(1);
   const [alert, setAlert] = useState(null);
 
@@ -20,13 +23,32 @@ const QtyControl = () => {
   const handleSubmit = () => {
     if (count === 0) setAlert({ status: 'warning', message: 'Nothing to add!' });
     else {
-      setAlert({
-        status: 'success',
-        message: 'Successfully added products to cart!',
-      });
-      setTimeout(() => {
-        setAlert(null);
-      }, 3000);
+      axios
+        .post('/cart', {
+          sku,
+          qty: count,
+        })
+        .then((res) => {
+          console.log('res', res.data);
+
+          setAlert({
+            status: 'success',
+            message: 'Successfully added products to cart!',
+          });
+          setTimeout(() => {
+            setAlert(null);
+          }, 3000);
+        })
+        .catch((err) => {
+          console.log('error in request', err);
+          setAlert({
+            status: 'warning',
+            message: 'Sorry, Something went wrong.',
+          });
+          setTimeout(() => {
+            setAlert(null);
+          }, 3000);
+        });
     }
   };
 
@@ -65,6 +87,10 @@ const QtyControl = () => {
       </div>
     </div>
   );
+};
+
+QtyControl.propTypes = {
+  sku: PropTypes.string.isRequired,
 };
 
 export default QtyControl;

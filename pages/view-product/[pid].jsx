@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import PageWrapper from '../../components/PageWrapper';
 import QtyControl from '../../components/QtyControl';
+import Loading from '../../components/Loading';
 
 const ProductPreview = ({ product }) => {
   const [primaryImage, setPrimaryImage] = useState(product.productImages[0]);
@@ -72,7 +73,14 @@ const ViewProduct = ({ data }) => {
       </PageWrapper>
     );
   }
-  return <div>Loading...</div>;
+  return (
+    <div
+      style={{ height: '80vh' }}
+      className="w-100 d-flex justify-content-center align-items-center"
+    >
+      <Loading data={data} />
+    </div>
+  );
 };
 
 ViewProduct.propTypes = {

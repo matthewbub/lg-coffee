@@ -10,6 +10,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import Head from 'next/head';
 
 import PropTypes from 'prop-types';
+import Loading from '../components/Loading';
 
 const stripePromise = loadStripe(process.env.PUBLISHABLE_KEY);
 
@@ -50,7 +51,16 @@ function MyApp({ Component, pageProps }) {
       </StripeWrapper>
     );
   }
-  return <>loading</>;
+  return (
+    <StripeWrapper>
+      <div
+        style={{ height: '80vh' }}
+        className="w-100 d-flex justify-content-center align-items-center"
+      >
+        <Loading data={data} />
+      </div>
+    </StripeWrapper>
+  );
 }
 
 MyApp.propTypes = {
