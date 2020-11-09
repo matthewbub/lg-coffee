@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders homepage unchanged 1`] = `
+exports[`index renders unchanged 1`] = `
 Array [
   <nav
     className="navbar navbar-expand-lg navbar-light bg-light sticky-top"

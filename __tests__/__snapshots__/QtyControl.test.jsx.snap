@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QtyControl component renders unchanged 1`] = `
+<div
+  className="d-flex flex-column align-items-end"
+>
+  <div
+    className="btn-group"
+  >
+    <button
+      className="btn btn-outline-dark p-1 pr-3 pl-3"
+      onClick={[Function]}
+      style={
+        Object {
+          "height": "fit-content",
+        }
+      }
+      type="button"
+    >
+      -
+    </button>
+    <p
+      className="d-flex pr-3 pl-3"
+      style={
+        Object {
+          "height": "fit-content",
+        }
+      }
+    >
+      1
+    </p>
+    <button
+      className="btn btn-outline-dark p-1 pr-3 pl-3"
+      onClick={[Function]}
+      style={
+        Object {
+          "height": "fit-content",
+        }
+      }
+      type="button"
+    >
+      +
+    </button>
+  </div>
+  <button
+    className="btn btn-outline-dark qty_submit"
+    onClick={[Function]}
+    type="button"
+  >
+    Add To Cart
+  </button>
+  <div
+    style={
+      Object {
+        "height": "100px",
+      }
+    }
+  />
+</div>
+`;

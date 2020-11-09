@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StickyTopNavbar component renders unchanged 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light bg-light sticky-top"
+>
+  <a
+    className="navbar-brand"
+    href="/"
+  >
+    VisionSpeaks
+  </a>
+  <button
+    aria-controls="basic-navbar-nav"
+    aria-label="Toggle navigation"
+    className="navbar-toggler collapsed"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    aria-expanded={null}
+    className="navbar-collapse collapse"
+    id="basic-navbar-nav"
+  >
+    <div
+      className="mr-auto navbar-nav"
+      onKeyDown={[Function]}
+    >
+      <a
+        className="nav-link"
+        data-rb-event-key="/"
+        href="/"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Products
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key="/info/made-to-order"
+        href="/info/made-to-order"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        Made To Order
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key="/info/about"
+        href="/info/about"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        About
+      </a>
+    </div>
+  </div>
+</nav>
+`;
