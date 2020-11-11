@@ -50,7 +50,7 @@ const HomeContent = ({ data }) => {
               productTitle={i.productTitle}
               productDescription={i.productDescription}
               productPrice={i.productPrice}
-              productPath={`/view-product${i.productSku}`}
+              productPath={`/view-product/${i.productSku}`}
               productBgIsLight={i.productBgIsLight}
             />
           ))}

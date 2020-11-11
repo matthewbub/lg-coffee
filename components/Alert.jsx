@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Alert = ({ status, message }) => (
+const Alert = ({ status, children }) => (
   <div style={{ height: '100px', width: '300px' }} className="mt-2">
     {status ? (
       <div className={`alert alert-${status}`} role="alert">
-        {message}
+        {children}
       </div>
     ) : null}
   </div>
@@ -13,7 +13,7 @@ const Alert = ({ status, message }) => (
 
 Alert.propTypes = {
   status: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Alert;

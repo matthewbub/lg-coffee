@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useSwr from 'swr';
 
 import { loadStripe } from '@stripe/stripe-js';
@@ -28,6 +28,14 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 function MyApp({ Component, pageProps }) {
   const { data, error } = useSwr('/api/data', fetcher);
 
+  const [cart, addProductToCart] = useState();
+
+  useEffect(() => {
+    const userCart = sessionStorage.getItem('cart');
+    addProductToCart(JSON.parse(userCart));
+  }, []);
+  // console.log(cart)
+
   if (error) return <div>Something went wrong</div>;
   if (!data) {
     return (
@@ -48,7 +56,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap" />
       </Head>
-      <Component data={data} {...pageProps} />
+      <Component data={data} cart={cart} {...pageProps} />
     </StripeWrapper>
   );
 }

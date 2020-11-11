@@ -34,19 +34,16 @@ ProductPreview.propTypes = {
   }).isRequired,
 };
 
-const ViewProduct = ({ data }) => {
+const ViewProduct = ({ data, cart }) => {
   const router = useRouter();
   const { pid } = router.query;
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    /**
-     * ESLint doesnt like this
-     */
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < data.products.length; i++) {
       // eslint-disable-next-line no-unused-expressions
-      data.products[i].productSku === `/${pid}`
+      data.products[i].productSku === `${pid}`
         ? setProduct(data.products[i])
         : null;
     }
@@ -77,7 +74,7 @@ const ViewProduct = ({ data }) => {
               </div>
               <div className="align-self-end p-sm-3 d-flex flex-column align-items-end">
                 <p className="product_view_price">{product.productPrice}</p>
-                <QtyControl product={product} />
+                <QtyControl product={product} cart={cart} />
               </div>
             </section>
           </div>
@@ -98,6 +95,7 @@ ViewProduct.propTypes = {
       }).isRequired,
     ).isRequired,
   }).isRequired,
+  cart: PropTypes.shape({}).isRequired,
 };
 
 export default ViewProduct;

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 import Router from 'next/router';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -175,8 +175,21 @@ CheckoutForm.propTypes = {
   onSuccessfulCheckout: PropTypes.shape({}).isRequired,
 };
 
+// const CheckoutPreview = ({ products }) => {
+//   const cart = {};
+//   useEffect(() => {
+//     for (let i = 0; i > products.length; i++) {
+//       const product = products[i].productSku;
+//       cart[product] = localStorage.getItem(product);
+//     }
+//   });
+//   console.log(cart);
+//   return (<div>d</div>);
+// };
+
 const Checkout = ({ data }) => (
   <PageWrapper data={data}>
+    {/* <CheckoutPreview data={data.products} /> */}
     <CheckoutForm
       price={287}
       onSuccessfulCheckout={() => Router.push('/order-confirmation')}

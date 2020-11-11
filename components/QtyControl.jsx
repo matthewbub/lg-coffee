@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import Alert from './Alert';
 
-const QtyControl = ({ sku }) => {
+const QtyControl = ({ product, cart }) => {
   const [count, setCount] = useState(1);
   const [alert, setAlert] = useState(null);
 
@@ -23,32 +22,27 @@ const QtyControl = ({ sku }) => {
   const handleSubmit = () => {
     if (count === 0) setAlert({ status: 'warning', message: 'Nothing to add!' });
     else {
-      axios
-        .post('/cart', {
-          sku,
-          qty: count,
-        })
-        .then((res) => {
-          console.log('res', res.data);
-
-          setAlert({
-            status: 'success',
-            message: 'Successfully added products to cart!',
-          });
-          setTimeout(() => {
-            setAlert(null);
-          }, 3000);
-        })
-        .catch((err) => {
-          console.log('error in request', err);
-          setAlert({
-            status: 'warning',
-            message: 'Sorry, Something went wrong.',
-          });
-          setTimeout(() => {
-            setAlert(null);
-          }, 3000);
+      let updatedCart;
+      if (cart) {
+        updatedCart = JSON.stringify({
+          ...cart,
+          [product.productSku]: { ...product, qty: count },
         });
+      } else {
+ updatedCart = JSON.stringify({
+          [product.productSku]: { ...product, qty: count },
+        });
+}
+
+      sessionStorage.setItem('cart', updatedCart);
+
+      setAlert({
+        status: 'success',
+        message: 'Successfully added products to cart!',
+      });
+      setTimeout(() => {
+        setAlert(null);
+      }, 3000);
     }
   };
 
@@ -90,7 +84,10 @@ const QtyControl = ({ sku }) => {
 };
 
 QtyControl.propTypes = {
-  sku: PropTypes.string.isRequired,
+  product: PropTypes.shape({
+    productSku: PropTypes.string.isRequired,
+  }).isRequired,
+  cart: PropTypes.shape({}).isRequired,
 };
 
 export default QtyControl;

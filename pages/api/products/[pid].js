@@ -1,5 +1,4 @@
-/* eslint-disable no-console */
-export default function handler(req, res) {
+export default function userHandler(req, res) {
   const {
     query: { sku, qty },
     method,
@@ -12,7 +11,7 @@ export default function handler(req, res) {
       break;
     case 'PUT':
       // Update or create data in your database
-      res.status(200).send({ req });
+      res.status(200).json({ sku, qty });
       break;
     default:
       res.setHeader('Allow', ['GET', 'PUT']);

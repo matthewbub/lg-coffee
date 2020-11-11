@@ -36,7 +36,7 @@ exports.data = {
       productTitle: 'Bunns In The Void',
       productDescription: 'Holographic Sticker, This thing is bad ass',
       productPrice: '$2.87',
-      productSku: '/bun_vs_',
+      productSku: 'bun_vs_',
       productBgIsLight: 'true',
       productImages: [
         '/bunns_in_the_void_TRANSP.png',
@@ -50,7 +50,7 @@ exports.data = {
       productTitle: 'Lady In The Void',
       productDescription: 'Holographic Sticker, This thing is bad ass',
       productPrice: '$2.87',
-      productSku: '/lad_vs_',
+      productSku: 'lad_vs_',
       productBgIsLight: false,
       productImages: [
         '/lady_in_the_void_TRANSP.png',
@@ -74,11 +74,15 @@ exports.data = {
     },
     {
       title: 'Made To Order',
-      path: '/info/made-to-order',
+      path: '/info/contact',
     },
     {
       title: 'About',
       path: '/info/about',
+    },
+    {
+      title: 'Cart',
+      path: '/view-cart',
     },
   ],
   footer: [
