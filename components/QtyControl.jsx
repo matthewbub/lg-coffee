@@ -77,7 +77,7 @@ const QtyControl = ({ product, cart }) => {
         Add To Cart
       </button>
       <div style={{ height: '100px' }}>
-        {alert ? <Alert message={alert.message} status={alert.status} /> : null}
+        {alert ? <Alert status={alert.status}>{alert.message}</Alert> : null}
       </div>
     </div>
   );
