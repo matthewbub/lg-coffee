@@ -29,10 +29,10 @@ const QtyControl = ({ product, cart }) => {
           [product.productSku]: { ...product, qty: count },
         });
       } else {
- updatedCart = JSON.stringify({
+        updatedCart = JSON.stringify({
           [product.productSku]: { ...product, qty: count },
         });
-}
+      }
 
       sessionStorage.setItem('cart', updatedCart);
 
