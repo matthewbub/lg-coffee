@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`index renders unchanged 1`] = `
-Array [
+<div
+  className="content"
+>
   <nav
     className="navbar navbar-expand-lg navbar-light bg-light sticky-top"
   >
@@ -69,87 +71,89 @@ Array [
         </a>
       </div>
     </div>
-  </nav>,
-  <div>
-    <div
-      className="fluid-container hero_image"
-      style={
-        Object {
-          "backgroundImage": "url(\\"/heatpress.jpeg\\")",
+  </nav>
+  <main>
+    <div>
+      <div
+        className="fluid-container hero_image"
+        style={
+          Object {
+            "backgroundImage": "url(\\"/heatpress.jpeg\\")",
+          }
         }
-      }
-    >
-      <div
-        className=""
       >
-        <h1
-          className="font-weight-bold"
+        <div
+          className=""
         >
-          Made To Order
-        </h1>
-        <p
-          className="font-weight-normal"
-        >
-          The highest quality work comes from custom work.
-        </p>
-        <a
-          href="/products"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-        >
-          Start Your Order
-        </a>
-      </div>
-    </div>
-    <div
-      className="container"
-    >
-      <div
-        className="d-flex products_wrapper"
-      >
-        <section
-          className="product_card_v m-1"
-        >
-          <div
-            className="product_image"
+          <h1
+            className="font-weight-bold"
+          >
+            Made To Order
+          </h1>
+          <p
+            className="font-weight-normal"
+          >
+            The highest quality work comes from custom work.
+          </p>
+          <a
+            href="/products"
             onClick={[Function]}
             onMouseEnter={[Function]}
-            style={
-              Object {
-                "backgroundImage": "url(\\"/front_page_bunns@2x.png\\")",
-              }
-            }
           >
-            <h2
-              className="text-light font-weight-bold"
-            >
-              Bunns In The Void
-            </h2>
-          </div>
-        </section>
-        <section
-          className="product_card_v m-1"
+            Start Your Order
+          </a>
+        </div>
+      </div>
+      <div
+        className="container"
+      >
+        <div
+          className="d-flex products_wrapper"
         >
-          <div
-            className="product_image"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            style={
-              Object {
-                "backgroundImage": "url(\\"/front_page_lady@2x.png\\")",
-              }
-            }
+          <section
+            className="product_card_v m-1"
           >
-            <h2
-              className="text-light font-weight-bold"
+            <div
+              className="product_image"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              style={
+                Object {
+                  "backgroundImage": "url(\\"/front_page_bunns@2x.png\\")",
+                }
+              }
             >
-              Lady In The Void
-            </h2>
-          </div>
-        </section>
+              <h2
+                className="text-light font-weight-bold"
+              >
+                Bunns In The Void
+              </h2>
+            </div>
+          </section>
+          <section
+            className="product_card_v m-1"
+          >
+            <div
+              className="product_image"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              style={
+                Object {
+                  "backgroundImage": "url(\\"/front_page_lady@2x.png\\")",
+                }
+              }
+            >
+              <h2
+                className="text-light font-weight-bold"
+              >
+                Lady In The Void
+              </h2>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
-  </div>,
+  </main>
   <div
     className="my-5 container-fluid"
   >
@@ -203,6 +207,6 @@ Array [
         </span>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

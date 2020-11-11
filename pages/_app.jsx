@@ -10,8 +10,7 @@ import PropTypes from 'prop-types';
 import Loading from '../components/Loading';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/index.css';
-import '../styles/custom.css';
-import '../styles/animations.css';
+import '../styles/global.css';
 
 const stripePromise = loadStripe(process.env.PUBLISHABLE_KEY);
 

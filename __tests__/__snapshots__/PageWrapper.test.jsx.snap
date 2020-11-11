@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageWrapper renders unchanged 1`] = `
-Array [
+<div
+  className="content"
+>
   <nav
     className="navbar navbar-expand-lg navbar-light bg-light sticky-top"
   >
@@ -69,10 +71,12 @@ Array [
         </a>
       </div>
     </div>
-  </nav>,
-  <p>
-    Hello World
-  </p>,
+  </nav>
+  <main>
+    <p>
+      Hello World
+    </p>
+  </main>
   <div
     className="my-5 container-fluid"
   >
@@ -126,6 +130,6 @@ Array [
         </span>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

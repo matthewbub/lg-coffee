@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`About page renders unchanged 1`] = `
-Array [
+<div
+  className="content"
+>
   <nav
     className="navbar navbar-expand-lg navbar-light bg-light sticky-top"
   >
@@ -69,36 +71,38 @@ Array [
         </a>
       </div>
     </div>
-  </nav>,
-  <div
-    className="container"
-    style={
-      Object {
-        "minHeight": "580px",
-      }
-    }
-  >
+  </nav>
+  <main>
     <div
-      className="row"
+      className="container"
+      style={
+        Object {
+          "minHeight": "580px",
+        }
+      }
     >
       <div
-        className="col-lg-6 col-md-8 col-sm-10 col-12 offset-lg-3 offset-md-2 offset-sm-1"
+        className="row"
       >
-        <h1
-          className="text-light mt-4"
+        <div
+          className="col-lg-6 col-md-8 col-sm-10 col-12 offset-lg-3 offset-md-2 offset-sm-1"
         >
-          About
-        </h1>
-        <p
-          className="text-light"
-        >
-          
+          <h1
+            className="text-light mt-4"
+          >
+            About
+          </h1>
+          <p
+            className="text-light"
+          >
+            
         VisionSpeaks is a custom art collective.
       
-        </p>
+          </p>
+        </div>
       </div>
     </div>
-  </div>,
+  </main>
   <div
     className="my-5 container-fluid"
   >
@@ -152,6 +156,6 @@ Array [
         </span>
       </div>
     </div>
-  </div>,
-]
+  </div>
+</div>
 `;

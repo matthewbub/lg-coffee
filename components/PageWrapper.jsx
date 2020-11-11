@@ -4,11 +4,11 @@ import StickyTopNavbar from './StickyTopNavbar';
 import Footer from './Footer';
 
 const PageWrapper = ({ children, data }) => (
-  <>
+  <div className="content">
     <StickyTopNavbar store={data.store} navigation={data.navigation} />
-    {children}
+    <main>{children}</main>
     <Footer links={data.footer} />
-  </>
+  </div>
 );
 
 PageWrapper.propTypes = {

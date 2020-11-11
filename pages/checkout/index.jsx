@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Loading from '../../components/Loading';
 import PageWrapper from '../../components/PageWrapper';
 
 const CheckoutError = ({ children }) => <>{children}</>;
@@ -21,7 +22,7 @@ CheckoutError.propTypes = {
 const BillingDetailsFields = () => (
   <>
     <Form.Row>
-      <h1 className="text-light mt-5">Checkout</h1>
+      <h1 className="text-light mt-5">Billing Information</h1>
       <Form.Control
         className="bg-dark text-light mt-3"
         type="text"
@@ -125,7 +126,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
       payment_method: paymentMethodReq.paymentMethod.id,
     });
 
-    console.log(confirmCardPayment);
+    // console.log(confirmCardPayment);
 
     onSuccessfulCheckout();
   };
@@ -175,30 +176,62 @@ CheckoutForm.propTypes = {
   onSuccessfulCheckout: PropTypes.shape({}).isRequired,
 };
 
-// const CheckoutPreview = ({ products }) => {
-//   const cart = {};
-//   useEffect(() => {
-//     for (let i = 0; i > products.length; i++) {
-//       const product = products[i].productSku;
-//       cart[product] = localStorage.getItem(product);
-//     }
-//   });
-//   console.log(cart);
-//   return (<div>d</div>);
-// };
-
-const Checkout = ({ data }) => (
-  <PageWrapper data={data}>
-    {/* <CheckoutPreview data={data.products} /> */}
-    <CheckoutForm
-      price={287}
-      onSuccessfulCheckout={() => Router.push('/order-confirmation')}
-    />
-  </PageWrapper>
+const CheckoutPreview = ({ cart }) => (
+  <div>
+    {Object.keys(cart).map((i) => (
+      <Row className="d-flex justify-content-center">
+        <Col md={6}>
+          {console.log(cart[i])}
+          <div className="d-flex">
+            <img
+              src={cart[i].productImages[0]}
+              alt={cart[i].productTitle}
+              style={{ height: '150px', width: '150px' }}
+            />
+            <h2 className="text-light">{cart[i].productTitle}</h2>
+            <p className="text-light">{cart[i].productPrice}</p>
+            <p className="text-light">{cart[i].qty}</p>
+          </div>
+        </Col>
+      </Row>
+    ))}
+  </div>
 );
 
+CheckoutPreview.propTypes = {
+  cart: PropTypes.shape({
+    productImages: PropTypes.string.isRequired,
+    productTitle: PropTypes.string.isRequired,
+    productPrice: PropTypes.string.isRequired,
+    qty: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
+const Checkout = ({ data, cart }) => {
+  if (!cart || !data) {
+    <div
+      style={{ height: '80vh' }}
+      className="w-100 d-flex justify-content-center align-items-center"
+    >
+      <Loading data={cart} />
+    </div>;
+  }
+  return (
+    <PageWrapper data={data}>
+      <CheckoutPreview cart={cart} />
+      <CheckoutForm
+        price={287}
+        onSuccessfulCheckout={() => Router.push('/checkout/order-confirmation')}
+      />
+    </PageWrapper>
+  );
+};
+
 Checkout.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  cart: PropTypes.shape({}).isRequired,
+  data: PropTypes.shape({
+    products: PropTypes.arrayOf({}).isRequired,
+  }).isRequired,
 };
 
 export default Checkout;
