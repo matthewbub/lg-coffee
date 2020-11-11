@@ -42,8 +42,8 @@ Array [
         </a>
         <a
           className="nav-link"
-          data-rb-event-key="/info/made-to-order"
-          href="/info/made-to-order"
+          data-rb-event-key="/info/contact"
+          href="/info/contact"
           onClick={[Function]}
           onKeyDown={[Function]}
         >
@@ -57,6 +57,15 @@ Array [
           onKeyDown={[Function]}
         >
           About
+        </a>
+        <a
+          className="nav-link"
+          data-rb-event-key="/view-cart"
+          href="/view-cart"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          Cart
         </a>
       </div>
     </div>

@@ -13,8 +13,6 @@ exports[`Alert component renders unchanged 1`] = `
   <div
     className="alert alert-danger"
     role="alert"
-  >
-    Unknown error occured. Try again later.
-  </div>
+  />
 </div>
 `;
