@@ -18,7 +18,13 @@
 > Large Commerce</br>
 > Simple Solutions
 
-Saas application using a JAM Stack, Firebase Auth & Storage, Stripe and Twillio. 
+Bootstrap an Ecommerce App for Physical Goods e.g. Standard ECommerce, Delivery Services
+
+## What do I need to know before I attempt this?
+
+The more you know the better. This Project was built using Next.js, Stripe's Api and Node. You will also need to have a basic understanding of Git as we will be utilizing vercels continuous integration and hosting with our Next.js app.
+
+More info coming soon :construction:
 
 ## Warning everything here is subject to breaking change.
 
@@ -54,12 +60,4 @@ LOCAL_URL=http://localhost:3000
 # Update these with your Stripe credentials
 PUBLISHABLE_KEY=stripe_publishable_key
 SECRET_KEY=stripe_secret_key
-# Update these with your Firebase app's values.
-FIREBASE_CLIENT_EMAIL=my-example-app-email@example.com
-NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY=MyExampleAppAPIKey123
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=my-example-app.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_DATABASE_URL=https://my-example-app.firebaseio.com
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=my-example-app-id
-# Your Firebase private key.
-FIREBASE_PRIVATE_KEY=some-key-here
 ```
