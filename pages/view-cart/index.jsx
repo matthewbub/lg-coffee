@@ -88,7 +88,8 @@ const ViewCart = ({ cart, data }) => {
 };
 
 ViewCart.propTypes = {
-  cart: PropTypes.shape({}).isRequired,
+  // eslint-disable-next-line react/require-default-props
+  cart: PropTypes.shape({}),
   data: PropTypes.shape({}).isRequired,
 };
 

@@ -13,7 +13,8 @@ const Loading = ({ data }) => {
 };
 
 Loading.propTypes = {
-  data: PropTypes.shape({}).isRequired,
+  // eslint-disable-next-line react/require-default-props
+  data: PropTypes.shape({}),
 };
 
 export default Loading;
