@@ -32,13 +32,12 @@ exports[`StickyTopNavbar component renders unchanged 1`] = `
     >
       <a
         className="nav-link"
-        data-rb-event-key="/checkout"
-        href="/checkout"
+        data-rb-event-key={null}
+        href="#"
         onClick={[Function]}
         onKeyDown={[Function]}
-      >
-        Cart
-      </a>
+        role="button"
+      />
     </div>
   </div>
 </nav>
