@@ -1,30 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useEffect, useState } from 'react';
 import useSwr from 'swr';
-
-import { loadStripe } from '@stripe/stripe-js';
-import { Elements } from '@stripe/react-stripe-js';
 import Head from 'next/head';
 
 import PropTypes from 'prop-types';
 import Loading from '../components/Loading';
+import StripeWrapper from '../components/StripeWrapper';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/index.css';
 import '../styles/global.css';
 
-const stripePromise = loadStripe(process.env.PUBLISHABLE_KEY);
-
-const StripeWrapper = ({ children }) => (
-  <Elements stripe={stripePromise}>{children}</Elements>
-);
-
-StripeWrapper.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   const { data, error } = useSwr('/api/data', fetcher);
 
   const [cart, addProductToCart] = useState();
@@ -33,18 +21,12 @@ function MyApp({ Component, pageProps }) {
     const userCart = sessionStorage.getItem('cart');
     addProductToCart(JSON.parse(userCart));
   }, []);
-  // console.log(cart)
 
   if (error) return <div>Something went wrong</div>;
   if (!data) {
     return (
       <StripeWrapper>
-        <div
-          style={{ height: '80vh' }}
-          className="w-100 d-flex justify-content-center align-items-center"
-        >
-          <Loading data={data} />
-        </div>
+        <Loading data={data} />
       </StripeWrapper>
     );
   }
@@ -60,9 +42,9 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-MyApp.propTypes = {
+App.propTypes = {
   Component: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
   pageProps: PropTypes.shape({}).isRequired,
 };
 
-export default MyApp;
+export default App;

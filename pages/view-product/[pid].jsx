@@ -4,35 +4,7 @@ import PropTypes from 'prop-types';
 import PageWrapper from '../../components/PageWrapper';
 import QtyControl from '../../components/QtyControl';
 import Loading from '../../components/Loading';
-
-const ProductPreview = ({ product }) => {
-  const [primaryImage, setPrimaryImage] = useState(product.productImages[0]);
-
-  const handlePrimaryImageToggle = (i) => setPrimaryImage(i);
-  return (
-    <section className="col-md-6 col-sm-12 bg-light pid_section">
-      <img className="main_img" src={primaryImage} alt="view product" />
-      <div className="img_previews">
-        {product.productImages.map((i) => (
-          <button
-            type="button"
-            key={i}
-            className="img_preview_button"
-            onClick={() => handlePrimaryImageToggle(i)}
-          >
-            <img src={i} alt="alt product views" />
-          </button>
-        ))}
-      </div>
-    </section>
-  );
-};
-
-ProductPreview.propTypes = {
-  product: PropTypes.shape({
-    productImages: PropTypes.arrayOf.isRequired,
-  }).isRequired,
-};
+import ProductPreview from '../../components/ProductPreview';
 
 const ViewProduct = ({ data, cart }) => {
   const router = useRouter();
@@ -50,14 +22,7 @@ const ViewProduct = ({ data, cart }) => {
   }, [data.products, pid]);
 
   if (!product) {
-    return (
-      <div
-        style={{ height: '80vh' }}
-        className="w-100 d-flex justify-content-center align-items-center"
-      >
-        <Loading data={data} />
-      </div>
-    );
+    return <Loading data={data} />;
   }
   return (
     <PageWrapper data={data}>

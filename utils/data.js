@@ -45,8 +45,6 @@ exports.data = {
       ],
     },
     {
-      imagePath: '/front_page_lady@2x.png',
-      imagePathHovered: '/front_page_lady_hover@2x.png',
       productTitle: 'Lady In The Void',
       productDescription: 'Holographic Sticker, This thing is bad ass',
       productPrice: '$2.87',
@@ -69,20 +67,12 @@ exports.data = {
   },
   navigation: [
     {
-      title: 'Products',
-      path: '/',
-    },
-    {
-      title: 'Made To Order',
-      path: '/info/contact',
-    },
-    {
       title: 'About',
       path: '/info/about',
     },
     {
       title: 'Cart',
-      path: '/view-cart',
+      path: '/checkout',
     },
   ],
   footer: [

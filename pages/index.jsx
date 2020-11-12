@@ -35,7 +35,9 @@ const HomeContent = ({ data }) => {
           <h1 className="font-weight-bold">{hero.heroHeadline}</h1>
           <p className="font-weight-normal">{hero.heroSubHeadline}</p>
           <Link className="btn btn-outline-dark" href={hero.heroPath}>
-            {hero.heroButton}
+            <button className="btn btn-outline-dark" type="button">
+              {hero.heroButton}
+            </button>
           </Link>
         </div>
       </div>
@@ -45,13 +47,11 @@ const HomeContent = ({ data }) => {
           {products.map((i) => (
             <ProductCard
               key={i.productSku}
-              imagePath={i.imagePath}
-              imagePathHovered={i.imagePathHovered}
+              imagePath={i.productImages[0]}
               productTitle={i.productTitle}
               productDescription={i.productDescription}
               productPrice={i.productPrice}
               productPath={`/view-product/${i.productSku}`}
-              productBgIsLight={i.productBgIsLight}
             />
           ))}
         </div>

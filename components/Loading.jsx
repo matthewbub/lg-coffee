@@ -9,7 +9,11 @@ const Loading = ({ data }) => {
     if (data) setLoader(false);
   }, [data]);
 
-  return <>{loading ? <Spinner animation="grow" variant="warning" /> : null}</>;
+  return (
+    <main className="full_screen loading">
+      {loading ? <Spinner animation="grow" variant="warning" /> : null}
+    </main>
+  );
 };
 
 Loading.propTypes = {
