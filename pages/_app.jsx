@@ -6,6 +6,7 @@ import Head from 'next/head';
 import PropTypes from 'prop-types';
 import Loading from '../components/Loading';
 import StripeWrapper from '../components/StripeWrapper';
+import FacebookPixelWrapper from '../components/FacebookPixelWrapper';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/index.css';
 import '../styles/global.css';
@@ -37,7 +38,9 @@ function App({ Component, pageProps }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap" />
       </Head>
-      <Component data={data} cart={cart} {...pageProps} />
+      <FacebookPixelWrapper>
+        <Component data={data} cart={cart} {...pageProps} />
+      </FacebookPixelWrapper>
     </StripeWrapper>
   );
 }
