@@ -32,15 +32,6 @@ exports[`StickyTopNavbar component renders unchanged 1`] = `
     >
       <a
         className="nav-link"
-        data-rb-event-key="/info/about"
-        href="/info/about"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-      >
-        About
-      </a>
-      <a
-        className="nav-link"
         data-rb-event-key="/checkout"
         href="/checkout"
         onClick={[Function]}

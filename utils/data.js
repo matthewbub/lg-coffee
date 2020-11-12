@@ -67,10 +67,6 @@ exports.data = {
   },
   navigation: [
     {
-      title: 'About',
-      path: '/info/about',
-    },
-    {
       title: 'Cart',
       path: '/checkout',
     },
@@ -80,12 +76,5 @@ exports.data = {
       title: 'Contact',
       path: 'mailto:support@visionspeaks.art',
     },
-    {
-      title: 'FAQ',
-      path: '/info/faq',
-    },
   ],
-  styles: {
-    demo: 'demo',
-  },
 };
