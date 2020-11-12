@@ -1,7 +1,5 @@
 exports.data = {
   store: {
-    accountOwner: 'Yulissa V',
-    dateCreated: '08/2020',
     storeName: 'VisionSpeaks',
     logo: '/logo.png',
     info: {
@@ -27,6 +25,11 @@ exports.data = {
       about: `
         VisionSpeaks is a custom art collective.
       `,
+    },
+    social: {
+      facebook: '',
+      twitter: '',
+      instagram: '',
     },
   },
   products: [
@@ -67,8 +70,8 @@ exports.data = {
   },
   navigation: [
     {
-      title: 'Cart',
-      path: '/checkout',
+      name: 'Blog',
+      href: '/blog',
     },
   ],
   footer: [
@@ -77,4 +80,76 @@ exports.data = {
       path: 'mailto:support@visionspeaks.art',
     },
   ],
+  threeCardComponent: [
+    {
+      image: 'https://via.placeholder.com/150',
+      heading: 'Demo Heading',
+      subheading: "Lorem Ipsem is probably what you don't want here",
+      href: '/example',
+    },
+    {
+      image: 'https://via.placeholder.com/150',
+      heading: 'Another Heading',
+      subheading: "Lorem Ipsem is probably what you don't want here",
+      href: '/example',
+    },
+    {
+      image: 'https://via.placeholder.com/150',
+      heading: 'Another Heading',
+      subheading: "Lorem Ipsem is probably what you don't want here",
+      href: '/example',
+    },
+  ],
+  textBlockComponent: {
+    heading: 'This is a demo heading',
+    subheading: 'Lorem Ipsem and Hello world do not belong here!',
+  },
+  heroComponent: {
+    image: '/heatpress.jpeg',
+    heading: 'Made To Order',
+    subheading: 'The highest quality work comes from custom work.',
+    button: 'Start Your Order',
+    href: '/products',
+  },
+  productsRowComponent: {
+    heading: 'New Arrivals',
+    products: [
+      {
+        name: 'Demo Product',
+        description: "Lorem Ipsum isn't what we should use here",
+        price: '287',
+        sku: 'bun_vs_',
+        images: [
+          'https://via.placeholder.com/300',
+          'https://via.placeholder.com/300',
+          'https://via.placeholder.com/300',
+        ],
+      },
+      {
+        name: 'Demo Product',
+        description: "Lorem Ipsum isn't what we should use here",
+        price: '287',
+        sku: 'bun_vs_',
+        images: [
+          'https://via.placeholder.com/300',
+          'https://via.placeholder.com/300',
+          'https://via.placeholder.com/300',
+        ],
+      },
+      {
+        name: 'Demo Product',
+        description: "Lorem Ipsum isn't what we should use here",
+        price: '287',
+        sku: 'bun_vs_',
+        images: [
+          'https://via.placeholder.com/300',
+          'https://via.placeholder.com/300',
+          'https://via.placeholder.com/300',
+        ],
+      },
+    ],
+  },
+  navigationComponent: {
+    logo: 'https://via.placeholder.com/30',
+  },
 };
