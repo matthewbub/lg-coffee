@@ -35,24 +35,6 @@ exports[`index renders unchanged 1`] = `
       >
         <a
           className="nav-link"
-          data-rb-event-key="/"
-          href="/"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-        >
-          Products
-        </a>
-        <a
-          className="nav-link"
-          data-rb-event-key="/info/contact"
-          href="/info/contact"
-          onClick={[Function]}
-          onKeyDown={[Function]}
-        >
-          Made To Order
-        </a>
-        <a
-          className="nav-link"
           data-rb-event-key="/info/about"
           href="/info/about"
           onClick={[Function]}
@@ -62,8 +44,8 @@ exports[`index renders unchanged 1`] = `
         </a>
         <a
           className="nav-link"
-          data-rb-event-key="/view-cart"
-          href="/view-cart"
+          data-rb-event-key="/checkout"
+          href="/checkout"
           onClick={[Function]}
           onKeyDown={[Function]}
         >
@@ -95,13 +77,14 @@ exports[`index renders unchanged 1`] = `
           >
             The highest quality work comes from custom work.
           </p>
-          <a
-            href="/products"
+          <button
+            className="btn btn-outline-dark"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            type="button"
           >
             Start Your Order
-          </a>
+          </button>
         </div>
       </div>
       <div
@@ -119,7 +102,7 @@ exports[`index renders unchanged 1`] = `
               onMouseEnter={[Function]}
               style={
                 Object {
-                  "backgroundImage": "url(\\"/front_page_bunns@2x.png\\")",
+                  "backgroundImage": "url(\\"/bunns_in_the_void_TRANSP.png\\")",
                 }
               }
             >
@@ -139,7 +122,7 @@ exports[`index renders unchanged 1`] = `
               onMouseEnter={[Function]}
               style={
                 Object {
-                  "backgroundImage": "url(\\"/front_page_lady@2x.png\\")",
+                  "backgroundImage": "url(\\"/lady_in_the_void_TRANSP.png\\")",
                 }
               }
             >
@@ -154,59 +137,61 @@ exports[`index renders unchanged 1`] = `
       </div>
     </div>
   </main>
-  <div
-    className="my-5 container-fluid"
-  >
+  <footer>
     <div
-      className="row"
+      className="my-5 container-fluid"
     >
       <div
-        className="d-flex justify-content-center col"
+        className="row"
       >
-        <span
-          className="text-light m-2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
+        <div
+          className="d-flex justify-content-center col"
         >
-          Contact
-        </span>
-        <span
-          className="text-light m-2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          style={
-            Object {
-              "cursor": "pointer",
+          <span
+            className="text-light m-2"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
             }
-          }
-        >
-          FAQ
-        </span>
+          >
+            Contact
+          </span>
+          <span
+            className="text-light m-2"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            FAQ
+          </span>
+        </div>
       </div>
-    </div>
-    <div
-      className="row"
-    >
       <div
-        className="d-flex justify-content-center col"
+        className="row"
       >
-        <span
-          className="text-light m-2"
-          style={
-            Object {
-              "fontSize": "12px",
-            }
-          }
+        <div
+          className="d-flex justify-content-center col"
         >
-          2020
-        </span>
+          <span
+            className="text-light m-2"
+            style={
+              Object {
+                "fontSize": "12px",
+              }
+            }
+          >
+            2020
+          </span>
+        </div>
       </div>
     </div>
-  </div>
+  </footer>
 </div>
 `;

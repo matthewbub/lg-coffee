@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckoutForm component renders unchanged 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-row"
+  >
+    <h1
+      className="text-light mt-5"
+    >
+      Billing Information
+    </h1>
+    <input
+      className="bg-dark text-light mt-3 form-control"
+      label="name"
+      name="name"
+      placeholder="Jane Doe"
+      required={true}
+      type="text"
+    />
+    <input
+      className="bg-dark text-light mt-3 form-control"
+      label="email"
+      name="email"
+      placeholder="jane.doe@example.com"
+      required={true}
+      type="text"
+    />
+    <input
+      className="bg-dark text-light mt-3 form-control"
+      label="address"
+      name="address"
+      placeholder="185 Berry St. Suite 550"
+      required={true}
+      type="text"
+    />
+    <input
+      className="bg-dark text-light mt-3 form-control"
+      label="city"
+      name="city"
+      placeholder="San Francisco"
+      required={true}
+      type="text"
+    />
+    <input
+      className="bg-dark text-light mt-3 form-control"
+      label="state"
+      name="state"
+      placeholder="CA"
+      required={true}
+      type="text"
+    />
+    <input
+      className="bg-dark text-light my-3 form-control"
+      label="zip"
+      name="zip"
+      placeholder="94103"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="StripeElement"
+  >
+    <div />
+  </div>
+  <button
+    className="btn btn-outline-light align-self-end mt-3"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

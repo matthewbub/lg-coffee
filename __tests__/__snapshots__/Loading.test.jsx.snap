@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Loading component renders unchanged 1`] = `
-<div
-  className="spinner-grow text-warning"
-/>
+<main
+  className="full_screen loading"
+>
+  <div
+    className="spinner-grow text-warning"
+  />
+</main>
 `;
