@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StickyTopNavbar from './StickyTopNavbar';
+import Navigation from '../prebuilts/Navigation';
 import Footer from './Footer';
 
 const PageWrapper = ({ children, data }) => (
   <div className="content">
-    <StickyTopNavbar store={data.store} navigation={data.navigation} />
+    <Navigation store={data.store} navigation={data.navigation} />
     <main>{children}</main>
     <Footer links={data.footer} />
   </div>

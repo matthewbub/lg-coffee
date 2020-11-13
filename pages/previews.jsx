@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Navigation from '../prebuilts/Navigation';
+// import Navigation from '../prebuilts/Navigation';
 import ThreeCardComponent from '../prebuilts/ThreeCardComponent';
 import TextBlockComponent from '../prebuilts/TextBlockComponent';
 import HeroComponent from '../prebuilts/HeroComponent';
@@ -8,10 +8,10 @@ import ProductRowComponet from '../prebuilts/ProductRowComponent';
 
 const Preview = ({ data }) => (
   <>
-    <Navigation
+    {/* <Navigation
       logo={data.navigationComponent.logo}
       navigation={data.navigation}
-    />
+    /> */}
     <HeroComponent
       image={data.heroComponent.image}
       heading={data.heroComponent.heading}

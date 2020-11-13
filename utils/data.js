@@ -1,6 +1,6 @@
 exports.data = {
   store: {
-    storeName: 'VisionSpeaks',
+    name: 'VisionSpeaks',
     logo: '/logo.png',
     info: {
       faq: [
@@ -32,41 +32,34 @@ exports.data = {
       instagram: '',
     },
   },
-  products: [
-    {
-      imagePath: '/front_page_bunns@2x.png',
-      imagePathHovered: '/front_page_bunns_hover@2x.png', // drop image opacity to .6
-      productTitle: 'Bunns In The Void',
-      productDescription: 'Holographic Sticker, This thing is bad ass',
-      productPrice: '$2.87',
-      productSku: 'bun_vs_',
-      productBgIsLight: 'true',
-      productImages: [
-        '/bunns_in_the_void_TRANSP.png',
-        '/bunns_001.png',
-        '/bunns_002.png',
-      ],
-    },
-    {
-      productTitle: 'Lady In The Void',
-      productDescription: 'Holographic Sticker, This thing is bad ass',
-      productPrice: '$2.87',
-      productSku: 'lad_vs_',
-      productBgIsLight: false,
-      productImages: [
-        '/lady_in_the_void_TRANSP.png',
-        '/lady_001.png',
-        '/lady_002.png',
-      ],
-    },
-  ],
-  hero: {
-    heroImage: '/heatpress.jpeg',
-    heroHeadline: 'Made To Order',
-    heroSubHeadline: 'The highest quality work comes from custom work.',
-    heroButton: 'Start Your Order',
-    heroPath: '/products',
-    styles: {},
+  products: {
+    heading: 'New Arrivials',
+    products: [
+      {
+        name: 'Bunns In The Void',
+        description: 'Holographic Sticker, This thing is bad ass',
+        price: 287,
+        sku: 'bun_vs_',
+        images: [
+          '/bunns_in_the_void_TRANSP.png',
+          '/bunns_001.png',
+          '/bunns_002.png',
+        ],
+        qty: 40,
+      },
+      {
+        name: 'Lady In The Void',
+        description: 'Holographic Sticker, This thing is bad ass',
+        price: 287,
+        sku: 'lad_vs_',
+        images: [
+          '/lady_in_the_void_TRANSP.png',
+          '/lady_001.png',
+          '/lady_002.png',
+        ],
+        qty: 40,
+      },
+    ],
   },
   navigation: [
     {
@@ -104,7 +97,7 @@ exports.data = {
     heading: 'This is a demo heading',
     subheading: 'Lorem Ipsem and Hello world do not belong here!',
   },
-  heroComponent: {
+  hero: {
     image: '/heatpress.jpeg',
     heading: 'Made To Order',
     subheading: 'The highest quality work comes from custom work.',

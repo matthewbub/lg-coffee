@@ -5,12 +5,20 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+const handleUSDChange = (number) => {
+  const string = JSON.stringify(number);
+  const { length } = string;
+  return JSON.parse(
+    `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
+  );
+};
+
 const ProductRowComponet = ({ heading, products }) => (
   <Container>
     <Row className="mt-5 mb-3">
       <h2 className="text-light">{heading}</h2>
     </Row>
-    <Row className="mb-5">
+    <Row className="mb-5 center_on_sm">
       {products.map((i) => (
         <Col
           key={i.sku}
@@ -21,11 +29,15 @@ const ProductRowComponet = ({ heading, products }) => (
           <Link href={`/${i.sku}`}>
             <div className="my-5">
               <div style={{ cursor: 'pointer' }}>
-                <img src={i.images[0]} alt={i.name} />
+                <img
+                  style={{ height: '300px', width: '300px' }}
+                  src={i.images[0]}
+                  alt={i.name}
+                />
                 <h5 className="text-light mt-3 mb-1">{i.name}</h5>
                 <h6 className="text-muted">
                   $
-                  {i.price}
+                  {handleUSDChange(i.price)}
                   {' '}
                   USD
                 </h6>
