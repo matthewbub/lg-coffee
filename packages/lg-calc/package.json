@@ -1,5 +1,5 @@
 {
-  "name": "calculator",
+  "name": "lg-calc",
   "version": "0.1.0-alpha.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "gitHead": "f33cac8ddacac786bc9e1cfdcefc5122a1d319ce"
 }
