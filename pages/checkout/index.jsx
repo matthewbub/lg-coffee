@@ -10,17 +10,8 @@ import CheckoutPreview from '../../components/CheckoutPreview';
 
 const Checkout = ({ data, cart }) => {
   if (!cart || !data) <Loading data={cart} />;
-  const carts = {
-  one: {
-    price: 287,
-    qty: 5,
-  },
-  two: {
-    price: 233,
-    qty: 3,
-  },
-};
-    console.log(handleCart(cart));
+ 
+   console.log(handleCart(cart, 'USD'));
 
 
   return (
