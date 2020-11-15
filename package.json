@@ -43,7 +43,7 @@
     "clsx": "^1.1.1",
     "cors": "^2.8.5",
     "js-cookie": "^2.2.1",
-    "lg-calc": "^0.5.1-alpha.1",
+    "lg-calc": "^0.4.0-alpha.0",
     "next": "^10.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",

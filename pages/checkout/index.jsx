@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import handleCart from 'lg-calc';
+import getFixedPrice from 'lg-calc';
 import Loading from '../../components/Loading';
 import PageWrapper from '../../components/PageWrapper';
 import SlimWrapper from '../../components/SlimWrapper';
@@ -10,9 +10,11 @@ import CheckoutPreview from '../../components/CheckoutPreview';
 
 const Checkout = ({ data, cart }) => {
   if (!cart || !data) <Loading data={cart} />;
- 
-   console.log(handleCart(cart, 'USD'));
+  const [total, setTotal] = useState();
 
+  useEffect(() => {
+    setTotal(getFixedPrice({ cart }));
+  }, [cart]);
 
   return (
     <PageWrapper data={data}>
@@ -20,7 +22,7 @@ const Checkout = ({ data, cart }) => {
         <CheckoutPreview cart={cart} />
         <CheckoutForm
           cart={cart}
-          price={287}
+          price={total}
           onSuccessfulCheckout={() => Router.push('/checkout/order-confirmation')}
         />
       </SlimWrapper>
