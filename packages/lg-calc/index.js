@@ -10,7 +10,7 @@
 //   },
 // };
 
-module.exports = ({ cart }) => {
+module.exports = (cart) => {
   const container = [];
 
   Object.keys(cart).map((i) => container.push(cart[i].price * cart[i].qty));

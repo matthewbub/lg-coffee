@@ -10,19 +10,18 @@ import CheckoutPreview from '../../components/CheckoutPreview';
 
 const Checkout = ({ data, cart }) => {
   if (!cart || !data) <Loading data={cart} />;
-  
-  useEffect(() => {
-    if(cart)handleCart({
-      one: {
-        price: 222,
-        qty: 3,
-      },
-      two: {
-        price: 222,
-        qty: 3,
-      },
-    });
-  })
+  const carts = {
+  one: {
+    price: 287,
+    qty: 5,
+  },
+  two: {
+    price: 233,
+    qty: 3,
+  },
+};
+    handleCart({carts});
+
 
   return (
     <PageWrapper data={data}>

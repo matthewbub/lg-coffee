@@ -70,9 +70,8 @@ const CheckoutPreview = ({ cart }) => {
             </Row>
 
             {Object.keys(cartInStorage).map((i) => (
-              <a href={cartInStorage[i].sku} style={{ textDecoration: 'none' }}>
-                <Row
-                  key={cartInStorage[i].sku}
+              <a href={cartInStorage[i].sku} style={{ textDecoration: 'none' }} key={cartInStorage[i].sku}>
+                <Row                  
                   className="d-flex align-items-center rounded bg-dark"
                 >
                   <Col xs={4}>
@@ -138,10 +137,10 @@ const CheckoutPreview = ({ cart }) => {
 CheckoutPreview.propTypes = {
   // eslint-disable-next-line react/require-default-props
   cart: PropTypes.shape({
-    images: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-    qty: PropTypes.string.isRequired,
+    images: PropTypes.string,
+    name: PropTypes.string,
+    price: PropTypes.string,
+    qty: PropTypes.string,
   }),
 };
 
