@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import calculator from 'lg-calc';
+import handleCart from 'lg-calc';
 import Loading from '../../components/Loading';
 import PageWrapper from '../../components/PageWrapper';
 import SlimWrapper from '../../components/SlimWrapper';
@@ -10,7 +10,20 @@ import CheckoutPreview from '../../components/CheckoutPreview';
 
 const Checkout = ({ data, cart }) => {
   if (!cart || !data) <Loading data={cart} />;
-  console.log(calculator(cart));
+  
+  useEffect(() => {
+    if(cart)handleCart({
+      one: {
+        price: 222,
+        qty: 3,
+      },
+      two: {
+        price: 222,
+        qty: 3,
+      },
+    });
+  })
+
   return (
     <PageWrapper data={data}>
       <SlimWrapper>

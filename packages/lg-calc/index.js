@@ -10,11 +10,9 @@
 //   },
 // };
 
-const handleCart = ({ cart }) => {
+module.exports = ({ cart }) => {
   const container = [];
 
   Object.keys(cart).map((i) => container.push(cart[i].price * cart[i].qty));
   return container.reduce((x, y) => x + y, 0);
 };
-
-module.exports = handleCart;
