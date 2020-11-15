@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -7,13 +7,24 @@ import BillingDetailsFields from './BillingDetailsFields';
 import SubmitButton from './SubmitButton';
 import CheckoutError from './CheckoutError';
 
-const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
+const handleUSDChange = (number) => {
+  const string = JSON.stringify(number);
+  const { length } = string;
+  return JSON.parse(
+    `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
+  );
+};
+
+const CheckoutForm = ({ price, onSuccessfulCheckout, cart }) => {
   const [isProcessing, setProcessingTo] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [checkoutError, setCheckoutError] = useState();
+  const [cartInStorage, setCartInStorage] = useState();
 
   const stripe = useStripe();
   const elements = useElements();
+
+  useEffect(() => setCartInStorage(cart), [cart]);
 
   const handleFormSubmit = async (ev) => {
     ev.preventDefault();
@@ -55,40 +66,53 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const cardElementOptions = {
     style: {
       base: {
+        iconColor: '#c4f0ff',
+        color: '#fff',
+        fontWeight: 500,
+        fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
         fontSize: '16px',
-        color: 'rgb(250,250,250)',
+        fontSmoothing: 'antialiased',
+        ':-webkit-autofill': {
+          color: '#fce883',
+        },
         '::placeholder': {
           color: '#87BBFD',
         },
       },
       invalid: {
-        color: '#FFC7EE',
         iconColor: '#FFC7EE',
+        color: '#FFC7EE',
       },
-      complete: {},
     },
-    hidePostalCode: true,
   };
-
   return (
     <Form onSubmit={handleFormSubmit}>
       <BillingDetailsFields />
-      <div className="StripeElement">
+      <div
+        style={{
+          backgroundColor: 'none !important',
+          border: '0',
+          }}
+      >
         <CardElement options={cardElementOptions} />
       </div>
 
       {checkoutError && <CheckoutError>{checkoutError}</CheckoutError>}
 
-      <SubmitButton disabled={isProcessing}>
-        {isProcessing ? 'Processing...' : `Pay $${price}`}
-      </SubmitButton>
+      <SubmitButton
+        disabled={isProcessing}
+        title={isProcessing ? 'Processing...' : `Pay $${handleUSDChange(price)} USD`}
+        className="mt-4 btn-outline-light"
+      />
     </Form>
   );
 };
 
 CheckoutForm.propTypes = {
   price: PropTypes.number.isRequired,
-  onSuccessfulCheckout: PropTypes.shape({}).isRequired,
+  onSuccessfulCheckout: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  cart: PropTypes.shape({}),
 };
 
 export default CheckoutForm;

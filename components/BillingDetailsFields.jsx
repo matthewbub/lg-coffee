@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 const BillingDetailsFields = () => (
   <>
     <Form.Row>
-      <h1 className="text-light mt-5">Billing Information</h1>
+      <h2 className="text-light mt-5">Billing Information</h2>
       <Form.Control
         className="bg-dark text-light mt-3"
         type="text"
@@ -12,6 +12,9 @@ const BillingDetailsFields = () => (
         name="name"
         placeholder="Jane Doe"
         required
+        style={{
+          border: '0',
+        }}
       />
 
       <Form.Control
@@ -21,6 +24,9 @@ const BillingDetailsFields = () => (
         name="email"
         placeholder="jane.doe@example.com"
         required
+        style={{
+          border: '0',
+        }}
       />
 
       <Form.Control
@@ -30,6 +36,9 @@ const BillingDetailsFields = () => (
         name="address"
         placeholder="185 Berry St. Suite 550"
         required
+        style={{
+          border: '0',
+        }}
       />
 
       <Form.Control
@@ -39,6 +48,9 @@ const BillingDetailsFields = () => (
         name="city"
         placeholder="San Francisco"
         required
+        style={{
+          border: '0',
+        }}
       />
 
       <Form.Control
@@ -48,6 +60,9 @@ const BillingDetailsFields = () => (
         name="state"
         placeholder="CA"
         required
+        style={{
+          border: '0',
+        }}
       />
 
       <Form.Control
@@ -57,6 +72,9 @@ const BillingDetailsFields = () => (
         name="zip"
         placeholder="94103"
         required
+        style={{
+          border: '0',
+        }}
       />
     </Form.Row>
   </>

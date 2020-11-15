@@ -5,34 +5,58 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Loading from './Loading';
 
+const handleUSDChange = (number) => {
+  const string = JSON.stringify(number);
+  const { length } = string;
+  return JSON.parse(
+    `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
+  );
+};
+
 const CheckoutPreview = ({ cart }) => {
   if (!cart) <Loading data={cart} />;
 
-  const [currentCart, setCurrentCart] = useState(cart);
+  const [cartInStorage, setCartInStorage] = useState(cart);
   const [isCartEmpty, setCartToEmpty] = useState();
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
-    currentCart ? setCartToEmpty(false) : setCartToEmpty(true);
-  }, [currentCart]);
+    cartInStorage ? setCartToEmpty(false) : setCartToEmpty(true);
+  }, [cartInStorage]);
+
+  // const [total, setTotal] = useState([]);
+
+  // const handleTotal = () => {
+  //   for (let i = 0; i < Object.keys(cartInStorage).length; i + 1) {
+  //     setTotal([...total, ])
+  //     priceRack.push = cartInStorage[i].price * cartInStorage[i].qty;
+  //   }
+  
+  // }
+
+  // const priceRack = [];
+  // let total;
+
+  
+  // total = priceRack.reduce((x, y) => x + y, 0);
 
   const handleRemoveFromCart = (id) => {
-    const updatedCart = currentCart;
+    const updatedCart = cartInStorage;
 
     delete updatedCart[id];
 
-    setCurrentCart(updatedCart);
+    setCartInStorage(updatedCart);
 
     if (Object.keys(updatedCart).length === 0) {
       sessionStorage.removeItem('cart');
       setCartToEmpty(true);
-    } else sessionStorage.setItem('cart', JSON.stringify(currentCart));
+    } else sessionStorage.setItem('cart', JSON.stringify(cartInStorage));
   };
 
   return (
     <>
       <Container fluid>
-        {currentCart === undefined || currentCart === null || isCartEmpty ? (
+        {cartInStorage === undefined || cartInStorage === null || isCartEmpty ? (
           <h2 className="text-light">No Products</h2>
         ) : (
           <>
@@ -40,69 +64,70 @@ const CheckoutPreview = ({ cart }) => {
               <h1 className="text-light mt-5 mb-4">Checkout</h1>
             </Row>
             <Row className="d-flex align-items-center border-light">
-              <Col xs={8}>
-                <h2 style={{ width: '100%' }} className="text-light ellipse">
-                  Product
-                </h2>
-              </Col>
-              <Col xs={3}>
-                <h2 className="text-light">Price</h2>
-              </Col>
-              <Col xs={1}>
-                <h2 className="text-light">Qty</h2>
-              </Col>
+              <h2 className="text-light ellipse">
+                Products
+              </h2>
             </Row>
 
-            {Object.keys(currentCart).map((i) => (
-              <Row
-                key={currentCart[i].productSku}
-                className="d-flex align-items-center border-light"
-              >
-                <Col xs={3}>
-                  <img
-                    src={currentCart[i].productImages[0]}
-                    alt={currentCart[i].productTitle}
-                    style={{ height: '100px', width: '100px' }}
-                  />
-                </Col>
-                <Col xs={5}>
-                  <h4
-                    style={{ width: '100%', margin: '0' }}
-                    className="text-light ellipse"
-                  >
-                    {currentCart[i].productTitle}
-                  </h4>
-                </Col>
-                <Col xs={3}>
-                  <p className="text-light" style={{ margin: '0' }}>
-                    {currentCart[i].productPrice}
-                  </p>
-                </Col>
-                <Col
-                  xs={1}
-                  className="d-flex align-items-center justify-content-between"
+            {Object.keys(cartInStorage).map((i) => (
+              <a href={cartInStorage[i].sku} style={{ textDecoration: 'none' }}>
+                <Row
+                  key={cartInStorage[i].sku}
+                  className="d-flex align-items-center rounded bg-dark"
                 >
-                  <p className="text-light" style={{ margin: '0' }}>
-                    {currentCart[i].qty}
-                  </p>
-                  <button
-                    type="button"
-                    style={{
-                      border: 'none',
-                      background: 'none',
-                      margin: '0',
-                      padding: '0',
-                    }}
-                    className="btn btn-outline-light font-weight-bolder ml-4"
-                    onClick={() => {
-                      handleRemoveFromCart(i);
-                    }}
-                  >
-                    X
-                  </button>
-                </Col>
-              </Row>
+                  <Col xs={4}>
+                    <img
+                      src={cartInStorage[i].images[0]}
+                      alt={cartInStorage[i].name}
+                      style={{ height: '100px', width: '100px' }}
+                    />
+                  </Col>
+                  <Col xs={8} className="d-flex flex-column">
+                    <Row className="align-self-end mr-2">
+                      <h4
+                        style={{ width: '100%', margin: '0' }}
+                        className="text-light ellipse"
+                      >
+                        {cartInStorage[i].name}
+                      </h4>
+                    </Row>
+                    <Row className="align-self-end align-items-end mr-2">
+                      <p className="text-light mt-2" style={{ margin: '0', padding: '0' }}>
+                        $
+                        {handleUSDChange(cartInStorage[i].price)}
+                        {' '}
+                        USD
+                      </p>
+                      <p className="text-light ml-4 mr-2" style={{ margin: '0', padding: '0' }}>
+                        Qty:
+                        {' '}
+                        {cartInStorage[i].qty}
+                      </p>
+                      <button
+                        type="button"
+                        style={{
+                          border: 'none',
+                          background: 'none',
+                          margin: '0',
+                          padding: '0',
+                        }}
+                        className="btn btn-outline-light font-weight-bolder ml-4"
+                        onClick={() => {
+                          handleRemoveFromCart(i);
+                        }}
+                      >
+                        X
+                      </button>
+                    </Row>
+                  </Col>
+                </Row>
+              </a>
             ))}
+            <Row>
+              <Col>
+                {/* <h3 className="text-light">{handleUSDChange(price.reduce((x, y) => x + y, 0) )}</h3> */}
+              </Col>
+            </Row>
           </>
         )}
       </Container>
@@ -111,12 +136,13 @@ const CheckoutPreview = ({ cart }) => {
 };
 
 CheckoutPreview.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   cart: PropTypes.shape({
-    productImages: PropTypes.string.isRequired,
-    productTitle: PropTypes.string.isRequired,
-    productPrice: PropTypes.string.isRequired,
+    images: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
     qty: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
 };
 
 export default CheckoutPreview;

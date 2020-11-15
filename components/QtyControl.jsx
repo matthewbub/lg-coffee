@@ -26,11 +26,11 @@ const QtyControl = ({ product, cart }) => {
       if (cart) {
         updatedCart = JSON.stringify({
           ...cart,
-          [product.productSku]: { ...product, qty: count },
+          [product.sku]: { ...product, qty: count, totalOfSku: product.price * count },
         });
       } else {
         updatedCart = JSON.stringify({
-          [product.productSku]: { ...product, qty: count },
+          [product.sku]: { ...product, qty: count, totalOfSku: product.price * count },
         });
       }
 
@@ -85,7 +85,8 @@ const QtyControl = ({ product, cart }) => {
 
 QtyControl.propTypes = {
   product: PropTypes.shape({
-    productSku: PropTypes.string.isRequired,
+    sku: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
   }).isRequired,
   cart: PropTypes.shape({}).isRequired,
 };

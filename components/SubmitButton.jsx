@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
-const SubmitButton = () => (
-  <button className="btn btn-outline-light align-self-end mt-3" type="submit">
-    Submit
+const SubmitButton = ({ title, className }) => (
+  <button className={clsx(className, 'btn')} type="submit">
+    {title}
   </button>
 );
+
+SubmitButton.propTypes = {
+  title: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
+};
 
 export default SubmitButton;

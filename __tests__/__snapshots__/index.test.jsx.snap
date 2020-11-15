@@ -42,10 +42,35 @@ exports[`index renders unchanged 1`] = `
           role="button"
         />
       </div>
+      <div
+        className="justify-content-end navbar-nav"
+        onKeyDown={[Function]}
+      >
+        <a
+          className="nav-link"
+          data-rb-event-key="/checkout"
+          href="/checkout"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+        >
+          <img
+            alt="Checkout"
+            src="/cart.png"
+            style={
+              Object {
+                "cursor": "pointer",
+                "height": "15px",
+              }
+            }
+          />
+        </a>
+      </div>
     </div>
   </nav>
   <main>
-    <div>
+    <div
+      className="container-fluid"
+    >
       <div
         className="fluid-container hero_image"
         style={
@@ -77,52 +102,103 @@ exports[`index renders unchanged 1`] = `
           </button>
         </div>
       </div>
+    </div>
+    <div
+      className="container"
+    >
       <div
-        className="container"
+        className="mt-5 mb-3 row"
+      >
+        <h2
+          className="text-light"
+        >
+          New Arrivials
+        </h2>
+      </div>
+      <div
+        className="mb-5 center_on_sm row"
       >
         <div
-          className="d-flex products_wrapper"
+          className="col-lg-4 col-md-4 col-sm-8 offset-lg-0 offset-md-0 offset-sm-2"
         >
-          <section
-            className="product_card_v m-1"
+          <div
+            className="my-5"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <div
-              className="product_image"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
               style={
                 Object {
-                  "backgroundImage": "url(\\"/bunns_in_the_void_TRANSP.png\\")",
+                  "cursor": "pointer",
                 }
               }
             >
-              <h2
-                className="text-light font-weight-bold"
+              <img
+                alt="Bunns In The Void"
+                src="/bunns_in_the_void_TRANSP.png"
+                style={
+                  Object {
+                    "height": "300px",
+                    "width": "300px",
+                  }
+                }
+              />
+              <h5
+                className="text-light mt-3 mb-1"
               >
                 Bunns In The Void
-              </h2>
+              </h5>
+              <h6
+                className="text-muted"
+              >
+                $
+                2.87
+                 
+                USD
+              </h6>
             </div>
-          </section>
-          <section
-            className="product_card_v m-1"
+          </div>
+        </div>
+        <div
+          className="col-lg-4 col-md-4 col-sm-8 offset-lg-0 offset-md-0 offset-sm-2"
+        >
+          <div
+            className="my-5"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
             <div
-              className="product_image"
-              onClick={[Function]}
-              onMouseEnter={[Function]}
               style={
                 Object {
-                  "backgroundImage": "url(\\"/lady_in_the_void_TRANSP.png\\")",
+                  "cursor": "pointer",
                 }
               }
             >
-              <h2
-                className="text-light font-weight-bold"
+              <img
+                alt="Lady In The Void"
+                src="/lady_in_the_void_TRANSP.png"
+                style={
+                  Object {
+                    "height": "300px",
+                    "width": "300px",
+                  }
+                }
+              />
+              <h5
+                className="text-light mt-3 mb-1"
               >
                 Lady In The Void
-              </h2>
+              </h5>
+              <h6
+                className="text-muted"
+              >
+                $
+                2.87
+                 
+                USD
+              </h6>
             </div>
-          </section>
+          </div>
         </div>
       </div>
     </div>
