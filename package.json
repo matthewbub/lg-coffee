@@ -7,13 +7,14 @@
     "packages/*"
   ],
   "scripts": {
+    "start": "next start",
     "dev": "npm run build:packages && next dev",
     "build": "next build",
-    "build:packages": "lerna run build --no-private",
-    "start": "next start",
+    "build:packages": "lerna run build --no-private",    
     "test": "jest",
     "test:dev": "jest --watch",
     "test:ci": "jest --ci",
+    "publish:packages": "lerna publish",
     "prettier": "prettier --config .prettierrc --write \"**/*.{js,jsx}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx}\"",
     "lint:js": "eslint  --cache \"**/*.{js,jsx}\"",
