@@ -1,14 +1,15 @@
 // // example arg
-const datas = {
-  one: {
-    price: '287',
-    qty: '5',
-  },
-  two: {
-    price: '233',
-    qty: '3',
-  },
-};
+// const datas = {
+//   one: {
+//     price: '287',
+//     qty: '5',
+//   },
+//   two: {
+//     price: '233',
+//     qty: '3',
+//   },
+// };
+
 const handleUSDChange = (number) => {
   const string = JSON.stringify(number);
   const { length } = string;
