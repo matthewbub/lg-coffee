@@ -20,7 +20,7 @@ const Checkout = ({ data, cart }) => {
     qty: 3,
   },
 };
-    handleCart({carts});
+    console.log(handleCart(JSON.parse(data)));
 
 
   return (
