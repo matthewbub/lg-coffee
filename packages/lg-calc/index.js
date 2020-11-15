@@ -1,10 +1,20 @@
-module.exports = (cart) => {
+// example arg
+// const cart = {
+//   one: {
+//     price: 287,
+//     qty: 5,
+//   },
+//   two: {
+//     price: 233,
+//     qty: 3,
+//   },
+// };
+
+const handleCart = ({ cart }) => {
   const container = [];
 
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < Object.keys(cart).length; i++) {
-    container.push(Object.keys(cart)[i].price * Object.keys(cart)[i].qty);
-  }
-
+  Object.keys(cart).map((i) => container.push(cart[i].price * cart[i].qty));
   return container.reduce((x, y) => x + y, 0);
 };
+
+module.exports = handleCart;
