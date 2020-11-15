@@ -1,15 +1,3 @@
-// // example arg
-const datas = {
-  one: {
-    price: '287',
-    qty: '5',
-  },
-  two: {
-    price: '233',
-    qty: '3',
-  },
-};
-
 const handleUSDChange = (number) => {
   const string = JSON.stringify(number);
   const { length } = string;
@@ -26,9 +14,13 @@ const keys = (cart) => {
   return container.reduce((x, y) => x + y, 0);
 };
 
-exports.default = (cart, currencyType) => {
+const getFixedPrice = (cart, currencyType) => {
   if (currencyType === 'USD') {
     return handleUSDChange(keys(cart));
   }
     return keys(cart);
 };
+
+module.exports = {
+  getFixedPrice: (cart, currencyType) => getFixedPrice(cart, currencyType)
+}
