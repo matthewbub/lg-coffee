@@ -52,11 +52,7 @@ const ProductRowComponet = ({ heading, products }) => (
 
 ProductRowComponet.propTypes = {
   heading: PropTypes.string.isRequired,
-  products: PropTypes.arrayOf({
-    images: PropTypes.arrayOf().isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-  }).isRequired,
+  products: PropTypes.arrayOf().isRequired,
 };
 
 export default ProductRowComponet;

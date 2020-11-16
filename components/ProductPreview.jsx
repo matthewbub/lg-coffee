@@ -12,6 +12,7 @@ const ProductPreview = ({ product }) => {
   if (!product) return <Loading />;
 
   const handlePrimaryImageToggle = (i) => setPrimaryImage(i);
+
   return (
     <section className="col-md-6 col-sm-12 bg-light pid_section">
       <img className="main_img" src={primaryImage} alt="view product" />
@@ -33,7 +34,7 @@ const ProductPreview = ({ product }) => {
 
 ProductPreview.propTypes = {
   product: PropTypes.shape({
-    images: PropTypes.arrayOf().isRequired,
+    images: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   }).isRequired,
 };
 

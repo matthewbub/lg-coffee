@@ -66,13 +66,14 @@ ViewProduct.propTypes = {
         PropTypes.shape({
           name: PropTypes.string.isRequired,
           description: PropTypes.string.isRequired,
-          price: PropTypes.string.isRequired,
+          price: PropTypes.number.isRequired,
           sku: PropTypes.string.isRequired,
         }).isRequired,
       ).isRequired,
     }).isRequired,
   }).isRequired,
-  cart: PropTypes.shape({}).isRequired,
+  // eslint-disable-next-line react/require-default-props
+  cart: PropTypes.shape({}),
 };
 
 export default ViewProduct;

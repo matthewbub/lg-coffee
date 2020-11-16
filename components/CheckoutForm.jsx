@@ -25,10 +25,6 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const stripe = useStripe();
   const elements = useElements();
 
-  // useEffect(() => {
-  //   setTotal(handleUSDChange(price));
-  // }, [price]);
-
   const handleFormSubmit = async (ev) => {
     ev.preventDefault();
 
