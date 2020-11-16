@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import Loading from './Loading';
 
 const ProductPreview = ({ product }) => {
-  const [primaryImage, setPrimaryImage] = useState(product.images[0]);
+  const [primaryImage, setPrimaryImage] = useState();
+
+  useEffect(() => {
+    setPrimaryImage(product.images[0]);
+  }, [product.images]);
+
+  if (!product) return <Loading />;
 
   const handlePrimaryImageToggle = (i) => setPrimaryImage(i);
   return (

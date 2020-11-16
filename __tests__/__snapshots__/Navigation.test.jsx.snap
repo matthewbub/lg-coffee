@@ -2,7 +2,7 @@
 
 exports[`StickyTopNavbar component renders unchanged 1`] = `
 <nav
-  className="navbar navbar-expand-lg navbar-light bg-light sticky-top"
+  className="justify-content-between navbar navbar-expand-lg navbar-light bg-light sticky-top"
 >
   <a
     className="navbar-brand"
@@ -10,58 +10,28 @@ exports[`StickyTopNavbar component renders unchanged 1`] = `
   >
     VisionSpeaks
   </a>
-  <button
-    aria-controls="basic-navbar-nav"
-    aria-label="Toggle navigation"
-    className="navbar-toggler collapsed"
-    onClick={[Function]}
-    type="button"
-  >
-    <span
-      className="navbar-toggler-icon"
-    />
-  </button>
   <div
-    aria-expanded={null}
-    className="navbar-collapse collapse"
-    id="basic-navbar-nav"
+    className="navbar-nav"
+    onKeyDown={[Function]}
   >
-    <div
-      className="mr-auto navbar-nav"
+    <a
+      className="nav-link"
+      data-rb-event-key="/checkout"
+      href="/checkout"
+      onClick={[Function]}
       onKeyDown={[Function]}
     >
-      <a
-        className="nav-link"
-        data-rb-event-key={null}
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-      />
-    </div>
-    <div
-      className="justify-content-end navbar-nav"
-      onKeyDown={[Function]}
-    >
-      <a
-        className="nav-link"
-        data-rb-event-key="/checkout"
-        href="/checkout"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-      >
-        <img
-          alt="Checkout"
-          src="/cart.png"
-          style={
-            Object {
-              "cursor": "pointer",
-              "height": "15px",
-            }
+      <img
+        alt="Checkout"
+        src="/cart.png"
+        style={
+          Object {
+            "cursor": "pointer",
+            "height": "15px",
           }
-        />
-      </a>
-    </div>
+        }
+      />
+    </a>
   </div>
 </nav>
 `;

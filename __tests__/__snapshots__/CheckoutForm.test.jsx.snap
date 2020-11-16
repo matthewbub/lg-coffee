@@ -8,17 +8,22 @@ exports[`CheckoutForm component renders unchanged 1`] = `
   <div
     className="form-row"
   >
-    <h1
+    <h2
       className="text-light mt-5"
     >
       Billing Information
-    </h1>
+    </h2>
     <input
       className="bg-dark text-light mt-3 form-control"
       label="name"
       name="name"
       placeholder="Jane Doe"
       required={true}
+      style={
+        Object {
+          "border": "0",
+        }
+      }
       type="text"
     />
     <input
@@ -27,6 +32,11 @@ exports[`CheckoutForm component renders unchanged 1`] = `
       name="email"
       placeholder="jane.doe@example.com"
       required={true}
+      style={
+        Object {
+          "border": "0",
+        }
+      }
       type="text"
     />
     <input
@@ -35,6 +45,11 @@ exports[`CheckoutForm component renders unchanged 1`] = `
       name="address"
       placeholder="185 Berry St. Suite 550"
       required={true}
+      style={
+        Object {
+          "border": "0",
+        }
+      }
       type="text"
     />
     <input
@@ -43,6 +58,11 @@ exports[`CheckoutForm component renders unchanged 1`] = `
       name="city"
       placeholder="San Francisco"
       required={true}
+      style={
+        Object {
+          "border": "0",
+        }
+      }
       type="text"
     />
     <input
@@ -51,6 +71,11 @@ exports[`CheckoutForm component renders unchanged 1`] = `
       name="state"
       placeholder="CA"
       required={true}
+      style={
+        Object {
+          "border": "0",
+        }
+      }
       type="text"
     />
     <input
@@ -59,19 +84,29 @@ exports[`CheckoutForm component renders unchanged 1`] = `
       name="zip"
       placeholder="94103"
       required={true}
+      style={
+        Object {
+          "border": "0",
+        }
+      }
       type="text"
     />
   </div>
   <div
-    className="StripeElement"
+    style={
+      Object {
+        "backgroundColor": "none !important",
+        "border": "0",
+      }
+    }
   >
     <div />
   </div>
   <button
-    className="btn btn-outline-light align-self-end mt-3"
+    className="mt-4 btn-outline-light btn"
     type="submit"
   >
-    Submit
+    Pay $1.23 USD
   </button>
 </form>
 `;

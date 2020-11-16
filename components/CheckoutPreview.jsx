@@ -24,22 +24,6 @@ const CheckoutPreview = ({ cart }) => {
     cartInStorage ? setCartToEmpty(false) : setCartToEmpty(true);
   }, [cartInStorage]);
 
-  // const [total, setTotal] = useState([]);
-
-  // const handleTotal = () => {
-  //   for (let i = 0; i < Object.keys(cartInStorage).length; i + 1) {
-  //     setTotal([...total, ])
-  //     priceRack.push = cartInStorage[i].price * cartInStorage[i].qty;
-  //   }
-  
-  // }
-
-  // const priceRack = [];
-  // let total;
-
-  
-  // total = priceRack.reduce((x, y) => x + y, 0);
-
   const handleRemoveFromCart = (id) => {
     const updatedCart = cartInStorage;
 
@@ -56,7 +40,9 @@ const CheckoutPreview = ({ cart }) => {
   return (
     <>
       <Container fluid>
-        {cartInStorage === undefined || cartInStorage === null || isCartEmpty ? (
+        {cartInStorage === undefined
+        || cartInStorage === null
+        || isCartEmpty ? (
           <h2 className="text-light">No Products</h2>
         ) : (
           <>
@@ -64,16 +50,16 @@ const CheckoutPreview = ({ cart }) => {
               <h1 className="text-light mt-5 mb-4">Checkout</h1>
             </Row>
             <Row className="d-flex align-items-center border-light">
-              <h2 className="text-light ellipse">
-                Products
-              </h2>
+              <h2 className="text-light ellipse">Products</h2>
             </Row>
 
             {Object.keys(cartInStorage).map((i) => (
-              <a href={cartInStorage[i].sku} style={{ textDecoration: 'none' }} key={cartInStorage[i].sku}>
-                <Row                  
-                  className="d-flex align-items-center rounded bg-dark"
-                >
+              <a
+                href={cartInStorage[i].sku}
+                style={{ textDecoration: 'none' }}
+                key={cartInStorage[i].sku}
+              >
+                <Row className="d-flex align-items-center rounded bg-dark">
                   <Col xs={4}>
                     <img
                       src={cartInStorage[i].images[0]}
@@ -91,13 +77,19 @@ const CheckoutPreview = ({ cart }) => {
                       </h4>
                     </Row>
                     <Row className="align-self-end align-items-end mr-2">
-                      <p className="text-light mt-2" style={{ margin: '0', padding: '0' }}>
+                      <p
+                        className="text-light mt-2"
+                        style={{ margin: '0', padding: '0' }}
+                      >
                         $
                         {handleUSDChange(cartInStorage[i].price)}
                         {' '}
                         USD
                       </p>
-                      <p className="text-light ml-4 mr-2" style={{ margin: '0', padding: '0' }}>
+                      <p
+                        className="text-light ml-4 mr-2"
+                        style={{ margin: '0', padding: '0' }}
+                      >
                         Qty:
                         {' '}
                         {cartInStorage[i].qty}
@@ -122,11 +114,10 @@ const CheckoutPreview = ({ cart }) => {
                 </Row>
               </a>
             ))}
-            <Row>
+            {/* <Row>
               <Col>
-                {/* <h3 className="text-light">{handleUSDChange(price.reduce((x, y) => x + y, 0) )}</h3> */}
               </Col>
-            </Row>
+            </Row> */}
           </>
         )}
       </Container>

@@ -4,16 +4,16 @@ import renderer from 'react-test-renderer';
 import ProductPreview from '../components/ProductPreview';
 
 const product = {
-    productTitle: 'product',
-    productDescription: 'this is an awesome product you should buy 2',
-    productPrice: '$2.87',
-    productSku: 'abc_123',
-    productImages: [
-      '/path_01.png',
-      '/path_02.png',
-      '/path_03.png',
-    ],
-    qty: 12,
+  name: 'product',
+  description: 'this is an awesome product you should buy 2',
+  price: '$2.87',
+  sku: 'abc_123',
+  images: [
+    '/path_01.png',
+    '/path_02.png',
+    '/path_03.png',
+  ],
+  qty: 12,
 };
 
 it('ProductPreview component renders smoke test without crashing', () => {

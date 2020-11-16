@@ -4,17 +4,22 @@ exports[`BillingDetailsFields component renders unchanged 1`] = `
 <div
   className="form-row"
 >
-  <h1
+  <h2
     className="text-light mt-5"
   >
     Billing Information
-  </h1>
+  </h2>
   <input
     className="bg-dark text-light mt-3 form-control"
     label="name"
     name="name"
     placeholder="Jane Doe"
     required={true}
+    style={
+      Object {
+        "border": "0",
+      }
+    }
     type="text"
   />
   <input
@@ -23,6 +28,11 @@ exports[`BillingDetailsFields component renders unchanged 1`] = `
     name="email"
     placeholder="jane.doe@example.com"
     required={true}
+    style={
+      Object {
+        "border": "0",
+      }
+    }
     type="text"
   />
   <input
@@ -31,6 +41,11 @@ exports[`BillingDetailsFields component renders unchanged 1`] = `
     name="address"
     placeholder="185 Berry St. Suite 550"
     required={true}
+    style={
+      Object {
+        "border": "0",
+      }
+    }
     type="text"
   />
   <input
@@ -39,6 +54,11 @@ exports[`BillingDetailsFields component renders unchanged 1`] = `
     name="city"
     placeholder="San Francisco"
     required={true}
+    style={
+      Object {
+        "border": "0",
+      }
+    }
     type="text"
   />
   <input
@@ -47,6 +67,11 @@ exports[`BillingDetailsFields component renders unchanged 1`] = `
     name="state"
     placeholder="CA"
     required={true}
+    style={
+      Object {
+        "border": "0",
+      }
+    }
     type="text"
   />
   <input
@@ -55,6 +80,11 @@ exports[`BillingDetailsFields component renders unchanged 1`] = `
     name="zip"
     placeholder="94103"
     required={true}
+    style={
+      Object {
+        "border": "0",
+      }
+    }
     type="text"
   />
 </div>

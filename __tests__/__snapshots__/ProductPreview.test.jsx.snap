@@ -7,7 +7,6 @@ exports[`ProductPreview component renders unchanged 1`] = `
   <img
     alt="view product"
     className="main_img"
-    src="/path_01.png"
   />
   <div
     className="img_previews"

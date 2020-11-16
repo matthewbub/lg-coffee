@@ -2,9 +2,9 @@
 
 exports[`SubmitButton component renders unchanged 1`] = `
 <button
-  className="btn btn-outline-light align-self-end mt-3"
+  className="btn"
   type="submit"
 >
-  Submit
+  submit
 </button>
 `;

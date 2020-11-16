@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import CheckoutPreview from '../components/CheckoutPreview';
 
-const cart = {
-  product: {
+const product = {
     productTitle: 'product',
     productDescription: 'this is an awesome product you should buy 2',
     productPrice: '$2.87',
@@ -15,16 +14,15 @@ const cart = {
       '/path_03.png',
     ],
     qty: 12,
-  },
 };
 
 it('CheckoutPreview component renders smoke test without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<CheckoutPreview cart={cart} />, div);
+  ReactDOM.render(<CheckoutPreview product={product} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('CheckoutPreview component renders unchanged', () => {
-  const tree = renderer.create(<CheckoutPreview cart={cart} />).toJSON();
+  const tree = renderer.create(<CheckoutPreview product={product} />).toJSON();
   expect(tree).toMatchSnapshot();
 });

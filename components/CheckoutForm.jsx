@@ -19,6 +19,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout, cart }) => {
   const [isProcessing, setProcessingTo] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [checkoutError, setCheckoutError] = useState();
+  // eslint-disable-next-line no-unused-vars
   const [cartInStorage, setCartInStorage] = useState();
 
   const stripe = useStripe();
@@ -92,7 +93,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout, cart }) => {
         style={{
           backgroundColor: 'none !important',
           border: '0',
-          }}
+        }}
       >
         <CardElement options={cardElementOptions} />
       </div>
@@ -101,7 +102,9 @@ const CheckoutForm = ({ price, onSuccessfulCheckout, cart }) => {
 
       <SubmitButton
         disabled={isProcessing}
-        title={isProcessing ? 'Processing...' : `Pay $${handleUSDChange(price)} USD`}
+        title={
+          isProcessing ? 'Processing...' : `Pay $${handleUSDChange(price)} USD`
+        }
         className="mt-4 btn-outline-light"
       />
     </Form>
