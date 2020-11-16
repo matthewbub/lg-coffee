@@ -32,9 +32,9 @@ const CheckoutPreview = ({ cart }) => {
     setCartInStorage(updatedCart);
 
     if (Object.keys(updatedCart).length === 0) {
-      sessionStorage.removeItem('cart');
+      localStorage.removeItem('cart');
       setCartToEmpty(true);
-    } else sessionStorage.setItem('cart', JSON.stringify(cartInStorage));
+    } else localStorage.setItem('cart', JSON.stringify(cartInStorage));
   };
 
   return (

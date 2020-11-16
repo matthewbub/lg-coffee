@@ -19,7 +19,7 @@ function App({ Component, pageProps }) {
   const [cart, addProductToCart] = useState();
 
   useEffect(() => {
-    const userCart = sessionStorage.getItem('cart');
+    const userCart = localStorage.getItem('cart');
     addProductToCart(JSON.parse(userCart));
   }, []);
 

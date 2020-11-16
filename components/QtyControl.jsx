@@ -42,7 +42,7 @@ const QtyControl = ({ product, cart }) => {
         });
       }
 
-      sessionStorage.setItem('cart', updatedCart);
+      localStorage.setItem('cart', updatedCart);
 
       setAlert({
         status: 'success',

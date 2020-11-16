@@ -10,11 +10,17 @@ import CheckoutPreview from '../../components/CheckoutPreview';
 
 const Checkout = ({ data, cart }) => {
   if (!cart || !data) <Loading data={cart} />;
-  const [total, setTotal] = useState();
+  const [total, setTotal] = useState({});
 
   useEffect(() => {
-    setTotal(getFixedPrice({ cart }));
+    setTotal(cart);
+  //   else {
+  //     setTotal({});
+  //   }
   }, [cart]);
+  // if (cart) setTotal(getFixedPrice({ cart }));
+
+  console.log(getFixedPrice(total));
 
   return (
     <PageWrapper data={data}>
@@ -22,7 +28,7 @@ const Checkout = ({ data, cart }) => {
         <CheckoutPreview cart={cart} />
         <CheckoutForm
           cart={cart}
-          price={total}
+          price={total ? getFixedPrice(total) : 0}
           onSuccessfulCheckout={() => Router.push('/checkout/order-confirmation')}
         />
       </SlimWrapper>

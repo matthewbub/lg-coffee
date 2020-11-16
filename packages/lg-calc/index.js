@@ -13,6 +13,6 @@
 module.exports = (cart) => {
   const container = [];
 
-  Object.keys(cart).map((i) => container.push(JSON.parse(cart[i].price) * JSON.parse(cart[i].qty)));
+  Object.keys(cart).map((i) => container.push(cart[i].price * cart[i].qty));
   return container.reduce((x, y) => x + y, 0);
 };

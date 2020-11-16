@@ -7,13 +7,13 @@ import BillingDetailsFields from './BillingDetailsFields';
 import SubmitButton from './SubmitButton';
 import CheckoutError from './CheckoutError';
 
-const handleUSDChange = (number) => {
-  const string = JSON.stringify(number);
-  const { length } = string;
-  return JSON.parse(
-    `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
-  );
-};
+// const handleUSDChange = (number) => {
+//   const string = JSON.stringify(number);
+//   const { length } = string;
+//   return JSON.parse(
+//     `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
+//   );
+// };
 
 const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
@@ -25,9 +25,9 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const stripe = useStripe();
   const elements = useElements();
 
-  useEffect(() => {
-    setTotal(handleUSDChange(price));
-  }, [price]);
+  // useEffect(() => {
+  //   setTotal(handleUSDChange(price));
+  // }, [price]);
 
   const handleFormSubmit = async (ev) => {
     ev.preventDefault();
