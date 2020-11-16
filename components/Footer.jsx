@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import SlimWrapper from './SlimWrapper';
 
 const date = new Date();
 const year = date.getFullYear();
@@ -12,17 +12,15 @@ const year = date.getFullYear();
 const Footer = ({ links }) => (
   <footer>
     <Container fluid className="my-5">
-      <Row>
-        <Col>
-          {links.map((i) => (
-            <Link href={i.path} key={i.title}>
-              <h5 className="text-light m-2" style={{ cursor: 'pointer' }}>
-                {i.title}
-              </h5>
-            </Link>
-          ))}
-        </Col>
-      </Row>
+      <SlimWrapper>
+        {links.map((i) => (
+          <Link href={i.path} key={i.title}>
+            <h5 className="text-light m-2" style={{ cursor: 'pointer' }}>
+              {i.title}
+            </h5>
+          </Link>
+        ))}
+      </SlimWrapper>
       <Row>
         <Col className="d-flex justify-content-center">
           <span className="text-light m-2" style={{ fontSize: '12px' }}>

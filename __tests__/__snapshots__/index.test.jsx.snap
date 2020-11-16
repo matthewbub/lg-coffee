@@ -42,7 +42,7 @@ exports[`index renders unchanged 1`] = `
       className="container"
     >
       <div
-        className="my-5 align-items-center justify-content-center row"
+        className="align-items-center justify-content-center row"
       >
         <div
           className="col-lg-8 col-md-9 col-sm-12"
@@ -55,7 +55,7 @@ exports[`index renders unchanged 1`] = `
         </div>
       </div>
       <div
-        className="my-5 align-items-center justify-content-center row"
+        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
       >
         <div
           className="col-lg-8 col-md-9 col-sm-12"
@@ -71,7 +71,7 @@ exports[`index renders unchanged 1`] = `
             }
           >
             <div
-              className="d-flex align-items-end justify-content-between"
+              className="d-flex align-items-center justify-content-between pr-2"
               style={
                 Object {
                   "cursor": "pointer",
@@ -84,13 +84,13 @@ exports[`index renders unchanged 1`] = `
                 src="/bunns_001.png"
               />
               <div
-                className="d-flex w-100 flex-column align-items-end justify-content-end text-right pr-4 pb-3"
+                className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
               >
-                <h4
+                <h5
                   className="text-light mt-3 mb-2 ellipse"
                 >
                   Bunns In The Void
-                </h4>
+                </h5>
                 <span
                   className="text-muted mb-1"
                 >
@@ -98,18 +98,13 @@ exports[`index renders unchanged 1`] = `
                   2.87
                    USD
                 </span>
-                <span
-                  className="label text-light rounded"
-                >
-                  sticker
-                </span>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        className="my-5 align-items-center justify-content-center row"
+        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
       >
         <div
           className="col-lg-8 col-md-9 col-sm-12"
@@ -125,7 +120,7 @@ exports[`index renders unchanged 1`] = `
             }
           >
             <div
-              className="d-flex align-items-end justify-content-between"
+              className="d-flex align-items-center justify-content-between pr-2"
               style={
                 Object {
                   "cursor": "pointer",
@@ -138,24 +133,19 @@ exports[`index renders unchanged 1`] = `
                 src="/lady_001.png"
               />
               <div
-                className="d-flex w-100 flex-column align-items-end justify-content-end text-right pr-4 pb-3"
+                className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
               >
-                <h4
+                <h5
                   className="text-light mt-3 mb-2 ellipse"
                 >
                   Lady In The Void
-                </h4>
+                </h5>
                 <span
                   className="text-muted mb-1"
                 >
                   $
                   2.87
                    USD
-                </span>
-                <span
-                  className="label text-light rounded"
-                >
-                  sticker
                 </span>
               </div>
             </div>
@@ -169,10 +159,10 @@ exports[`index renders unchanged 1`] = `
       className="my-5 container-fluid"
     >
       <div
-        className="row"
+        className="align-items-center justify-content-center row"
       >
         <div
-          className="col"
+          className="col-lg-8 col-md-9 col-sm-12"
         >
           <h5
             className="text-light m-2"

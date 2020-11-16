@@ -45,4 +45,13 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
   }
+
+  .product_img_prc {
+    height: 100px;
+    width: 100px; 
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;   
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
