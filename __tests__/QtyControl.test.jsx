@@ -8,7 +8,7 @@ const sku = 'demo_sku';
 const product = {
   name: 'product',
   description: 'this is an awesome product you should buy 2',
-  price: '$2.87',
+  price: 287,
   sku: 'abc_123',
   images: [
     '/path_01.png',

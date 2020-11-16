@@ -7,7 +7,9 @@
     "plugin:import/warnings",
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
-    "airbnb"
+    "airbnb",
+    "prettier",
+    "prettier/react"
   ],
   "env": {
     "browser": true,

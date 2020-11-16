@@ -1,3 +1,4 @@
+/* eslint-disable */
 const { expect } = require('chai');
 const { calc } = require('../index');
 
@@ -14,7 +15,7 @@ describe('calc func should accept an object and return a integer', () => {
           price: 233,
           qty: 3,
         },
-      }),
+      })
     ).to.equal(expected);
   });
   it('should return a positive integer with trailing 0s', () => {
@@ -25,7 +26,7 @@ describe('calc func should accept an object and return a integer', () => {
           price: 10000,
           qty: 2,
         },
-      }),
+      })
     ).to.equal(expected);
   });
 });
