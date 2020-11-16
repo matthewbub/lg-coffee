@@ -28,12 +28,7 @@ const ProductRowComponet = ({ heading, products }) => (
                   alt={i.name}
                 />
                 <h5 className="text-light mt-3 mb-1">{i.name}</h5>
-                <h6 className="text-muted">
-                  $
-                  {formatUSD(i.price)}
-                  {' '}
-                  USD
-                </h6>
+                <h6 className="text-muted">${formatUSD(i.price)} USD</h6>
               </div>
             </div>
           </Link>

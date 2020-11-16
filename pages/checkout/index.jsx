@@ -23,7 +23,9 @@ const Checkout = ({ data, cart }) => {
         <CheckoutForm
           cart={cart}
           price={total ? getFixedPrice(total) : 0}
-          onSuccessfulCheckout={() => Router.push('/checkout/order-confirmation')}
+          onSuccessfulCheckout={() =>
+            Router.push('/checkout/order-confirmation')
+          }
         />
       </SlimWrapper>
     </PageWrapper>

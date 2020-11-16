@@ -21,7 +21,8 @@ const QtyControl = ({ product, cart }) => {
   };
 
   const handleSubmit = () => {
-    if (count === 0) setAlert({ status: 'warning', message: 'Nothing to add!' });
+    if (count === 0)
+      setAlert({ status: 'warning', message: 'Nothing to add!' });
     else {
       let updatedCart;
       if (cart) {
@@ -91,9 +92,7 @@ const QtyControl = ({ product, cart }) => {
       <div style={{ height: '100px' }}>
         {alert ? (
           <Alert status={alert.status}>
-            {alert.message}
-            {' '}
-            <br />
+            {alert.message} <br />
             <Link href="/checkout">
               <span>View Cart</span>
             </Link>

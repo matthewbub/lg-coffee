@@ -5,8 +5,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const ThreeCardComponent = ({ threeCardComponent }) => (!Array.isArray(threeCardComponent) ? (
-  <div>Error loading data. Check the docs.</div>
+const ThreeCardComponent = ({ threeCardComponent }) =>
+  !Array.isArray(threeCardComponent) ? (
+    <div>Error loading data. Check the docs.</div>
   ) : (
     <Container>
       <Row className="my-5">
@@ -38,7 +39,7 @@ const ThreeCardComponent = ({ threeCardComponent }) => (!Array.isArray(threeCard
         ))}
       </Row>
     </Container>
-  ));
+  );
 
 ThreeCardComponent.propTypes = {
   threeCardComponent: PropTypes.arrayOf({}).isRequired,

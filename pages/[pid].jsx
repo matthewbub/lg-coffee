@@ -59,7 +59,7 @@ ViewProduct.propTypes = {
           description: PropTypes.string.isRequired,
           price: PropTypes.number.isRequired,
           sku: PropTypes.string.isRequired,
-        }).isRequired,
+        }).isRequired
       ).isRequired,
     }).isRequired,
   }).isRequired,

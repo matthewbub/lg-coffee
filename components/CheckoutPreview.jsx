@@ -107,10 +107,6 @@ const CheckoutPreview = ({ cart }) => {
                 </Row>
               </a>
             ))}
-            {/* <Row>
-              <Col>
-              </Col>
-            </Row> */}
           </>
         )}
       </Container>

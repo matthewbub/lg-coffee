@@ -3,9 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 
-const HeroComponent = ({
- image, heading, subheading, button, href,
-}) => (
+const HeroComponent = ({ image, heading, subheading, button, href }) => (
   <Container fluid>
     <div
       style={{ backgroundImage: `url("${image}")` }}
