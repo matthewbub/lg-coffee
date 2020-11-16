@@ -15,17 +15,19 @@ const handleUSDChange = (number) => {
   );
 };
 
-const CheckoutForm = ({ price, onSuccessfulCheckout, cart }) => {
+const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [checkoutError, setCheckoutError] = useState();
   // eslint-disable-next-line no-unused-vars
-  const [cartInStorage, setCartInStorage] = useState();
+  const [total, setTotal] = useState();
 
   const stripe = useStripe();
   const elements = useElements();
 
-  useEffect(() => setCartInStorage(cart), [cart]);
+  useEffect(() => {
+    setTotal(handleUSDChange(price));
+  }, [price]);
 
   const handleFormSubmit = async (ev) => {
     ev.preventDefault();
@@ -45,7 +47,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout, cart }) => {
 
     // create payment intent
     const { data: clientSecret } = await axios.post('/api/payment_intents', {
-      amount: price * 100,
+      amount: price,
     });
 
     const cardElement = elements.getElement(CardElement);
@@ -102,9 +104,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout, cart }) => {
 
       <SubmitButton
         disabled={isProcessing}
-        title={
-          isProcessing ? 'Processing...' : `Pay $${handleUSDChange(price)} USD`
-        }
+        title={isProcessing ? 'Processing...' : `Pay $${price} USD`}
         className="mt-4 btn-outline-light"
       />
     </Form>
