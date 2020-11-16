@@ -4,7 +4,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 const Navigation = ({ store }) => (
-  <Navbar bg="light" expand="lg" sticky="top" className="justify-content-between">
+  <Navbar
+    bg="light"
+    expand="lg"
+    sticky="top"
+    className="justify-content-between"
+  >
     <Navbar.Brand href="/">{store.name}</Navbar.Brand>
     <Nav>
       <Nav.Link href="/checkout">
@@ -12,9 +17,9 @@ const Navigation = ({ store }) => (
           src="/cart.png"
           alt="Checkout"
           style={{
-              height: '15px',
-              cursor: 'pointer',
-            }}
+            height: '15px',
+            cursor: 'pointer',
+          }}
         />
       </Nav.Link>
     </Nav>

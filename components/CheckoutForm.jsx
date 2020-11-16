@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -15,17 +15,19 @@ const handleUSDChange = (number) => {
   );
 };
 
-const CheckoutForm = ({ price, onSuccessfulCheckout, cart }) => {
+const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [checkoutError, setCheckoutError] = useState();
   // eslint-disable-next-line no-unused-vars
-  const [cartInStorage, setCartInStorage] = useState();
+  const [total, setTotal] = useState();
 
   const stripe = useStripe();
   const elements = useElements();
 
-  useEffect(() => setCartInStorage(cart), [cart]);
+  // useEffect(() => {
+  //   setTotal(handleUSDChange(price));
+  // }, [price]);
 
   const handleFormSubmit = async (ev) => {
     ev.preventDefault();
@@ -45,7 +47,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout, cart }) => {
 
     // create payment intent
     const { data: clientSecret } = await axios.post('/api/payment_intents', {
-      amount: price * 100,
+      amount: price,
     });
 
     const cardElement = elements.getElement(CardElement);

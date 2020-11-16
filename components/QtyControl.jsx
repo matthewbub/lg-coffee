@@ -26,15 +26,23 @@ const QtyControl = ({ product, cart }) => {
       if (cart) {
         updatedCart = JSON.stringify({
           ...cart,
-          [product.sku]: { ...product, qty: count, totalOfSku: product.price * count },
+          [product.sku]: {
+            ...product,
+            qty: count,
+            totalOfSku: product.price * count,
+          },
         });
       } else {
         updatedCart = JSON.stringify({
-          [product.sku]: { ...product, qty: count, totalOfSku: product.price * count },
+          [product.sku]: {
+            ...product,
+            qty: count,
+            totalOfSku: product.price * count,
+          },
         });
       }
 
-      sessionStorage.setItem('cart', updatedCart);
+      localStorage.setItem('cart', updatedCart);
 
       setAlert({
         status: 'success',
