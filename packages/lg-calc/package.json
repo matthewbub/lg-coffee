@@ -10,8 +10,10 @@
   "author": "hi-matbub",
   "license": "MIT",
   "gitHead": "f33cac8ddacac786bc9e1cfdcefc5122a1d319ce",
-  "dependencies": {
-    "chai": "^4.2.0",
+  "dependencies": {    
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
     "mocha": "^8.2.1"
   }
 }

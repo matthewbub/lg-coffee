@@ -9,8 +9,6 @@ const calc = (cart) => {
   }
 };
 
-console.log(calc('o'));
-
 module.exports = {
   calc: (cart) => calc(cart),
 };
