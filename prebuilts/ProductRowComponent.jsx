@@ -4,14 +4,7 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-const handleUSDChange = (number) => {
-  const string = JSON.stringify(number);
-  const { length } = string;
-  return JSON.parse(
-    `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
-  );
-};
+import { formatUSD } from '../utils/formatUSD';
 
 const ProductRowComponet = ({ heading, products }) => (
   <Container>
@@ -37,7 +30,7 @@ const ProductRowComponet = ({ heading, products }) => (
                 <h5 className="text-light mt-3 mb-1">{i.name}</h5>
                 <h6 className="text-muted">
                   $
-                  {handleUSDChange(i.price)}
+                  {formatUSD(i.price)}
                   {' '}
                   USD
                 </h6>
@@ -52,11 +45,7 @@ const ProductRowComponet = ({ heading, products }) => (
 
 ProductRowComponet.propTypes = {
   heading: PropTypes.string.isRequired,
-  products: PropTypes.arrayOf({
-    images: PropTypes.arrayOf().isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
-  }).isRequired,
+  products: PropTypes.arrayOf().isRequired,
 };
 
 export default ProductRowComponet;

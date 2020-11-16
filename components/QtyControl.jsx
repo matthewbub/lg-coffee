@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import Alert from './Alert';
 
 const QtyControl = ({ product, cart }) => {
@@ -46,7 +47,10 @@ const QtyControl = ({ product, cart }) => {
 
       setAlert({
         status: 'success',
-        message: 'Successfully added products to cart!',
+        message:
+          count === 1
+            ? `Successfully added ${count} product to your cart!`
+            : `Successfully added ${count} products to your cart!`,
       });
       setTimeout(() => {
         setAlert(null);
@@ -85,7 +89,16 @@ const QtyControl = ({ product, cart }) => {
         Add To Cart
       </button>
       <div style={{ height: '100px' }}>
-        {alert ? <Alert status={alert.status}>{alert.message}</Alert> : null}
+        {alert ? (
+          <Alert status={alert.status}>
+            {alert.message}
+            {' '}
+            <br />
+            <Link href="/checkout">
+              <span>View Cart</span>
+            </Link>
+          </Alert>
+        ) : null}
       </div>
     </div>
   );
@@ -94,9 +107,10 @@ const QtyControl = ({ product, cart }) => {
 QtyControl.propTypes = {
   product: PropTypes.shape({
     sku: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
   }).isRequired,
-  cart: PropTypes.shape({}).isRequired,
+  // eslint-disable-next-line react/require-default-props
+  cart: PropTypes.shape({}),
 };
 
 export default QtyControl;

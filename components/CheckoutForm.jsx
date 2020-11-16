@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -6,14 +6,7 @@ import Form from 'react-bootstrap/Form';
 import BillingDetailsFields from './BillingDetailsFields';
 import SubmitButton from './SubmitButton';
 import CheckoutError from './CheckoutError';
-
-const handleUSDChange = (number) => {
-  const string = JSON.stringify(number);
-  const { length } = string;
-  return JSON.parse(
-    `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
-  );
-};
+import { formatUSD } from '../utils/formatUSD';
 
 const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
@@ -21,13 +14,17 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [checkoutError, setCheckoutError] = useState();
   // eslint-disable-next-line no-unused-vars
   const [total, setTotal] = useState();
+  const [USD, setUSD] = useState();
+
+  useEffect(() => {
+    setTotal(price);
+    if (total > 0) {
+      setUSD(formatUSD(total));
+    }
+  }, [price, total]);
 
   const stripe = useStripe();
   const elements = useElements();
-
-  // useEffect(() => {
-  //   setTotal(handleUSDChange(price));
-  // }, [price]);
 
   const handleFormSubmit = async (ev) => {
     ev.preventDefault();
@@ -104,9 +101,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
       <SubmitButton
         disabled={isProcessing}
-        title={
-          isProcessing ? 'Processing...' : `Pay $${handleUSDChange(price)} USD`
-        }
+        title={isProcessing ? 'Processing...' : `Pay $${USD || price} USD`}
         className="mt-4 btn-outline-light"
       />
     </Form>

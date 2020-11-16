@@ -9,12 +9,10 @@ $ npm i lg-calc
 
 ### Use
 
-
-
 ```js
-import calc from 'lg-calc'
+import calc from 'lg-calc';
 
-const cart = {
+calc({
   one: {
     price: 287,
     qty: 5,
@@ -23,9 +21,7 @@ const cart = {
     price: 233,
     qty: 3,
   },
-};
-
-calc(cart); // returns 2134
-calc(cart, 'USD'); // returns 21.34
-
+}); // returns 2134
 ```
+
+<p align="center">Questions? <a href="mailto:6matbub@gmail.com">Contact Me</a></p>

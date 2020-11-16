@@ -4,14 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Loading from './Loading';
-
-const handleUSDChange = (number) => {
-  const string = JSON.stringify(number);
-  const { length } = string;
-  return JSON.parse(
-    `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
-  );
-};
+import { formatUSD } from '../utils/formatUSD';
 
 const CheckoutPreview = ({ cart }) => {
   if (!cart) <Loading data={cart} />;
@@ -82,7 +75,7 @@ const CheckoutPreview = ({ cart }) => {
                         style={{ margin: '0', padding: '0' }}
                       >
                         $
-                        {handleUSDChange(cartInStorage[i].price)}
+                        {formatUSD(cartInStorage[i].price)}
                         {' '}
                         USD
                       </p>

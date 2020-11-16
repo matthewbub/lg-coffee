@@ -5,14 +5,7 @@ import PageWrapper from '../components/PageWrapper';
 import QtyControl from '../components/QtyControl';
 import Loading from '../components/Loading';
 import ProductPreview from '../components/ProductPreview';
-
-const handleUSDChange = (number) => {
-  const string = JSON.stringify(number);
-  const { length } = string;
-  return JSON.parse(
-    `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
-  );
-};
+import { formatUSD } from '../utils/formatUSD';
 
 const ViewProduct = ({ data, cart }) => {
   const router = useRouter();
@@ -46,9 +39,7 @@ const ViewProduct = ({ data, cart }) => {
                 </p>
               </div>
               <div className="align-self-end p-sm-3 d-flex flex-column align-items-end">
-                <p className="product_view_price">
-                  {handleUSDChange(product.price)}
-                </p>
+                <p className="product_view_price">{formatUSD(product.price)}</p>
                 <QtyControl product={product} cart={cart} />
               </div>
             </section>
@@ -66,13 +57,14 @@ ViewProduct.propTypes = {
         PropTypes.shape({
           name: PropTypes.string.isRequired,
           description: PropTypes.string.isRequired,
-          price: PropTypes.string.isRequired,
+          price: PropTypes.number.isRequired,
           sku: PropTypes.string.isRequired,
         }).isRequired,
       ).isRequired,
     }).isRequired,
   }).isRequired,
-  cart: PropTypes.shape({}).isRequired,
+  // eslint-disable-next-line react/require-default-props
+  cart: PropTypes.shape({}),
 };
 
 export default ViewProduct;

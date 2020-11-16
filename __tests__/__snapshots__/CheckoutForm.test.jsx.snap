@@ -106,7 +106,7 @@ exports[`CheckoutForm component renders unchanged 1`] = `
     className="mt-4 btn-outline-light btn"
     type="submit"
   >
-    Pay $1.23 USD
+    Pay $123 USD
   </button>
 </form>
 `;
