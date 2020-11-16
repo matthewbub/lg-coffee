@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -21,6 +21,16 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [checkoutError, setCheckoutError] = useState();
   // eslint-disable-next-line no-unused-vars
   const [total, setTotal] = useState();
+  const [USD, setUSD] = useState();
+
+  useEffect(() => {
+    setTotal(price);
+    if (total > 0) {
+      setUSD(handleUSDChange(total));
+    }
+  }, [price, total]);
+
+  console.log(USD);
 
   const stripe = useStripe();
   const elements = useElements();
@@ -100,9 +110,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
       <SubmitButton
         disabled={isProcessing}
-        title={
-          isProcessing ? 'Processing...' : `Pay $${handleUSDChange(price)} USD`
-        }
+        title={isProcessing ? 'Processing...' : `Pay $${USD || price} USD`}
         className="mt-4 btn-outline-light"
       />
     </Form>
