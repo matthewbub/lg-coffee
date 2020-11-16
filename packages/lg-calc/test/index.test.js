@@ -1,3 +1,4 @@
+const { expect } = require('chai');
 const { calc } = require('../index');
 
 describe('calc func should accept an object and return a integer', () => {
