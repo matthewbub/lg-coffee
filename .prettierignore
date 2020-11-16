@@ -5,3 +5,8 @@ package-lock.json
 .eslintrc.json
 __tests__/
 .github/
+lerna.json
+packages/lg-calc/README.md
+*.md
+report.20201114.173624.41362.0.001.json
+styles/
