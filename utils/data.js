@@ -2,6 +2,8 @@ exports.data = {
   store: {
     name: 'VisionSpeaks',
     logo: '/logo.png',
+    url: process.env.PUBLIC_URL,
+    description: 'Custom sticker shop',
     info: {
       faq: [
         {

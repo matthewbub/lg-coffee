@@ -45,6 +45,7 @@
     "js-cookie": "^2.2.1",
     "lg-calc": "^0.5.1-alpha.4",
     "next": "^10.0.0",
+    "next-seo": "^4.17.0",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",

@@ -12,6 +12,13 @@
   <a href="https://github.com/facebook/jest">
     <img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="Tested with Jest">
   </a>
+
+  <a href="https://lerna.js.org/">
+    <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="Maintained with lerna">
+  </a>
+
+  [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
 </p>
 
 
