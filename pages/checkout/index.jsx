@@ -14,13 +14,7 @@ const Checkout = ({ data, cart }) => {
 
   useEffect(() => {
     setTotal(cart);
-  //   else {
-  //     setTotal({});
-  //   }
   }, [cart]);
-  // if (cart) setTotal(getFixedPrice({ cart }));
-
-  console.log(getFixedPrice(total));
 
   return (
     <PageWrapper data={data}>
