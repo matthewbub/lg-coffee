@@ -39,64 +39,39 @@ exports[`index renders unchanged 1`] = `
   </nav>
   <main>
     <div
-      className="container-fluid"
-    >
-      <div
-        className="fluid-container hero_image"
-        style={
-          Object {
-            "backgroundImage": "url(\\"/heatpress.jpeg\\")",
-          }
-        }
-      >
-        <div
-          className=""
-        >
-          <h1
-            className="font-weight-bold"
-          >
-            Made To Order
-          </h1>
-          <p
-            className="font-weight-normal"
-          >
-            The highest quality work comes from custom work.
-          </p>
-          <button
-            className="btn btn-outline-dark"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            type="button"
-          >
-            Start Your Order
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
       className="container"
     >
       <div
-        className="mt-5 mb-3 row"
-      >
-        <h2
-          className="text-light"
-        >
-          New Arrivials
-        </h2>
-      </div>
-      <div
-        className="mb-5 center_on_sm row"
+        className="my-5 align-items-center justify-content-center row"
       >
         <div
-          className="col-lg-4 col-md-4 col-sm-8 offset-lg-0 offset-md-0 offset-sm-2"
+          className="col-lg-8 col-md-9 col-sm-12"
+        >
+          <h2
+            className="text-light"
+          >
+            New Arrivials
+          </h2>
+        </div>
+      </div>
+      <div
+        className="my-5 align-items-center justify-content-center row"
+      >
+        <div
+          className="col-lg-8 col-md-9 col-sm-12"
         >
           <div
-            className="my-5"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#242424",
+                "borderRadius": "15px",
+              }
+            }
           >
             <div
+              className="d-flex align-items-end justify-content-between"
               style={
                 Object {
                   "cursor": "pointer",
@@ -105,38 +80,52 @@ exports[`index renders unchanged 1`] = `
             >
               <img
                 alt="Bunns In The Void"
-                src="/bunns_in_the_void_TRANSP.png"
-                style={
-                  Object {
-                    "height": "300px",
-                    "width": "300px",
-                  }
-                }
+                className="product_img_prc"
+                src="/bunns_001.png"
               />
-              <h5
-                className="text-light mt-3 mb-1"
+              <div
+                className="d-flex w-100 flex-column align-items-end justify-content-end text-right pr-4 pb-3"
               >
-                Bunns In The Void
-              </h5>
-              <h6
-                className="text-muted"
-              >
-                $
-                2.87
-                 USD
-              </h6>
+                <h4
+                  className="text-light mt-3 mb-2 ellipse"
+                >
+                  Bunns In The Void
+                </h4>
+                <span
+                  className="text-muted mb-1"
+                >
+                  $
+                  2.87
+                   USD
+                </span>
+                <span
+                  className="label text-light rounded"
+                >
+                  sticker
+                </span>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="my-5 align-items-center justify-content-center row"
+      >
         <div
-          className="col-lg-4 col-md-4 col-sm-8 offset-lg-0 offset-md-0 offset-sm-2"
+          className="col-lg-8 col-md-9 col-sm-12"
         >
           <div
-            className="my-5"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#242424",
+                "borderRadius": "15px",
+              }
+            }
           >
             <div
+              className="d-flex align-items-end justify-content-between"
               style={
                 Object {
                   "cursor": "pointer",
@@ -145,26 +134,30 @@ exports[`index renders unchanged 1`] = `
             >
               <img
                 alt="Lady In The Void"
-                src="/lady_in_the_void_TRANSP.png"
-                style={
-                  Object {
-                    "height": "300px",
-                    "width": "300px",
-                  }
-                }
+                className="product_img_prc"
+                src="/lady_001.png"
               />
-              <h5
-                className="text-light mt-3 mb-1"
+              <div
+                className="d-flex w-100 flex-column align-items-end justify-content-end text-right pr-4 pb-3"
               >
-                Lady In The Void
-              </h5>
-              <h6
-                className="text-muted"
-              >
-                $
-                2.87
-                 USD
-              </h6>
+                <h4
+                  className="text-light mt-3 mb-2 ellipse"
+                >
+                  Lady In The Void
+                </h4>
+                <span
+                  className="text-muted mb-1"
+                >
+                  $
+                  2.87
+                   USD
+                </span>
+                <span
+                  className="label text-light rounded"
+                >
+                  sticker
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -179,9 +172,21 @@ exports[`index renders unchanged 1`] = `
         className="row"
       >
         <div
-          className="d-flex justify-content-center col"
+          className="col"
         >
-          <span
+          <h5
+            className="text-light m-2"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            FAQ
+          </h5>
+          <h5
             className="text-light m-2"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -192,7 +197,7 @@ exports[`index renders unchanged 1`] = `
             }
           >
             Contact
-          </span>
+          </h5>
         </div>
       </div>
       <div

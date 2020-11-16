@@ -50,9 +50,21 @@ exports[`PageWrapper renders unchanged 1`] = `
         className="row"
       >
         <div
-          className="d-flex justify-content-center col"
+          className="col"
         >
-          <span
+          <h5
+            className="text-light m-2"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            FAQ
+          </h5>
+          <h5
             className="text-light m-2"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -63,7 +75,7 @@ exports[`PageWrapper renders unchanged 1`] = `
             }
           >
             Contact
-          </span>
+          </h5>
         </div>
       </div>
       <div

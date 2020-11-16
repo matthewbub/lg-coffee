@@ -2,10 +2,10 @@
 
 exports[`SlimWrapper component renders unchanged 1`] = `
 <div
-  className="row"
+  className="my-5 align-items-center justify-content-center row"
 >
   <div
-    className="col-lg-4 col-md-6 col-sm-8 col-10 offset-lg-4 offset-md-3 offset-sm-2 offset-1"
+    className="col-lg-8 col-md-9 col-sm-12"
   >
     Hello, World!
   </div>

@@ -4,13 +4,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const SlimWrapper = ({ children }) => (
-  <Row>
-    <Col
-      lg={{ span: 4, offset: 4 }}
-      md={{ span: 6, offset: 3 }}
-      sm={{ span: 8, offset: 2 }}
-      xs={{ span: 10, offset: 1 }}
-    >
+  <Row className="my-5 align-items-center justify-content-center">
+    <Col lg={8} md={9} sm={12}>
       {children}
     </Col>
   </Row>
