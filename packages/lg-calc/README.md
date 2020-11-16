@@ -1,4 +1,5 @@
 # lg-calc
+<img alt="tested with mocha and chai" src="https://img.shields.io/badge/tested-with_mocha_and_chai-ff69b4.svg" />
 
 A utility that accepts an object and returns an integer. 
 
