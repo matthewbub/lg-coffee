@@ -14,21 +14,20 @@ const ProductRowComponet = ({ heading, products }) => (
     {products.map((i) => (
       <SlimWrapper
         key={i.sku}
-        className="mb-3 align-items-center justify-content-center"
+        className="mb-2 align-items-center justify-content-center"
       >
         <Link href={`/${i.sku}`}>
           <div style={{ backgroundColor: '#242424', borderRadius: '15px' }}>
             <div
               style={{ cursor: 'pointer' }}
-              className="d-flex align-items-end justify-content-between"
+              className="d-flex align-items-center justify-content-between pr-2"
             >
               <img src={i.images[1]} alt={i.name} className="product_img_prc" />
-              <div className="d-flex w-100 flex-column align-items-end justify-content-end text-right pr-4 pb-3">
-                <h4 className="text-light mt-3 mb-2 ellipse">{i.name}</h4>
+              <div className="d-flex w-100 flex-column align-items-end justify-content-center text-right">
+                <h5 className="text-light mt-3 mb-2 ellipse">{i.name}</h5>
                 <span className="text-muted mb-1">
                   ${formatUSD(i.price)} USD
                 </span>
-                <span className="label text-light rounded">{i.type}</span>
               </div>
             </div>
           </div>

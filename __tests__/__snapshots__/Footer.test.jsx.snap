@@ -6,10 +6,10 @@ exports[`Footer component renders unchanged 1`] = `
     className="my-5 container-fluid"
   >
     <div
-      className="row"
+      className="align-items-center justify-content-center row"
     >
       <div
-        className="col"
+        className="col-lg-8 col-md-9 col-sm-12"
       >
         <h5
           className="text-light m-2"
