@@ -13,12 +13,12 @@ const Footer = ({ links }) => (
   <footer>
     <Container fluid className="my-5">
       <Row>
-        <Col className="d-flex justify-content-center">
+        <Col>
           {links.map((i) => (
             <Link href={i.path} key={i.title}>
-              <span className="text-light m-2" style={{ cursor: 'pointer' }}>
+              <h5 className="text-light m-2" style={{ cursor: 'pointer' }}>
                 {i.title}
-              </span>
+              </h5>
             </Link>
           ))}
         </Col>

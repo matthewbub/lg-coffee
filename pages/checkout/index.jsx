@@ -1,7 +1,7 @@
 import Router from 'next/router';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import calc from 'lg-calc';
+import { calc } from 'lg-calc';
 import Loading from '../../components/Loading';
 import PageWrapper from '../../components/PageWrapper';
 import SlimWrapper from '../../components/SlimWrapper';
@@ -22,7 +22,7 @@ const Checkout = ({ data, cart }) => {
         <CheckoutPreview cart={cart} />
         <CheckoutForm
           cart={cart}
-          price={total ? calc(total) : 0}
+          price={calc(total) || 0}
           onSuccessfulCheckout={() =>
             Router.push('/checkout/order-confirmation')
           }

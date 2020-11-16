@@ -1,18 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PageWrapper from '../components/PageWrapper';
-import HeroComponent from '../prebuilts/HeroComponent';
 import ProductRowComponet from '../prebuilts/ProductRowComponent';
 
 const HomePage = ({ data }) => (
   <PageWrapper data={data}>
-    <HeroComponent
-      image={data.hero.image}
-      heading={data.hero.heading}
-      subheading={data.hero.subheading}
-      button={data.hero.button}
-      href={data.hero.href}
-    />
     <ProductRowComponet
       heading={data.products.heading}
       products={data.products.products}

@@ -47,6 +47,7 @@ exports.data = {
           '/bunns_001.png',
           '/bunns_002.png',
         ],
+        type: 'sticker',
         qty: 40,
       },
       {
@@ -59,6 +60,7 @@ exports.data = {
           '/lady_001.png',
           '/lady_002.png',
         ],
+        type: 'sticker',
         qty: 40,
       },
     ],
@@ -70,6 +72,10 @@ exports.data = {
     },
   ],
   footer: [
+    {
+      title: 'FAQ',
+      path: '/FAQ',
+    },
     {
       title: 'Contact',
       path: 'mailto:support@visionspeaks.art',
