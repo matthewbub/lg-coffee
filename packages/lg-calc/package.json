@@ -1,6 +1,6 @@
 {
   "name": "lg-calc",
-  "version": "0.5.1-alpha.4",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "hi-matbub",
   "license": "MIT",
   "gitHead": "f33cac8ddacac786bc9e1cfdcefc5122a1d319ce",
-  "dependencies": {    
+  "dependencies": {
     "chai": "^4.2.0"
   },
   "devDependencies": {
