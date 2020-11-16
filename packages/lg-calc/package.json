@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require test/setup.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "gitHead": "f33cac8ddacac786bc9e1cfdcefc5122a1d319ce"
+  "author": "hi-matbub",
+  "license": "MIT",
+  "gitHead": "f33cac8ddacac786bc9e1cfdcefc5122a1d319ce",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
 }
