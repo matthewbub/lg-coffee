@@ -16,8 +16,6 @@ const Checkout = ({ data, cart }) => {
     setTotal(cart);
   }, [cart]);
 
-  console.log(total);
-
   return (
     <PageWrapper data={data}>
       <SlimWrapper>

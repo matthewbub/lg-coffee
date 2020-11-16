@@ -6,14 +6,7 @@ import Form from 'react-bootstrap/Form';
 import BillingDetailsFields from './BillingDetailsFields';
 import SubmitButton from './SubmitButton';
 import CheckoutError from './CheckoutError';
-
-const handleUSDChange = (number) => {
-  const string = JSON.stringify(number);
-  const { length } = string;
-  return JSON.parse(
-    `${string.substring(0, length - 2)}.${string.substring(length - 2)}`,
-  );
-};
+import { formatUSD } from '../utils/formatUSD';
 
 const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
@@ -26,11 +19,9 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   useEffect(() => {
     setTotal(price);
     if (total > 0) {
-      setUSD(handleUSDChange(total));
+      setUSD(formatUSD(total));
     }
   }, [price, total]);
-
-  console.log(USD);
 
   const stripe = useStripe();
   const elements = useElements();
