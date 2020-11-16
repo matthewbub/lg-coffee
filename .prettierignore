@@ -4,3 +4,4 @@ package-lock.json
 .next
 .eslintrc.json
 __tests__/
+.github/
