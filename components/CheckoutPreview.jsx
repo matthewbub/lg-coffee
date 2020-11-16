@@ -33,9 +33,9 @@ const CheckoutPreview = ({ cart }) => {
   return (
     <>
       <Container fluid>
-        {cartInStorage === undefined
-        || cartInStorage === null
-        || isCartEmpty ? (
+        {cartInStorage === undefined ||
+        cartInStorage === null ||
+        isCartEmpty ? (
           <h2 className="text-light">No Products</h2>
         ) : (
           <>
@@ -74,18 +74,13 @@ const CheckoutPreview = ({ cart }) => {
                         className="text-light mt-2"
                         style={{ margin: '0', padding: '0' }}
                       >
-                        $
-                        {formatUSD(cartInStorage[i].price)}
-                        {' '}
-                        USD
+                        ${formatUSD(cartInStorage[i].price)} USD
                       </p>
                       <p
                         className="text-light ml-4 mr-2"
                         style={{ margin: '0', padding: '0' }}
                       >
-                        Qty:
-                        {' '}
-                        {cartInStorage[i].qty}
+                        Qty: {cartInStorage[i].qty}
                       </p>
                       <button
                         type="button"
