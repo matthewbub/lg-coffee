@@ -1,8 +1,8 @@
-# lgco ☕
+<img src="/public/lg-coffee-logo.png" alt="lg-coffee" />
 
 <p align="center">
   <a href="https://travis-ci.com/hi-matbub/coffee-menu.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" target="_blank">
-    <img src="https://travis-ci.com/hi-matbub/coffee-menu.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" alt="travis ci"
+    <img src="https://travis-ci.com/hi-matbub/coffee-menu.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" alt="travis ci" />
   </a>
     
   <a href= "https://github.com/prettier/prettier">
@@ -10,11 +10,11 @@
   </a>
   
   <a href="https://github.com/facebook/jest">
-    <img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="Tested with Jest">
+    <img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="Tested with Jest" />
   </a>
 
   <a href="https://lerna.js.org/">
-    <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="Maintained with lerna">
+    <img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="Maintained with lerna" />
   </a>
 
 </p>
