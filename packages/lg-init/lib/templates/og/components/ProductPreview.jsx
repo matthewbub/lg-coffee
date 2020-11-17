@@ -6,10 +6,10 @@ const ProductPreview = ({ product }) => {
   const [primaryImage, setPrimaryImage] = useState();
 
   useEffect(() => {
-    setPrimaryImage(product.images[0]);
-  }, [product.images]);
-
-  if (!product) return <Loading />;
+    setPrimaryImage(product);
+  }, [product]);
+console.log(product)
+  if (!primaryImage) return <Loading />;
 
   const handlePrimaryImageToggle = (i) => setPrimaryImage(i);
 

@@ -1,10 +1,6 @@
 <img src="/public/lg-coffee-logo.png" alt="lg-coffee" />
 
-<p align="center">
-  <a href="https://travis-ci.com/hi-matbub/lg-coffee.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" target="_blank">
-    <img src="https://travis-ci.com/hi-matbub/lg-coffee.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" alt="travis ci" />
-  </a>
-    
+<p align="center">  
   <a href= "https://github.com/prettier/prettier">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" />
   </a>
