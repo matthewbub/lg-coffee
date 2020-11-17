@@ -8,7 +8,7 @@ import SlimWrapper from '../components/SlimWrapper';
 const ProductRowComponet = ({ heading, products }) => (
   <Container>
     <SlimWrapper>
-      <h2 className="text-light">{heading}</h2>
+      <h2 className="text-light my-5">{heading}</h2>
     </SlimWrapper>
 
     {products.map((i) => (
@@ -20,7 +20,7 @@ const ProductRowComponet = ({ heading, products }) => (
           <div style={{ backgroundColor: '#242424', borderRadius: '15px' }}>
             <div
               style={{ cursor: 'pointer' }}
-              className="d-flex align-items-center justify-content-between pr-2"
+              className="d-flex align-items-end justify-content-between pr-2"
             >
               <img src={i.images[1]} alt={i.name} className="product_img_prc" />
               <div className="d-flex w-100 flex-column align-items-end justify-content-center text-right">

@@ -3,7 +3,7 @@
 exports[`Footer component renders unchanged 1`] = `
 <footer>
   <div
-    className="my-5 container-fluid"
+    className="my-5 container"
   >
     <div
       className="align-items-center justify-content-center row"

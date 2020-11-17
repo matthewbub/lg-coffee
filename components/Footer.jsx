@@ -11,7 +11,7 @@ const year = date.getFullYear();
 
 const Footer = ({ links }) => (
   <footer>
-    <Container fluid className="my-5">
+    <Container className="my-5">
       <SlimWrapper>
         {links.map((i) => (
           <Link href={i.path} key={i.title}>

@@ -44,7 +44,7 @@ exports[`PageWrapper renders unchanged 1`] = `
   </main>
   <footer>
     <div
-      className="my-5 container-fluid"
+      className="my-5 container"
     >
       <div
         className="align-items-center justify-content-center row"

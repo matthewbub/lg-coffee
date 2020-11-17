@@ -48,7 +48,7 @@ exports[`index renders unchanged 1`] = `
           className="col-lg-8 col-md-9 col-sm-12"
         >
           <h2
-            className="text-light"
+            className="text-light my-5"
           >
             New Arrivials
           </h2>
@@ -71,7 +71,7 @@ exports[`index renders unchanged 1`] = `
             }
           >
             <div
-              className="d-flex align-items-center justify-content-between pr-2"
+              className="d-flex align-items-end justify-content-between pr-2"
               style={
                 Object {
                   "cursor": "pointer",
@@ -120,7 +120,7 @@ exports[`index renders unchanged 1`] = `
             }
           >
             <div
-              className="d-flex align-items-center justify-content-between pr-2"
+              className="d-flex align-items-end justify-content-between pr-2"
               style={
                 Object {
                   "cursor": "pointer",
@@ -153,10 +153,18 @@ exports[`index renders unchanged 1`] = `
         </div>
       </div>
     </div>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Launch demo modal
+    </button>
   </main>
   <footer>
     <div
-      className="my-5 container-fluid"
+      className="my-5 container"
     >
       <div
         className="align-items-center justify-content-center row"
