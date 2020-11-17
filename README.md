@@ -67,3 +67,6 @@ LOCAL_URL=http://localhost:3000
 PUBLISHABLE_KEY=stripe_publishable_key
 SECRET_KEY=stripe_secret_key
 ```
+## Support
+
+Proud to support? <a href="https://www.buymeacoffee.com/himatbub" target="_blank"><img src="/public/buy-me-a-coffee.png" alt="Buy Me A Coffee"></a>
