@@ -1,5 +1,5 @@
 {
-  "name": "coffee-menu",
+  "name": "lg-coffee",
   "version": "1.0.0",
   "description": "coffee menu styled web app for business transactions.",
   "main": "index.js",
@@ -23,15 +23,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hi-matbub/coffee-menu.git"
+    "url": "git+https://github.com/hi-matbub/lg-coffee.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hi-matbub/coffee-menu/issues"
+    "url": "https://github.com/hi-matbub/lg-coffee/issues"
   },
-  "homepage": "https://github.com/hi-matbub/coffee-menu#readme",
+  "homepage": "https://github.com/hi-matbub/lg-coffee#readme",
   "dependencies": {
     "@mdx-js/loader": "^1.6.21",
     "@next/mdx": "^10.0.1",

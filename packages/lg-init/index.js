@@ -59,7 +59,7 @@ const moveTemplateToUserCurrentWorkingDirectory = (name) => {
     console.log(chalk.bold(`cd ${name} && npm i && npm run dev`));
     console.log();
     console.log('Have questions? Visit the docs for more info!');
-    console.log('https://github.com/hi-matbub/coffee-menu');
+    console.log('https://github.com/hi-matbub/lg-coffee');
     console.log();
   } catch {
     console.log();
