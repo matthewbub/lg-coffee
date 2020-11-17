@@ -1,33 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import PageWrapper from '../components/PageWrapper';
-import ProductRowComponet from '../prebuilts/ProductRowComponent';
-import ProductComponent from '../components/ProductComponent';
+import Home from '../docs/home.mdx';
 
-const HomePage = ({ data }) => (
-  <PageWrapper data={data}>
-    <ProductRowComponet
-      heading={data.products.heading}
-      products={data.products.products}
-    />
-    <ProductComponent />
-  </PageWrapper>
-);
-
-HomePage.propTypes = {
-  data: PropTypes.shape({
-    hero: PropTypes.shape({
-      image: PropTypes.string.isRequired,
-      heading: PropTypes.string.isRequired,
-      subheading: PropTypes.string.isRequired,
-      button: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
-    products: PropTypes.shape({
-      heading: PropTypes.string.isRequired,
-      products: PropTypes.arrayOf({}).isRequired,
-    }).isRequired,
-  }).isRequired,
+const HomePage = () => {
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col col-3">
+          Nav
+          <ul>
+            <li>List</li>
+            <li>List</li>
+            <li>List</li>
+          </ul>
+        </div>
+        <div className="col col-9">
+          <Home />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default HomePage;
