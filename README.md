@@ -27,7 +27,7 @@ Bootstrap an Ecommerce App for Physical Goods e.g. Standard ECommerce, Delivery 
 
 ## What do I need to know before I attempt this?
 
-The more you know the better. This Project was built using Next.js, Stripe's Api and Node. You will also need to have a basic understanding of Git as we will be utilizing vercels continuous integration and hosting with our Next.js app.
+This project was built with minimal maintaince/fees in mind. Being familiar with modern javascript would help, however is not required.
 
 More info coming soon :construction:
 
@@ -36,16 +36,17 @@ More info coming soon :construction:
 ## Set up
 
 ```bash
-$ npm i 
+$ npx lg-init myAwesomeStore
 ```
-In addition to installing the required dependencies you will need to provide the credintials listed below in the Environment Variables.
 
-## Workflow
+## Contributing 
+
+### Workflow
 
 This project uses <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> and is enforced using Airbnb's Styleguide. Most breaking changes will be caught in the pre-commit stage. However shit happens and mistakes slide. Those will either be caught in the <a href="https://github.com/hi-matbub/coffee-menu/actions">GitHub Workflow</a> Script or in the <a href="https://travis-ci.com/hi-matbub/coffee-menu">Travis Build</a>.
 
 
-## Test
+### Test
 
 Insure you've completed the Set up instructions above.
 
