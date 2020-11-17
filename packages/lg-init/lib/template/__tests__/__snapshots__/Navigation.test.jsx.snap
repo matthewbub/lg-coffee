@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StickyTopNavbar component renders unchanged 1`] = `
+<nav
+  className="justify-content-between navbar navbar-expand-lg navbar-light bg-light sticky-top"
+>
+  <a
+    className="navbar-brand"
+    href="/"
+  >
+    VisionSpeaks
+  </a>
+  <div
+    className="navbar-nav"
+    onKeyDown={[Function]}
+  >
+    <a
+      className="nav-link"
+      data-rb-event-key="/checkout"
+      href="/checkout"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+    >
+      <img
+        alt="Checkout"
+        src="/cart.png"
+        style={
+          Object {
+            "cursor": "pointer",
+            "height": "15px",
+          }
+        }
+      />
+    </a>
+  </div>
+</nav>
+`;

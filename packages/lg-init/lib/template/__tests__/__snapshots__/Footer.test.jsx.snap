@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component renders unchanged 1`] = `
+<footer>
+  <div
+    className="my-5 container"
+  >
+    <div
+      className="align-items-center justify-content-center row"
+    >
+      <div
+        className="col-lg-8 col-md-9 col-sm-12"
+      >
+        <h5
+          className="text-light m-2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          FAQ
+        </h5>
+        <h5
+          className="text-light m-2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Contact
+        </h5>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="d-flex justify-content-center col"
+      >
+        <span
+          className="text-light m-2"
+          style={
+            Object {
+              "fontSize": "12px",
+            }
+          }
+        >
+          2020
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+`;

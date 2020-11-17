@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SlimWrapper component renders unchanged 1`] = `
+<div
+  className="align-items-center justify-content-center row"
+>
+  <div
+    className="col-lg-8 col-md-9 col-sm-12"
+  >
+    Hello, World!
+  </div>
+</div>
+`;

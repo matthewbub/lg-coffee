@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SubmitButton component renders unchanged 1`] = `
+<button
+  className="cn btn"
+  type="submit"
+>
+  submit
+</button>
+`;

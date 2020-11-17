@@ -1,0 +1,133 @@
+html,
+body,
+main,
+.dark_mode {
+  background: #0c0b07 !important;
+}
+
+.product_card {
+  display: flex;
+}
+
+.product_image {
+  height: 250px;
+  width: 250px;
+  background-position: bottom;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.products_wrapper {
+  overflow-x: scroll;
+  max-width: 100%;
+}
+
+.products_wrapper:nth-child(even) h4 h3 p {
+  color: #fff !important;
+}
+
+.product_title {
+  font-size: 2.5em;
+  font-weight: 900;
+}
+
+.big_title {
+  font-size: 4.75em;
+  font-weight: 900;
+}
+
+.product_text {
+  font-weight: bold;
+}
+
+.product_price {
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.no-link {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.no-link:hover {
+  color: inherit;
+}
+
+.hero_image {
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 5em 5em;
+}
+
+.main_img {
+  width: 350px;
+  height: 350px;
+}
+
+.img_preview_button {
+  margin: 0.25em;
+}
+
+.img_preview_button,
+.img_preview_button > img {
+  height: 100px;
+  width: 100px;
+  border: 0;
+  background-color: initial;
+}
+
+.pid_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pid_section:last-child {
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2em 0 4em 0;
+}
+
+.btn-group,
+.qty_submit {
+  width: 160px;
+}
+
+@media screen and (max-width: 768px) and (min-width: 0) {
+  .p-sm-3 {
+    padding: 1em 3em 0 3em;
+  }
+
+  .pid_section:last-child {
+    padding: 0 0 4em 0;
+  }
+}
+
+@media screen and (max-width: 858px) and (min-width: 0) {
+  .hero_image {
+    justify-content: flex-start;
+    padding: 2em;
+    background-position: right;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 0) {
+  .product_image {
+    height: 275px;
+    width: 200px;
+    padding: 0.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
