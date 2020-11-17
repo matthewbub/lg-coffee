@@ -69,4 +69,5 @@ SECRET_KEY=stripe_secret_key
 ```
 ## Support
 
-Proud to support? <a href="https://www.buymeacoffee.com/himatbub" target="_blank"><img src="/public/buy-me-a-coffee.png" alt="Buy Me A Coffee"></a>
+Proud to support? </br>
+<a href="https://www.buymeacoffee.com/himatbub" target="_blank"><img src="/public/buy-me-a-coffee.png" alt="Buy Me A Coffee"></a>
