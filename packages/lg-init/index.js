@@ -57,10 +57,6 @@ const moveTemplateToUserCurrentWorkingDirectory = (name) => {
     console.log();
     console.log('Quick start:');
     console.log(chalk.bold(`cd ${name} && npm i && npm run dev`));
-    console.log(
-      'Once compiled, your app will be live at: ' +
-        chalk.green('http://localhost:3000')
-    );
     console.log();
     console.log('Have questions? Visit the docs for more info!');
     console.log('https://github.com/hi-matbub/coffee-menu');
