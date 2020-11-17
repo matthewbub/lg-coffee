@@ -27,8 +27,6 @@ This project was built with minimal maintaince/fees in mind. Being familiar with
 
 More info coming soon :construction:
 
-## Warning everything here is subject to breaking change.
-
 ## Set up
 
 ```bash
@@ -54,7 +52,7 @@ $ npm run test
 $ npm run test:dev
 ```
 
-## Environment Variables
+### Environment Variables
 
 ```bash
 PUBLIC_URL=https://yourdomainhere.com
@@ -63,6 +61,15 @@ LOCAL_URL=http://localhost:3000
 PUBLISHABLE_KEY=stripe_publishable_key
 SECRET_KEY=stripe_secret_key
 ```
+
+## Example Sites
+
+- https://lg-coffee-og-example.vercel.app/
+
+## Who uses lg-coffee? 
+
+Are you using lg-coffee? I'd love to hear from you! Get in touch with me at <a href="mailto:6matbub@gmail.com">6matbub@gmail.com</a>
+
 ## Support
 
 Proud to support? </br>

@@ -8,7 +8,6 @@ import StripeWrapper from '../components/StripeWrapper';
 import FacebookPixelWrapper from '../components/FacebookPixelWrapper';
 import NextSEOWrapper from '../components/NextSEOWrapper';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../styles/index.css';
 import '../styles/global.css';
 import '../styles/ProductPreview.css';
 
