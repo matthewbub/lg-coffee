@@ -1,8 +1,8 @@
 # lgco ☕
 
 <p align="center">
-  <a href="https://travis-ci.com/hi-matbub/coffee-menu.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" target="_blank">
-    <img src="https://travis-ci.com/hi-matbub/coffee-menu.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" alt="travis ci"
+  <a href="https://travis-ci.com/hi-matbub/lg-coffee.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" target="_blank">
+    <img src="https://travis-ci.com/hi-matbub/lg-coffee.svg?token=wsyKr5ypVsdRwKJab6d2&branch=main" alt="travis ci"
   </a>
     
   <a href= "https://github.com/prettier/prettier">
@@ -42,7 +42,7 @@ In addition to installing the required dependencies you will need to provide the
 
 ## Workflow
 
-This project uses <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> and is enforced using Airbnb's Styleguide. Most breaking changes will be caught in the pre-commit stage. However shit happens and mistakes slide. Those will either be caught in the <a href="https://github.com/hi-matbub/coffee-menu/actions">GitHub Workflow</a> Script or in the <a href="https://travis-ci.com/hi-matbub/coffee-menu">Travis Build</a>.
+This project uses <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> and is enforced using Airbnb's Styleguide. Most breaking changes will be caught in the pre-commit stage. However shit happens and mistakes slide. Those will either be caught in the <a href="https://github.com/hi-matbub/lg-coffee/actions">GitHub Workflow</a> Script or in the <a href="https://travis-ci.com/hi-matbub/lg-coffee">Travis Build</a>.
 
 
 ## Test
