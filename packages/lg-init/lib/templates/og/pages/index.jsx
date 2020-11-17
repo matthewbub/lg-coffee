@@ -3,30 +3,30 @@ import PropTypes from 'prop-types';
 import PageWrapper from '../components/PageWrapper';
 import ProductRowComponet from '../prebuilts/ProductRowComponent';
 import Loading from '../components/Loading';
-import ProductComponent from '../components/ProductComponent';
 
 const HomePage = ({ data, cart }) => {
   const [loading, setLoading] = useState(false);
-  
+
   useEffect(() => {
-    if (!data && !cart) setLoading(true)
-    else setLoading(false)
-  }, [data, cart])  
+    if (!data && !cart) setLoading(true);
+    else setLoading(false);
+  }, [data, cart]);
 
   return (
     <>
-      { 
-      loading ? <Loading data={data} />
-      : <PageWrapper data={data}>
+      {loading ? (
+        <Loading data={data} />
+      ) : (
+        <PageWrapper data={data}>
           <ProductRowComponet
             heading={data.products.heading}
             products={data.products.products}
             cart={cart}
           />
         </PageWrapper>
-      }
-    </>    
-  )
+      )}
+    </>
+  );
 };
 
 HomePage.propTypes = {
@@ -43,6 +43,7 @@ HomePage.propTypes = {
       products: PropTypes.arrayOf({}).isRequired,
     }).isRequired,
   }).isRequired,
+  cart: PropTypes.shape({}).isRequired,
 };
 
 export default HomePage;

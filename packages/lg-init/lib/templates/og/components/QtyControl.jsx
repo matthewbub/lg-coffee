@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 import Alert from './Alert';
 
 const QtyControl = ({ product, cart }) => {
@@ -50,8 +49,8 @@ const QtyControl = ({ product, cart }) => {
         status: 'success',
         message:
           count === 1
-            ? `Successfully added ${count} product to your cart!`
-            : `Successfully added ${count} products to your cart!`,
+            ? `added ${count} product to your cart!`
+            : `added ${count} products to your cart!`,
       });
       setTimeout(() => {
         setAlert(null);
@@ -60,44 +59,48 @@ const QtyControl = ({ product, cart }) => {
   };
 
   return (
-    <div className="d-flex flex-column align-items-end">
-      <div className="btn-group">
-        <button
-          type="button"
-          className="btn btn-outline-dark p-1 pr-3 pl-3"
-          style={{ height: 'fit-content' }}
-          onClick={() => handleCount('-')}
-        >
-          -
-        </button>
-        <p className="d-flex pr-3 pl-3" style={{ height: 'fit-content' }}>
-          {count}
-        </p>
-        <button
-          type="button"
-          className="btn btn-outline-dark p-1 pr-3 pl-3"
-          style={{ height: 'fit-content' }}
-          onClick={() => handleCount('+')}
-        >
-          +
-        </button>
-      </div>
-      <button
-        type="button"
-        className="btn btn-outline-dark qty_submit"
-        onClick={handleSubmit}
+    <div className="d-flex justify-content-end">
+      <div
+        style={{
+          height: '100px',
+          position: 'absolute',
+          zIndex: '2000',
+          left: '1em',
+          bottom: '-1em',
+        }}
       >
-        Add To Cart
-      </button>
-      <div style={{ height: '100px' }}>
-        {alert ? (
-          <Alert status={alert.status}>
-            {alert.message} <br />
-            <Link href="/checkout">
-              <span>View Cart</span>
-            </Link>
-          </Alert>
-        ) : null}
+        {alert ? <Alert status={alert.status}>{alert.message}</Alert> : null}
+      </div>
+
+      <div className="d-flex flex-column align-items-end mb-3">
+        <div className="btn-group">
+          <button
+            type="button"
+            className="btn btn-outline-dark p-1 pr-3 pl-3"
+            style={{ height: 'fit-content' }}
+            onClick={() => handleCount('-')}
+          >
+            -
+          </button>
+          <p className="d-flex pr-3 pl-3" style={{ height: 'fit-content' }}>
+            {count}
+          </p>
+          <button
+            type="button"
+            className="btn btn-outline-dark p-1 pr-3 pl-3"
+            style={{ height: 'fit-content' }}
+            onClick={() => handleCount('+')}
+          >
+            +
+          </button>
+        </div>
+        <button
+          type="button"
+          className="btn btn-outline-dark qty_submit"
+          onClick={handleSubmit}
+        >
+          Add To Cart
+        </button>
       </div>
     </div>
   );
