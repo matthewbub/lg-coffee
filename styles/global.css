@@ -10,48 +10,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', 'Roborto';
 }
 
-.loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+li {
+  list-style-type: none !important;
 }
 
-.ellipse {
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-}
-
-.label {
-  padding: .25em .75em !important;
-  margin: .25em 0 !important;
-  font-size: 12px;
-  background-color: #FF6C00;
-}
-
-.product_img_prc {
-  height: 150px;
-  width: 150px; 
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;   
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-@media screen and (max-width: 992px) {
-  .center_on_sm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .product_img_prc {
-    height: 100px;
-    width: 100px; 
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;   
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-}

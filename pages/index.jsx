@@ -5,15 +5,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col col-3">
-          Nav
-          <ul>
-            <li>List</li>
-            <li>List</li>
-            <li>List</li>
-          </ul>
-        </div>
-        <div className="col col-9">
+        <div className="col col-lg-9 col-sm-12 col-xs-12">
           <Home />
         </div>
       </div>
