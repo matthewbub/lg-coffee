@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PageWrapper from '../components/PageWrapper';
 import ProductRowComponet from '../prebuilts/ProductRowComponent';
+import ProductComponent from '../components/ProductComponent';
 
 const HomePage = ({ data }) => (
   <PageWrapper data={data}>
@@ -9,6 +10,7 @@ const HomePage = ({ data }) => (
       heading={data.products.heading}
       products={data.products.products}
     />
+    <ProductComponent />
   </PageWrapper>
 );
 
