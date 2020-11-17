@@ -9,9 +9,7 @@
   "engines": {
     "node": ">=10.15.1"
   },
-  "scripts": {
-    "test": "hello world"
-  },
+  "scripts": {},
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -19,6 +17,7 @@
     "commander": "^6.2.0",
     "fs-extra": "^9.0.1",
     "inquirer": "^7.3.3",
+    "node-emoji": "^1.10.0",
     "shelljs": "^0.8.4"
   }
 }

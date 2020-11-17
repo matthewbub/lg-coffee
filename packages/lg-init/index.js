@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /* eslint-disable */
-
 const chalk = require('chalk');
 const program = require('commander');
 const fs = require('fs-extra');
-const shell = require('shelljs');
+// const shell = require('shelljs');
 const path = require('path');
 const inquirer = require('inquirer');
+const emoji = require('node-emoji');
 const engine = require('./package.json').engines.node;
 
 const CWD = process.cwd();
@@ -14,7 +14,6 @@ process.chdir(__dirname);
 program.version(engine);
 
 const buildDir = process.cwd();
-const newProjectName = 'lg-coffee';
 
 const promptUserForProjectName = async () => {
   console.log();
@@ -37,18 +36,39 @@ const promptUserForProjectName = async () => {
   ]);
 };
 
-const moveTemplateToUserCurrentWorkingDirectory = (name) =>
-  fs.moveSync(
-    path.resolve(buildDir, 'lib/template'),
-    path.resolve(CWD, name),
-    (err) => {
-      if (err) {
-        console.error(err);
-      } else {
-        return console.log('success!');
+const moveTemplateToUserCurrentWorkingDirectory = (name) => {
+  try {
+    fs.moveSync(
+      path.resolve(buildDir, 'lib/templates/og'),
+      path.resolve(CWD, name),
+      (err) => {
+        if (err) {
+          console.error(err);
+        } else {
+          return console.log('success!');
+        }
       }
-    }
-  );
+    );
+
+    console.log();
+    console.log(
+      name + ' has been successfully created!' + emoji.emojify(':rocket:')
+    );
+    console.log();
+    console.log('Quick start:');
+    console.log(chalk.bold(`cd ${name} && npm i && npm run dev`));
+    console.log('your app is live at: ' + chalk.green('http://localhost:3000'));
+    console.log();
+    console.log('Have questions? Visit the docs for more info!');
+    console.log('https://github.com/hi-matbub/coffee-menu');
+    console.log();
+  } catch {
+    console.log();
+    console.log("Something wen't wrong.");
+    console.log(`Run ${chalk.yellow('npx lgCoffee --help')} for more options`);
+    console.log();
+  }
+};
 
 const prepBuild = () => {
   if (!process.argv.slice(2)[0]) {
@@ -59,7 +79,7 @@ const prepBuild = () => {
   } else if (process.argv.slice(2)[1]) {
     // if to many args
     console.log();
-    console.log('lg-coffe setup');
+    console.log('lg-coffee setup');
     console.log();
     console.log(
       `To Many Arguments! Remove "${
@@ -68,12 +88,12 @@ const prepBuild = () => {
     );
     console.log();
     console.log('e.g. npx lg-init myAwesomeStore');
-    console.log(`Run ${chalk.yellow('--help')} for more options`);
+    console.log(`Run ${chalk.yellow('npx lg-init --help')} for more options`);
     console.log();
   } else if (process.argv.slice(2)[0]) {
     // if name provided
     console.log();
-    console.log('lg-coffe setup');
+    console.log('lg-coffee setup');
     console.log();
     console.log(
       `building project in ${path.resolve(CWD, process.argv.slice(2)[0])}`
@@ -82,7 +102,7 @@ const prepBuild = () => {
   } else {
     // idk what wen't wrong, did but it didn't work
     console.log("Something wen't wrong.");
-    console.log(`Run ${chalk.yellow('--help')} for more options`);
+    console.log(`Run ${chalk.yellow('npx lg-init --help')} for more options`);
   }
 };
 
