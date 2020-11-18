@@ -32,75 +32,66 @@ const CheckoutPreview = ({ cart }) => {
 
   return (
     <>
-      <Container fluid>
+      <Container>
         {cartInStorage === undefined ||
         cartInStorage === null ||
         isCartEmpty ? (
-          <h2 className="text-light">No Products</h2>
+          <h2>No Products</h2>
         ) : (
           <>
-            <Row>
-              <h1 className="text-light mt-5 mb-4">Checkout</h1>
-            </Row>
-            <Row className="d-flex align-items-center border-light">
-              <h2 className="text-light ellipse">Products</h2>
+            <Row className="d-flex align-items-center">
+              <h2 className="ellipse pb-5 pl-5">In Cart</h2>
             </Row>
 
             {Object.keys(cartInStorage).map((i) => (
-              <a
-                href={cartInStorage[i].sku}
-                style={{ textDecoration: 'none' }}
+              <Row
                 key={cartInStorage[i].sku}
+                className="d-flex align-items-center rounded px-5"
               >
-                <Row className="d-flex align-items-center rounded bg-dark">
-                  <Col xs={4}>
-                    <img
-                      src={cartInStorage[i].images[0]}
-                      alt={cartInStorage[i].name}
-                      style={{ height: '100px', width: '100px' }}
-                    />
-                  </Col>
-                  <Col xs={8} className="d-flex flex-column">
-                    <Row className="align-self-end mr-2">
-                      <h4
-                        style={{ width: '100%', margin: '0' }}
-                        className="text-light ellipse"
-                      >
-                        {cartInStorage[i].name}
-                      </h4>
-                    </Row>
-                    <Row className="align-self-end align-items-end mr-2">
-                      <p
-                        className="text-light mt-2"
-                        style={{ margin: '0', padding: '0' }}
-                      >
-                        ${formatUSD(cartInStorage[i].price)} USD
-                      </p>
-                      <p
-                        className="text-light ml-4 mr-2"
-                        style={{ margin: '0', padding: '0' }}
-                      >
-                        Qty: {cartInStorage[i].qty}
-                      </p>
-                      <button
-                        type="button"
-                        style={{
-                          border: 'none',
-                          background: 'none',
-                          margin: '0',
-                          padding: '0',
-                        }}
-                        className="btn btn-outline-light font-weight-bolder ml-4"
-                        onClick={() => {
-                          handleRemoveFromCart(i);
-                        }}
-                      >
-                        X
-                      </button>
-                    </Row>
-                  </Col>
-                </Row>
-              </a>
+                <Col xs={4}>
+                  <img
+                    src={cartInStorage[i].images[0]}
+                    alt={cartInStorage[i].name}
+                    style={{ height: '100px', width: '100px' }}
+                  />
+                </Col>
+                <Col xs={8} className="d-flex flex-column">
+                  <Row className="align-self-end mr-2">
+                    <h4
+                      style={{ width: '100%', margin: '0' }}
+                      className="ellipse"
+                    >
+                      {cartInStorage[i].name}
+                    </h4>
+                  </Row>
+                  <Row className="align-self-end align-items-end mr-2">
+                    <p className="mt-2" style={{ margin: '0', padding: '0' }}>
+                      ${formatUSD(cartInStorage[i].price)} USD
+                    </p>
+                    <p
+                      className="ml-4 mr-2"
+                      style={{ margin: '0', padding: '0' }}
+                    >
+                      Qty: {cartInStorage[i].qty}
+                    </p>
+                    <button
+                      type="button"
+                      style={{
+                        border: 'none',
+                        background: 'none',
+                        margin: '0',
+                        padding: '0',
+                      }}
+                      className="btn btn-outline-danger font-weight-bolder ml-4"
+                      onClick={() => {
+                        handleRemoveFromCart(i);
+                      }}
+                    >
+                      X
+                    </button>
+                  </Row>
+                </Col>
+              </Row>
             ))}
           </>
         )}

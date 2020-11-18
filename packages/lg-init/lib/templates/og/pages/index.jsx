@@ -17,7 +17,7 @@ const HomePage = ({ data, cart }) => {
       {loading ? (
         <Loading data={data} />
       ) : (
-        <PageWrapper data={data}>
+        <PageWrapper data={data} cart={cart}>
           <ProductRowComponet
             heading={data.products.heading}
             products={data.products.products}

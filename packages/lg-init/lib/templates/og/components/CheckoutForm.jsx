@@ -66,17 +66,17 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const cardElementOptions = {
     style: {
       base: {
-        iconColor: '#c4f0ff',
-        color: '#fff',
+        iconColor: '#000000',
+        color: '#212529',
         fontWeight: 500,
         fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
         fontSize: '16px',
         fontSmoothing: 'antialiased',
         ':-webkit-autofill': {
-          color: '#fce883',
+          color: '#000000',
         },
         '::placeholder': {
-          color: '#87BBFD',
+          color: '#6B757E',
         },
       },
       invalid: {
@@ -89,6 +89,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
     <Form onSubmit={handleFormSubmit}>
       <BillingDetailsFields />
       <div
+        className="px-5 py-2"
         style={{
           backgroundColor: 'none !important',
           border: '0',
@@ -101,8 +102,8 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
       <SubmitButton
         disabled={isProcessing}
-        title={isProcessing ? 'Processing...' : `Pay $${USD || price} USD`}
-        className="mt-4 btn-outline-light"
+        title={isProcessing ? 'Processing...' : `Pay $${USD} USD`}
+        className="my-4 mx-5 btn-outline-dark"
       />
     </Form>
   );

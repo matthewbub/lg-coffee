@@ -3,20 +3,21 @@ import PropTypes from 'prop-types';
 import Navigation from '../prebuilts/Navigation';
 import Footer from './Footer';
 
-const PageWrapper = ({ children, data }) => (
+const PageWrapper = ({ children, data, cart }) => (
   <div className="content">
-    <Navigation store={data.store} navigation={data.navigation} />
+    <Navigation data={data} cart={cart} />
     <main>{children}</main>
-    <Footer links={data.footer} />
+    <Footer contact={data.contact} />
   </div>
 );
 
 PageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
+  cart: PropTypes.shape({}).isRequired,
   data: PropTypes.shape({
     store: PropTypes.shape({}).isRequired,
     navigation: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
-    footer: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+    contact: PropTypes.string.isRequired,
   }).isRequired,
 };
 
