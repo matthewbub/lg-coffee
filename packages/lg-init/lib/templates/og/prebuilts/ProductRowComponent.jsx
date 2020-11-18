@@ -19,7 +19,7 @@ const ProductRowComponet = ({ heading, products, cart }) => {
       ) : (
         <Container>
           <SlimWrapper>
-            <h2 className="text-light my-5">{heading}</h2>
+            <h2 className="my-5">{heading}</h2>
           </SlimWrapper>
 
           {products.map((i) => (

@@ -13,15 +13,18 @@ const Footer = ({ contact }) => (
   <footer>
     <Container className="my-5">
       <SlimWrapper>
+        <h5 className="m-2" style={{ cursor: 'pointer' }}>
+          FAQ
+        </h5>
         <Link href={`mailto:${contact}`}>
-          <h5 className="text-light m-2" style={{ cursor: 'pointer' }}>
+          <h5 className="m-2" style={{ cursor: 'pointer' }}>
             Contact
           </h5>
         </Link>
       </SlimWrapper>
       <Row>
         <Col className="d-flex justify-content-center">
-          <span className="text-light m-2" style={{ fontSize: '12px' }}>
+          <span className="m-2" style={{ fontSize: '12px' }}>
             {year}
           </span>
         </Col>

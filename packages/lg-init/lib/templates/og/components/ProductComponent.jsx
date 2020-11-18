@@ -33,10 +33,13 @@ const ProductComponent = ({ product, cart }) => {
           <div role="button" onClick={handleShow}>
             {/* initial view */}
             <SlimWrapper className="mb-2 align-items-center justify-content-center">
-              <div style={{ backgroundColor: '#242424', borderRadius: '15px' }}>
+              <div
+                style={{ background: '#FFFFFF', borderRadius: '6px' }}
+                className="border"
+              >
                 <div
                   style={{ cursor: 'pointer' }}
-                  className="d-flex align-items-end justify-content-between pr-2"
+                  className="d-flex align-items-end justify-content-between pr-3"
                 >
                   <img
                     src={product.images[1]}
@@ -44,10 +47,8 @@ const ProductComponent = ({ product, cart }) => {
                     className="product_img_prc"
                   />
                   <div className="d-flex w-100 flex-column align-items-end justify-content-center text-right">
-                    <h5 className="text-light mt-3 mb-2 ellipse">
-                      {product.name}
-                    </h5>
-                    <span className="text-muted mb-1">
+                    <h5 className="mt-3 mb-2 ellipse">{product.name}</h5>
+                    <span className="text-muted mb-3">
                       ${formatUSD(product.price)} USD
                     </span>
                   </div>
