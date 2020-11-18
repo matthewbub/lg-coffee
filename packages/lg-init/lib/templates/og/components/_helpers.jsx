@@ -73,6 +73,16 @@ H6.propTypes = {
   theme: PropTypes.string.isRequired,
 };
 
+const P = ({ children, className, theme }) => (
+  <p className={clsx(className, theme)}>{children}</p>
+);
+
+P.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string.isRequired,
+  theme: PropTypes.string.isRequired,
+};
+
 const Pill = ({ title, className, theme, handleShow }) => (
   <button
     type="button"
@@ -140,4 +150,4 @@ Wrap.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
-export { H1, H2, H3, H4, H5, H6, Pill, PrimaryModal, Wrap };
+export { H1, H2, H3, H4, H5, H6, P, Pill, PrimaryModal, Wrap };

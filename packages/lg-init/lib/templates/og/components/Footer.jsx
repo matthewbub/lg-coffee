@@ -5,12 +5,14 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SlimWrapper from './SlimWrapper';
 import Contact from './ContactComponent';
+import Loading from './Loading';
+import FAQComonent from './FAQComponent';
 import { H6, H2, PrimaryModal, Wrap } from './_helpers';
 
 const date = new Date();
 const year = date.getFullYear();
 
-const Footer = ({ theme, store }) => (
+const Footer = ({ data, theme, store }) => (
   <footer>
     <Container className="my-5">
       <SlimWrapper>
@@ -20,7 +22,7 @@ const Footer = ({ theme, store }) => (
             Hello
           </PrimaryModal>
           <PrimaryModal title="FAQ" theme={theme}>
-            Hello
+            { data ? <FAQComonent store={store} theme={theme} /> : <Loading data={store} />}
           </PrimaryModal>
           <PrimaryModal title="Contact" theme={theme}>
             <Contact store={store}/>
@@ -40,6 +42,7 @@ const Footer = ({ theme, store }) => (
 );
 
 Footer.propTypes = {
+  data: PropTypes.shape({}),
   theme: PropTypes.shape({
     text: PropTypes.shape({}).isRequired,
     secondaryText: PropTypes.shape({}).isRequired,
