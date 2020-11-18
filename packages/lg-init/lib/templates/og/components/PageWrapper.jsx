@@ -5,9 +5,9 @@ import Footer from './Footer';
 
 const PageWrapper = ({ children, data, cart }) => (
   <div className="content">
-    <Navigation data={data} cart={cart} />
+    <Navigation data={data} cart={cart} theme={data.theme} />
     <main>{children}</main>
-    <Footer contact={data.contact} />
+    <Footer contact={data.contact} theme={data.theme} />
   </div>
 );
 
@@ -18,6 +18,7 @@ PageWrapper.propTypes = {
     store: PropTypes.shape({}).isRequired,
     navigation: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
     contact: PropTypes.string.isRequired,
+    theme: PropTypes.shape({}).isRequired,
   }).isRequired,
 };
 

@@ -1,0 +1,16 @@
+.primary_image_preview {
+  height: 250px;
+  width: 250px;
+}
+
+.img_preview_button {
+  margin: 0.25em;
+}
+
+.img_preview_button,
+.img_preview_button > img {
+  height: 100px;
+  width: 100px;
+  border: 0;
+  background-color: initial;
+}

@@ -1,0 +1,8 @@
+.lg_pill {
+  border-radius: 6px !important;
+  width: 150px;
+  height: 80px;
+  font-family: 'Montserrat', 'Roborto';
+  display: flex;
+  justify-content: flex-end;
+}

@@ -58,6 +58,19 @@ const ProductComponent = ({ product, cart }) => {
           </div>
 
           <Modal show={show} onHide={handleClose}>
+            <button
+              type="button"
+              onClick={handleClose}
+              className="align-self-end mt-4 mr-4 btn btn-outline-dark"
+              style={{
+                border: 'none',
+                background: 'none',
+                fontSize: '16px',
+                fontFamily: 'Montserrat',
+              }}
+            >
+              Go Back
+            </button>
             <ProductPreview product={product} />
             <div className="p-4">
               <h2>{product.name}</h2>

@@ -9,6 +9,7 @@ import FacebookPixelWrapper from '../components/FacebookPixelWrapper';
 import NextSEOWrapper from '../components/NextSEOWrapper';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/global.css';
+import '../styles/helpers.css';
 import '../styles/ProductPreview.css';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
