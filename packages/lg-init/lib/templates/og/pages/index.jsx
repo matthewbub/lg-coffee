@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import PageWrapper from '../components/PageWrapper';
@@ -11,7 +12,7 @@ const HomePage = ({ data, cart }) => {
     if (!data && !cart) setLoading(true);
     else setLoading(false);
   }, [data, cart]);
-
+  
   return (
     <>
       {loading ? (
@@ -30,20 +31,13 @@ const HomePage = ({ data, cart }) => {
 };
 
 HomePage.propTypes = {
-  data: PropTypes.shape({
-    hero: PropTypes.shape({
-      image: PropTypes.string.isRequired,
-      heading: PropTypes.string.isRequired,
-      subheading: PropTypes.string.isRequired,
-      button: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    }).isRequired,
+  data: PropTypes.shape({    
     products: PropTypes.shape({
-      heading: PropTypes.string.isRequired,
-      products: PropTypes.arrayOf({}).isRequired,
-    }).isRequired,
-  }).isRequired,
-  cart: PropTypes.shape({}).isRequired,
+      heading: PropTypes.string,
+      products: PropTypes.arrayOf(),
+    }),
+  }),
+  cart: PropTypes.shape({}),
 };
 
 export default HomePage;

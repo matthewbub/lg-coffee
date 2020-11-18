@@ -4,13 +4,13 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SlimWrapper from './SlimWrapper';
-import ContactFrom from './ContactForm';
+import Contact from './ContactComponent';
 import { H6, H2, PrimaryModal, Wrap } from './_helpers';
 
 const date = new Date();
 const year = date.getFullYear();
 
-const Footer = ({ theme }) => (
+const Footer = ({ theme, store }) => (
   <footer>
     <Container className="my-5">
       <SlimWrapper>
@@ -23,13 +23,7 @@ const Footer = ({ theme }) => (
             Hello
           </PrimaryModal>
           <PrimaryModal title="Contact" theme={theme}>
-            <ContactFrom />
-            <button
-              type="submit"
-              className="btn btn-outline-dark mb-5 mt-2 mx-4"
-            >
-              Send Message
-            </button>
+            <Contact store={store}/>
           </PrimaryModal>
         </Wrap>
       </SlimWrapper>

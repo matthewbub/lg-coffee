@@ -19,6 +19,8 @@ const CartComponent = ({ cart }) => {
     cart ? setCartToEmpty(false) : setCartToEmpty(true);
   }, [cart]);
 
+  console.log(cart)
+
   return (
     <>
       <div variant="primary" onClick={handleShow}>
