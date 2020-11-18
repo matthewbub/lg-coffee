@@ -2,59 +2,67 @@
 
 exports[`QtyControl component renders unchanged 1`] = `
 <div
-  className="d-flex flex-column align-items-end"
+  className="d-flex justify-content-end"
 >
-  <div
-    className="btn-group"
-  >
-    <button
-      className="btn btn-outline-dark p-1 pr-3 pl-3"
-      onClick={[Function]}
-      style={
-        Object {
-          "height": "fit-content",
-        }
-      }
-      type="button"
-    >
-      -
-    </button>
-    <p
-      className="d-flex pr-3 pl-3"
-      style={
-        Object {
-          "height": "fit-content",
-        }
-      }
-    >
-      1
-    </p>
-    <button
-      className="btn btn-outline-dark p-1 pr-3 pl-3"
-      onClick={[Function]}
-      style={
-        Object {
-          "height": "fit-content",
-        }
-      }
-      type="button"
-    >
-      +
-    </button>
-  </div>
-  <button
-    className="btn btn-outline-dark qty_submit"
-    onClick={[Function]}
-    type="button"
-  >
-    Add To Cart
-  </button>
   <div
     style={
       Object {
+        "bottom": "-1em",
         "height": "100px",
+        "left": "1em",
+        "position": "absolute",
+        "zIndex": "2000",
       }
     }
   />
+  <div
+    className="d-flex flex-column align-items-end mb-3"
+  >
+    <div
+      className="btn-group"
+    >
+      <button
+        className="btn btn-outline-dark p-1 pr-3 pl-3"
+        onClick={[Function]}
+        style={
+          Object {
+            "height": "fit-content",
+          }
+        }
+        type="button"
+      >
+        -
+      </button>
+      <p
+        className="d-flex pr-3 pl-3"
+        style={
+          Object {
+            "height": "fit-content",
+          }
+        }
+      >
+        1
+      </p>
+      <button
+        className="btn btn-outline-dark p-1 pr-3 pl-3"
+        onClick={[Function]}
+        style={
+          Object {
+            "height": "fit-content",
+          }
+        }
+        type="button"
+      >
+        +
+      </button>
+    </div>
+    <button
+      className="btn btn-outline-dark qty_submit"
+      onClick={[Function]}
+      type="button"
+    >
+      Add To Cart
+    </button>
+  </div>
 </div>
 `;

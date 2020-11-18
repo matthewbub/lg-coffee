@@ -55,112 +55,110 @@ exports[`index renders unchanged 1`] = `
         </div>
       </div>
       <div
-        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
+        onClick={[Function]}
+        role="button"
       >
         <div
-          className="col-lg-8 col-md-9 col-sm-12"
+          className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
         >
           <div
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#242424",
-                "borderRadius": "15px",
-              }
-            }
+            className="col-lg-8 col-md-9 col-sm-12"
           >
             <div
-              className="d-flex align-items-end justify-content-between pr-2"
               style={
                 Object {
-                  "cursor": "pointer",
+                  "backgroundColor": "#242424",
+                  "borderRadius": "15px",
                 }
               }
             >
-              <img
-                alt="Bunns In The Void"
-                className="product_img_prc"
-                src="/bunns_001.png"
-              />
               <div
-                className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
+                className="d-flex align-items-end justify-content-between pr-2"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
               >
-                <h5
-                  className="text-light mt-3 mb-2 ellipse"
+                <img
+                  alt="Bunns In The Void"
+                  className="product_img_prc"
+                  src="/bunns_001.png"
+                />
+                <div
+                  className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
                 >
-                  Bunns In The Void
-                </h5>
-                <span
-                  className="text-muted mb-1"
-                >
-                  $
-                  2.87
-                   USD
-                </span>
+                  <h5
+                    className="text-light mt-3 mb-2 ellipse"
+                  >
+                    Bunns In The Void
+                  </h5>
+                  <span
+                    className="text-muted mb-1"
+                  >
+                    $
+                    2.87
+                     USD
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div
-        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
+        onClick={[Function]}
+        role="button"
       >
         <div
-          className="col-lg-8 col-md-9 col-sm-12"
+          className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
         >
           <div
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            style={
-              Object {
-                "backgroundColor": "#242424",
-                "borderRadius": "15px",
-              }
-            }
+            className="col-lg-8 col-md-9 col-sm-12"
           >
             <div
-              className="d-flex align-items-end justify-content-between pr-2"
               style={
                 Object {
-                  "cursor": "pointer",
+                  "backgroundColor": "#242424",
+                  "borderRadius": "15px",
                 }
               }
             >
-              <img
-                alt="Lady In The Void"
-                className="product_img_prc"
-                src="/lady_001.png"
-              />
               <div
-                className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
+                className="d-flex align-items-end justify-content-between pr-2"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
               >
-                <h5
-                  className="text-light mt-3 mb-2 ellipse"
+                <img
+                  alt="Lady In The Void"
+                  className="product_img_prc"
+                  src="/lady_001.png"
+                />
+                <div
+                  className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
                 >
-                  Lady In The Void
-                </h5>
-                <span
-                  className="text-muted mb-1"
-                >
-                  $
-                  2.87
-                   USD
-                </span>
+                  <h5
+                    className="text-light mt-3 mb-2 ellipse"
+                  >
+                    Lady In The Void
+                  </h5>
+                  <span
+                    className="text-muted mb-1"
+                  >
+                    $
+                    2.87
+                     USD
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <button
-      className="btn btn-primary"
-      disabled={false}
-      onClick={[Function]}
-      type="button"
-    >
-      Launch demo modal
-    </button>
   </main>
   <footer>
     <div
@@ -172,18 +170,6 @@ exports[`index renders unchanged 1`] = `
         <div
           className="col-lg-8 col-md-9 col-sm-12"
         >
-          <h5
-            className="text-light m-2"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
-          >
-            FAQ
-          </h5>
           <h5
             className="text-light m-2"
             onClick={[Function]}

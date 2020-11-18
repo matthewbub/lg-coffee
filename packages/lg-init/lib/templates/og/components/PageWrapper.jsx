@@ -7,7 +7,7 @@ const PageWrapper = ({ children, data }) => (
   <div className="content">
     <Navigation store={data.store} navigation={data.navigation} />
     <main>{children}</main>
-    <Footer links={data.footer} />
+    <Footer contact={data.contact} />
   </div>
 );
 
@@ -16,7 +16,7 @@ PageWrapper.propTypes = {
   data: PropTypes.shape({
     store: PropTypes.shape({}).isRequired,
     navigation: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
-    footer: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+    contact: PropTypes.string.isRequired,
   }).isRequired,
 };
 

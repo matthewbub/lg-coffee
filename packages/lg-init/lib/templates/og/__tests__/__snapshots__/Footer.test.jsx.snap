@@ -21,18 +21,6 @@ exports[`Footer component renders unchanged 1`] = `
             }
           }
         >
-          FAQ
-        </h5>
-        <h5
-          className="text-light m-2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
-          style={
-            Object {
-              "cursor": "pointer",
-            }
-          }
-        >
           Contact
         </h5>
       </div>

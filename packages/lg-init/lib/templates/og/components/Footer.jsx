@@ -9,17 +9,15 @@ import SlimWrapper from './SlimWrapper';
 const date = new Date();
 const year = date.getFullYear();
 
-const Footer = ({ links }) => (
+const Footer = ({ contact }) => (
   <footer>
     <Container className="my-5">
       <SlimWrapper>
-        {links.map((i) => (
-          <Link href={i.path} key={i.title}>
-            <h5 className="text-light m-2" style={{ cursor: 'pointer' }}>
-              {i.title}
-            </h5>
-          </Link>
-        ))}
+        <Link href={`mailto:${contact}`}>
+          <h5 className="text-light m-2" style={{ cursor: 'pointer' }}>
+            Contact
+          </h5>
+        </Link>
       </SlimWrapper>
       <Row>
         <Col className="d-flex justify-content-center">
@@ -33,7 +31,7 @@ const Footer = ({ links }) => (
 );
 
 Footer.propTypes = {
-  links: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+  contact: PropTypes.string.isRequired,
 };
 
 export default Footer;
