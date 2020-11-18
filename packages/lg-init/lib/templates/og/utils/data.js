@@ -32,6 +32,12 @@ exports.data = {
       instagram: '',
     },
   },
+  theme: {
+    text: { color: '#212529' },
+    secondaryText: { color: '#6C757D' },
+    primaryBackground: { backgroundColor: '#F8F9FA' },
+    secondaryBackground: { backgroundColor: '#FFFFFF' },
+  },
   products: {
     heading: 'New Arrivials',
     products: [
