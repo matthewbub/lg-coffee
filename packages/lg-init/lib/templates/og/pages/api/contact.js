@@ -2,9 +2,7 @@ const sgMail = require('@sendgrid/mail');
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-export default function async (req, res) {
-  
-
+export default function async(req, res) {
   const { email, message } = req.body;
 
   const content = {
@@ -16,20 +14,17 @@ export default function async (req, res) {
   };
 
   // res.send(JSON.stringify(content))
-  sgMail
-  .send(content)
-  .then(() => {}, error => {
-    console.error(error);
- 
-    if (error.response) {
-      console.error(error.response.body)
-      res.status(400).send(error.response.body)
+  sgMail.send(content).then(
+    () => {},
+    (error) => {
+      // console.error(error);
+
+      if (error.response) {
+        // console.error(error.response.body)
+        res.status(400).send(error.response.body);
+      }
     }
-    // return res.status(200)
-  });
-  
+  );
+
   return res.status(200).send('Message sent');
-
-};
-
-
+}

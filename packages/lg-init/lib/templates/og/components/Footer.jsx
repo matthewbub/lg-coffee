@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
@@ -20,13 +21,17 @@ const Footer = ({ data, theme, store }) => (
         <H2 theme={theme}>More Info</H2>
         <Wrap>
           <PrimaryModal title="About" theme={theme}>
-            <AboutComponent theme={theme} store={store}/>
+            <AboutComponent theme={theme} store={store} />
           </PrimaryModal>
           <PrimaryModal title="FAQ" theme={theme}>
-            { data ? <FAQComonent store={store} theme={theme} /> : <Loading data={store} />}
+            {data ? (
+              <FAQComonent store={store} theme={theme} />
+            ) : (
+              <Loading data={store} />
+            )}
           </PrimaryModal>
           <PrimaryModal title="Contact" theme={theme}>
-            <Contact store={store}/>
+            <Contact store={store} />
           </PrimaryModal>
         </Wrap>
       </SlimWrapper>
@@ -44,6 +49,7 @@ const Footer = ({ data, theme, store }) => (
 
 Footer.propTypes = {
   data: PropTypes.shape({}),
+  store: PropTypes.shape({}),
   theme: PropTypes.shape({
     text: PropTypes.shape({}).isRequired,
     secondaryText: PropTypes.shape({}).isRequired,
