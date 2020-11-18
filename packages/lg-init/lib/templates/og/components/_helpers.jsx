@@ -85,6 +85,7 @@ P.propTypes = {
 
 const Pill = ({ title, className, theme, handleShow }) => (
   <button
+    id={title}
     type="button"
     onClick={handleShow}
     className={clsx('btn btn-outline-dark mr-2 mt-2 lg_pill', className)}
@@ -108,7 +109,7 @@ const PrimaryModal = ({ children, className, theme, title }) => {
 
   return (
     <>
-      <Pill
+      <Pill        
         title={title}
         className={className}
         handleShow={handleShow}
