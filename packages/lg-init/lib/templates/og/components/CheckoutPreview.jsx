@@ -15,6 +15,7 @@ const CheckoutPreview = ({ cart }) => {
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
     cartInStorage ? setCartToEmpty(false) : setCartToEmpty(true);
+    
   }, [cartInStorage]);
 
   const handleRemoveFromCart = (id) => {

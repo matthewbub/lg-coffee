@@ -39,8 +39,9 @@ const ContactForm = ({ theme }) => (
           className="my-3"
           type="text"
           as="textarea"
-          label="body"
-          name="body"
+          rows={3}
+          label="message"
+          name="message"
           placeholder="Inquiring about my recent purchase..."
           required
           style={{
