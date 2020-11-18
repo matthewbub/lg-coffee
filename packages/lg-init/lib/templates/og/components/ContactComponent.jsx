@@ -5,37 +5,81 @@ import ContactFrom from './ContactForm';
 
 
 
-const Contact = () => {
+const Contact = ({ store }) => {
   
-  const [isProcessing, setProcessingTo] = useState(false);
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null }
+  })
 
-  const handleFormSubmit = async (ev) => {
-    ev.preventDefault();
+  const [inputs, setInputs] = useState({
+    email: '',
+    message: ''
+  })
 
-    const messageDetails = {
-      name: ev.target.name.value,
-      email: ev.target.email.value,
-      message: ev.target.message.value,
-    };
-
-    setProcessingTo(true);
-    console.log(messageDetails)
+  const handleResponse = (msg) => {
+    console.log(msg)
+    if (status === 200) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg }
+      })
+    } else {
+      setStatus({
+        info: { error: true, msg }
+      })
+    }
   }
-    // // create payment intent
-    // const { data: clientSecret } = await axios.post('/api/payment_intents', {
-    //   amount: price,
-    // });
+
+  const handleFormSubmit = async e => {
+    e.preventDefault()
+    setStatus(prevStatus => ({ ...prevStatus, submitting: true }))
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({        
+        email: e.target.email.value,
+        message: e.target.message.value,
+      })
+    })
+
+  
+    const text = await res.text()
+    handleResponse(res.status, text)
+  }
 
   return (  
-    <Form onSubmit={handleFormSubmit}>
-      <ContactFrom />
-      <button
-        type="submit"
-        className="btn btn-outline-dark mb-5 mt-2 mx-4"
-      >
-        Send Message
-      </button>
-    </Form>
+    <>
+      <Form onSubmit={handleFormSubmit}>
+        <ContactFrom 
+          inputs={inputs}
+        />
+        <button
+          type="submit"
+          className="btn btn-outline-dark mb-5 mt-2 mx-4"
+          disabled={status.submitting}   
+        >
+          {
+            // eslint-disable-next-line no-nested-ternary
+            !status.submitting
+              ? !status.submitted
+                ? 'Send Message'
+                : 'Message Sent'
+              : 'Sending Message...'
+          }
+          </button>
+      </Form>
+      {status.info.error && (
+        <div className="error">Error: {status.info.msg}</div>
+      )}
+      {!status.info.error && status.info.msg && (
+        <div className="success">{status.info.msg}</div>
+      )}
+    </>
   )
 }
 

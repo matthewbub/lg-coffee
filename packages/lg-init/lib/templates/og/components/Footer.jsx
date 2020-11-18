@@ -10,7 +10,7 @@ import { H6, H2, PrimaryModal, Wrap } from './_helpers';
 const date = new Date();
 const year = date.getFullYear();
 
-const Footer = ({ theme }) => (
+const Footer = ({ theme, store }) => (
   <footer>
     <Container className="my-5">
       <SlimWrapper>
@@ -23,7 +23,7 @@ const Footer = ({ theme }) => (
             Hello
           </PrimaryModal>
           <PrimaryModal title="Contact" theme={theme}>
-            <Contact/>
+            <Contact store={store}/>
           </PrimaryModal>
         </Wrap>
       </SlimWrapper>
