@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { H4, P } from './_helpers';
@@ -14,5 +15,15 @@ const FAQComponent = ({theme, store}) => (
     }
   </div>
 )
+
+FAQComponent.propTypes = {
+  theme: PropTypes.shape({}),
+  store: PropTypes.shape({
+    info: PropTypes.shape({
+      faq: PropTypes.arrayOf(PropTypes.shape({})),
+    }),
+  }),
+  
+}
 
 export default FAQComponent;

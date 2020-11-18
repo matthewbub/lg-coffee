@@ -7,6 +7,7 @@ import SlimWrapper from './SlimWrapper';
 import Contact from './ContactComponent';
 import Loading from './Loading';
 import FAQComonent from './FAQComponent';
+import AboutComponent from './AboutComponent';
 import { H6, H2, PrimaryModal, Wrap } from './_helpers';
 
 const date = new Date();
@@ -19,7 +20,7 @@ const Footer = ({ data, theme, store }) => (
         <H2 theme={theme}>More Info</H2>
         <Wrap>
           <PrimaryModal title="About" theme={theme}>
-            Hello
+            <AboutComponent theme={theme} store={store}/>
           </PrimaryModal>
           <PrimaryModal title="FAQ" theme={theme}>
             { data ? <FAQComonent store={store} theme={theme} /> : <Loading data={store} />}
