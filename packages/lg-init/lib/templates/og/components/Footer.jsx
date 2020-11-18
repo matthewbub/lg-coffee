@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
@@ -5,25 +6,32 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SlimWrapper from './SlimWrapper';
 import Contact from './ContactComponent';
+import Loading from './Loading';
+import FAQComonent from './FAQComponent';
+import AboutComponent from './AboutComponent';
 import { H6, H2, PrimaryModal, Wrap } from './_helpers';
 
 const date = new Date();
 const year = date.getFullYear();
 
-const Footer = ({ theme, store }) => (
+const Footer = ({ data, theme, store }) => (
   <footer>
     <Container className="my-5">
       <SlimWrapper>
         <H2 theme={theme}>More Info</H2>
         <Wrap>
           <PrimaryModal title="About" theme={theme}>
-            Hello
+            <AboutComponent theme={theme} store={store} />
           </PrimaryModal>
           <PrimaryModal title="FAQ" theme={theme}>
-            Hello
+            {data ? (
+              <FAQComonent store={store} theme={theme} />
+            ) : (
+              <Loading data={store} />
+            )}
           </PrimaryModal>
           <PrimaryModal title="Contact" theme={theme}>
-            <Contact store={store}/>
+            <Contact store={store} />
           </PrimaryModal>
         </Wrap>
       </SlimWrapper>
@@ -40,6 +48,8 @@ const Footer = ({ theme, store }) => (
 );
 
 Footer.propTypes = {
+  data: PropTypes.shape({}),
+  store: PropTypes.shape({}),
   theme: PropTypes.shape({
     text: PropTypes.shape({}).isRequired,
     secondaryText: PropTypes.shape({}).isRequired,

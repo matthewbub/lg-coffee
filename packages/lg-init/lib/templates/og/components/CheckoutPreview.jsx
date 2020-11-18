@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Loading from './Loading';
 import { formatUSD } from '../utils/formatUSD';
+import { H2, H3, H4 } from './_helpers';
 
 const CheckoutPreview = ({ cart }) => {
   if (!cart) <Loading data={cart} />;
@@ -37,11 +38,11 @@ const CheckoutPreview = ({ cart }) => {
         {cartInStorage === undefined ||
         cartInStorage === null ||
         isCartEmpty ? (
-          <h2>No Products</h2>
+          <H2 className="m-4">No Products</H2>
         ) : (
           <>
             <Row className="d-flex align-items-center">
-              <h2 className="ellipse pb-5 pl-5">In Cart</h2>
+              <H3 className="ellipse pb-5 pl-5">In Cart</H3>
             </Row>
 
             {Object.keys(cartInStorage).map((i) => (
@@ -58,12 +59,12 @@ const CheckoutPreview = ({ cart }) => {
                 </Col>
                 <Col xs={8} className="d-flex flex-column">
                   <Row className="align-self-end mr-2">
-                    <h4
+                    <H4
                       style={{ width: '100%', margin: '0' }}
                       className="ellipse"
                     >
                       {cartInStorage[i].name}
-                    </h4>
+                    </H4>
                   </Row>
                   <Row className="align-self-end align-items-end mr-2">
                     <p className="mt-2" style={{ margin: '0', padding: '0' }}>

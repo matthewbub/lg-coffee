@@ -19,8 +19,6 @@ const CartComponent = ({ cart }) => {
     cart ? setCartToEmpty(false) : setCartToEmpty(true);
   }, [cart]);
 
-  console.log(cart)
-
   return (
     <>
       <div variant="primary" onClick={handleShow}>
@@ -36,7 +34,7 @@ const CartComponent = ({ cart }) => {
 
       <Modal show={show} onHide={handleClose}>
         {isCartEmpty ? (
-          <h2>Nothing in cart</h2>
+          <h2 className="m-4">Nothing in cart</h2>
         ) : (
           <div className="d-flex flex-column align-items-center">
             <div>

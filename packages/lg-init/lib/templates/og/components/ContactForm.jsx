@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import { H2 } from './_helpers';
 
-const ContactForm = ({ theme, handleOnChange, inputs }) => (
+const ContactForm = ({ theme }) => (
   <div className="d-flex flex-column align-items-center">
     <div style={{ maxWidth: '80%' }}>
       <Form.Row>
@@ -16,7 +16,7 @@ const ContactForm = ({ theme, handleOnChange, inputs }) => (
           type="text"
           label="email"
           name="email"
-          placeholder="jane.doe@example.com"        
+          placeholder="jane.doe@example.com"
           required
           style={{
             border: '0',
@@ -30,7 +30,7 @@ const ContactForm = ({ theme, handleOnChange, inputs }) => (
           rows={3}
           label="message"
           name="message"
-          placeholder="Inquiring about my recent purchase..."          
+          placeholder="Inquiring about my recent purchase..."
           required
           style={{
             border: '0',
@@ -40,7 +40,7 @@ const ContactForm = ({ theme, handleOnChange, inputs }) => (
         <Form.Check
           className="my-3"
           type="checkbox"
-          label="I am not a robot" 
+          label="I am not a robot"
           required
           style={{
             border: '0',
@@ -54,10 +54,6 @@ const ContactForm = ({ theme, handleOnChange, inputs }) => (
 ContactForm.propTypes = {
   // eslint-disable-next-line react/require-default-props
   theme: PropTypes.shape({}),
-  handleOnChange: PropTypes.func.isRequired,
-  inputs: PropTypes.shape({
-    message: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default ContactForm;

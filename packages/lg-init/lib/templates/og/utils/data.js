@@ -4,6 +4,7 @@ exports.data = {
     logo: '/logo.png',
     url: '',
     description: 'Custom sticker shop',
+    about: 'This is a custom sticker shop right here!',
     contact: 'youremail@here.com',
     info: {
       faq: [
