@@ -1,5 +1,5 @@
 import React from 'react';
-import Components from '../docs/Components.mdx';
+import Components from '../docs/components.mdx';
 
 const ComponentsPage = () => {
   return (
