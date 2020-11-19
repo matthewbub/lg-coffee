@@ -34,14 +34,11 @@ const CheckoutPreview = ({
   return (
     <Container>
       <Row className="d-flex align-items-center">
-        <H3 className="ellipse pb-5 pl-5">In Cart</H3>
+        <H3 className="ellipse pb-5">In Cart</H3>
       </Row>
 
       {Object.keys(cart).map((i) => (
-        <Row
-          key={cart[i].sku}
-          className="d-flex align-items-center rounded px-3"
-        >
+        <Row key={cart[i].sku} className="d-flex align-items-center rounded">
           <Col xs={2}>
             <img
               src={cart[i].images[0]}

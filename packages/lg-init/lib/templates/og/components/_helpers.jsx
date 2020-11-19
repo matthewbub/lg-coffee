@@ -188,19 +188,23 @@ const PrimaryModal = ({ children, className, theme, title }) => {
         style={theme.secondaryBackground || defaultTheme.secondaryBackground}
       />
       <Modal show={show} onHide={handleClose}>
-        <button
-          type="button"
-          onClick={handleClose}
-          className="align-self-end mt-4 mr-4 btn btn-outline-dark"
-          style={{
-            border: 'none',
-            background: 'none',
-            fontSize: '16px',
-          }}
-        >
-          Go Back
-        </button>
-        {children}
+        <div className="d-flex flex-column align-items-center">
+          <div className="d-flex flex-column" style={{ maxWidth: '80%' }}>
+            <button
+              type="button"
+              onClick={handleClose}
+              className="align-self-end mt-4 btn btn-outline-dark"
+              style={{
+                border: 'none',
+                background: 'none',
+                fontSize: '16px',
+              }}
+            >
+              Go Back
+            </button>
+            {children}
+          </div>
+        </div>
       </Modal>
     </>
   );
