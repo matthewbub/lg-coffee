@@ -13,10 +13,14 @@ const PageWrapper = ({ children, data, cart }) => (
 
 PageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
-  cart: PropTypes.shape({}).isRequired,
+  cart: PropTypes.shape({}),
   data: PropTypes.shape({
     store: PropTypes.shape({}).isRequired,
   }).isRequired,
 };
+
+PageWrapper.defaultProps = {
+  cart : {}
+}
 
 export default PageWrapper;

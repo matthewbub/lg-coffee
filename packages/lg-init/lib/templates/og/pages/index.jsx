@@ -22,7 +22,11 @@ HomePage.propTypes = {
       products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
     }).isRequired,
   }).isRequired,
-  cart: PropTypes.shape({}).isRequired,
+  cart: PropTypes.shape({}),
 };
+
+HomePage.defaultProps = {
+  cart : {}
+}
 
 export default HomePage;

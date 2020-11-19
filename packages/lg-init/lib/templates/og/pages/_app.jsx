@@ -17,7 +17,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 function App({ Component, pageProps }) {
   const { data, error } = useSwr('/api/data', fetcher);
 
-  const [cart, addProductToCart] = useState();
+  const [cart, addProductToCart] = useState({});
 
   useEffect(() => {
     const userCart = localStorage.getItem('cart');

@@ -77,6 +77,7 @@ Contact.propTypes = {
   store: PropTypes.shape({
     contact: PropTypes.string,
   }),
+  theme: PropTypes.shape({}).isRequired,
 };
 
 export default Contact;

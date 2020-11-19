@@ -22,7 +22,11 @@ ProductRowComponet.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({}).isRequired,
   ).isRequired,
-  cart: PropTypes.shape({}).isRequired,
+  cart: PropTypes.shape({}),
 };
+
+ProductRowComponet.defaultProps = {
+  cart : {}
+}
 
 export default ProductRowComponet;

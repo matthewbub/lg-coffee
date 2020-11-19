@@ -24,7 +24,11 @@ Navigation.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-  cart: PropTypes.shape({}).isRequired,
+  cart: PropTypes.shape({}),
 };
+
+Navigation.defaultProps = {
+  cart : {}
+}
 
 export default Navigation;

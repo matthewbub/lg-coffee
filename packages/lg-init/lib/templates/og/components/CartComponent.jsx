@@ -68,10 +68,13 @@ const CartModal = ({ cart, handleClose }) => (
 );
 
 CartModal.propTypes ={
-  cart: PropTypes.shape({}).isRequired,
+  cart: PropTypes.shape({}),
   handleClose: PropTypes.func.isRequired,
 };
 
+CartModal.defaultProps = {
+  cart : {}
+}
 
 const CartComponent = ({ cart }) => {
   const [isCartEmpty, setCartToEmpty] = useState(true);
@@ -101,8 +104,12 @@ const CartComponent = ({ cart }) => {
 };
 
 CartComponent.propTypes = {
-  cart: PropTypes.shape({}).isRequired,
+  cart: PropTypes.shape({}),
   data: PropTypes.shape({}).isRequired,
 };
+
+CartComponent.defaultProps = {
+  cart : {}
+}
 
 export default CartComponent;

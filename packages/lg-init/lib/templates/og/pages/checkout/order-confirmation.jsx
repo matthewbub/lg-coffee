@@ -59,7 +59,7 @@ const OrderConfirmation = ({ data }) => {
 };
 
 OrderConfirmation.propTypes = {
-  cart: PropTypes.shape({}).isRequired,
+  cart: PropTypes.shape({}),
   data: PropTypes.shape({
     theme: PropTypes.shape({
       primaryBackground: PropTypes.shape({}),
@@ -68,6 +68,7 @@ OrderConfirmation.propTypes = {
 };
 
 OrderConfirmation.defaultProps = {
+  cart: {},
   data: {
     theme: {
       primaryBackground: { backgroundColor: '#F8F9FA' },
