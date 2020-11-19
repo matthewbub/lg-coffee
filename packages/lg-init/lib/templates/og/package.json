@@ -33,7 +33,6 @@
     "lg-calc": "^1.0.0",
     "next": "^10.0.0",
     "next-seo": "^4.17.0",
-    "node-fetch": "^2.6.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",

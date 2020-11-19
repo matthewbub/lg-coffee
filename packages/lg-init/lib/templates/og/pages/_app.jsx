@@ -17,14 +17,17 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 function App({ Component, pageProps }) {
   const { data, error } = useSwr('/api/data', fetcher);
 
-  const [cart, addProductToCart] = useState({});
+  const [cart, setCart] = useState({});
+
+  const handleUpdatedCartInState = (updatedCart) => setCart(JSON.parse(updatedCart))
 
   useEffect(() => {
     const userCart = localStorage.getItem('cart');
-    addProductToCart(JSON.parse(userCart));
+    setCart(JSON.parse(userCart));
   }, []);
 
   if (error) return <div>Something went wrong</div>;
+  
   if (!data) {
     return (
       <StripeWrapper>
@@ -32,6 +35,7 @@ function App({ Component, pageProps }) {
       </StripeWrapper>
     );
   }
+
   return (
     <StripeWrapper>
       <Head>
@@ -51,7 +55,7 @@ function App({ Component, pageProps }) {
           description={data.description}
           url={data.url}
         />
-        <Component data={data} cart={cart} {...pageProps} />
+        <Component data={data} cart={cart} handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)} {...pageProps} />
       </FacebookPixelWrapper>
     </StripeWrapper>
   );

@@ -1,61 +1,49 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
 import Alert from './Alert';
+import { H5 } from './_helpers';
 
-const QtyControl = ({ product, cart }) => {
-  const [count, setCount] = useState(1);
+const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {  
   const [alert, setAlert] = useState(null);
 
-  const handleCount = (operator) => {
-    if (count === 0) return;
-    if (operator === '+') setCount(count + 1);
-    else if (operator === '-') setCount(count - 1);
-    else {
-      setAlert({
-        status: 'danger',
-        message: 'Unknown error occured. Try again later.',
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+
+    let updatedCart;
+
+    if (cart) {
+      updatedCart = JSON.stringify({
+        ...cart,
+        [product.sku]: {
+          ...product,
+          qty: ev.target.qty.value,
+        },
+      });
+    } else {
+      // if cart empty, set cart
+      updatedCart = JSON.stringify({
+        [product.sku]: {
+          ...product,
+          qty: ev.target.qty.value,
+        },
       });
     }
-  };
 
-  const handleSubmit = () => {
-    if (count === 0)
-      setAlert({ status: 'warning', message: 'Nothing to add!' });
-    else {
-      let updatedCart;
-      if (cart) {
-        updatedCart = JSON.stringify({
-          ...cart,
-          [product.sku]: {
-            ...product,
-            qty: count,
-            totalOfSku: product.price * count,
-          },
-        });
-      } else {
-        updatedCart = JSON.stringify({
-          [product.sku]: {
-            ...product,
-            qty: count,
-            totalOfSku: product.price * count,
-          },
-        });
-      }
-
-      localStorage.setItem('cart', updatedCart);
-
-      setAlert({
-        status: 'success',
-        message:
-          count === 1
-            ? `added ${count} product to your cart!`
-            : `added ${count} products to your cart!`,
-      });
-      setTimeout(() => {
-        setAlert(null);
-      }, 3000);
-    }
+    localStorage.setItem('cart', updatedCart);
+    handleUpdatedCartInState(updatedCart)
+    setAlert({
+      status: 'success',
+      message:
+        ev.target.qty.value === 1
+          ? `added ${ev.target.qty.value} product to your cart!`
+          : `added ${ev.target.qty.value} products to your cart!`,
+    });
+    setTimeout(() => {
+      setAlert(null);
+    }, 3000);
+  
   };
 
   return (
@@ -73,34 +61,28 @@ const QtyControl = ({ product, cart }) => {
       </div>
 
       <div className="d-flex flex-column align-items-end mb-3">
-        <div className="btn-group">
+        <Form className="d-flex align-items-center" onSubmit={handleSubmit}>
+          <H5 className="p-0 m-0">QTY:</H5>  
+          <Form.Control 
+            type="number" 
+            label="qty"
+            min="1" 
+            max="40" 
+            name="qty"
+            defaultValue="1"
+            className="border-dark mx-3"
+            style={{
+              width: 'fit-content'
+            }}
+          /> 
           <button
-            type="button"
-            className="btn btn-outline-dark p-1 pr-3 pl-3"
-            style={{ height: 'fit-content' }}
-            onClick={() => handleCount('-')}
+            type="submit"
+            className="btn btn-outline-dark qty_submit"
+            style={{width: '125px !important'}}
           >
-            -
+            Add To Cart
           </button>
-          <p className="d-flex pr-3 pl-3" style={{ height: 'fit-content' }}>
-            {count}
-          </p>
-          <button
-            type="button"
-            className="btn btn-outline-dark p-1 pr-3 pl-3"
-            style={{ height: 'fit-content' }}
-            onClick={() => handleCount('+')}
-          >
-            +
-          </button>
-        </div>
-        <button
-          type="button"
-          className="btn btn-outline-dark qty_submit"
-          onClick={handleSubmit}
-        >
-          Add To Cart
-        </button>
+        </Form>
       </div>
     </div>
   );
@@ -111,8 +93,13 @@ QtyControl.propTypes = {
     sku: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   }).isRequired,
-  // eslint-disable-next-line react/require-default-props
   cart: PropTypes.shape({}),
+  handleUpdatedCartInState: PropTypes.func.isRequired,
 };
+
+
+QtyControl.defaultProps = {
+  cart: {},
+}
 
 export default QtyControl;

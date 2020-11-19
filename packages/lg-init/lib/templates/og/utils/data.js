@@ -1,7 +1,7 @@
 exports.data = {
   store: {
     name: 'VisionSpeaks',
-    logo: '/logo.png',
+    logo: '/logo_POP.png',
     url: '',
     description: 'Custom sticker shop',
     about: 'This is a custom sticker shop right here!',
