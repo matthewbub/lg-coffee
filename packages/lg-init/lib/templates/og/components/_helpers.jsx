@@ -109,7 +109,7 @@ const PrimaryModal = ({ children, className, theme, title }) => {
 
   return (
     <>
-      <Pill        
+      <Pill
         title={title}
         className={className}
         handleShow={handleShow}
