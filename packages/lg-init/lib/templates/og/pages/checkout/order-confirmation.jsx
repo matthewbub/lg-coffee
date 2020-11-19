@@ -12,15 +12,19 @@ const OrderConfirmation = ({ cart, data }) => {
     <PageWrapper data={data} cart={cart}>
       <div style={data.theme.primaryBackground} className="my-5">
         <SlimWrapper className="mb-2 align-items-center justify-content-center">
+          
           <H3 theme={data.theme}>Order Confirmation</H3>
+          
           <P theme={data.theme}>
             Thank you for shoppng with us. You should recive a receipt via email
             shortly. If you have any questions, feel free to{' '}
             <Link href="/#contact">Contact Us</Link>
           </P>
+          
           <H4 theme={data.theme}>Your Order:</H4>
+
           {Object.keys(cart).map((i) => (
-            <div>
+            <div key={cart[i].sku}>
               <div
                 style={{ cursor: 'pointer' }}
                 className="d-flex align-items-end justify-content-between pr-3"
@@ -39,6 +43,7 @@ const OrderConfirmation = ({ cart, data }) => {
               </div>
             </div>
           ))}
+          
         </SlimWrapper>
       </div>
     </PageWrapper>
@@ -46,12 +51,20 @@ const OrderConfirmation = ({ cart, data }) => {
 };
 
 OrderConfirmation.propTypes = {
-  cart: PropTypes.shape({}),
+  cart: PropTypes.shape({}).isRequired,
   data: PropTypes.shape({
     theme: PropTypes.shape({
-      primaryBackground: PropTypes.string,
+      primaryBackground: PropTypes.shape({}),
     }),
   }),
 };
+
+OrderConfirmation.defaultProps = {
+  data: {
+    theme: {
+      primaryBackground: { backgroundColor: '#F8F9FA' },
+    }
+  }
+}
 
 export default OrderConfirmation;
