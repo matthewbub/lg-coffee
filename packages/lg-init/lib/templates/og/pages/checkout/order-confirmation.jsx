@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import PageWrapper from '../../components/PageWrapper';
@@ -7,7 +7,15 @@ import SlimWrapper from '../../components/SlimWrapper';
 import { formatUSD } from '../../utils/formatUSD';
 import { H3, H4, P } from '../../components/_helpers';
 
-const OrderConfirmation = ({ cart, data }) => {
+const OrderConfirmation = ({ data }) => {
+  const [cart, setCart] = useState({});
+
+  useEffect(() => {
+    const confirmation = localStorage.getItem('order-confirmation')
+    // eslint-disable-next-line no-unused-expressions
+    confirmation ? setCart(JSON.parse(confirmation)) : null
+  }, []);
+
   return (
     <PageWrapper data={data} cart={cart}>
       <div style={data.theme.primaryBackground} className="my-5">
