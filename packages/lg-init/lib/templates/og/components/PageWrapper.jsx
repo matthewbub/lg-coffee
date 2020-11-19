@@ -5,7 +5,13 @@ import Footer from './Footer';
 
 const PageWrapper = ({ children, data, cart, handleUpdatedCartInState }) => (
   <div className="content">
-    <Navigation data={data} cart={cart}  handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)}/>
+    <Navigation
+      data={data}
+      cart={cart}
+      handleUpdatedCartInState={(updatedCart) =>
+        handleUpdatedCartInState(updatedCart)
+      }
+    />
     <main>{children}</main>
     <Footer data={data} />
   </div>
@@ -21,7 +27,7 @@ PageWrapper.propTypes = {
 };
 
 PageWrapper.defaultProps = {
-  cart : {}
-}
+  cart: {},
+};
 
 export default PageWrapper;

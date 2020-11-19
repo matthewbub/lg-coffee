@@ -6,9 +6,13 @@ import Col from 'react-bootstrap/Col';
 import { formatUSD } from '../utils/formatUSD';
 import { H3, H4 } from './_helpers';
 
-const CheckoutPreview = ({ cart, handleEmptyCartNotice, handleUpdatedCartInState }) => {
-  const [cartInStorage, setCartInStorage] = useState(cart);  
- 
+const CheckoutPreview = ({
+  cart,
+  handleEmptyCartNotice,
+  handleUpdatedCartInState,
+}) => {
+  const [cartInStorage, setCartInStorage] = useState(cart);
+
   const handleRemoveFromCart = (id) => {
     const updatedCart = cartInStorage;
 
@@ -18,13 +22,13 @@ const CheckoutPreview = ({ cart, handleEmptyCartNotice, handleUpdatedCartInState
 
     if (Object.keys(updatedCart).length === 0) {
       localStorage.removeItem('cart');
-      return handleEmptyCartNotice();      
-    // eslint-disable-next-line no-else-return
+      return handleEmptyCartNotice();
+      // eslint-disable-next-line no-else-return
     } else {
       // func requires JSON
-      handleUpdatedCartInState(JSON.stringify(updatedCart))
-      return localStorage.setItem('cart', JSON.stringify(cartInStorage))
-    };
+      handleUpdatedCartInState(JSON.stringify(updatedCart));
+      return localStorage.setItem('cart', JSON.stringify(cartInStorage));
+    }
   };
 
   return (
@@ -47,10 +51,7 @@ const CheckoutPreview = ({ cart, handleEmptyCartNotice, handleUpdatedCartInState
           </Col>
           <Col xs={10} className="d-flex flex-column">
             <Row className="align-self-end mr-2">
-              <H4
-                style={{ width: '100%', margin: '0' }}
-                className="ellipse"
-              >
+              <H4 style={{ width: '100%', margin: '0' }} className="ellipse">
                 {cart[i].name}
               </H4>
             </Row>
@@ -58,10 +59,7 @@ const CheckoutPreview = ({ cart, handleEmptyCartNotice, handleUpdatedCartInState
               <p className="mt-2" style={{ margin: '0', padding: '0' }}>
                 ${formatUSD(cart[i].price)} USD
               </p>
-              <p
-                className="ml-4 mr-2"
-                style={{ margin: '0', padding: '0' }}
-              >
+              <p className="ml-4 mr-2" style={{ margin: '0', padding: '0' }}>
                 Qty: {cart[i].qty}
               </p>
               <button
@@ -99,12 +97,12 @@ CheckoutPreview.propTypes = {
 };
 
 CheckoutPreview.defaultProps = {
-  cart : {
+  cart: {
     images: '',
     name: '',
     price: '',
     qty: '',
-  }
-}
+  },
+};
 
 export default CheckoutPreview;

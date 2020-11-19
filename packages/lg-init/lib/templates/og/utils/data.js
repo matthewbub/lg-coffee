@@ -1,9 +1,9 @@
 exports.data = {
   store: {
-    name: 'Dog-Gone Goods', 
-    logo: '/logo.svg', 
+    name: 'Dog-Gone Goods',
+    logo: '/logo.svg',
     hero: '/hero.svg',
-    url: '', 
+    url: '',
     description: 'A dog treat shop',
     about: 'Everyone loves a happy dog!',
     contact: 'youremail@here.com',
@@ -20,7 +20,7 @@ exports.data = {
         {
           q: 'What is your policy on refunds?',
           a: 'At this time, we are unable to honor refunds.',
-        },     
+        },
       ],
     },
     social: {
@@ -41,38 +41,30 @@ exports.data = {
       {
         name: 'Strawberry Bone',
         description: 'Super colorful, your dog will love this!',
-        price: 197, 
+        price: 197,
         sku: 'srw_bn_',
-        images: [
-          '/pink.png',
-        ]        
+        images: ['/pink.png'],
       },
       {
         name: 'Chocolate Bone',
         description: 'Super chocolately, your dog will love this!',
-        price: 197, 
+        price: 197,
         sku: 'chc_bn_',
-        images: [
-          '/dark.png',
-        ]        
+        images: ['/dark.png'],
       },
       {
         name: 'Lemon Bone',
         description: 'Super lemony, your dog will love this!',
-        price: 197, 
+        price: 197,
         sku: 'lnm_bn_',
-        images: [
-          '/yellow.png',
-        ]        
+        images: ['/yellow.png'],
       },
       {
         name: 'Orange Bone',
         description: 'Super colorful, your dog will love this!',
-        price: 197, 
+        price: 197,
         sku: 'ong_bn_',
-        images: [
-          '/orange.png',
-        ]        
+        images: ['/orange.png'],
       },
     ],
   },

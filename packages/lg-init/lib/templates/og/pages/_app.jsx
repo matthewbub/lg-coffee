@@ -19,7 +19,8 @@ function App({ Component, pageProps }) {
 
   const [cart, setCart] = useState({});
 
-  const handleUpdatedCartInState = (updatedCart) => setCart(JSON.parse(updatedCart))
+  const handleUpdatedCartInState = (updatedCart) =>
+    setCart(JSON.parse(updatedCart));
 
   useEffect(() => {
     const userCart = localStorage.getItem('cart');
@@ -27,7 +28,7 @@ function App({ Component, pageProps }) {
   }, []);
 
   if (error) return <div>Something went wrong</div>;
-  
+
   if (!data) {
     return (
       <StripeWrapper>
@@ -41,8 +42,11 @@ function App({ Component, pageProps }) {
       <Head>
         <title>{data.name}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />        
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
+          rel="stylesheet"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap"
           rel="stylesheet"
@@ -55,7 +59,14 @@ function App({ Component, pageProps }) {
           description={data.description}
           url={data.url}
         />
-        <Component data={data} cart={cart} handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)} {...pageProps} />
+        <Component
+          data={data}
+          cart={cart}
+          handleUpdatedCartInState={(updatedCart) =>
+            handleUpdatedCartInState(updatedCart)
+          }
+          {...pageProps}
+        />
       </FacebookPixelWrapper>
     </StripeWrapper>
   );

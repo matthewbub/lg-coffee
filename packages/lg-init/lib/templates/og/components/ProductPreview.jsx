@@ -28,18 +28,18 @@ const ProductPreview = ({ product }) => {
             alt="view product"
           />
           <div className="img_previews">
-            {
-            !product.images.length <= 1 ? null :
-            product.images.map((i) => (
-              <button
-                type="button"
-                key={i}
-                className="img_preview_button"
-                onClick={() => handlePrimaryImageToggle(i)}
-              >
-                <img src={i} alt="alt product views" />
-              </button>
-            ))}
+            {!product.images.length <= 1
+              ? null
+              : product.images.map((i) => (
+                  <button
+                    type="button"
+                    key={i}
+                    className="img_preview_button"
+                    onClick={() => handlePrimaryImageToggle(i)}
+                  >
+                    <img src={i} alt="alt product views" />
+                  </button>
+                ))}
           </div>
         </section>
       )}
