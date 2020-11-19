@@ -7,7 +7,7 @@ import SlimWrapper from './SlimWrapper';
 import Loading from './Loading';
 import { formatUSD } from '../utils/formatUSD';
 
-const ProductComponent = ({ product, cart }) => {
+const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -69,7 +69,7 @@ const ProductComponent = ({ product, cart }) => {
               <h2>{product.name}</h2>
               <p>{product.description}</p>
               <p>{product ? `$${formatUSD(product.price)}` : null}</p>
-              <QtyControl product={product} cart={cart} />
+              <QtyControl product={product} cart={cart} handleUpdatedCartInState={handleUpdatedCartInState} />
             </div>
           </Modal>
         </>

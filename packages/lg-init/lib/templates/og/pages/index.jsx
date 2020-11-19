@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import PageWrapper from '../components/PageWrapper';
 import ProductRowComponet from '../prebuilts/ProductRowComponent';
 
-const HomePage = ({ data, cart }) => {
+const HomePage = ({ data, cart, handleUpdatedCartInState }) => {
   return(
     <PageWrapper data={data} cart={cart}>
       <ProductRowComponet
         heading={data.products.heading}
         products={data.products.products}
         cart={cart}
+        handleUpdatedCartInState={handleUpdatedCartInState}
       />
     </PageWrapper>
   )

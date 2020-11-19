@@ -35,7 +35,7 @@ CartIcon.propTypes ={
   handleShow: PropTypes.func.isRequired,
 };
 
-const CartModal = ({ cart, handleClose }) => (
+const CartModal = ({ cart, handleClose, handleEmptyCartNotice }) => (
   <div className="d-flex flex-column align-items-center">
     <div>
       <div className="d-flex flex-column">
@@ -53,7 +53,10 @@ const CartModal = ({ cart, handleClose }) => (
           Go Back
         </button>
       </div>
-      <CheckoutPreview cart={cart} />
+      <CheckoutPreview 
+        cart={cart} 
+        handleEmptyCartNotice={handleEmptyCartNotice}
+      />
       <CheckoutForm
         cart={cart}
         price={calc(cart)}
@@ -89,6 +92,8 @@ const CartComponent = ({ cart }) => {
     cart ? setCartToEmpty(false) : setCartToEmpty(true);
   }, [cart]);
 
+  const handleEmptyCartNotice = () => setCartToEmpty(true);
+
   return (
     <>
       <CartIcon handleShow={handleShow} />
@@ -96,7 +101,7 @@ const CartComponent = ({ cart }) => {
       <Modal show={show} onHide={handleClose}>
         {isCartEmpty ? 
           <h2 className="m-4">Nothing in cart</h2>
-         : <CartModal cart={cart} handleClose={handleClose} />
+         : <CartModal cart={cart} handleClose={handleClose} handleEmptyCartNotice={handleEmptyCartNotice} />
         }
       </Modal>
     </>

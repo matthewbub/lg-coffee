@@ -4,14 +4,14 @@ import Container from 'react-bootstrap/Container';
 import SlimWrapper from '../components/SlimWrapper';
 import ProductComponent from '../components/ProductComponent';
 
-const ProductRowComponet = ({ heading, products, cart }) => (
+const ProductRowComponet = ({ heading, products, cart, handleUpdatedCartInState }) => (
   <Container>
     <SlimWrapper>
       <h2 className="my-5">{heading}</h2>
     </SlimWrapper>
 
     {products.map((i) => (
-      <ProductComponent key={i.sku} cart={cart} product={i} />
+      <ProductComponent key={i.sku} cart={cart} product={i} handleUpdatedCartInState={handleUpdatedCartInState} />
     ))}
   </Container>
 );
