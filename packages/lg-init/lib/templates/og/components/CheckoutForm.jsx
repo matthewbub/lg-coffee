@@ -12,7 +12,6 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [checkoutError, setCheckoutError] = useState();
-  // eslint-disable-next-line no-unused-vars
   const [total, setTotal] = useState();
   const [USD, setUSD] = useState();
 
@@ -112,8 +111,11 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 CheckoutForm.propTypes = {
   price: PropTypes.number.isRequired,
   onSuccessfulCheckout: PropTypes.func.isRequired,
-  // eslint-disable-next-line react/require-default-props
   cart: PropTypes.shape({}),
 };
+
+CheckoutForm.defaultProps = {
+  cart : {}
+}
 
 export default CheckoutForm;

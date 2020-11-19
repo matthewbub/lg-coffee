@@ -1,0 +1,53 @@
+# Components
+
+Components built specifically for lg-coffee. 
+
+Preferred method for text is using the [preffered text helpers](/text). 
+However this app is already intergrated with MDX should that be your desired 
+route _(themes currently are not supported for mdx)_.
+
+## PrimaryModal
+
+A modal component that accepts ` title | children | className | theme `.
+
+- _note: className prop only applies to inital pill component_
+
+prop | type | isRequired 
+---  | ---  | ---
+title | string | yes
+children | node | yes
+className | string | no
+theme | object | no
+
+##### Example 
+
+```
+import { PrimaryModal} from './Components/_helpers'
+
+const Example = () => (
+  <PrimaryModal title='Click Me!'>
+    <h1>Hello from inside this pop up!</h1>
+  </PrimaryModal>
+)
+```
+
+## Wrap 
+
+Automataically wrap content during resize.
+
+prop | type | isRequired 
+---  | ---  | ---
+children | node | yes
+className | string | no
+
+##### Example 
+
+```
+import { Wrap } from './Components/_helpers'
+
+const Example = () => (
+  <Wrap>
+    <button>Option 1</button>
+    <button>Option 2</button>
+  </Wrap>
+)

@@ -5,36 +5,22 @@ import Footer from './Footer';
 
 const PageWrapper = ({ children, data, cart }) => (
   <div className="content">
-    <Navigation data={data} cart={cart} theme={data.theme} />
+    <Navigation data={data} cart={cart} />
     <main>{children}</main>
-    <Footer
-      data={data}
-      contact={data.contact}
-      theme={data.theme}
-      store={data.store}
-    />
+    <Footer data={data} />
   </div>
 );
 
 PageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
-  cart: PropTypes.shape({}).isRequired,
+  cart: PropTypes.shape({}),
   data: PropTypes.shape({
     store: PropTypes.shape({}).isRequired,
-    navigation: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
-    contact: PropTypes.string.isRequired,
-    theme: PropTypes.shape({}).isRequired,
   }).isRequired,
 };
 
-export async function getStaticProps() {
-  const res = await fetch('/data');
-  const json = await res.json();
-  return {
-    props: {
-      res: json.data,
-    },
-  };
+PageWrapper.defaultProps = {
+  cart : {}
 }
 
 export default PageWrapper;

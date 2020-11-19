@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import ContactFrom from './ContactForm';
 
-const Contact = ({ store }) => {
+const Contact = ({ store, theme }) => {
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -47,7 +47,7 @@ const Contact = ({ store }) => {
   return (
     <>
       <Form onSubmit={handleFormSubmit}>
-        <ContactFrom />
+        <ContactFrom theme={theme}/>
         <button
           type="submit"
           className="btn btn-outline-dark mb-5 mt-2 mx-4"
@@ -77,6 +77,7 @@ Contact.propTypes = {
   store: PropTypes.shape({
     contact: PropTypes.string,
   }),
+  theme: PropTypes.shape({}).isRequired,
 };
 
 export default Contact;

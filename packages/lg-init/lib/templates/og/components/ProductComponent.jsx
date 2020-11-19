@@ -1,7 +1,3 @@
-/* eslint-disable no-else-return */
-/* eslint-disable react/require-default-props */
-/* eslint-disable jsx-a11y/interactive-supports-focus */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/Modal';
@@ -29,33 +25,30 @@ const ProductComponent = ({ product, cart }) => {
       {loading ? (
         <Loading data={product} />
       ) : (
-        <>
-          <div role="button" onClick={handleShow}>
-            {/* initial view */}
-            <SlimWrapper className="mb-2 align-items-center justify-content-center">
-              <div
-                style={{ background: '#FFFFFF', borderRadius: '6px' }}
-                className="border"
-              >
-                <div
-                  style={{ cursor: 'pointer' }}
-                  className="d-flex align-items-end justify-content-between pr-3"
-                >
-                  <img
-                    src={product.images[1]}
-                    alt={product.name}
-                    className="product_img_prc"
-                  />
-                  <div className="d-flex w-100 flex-column align-items-end justify-content-center text-right">
-                    <h5 className="mt-3 mb-2 ellipse">{product.name}</h5>
-                    <span className="text-muted mb-3">
-                      ${formatUSD(product.price)} USD
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </SlimWrapper>
-          </div>
+        <>     
+          <SlimWrapper className="mb-2 align-items-center justify-content-center">
+            <button 
+              className="btn btn-outline-dark d-flex w-100"
+              type="button" 
+              onClick={handleShow}
+              style={{
+                borderRadius: '6px',
+                cursor: 'pointer'
+              }}>
+              <img
+                src={product.images[1]}
+                alt={product.name}
+                className="product_img_prc"
+              />
+              <div className="d-flex w-100 flex-column align-items-end justify-content-center text-right">
+                <h5 className="mt-3 mb-2 ellipse">{product.name}</h5>
+                <span className="text-muted mb-3">
+                  ${formatUSD(product.price)} USD
+                </span>                  
+              </div>              
+            </button>
+          </SlimWrapper>
+          
 
           <Modal show={show} onHide={handleClose}>
             <button
@@ -86,14 +79,17 @@ const ProductComponent = ({ product, cart }) => {
 };
 
 ProductComponent.propTypes = {
-  // eslint-disable-next-line react/require-default-props
   cart: PropTypes.shape({}),
   product: PropTypes.shape({
-    name: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.number,
-    images: PropTypes.arrayOf(PropTypes.string),
-  }),
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
 };
+
+ProductComponent.defaultProps = {
+  cart : {}
+}
 
 export default ProductComponent;

@@ -111,4 +111,13 @@ CheckoutPreview.propTypes = {
   }),
 };
 
+CheckoutPreview.defaultProps = {
+  cart : {
+    images: '',
+    name: '',
+    price: '',
+    qty: '',
+  }
+}
+
 export default CheckoutPreview;

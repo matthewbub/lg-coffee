@@ -53,7 +53,7 @@ const ContactForm = ({ theme }) => (
 
 ContactForm.propTypes = {
   // eslint-disable-next-line react/require-default-props
-  theme: PropTypes.shape({}),
+  theme: PropTypes.shape({}).isRequired,
 };
 
 export default ContactForm;
