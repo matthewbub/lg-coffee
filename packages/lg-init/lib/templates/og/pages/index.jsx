@@ -10,6 +10,17 @@ const HomePage = ({ data, cart, handleUpdatedCartInState }) => {
       cart={cart}  
       handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)}
     >
+      { 
+      !data.store.hero ? null :
+        <div 
+          className="hero_"
+          style={{
+            backgroundImage: `url(${data.store.hero})`,
+            backgroundPosition: 'bottom',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',          
+          }}/>
+      }
       <ProductRowComponet
         heading={data.products.heading}
         products={data.products.products}
@@ -26,13 +37,21 @@ HomePage.propTypes = {
       heading: PropTypes.string.isRequired,
       products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
     }).isRequired,
-  }).isRequired,
+    store: PropTypes.shape({
+      hero: PropTypes.string,
+    }),
+  }),
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
 HomePage.defaultProps = {
-  cart : {}
+  cart : {},
+  data: {
+    store: {
+      hero: null
+    }
+  }
 }
 
 export default HomePage;

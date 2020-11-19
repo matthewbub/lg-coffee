@@ -28,7 +28,9 @@ const ProductPreview = ({ product }) => {
             alt="view product"
           />
           <div className="img_previews">
-            {product.images.map((i) => (
+            {
+            !product.images.length <= 1 ? null :
+            product.images.map((i) => (
               <button
                 type="button"
                 key={i}

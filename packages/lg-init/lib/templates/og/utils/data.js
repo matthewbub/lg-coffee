@@ -1,16 +1,17 @@
 exports.data = {
   store: {
-    name: 'VisionSpeaks',
-    logo: '/logo_POP.png',
-    url: '',
-    description: 'Custom sticker shop',
-    about: 'This is a custom sticker shop right here!',
+    name: 'Dog-Gone Goods', 
+    logo: '/logo.svg', 
+    hero: '/hero.svg',
+    url: '', 
+    description: 'A dog treat shop',
+    about: 'Everyone loves a happy dog!',
     contact: 'youremail@here.com',
     info: {
       faq: [
         {
-          q: 'Do you make custom products?',
-          a: 'Yes',
+          q: 'Are these treats tasty?',
+          a: 'Yes you bet they are!',
         },
         {
           q: 'How long will it take to recieve my purchase?',
@@ -35,31 +36,43 @@ exports.data = {
     secondaryBackground: { backgroundColor: '#FFFFFF' },
   },
   products: {
-    heading: 'New Arrivials',
+    heading: 'Tasty Treats',
     products: [
       {
-        name: 'Bunns In The Void',
-        description: 'Holographic Sticker, This thing is bad ass',
-        price: 287,
-        sku: 'bun_vs_',
+        name: 'Strawberry Bone',
+        description: 'Super colorful, your dog will love this!',
+        price: 197, 
+        sku: 'srw_bn_',
         images: [
-          '/bunns_in_the_void_TRANSP.png',
-          '/bunns_001.png',
-          '/bunns_002.png',
-        ],
-        type: 'sticker',        
+          '/pink.png',
+        ]        
       },
       {
-        name: 'Lady In The Void',
-        description: 'Holographic Sticker, This thing is bad ass',
-        price: 287,
-        sku: 'lad_vs_',
+        name: 'Chocolate Bone',
+        description: 'Super chocolately, your dog will love this!',
+        price: 197, 
+        sku: 'chc_bn_',
         images: [
-          '/lady_in_the_void_TRANSP.png',
-          '/lady_001.png',
-          '/lady_002.png',
-        ],
-        type: 'sticker',       
+          '/dark.png',
+        ]        
+      },
+      {
+        name: 'Lemon Bone',
+        description: 'Super lemony, your dog will love this!',
+        price: 197, 
+        sku: 'lnm_bn_',
+        images: [
+          '/yellow.png',
+        ]        
+      },
+      {
+        name: 'Orange Bone',
+        description: 'Super colorful, your dog will love this!',
+        price: 197, 
+        sku: 'ong_bn_',
+        images: [
+          '/orange.png',
+        ]        
       },
     ],
   },
