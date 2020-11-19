@@ -44,6 +44,7 @@ const CartModal = ({
   <div className="d-flex flex-column align-items-center">
     <div style={{ maxWidth: '80%' }}>
       <div className="d-flex flex-column">
+       
         <button
           type="button"
           onClick={handleClose}
@@ -56,7 +57,9 @@ const CartModal = ({
         >
           Go Back
         </button>
+
       </div>
+      
       <CheckoutPreview
         cart={cart}
         handleEmptyCartNotice={handleEmptyCartNotice}
@@ -64,6 +67,7 @@ const CartModal = ({
           handleUpdatedCartInState(updatedCart)
         }
       />
+      
       <CheckoutForm
         cart={cart}
         price={calc(cart)}
@@ -72,6 +76,7 @@ const CartModal = ({
           Router.push('/checkout/order-confirmation');
         }}
       />
+      
     </div>
   </div>
 );

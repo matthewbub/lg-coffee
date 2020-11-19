@@ -39,6 +39,7 @@ const CheckoutPreview = ({
 
       {Object.keys(cart).map((i) => (
         <Row key={cart[i].sku} className="d-flex align-items-center rounded">
+          
           <Col xs={2}>
             <img
               src={cart[i].images[0]}
@@ -46,12 +47,15 @@ const CheckoutPreview = ({
               style={{ height: '75px', width: '75px' }}
             />
           </Col>
+          
           <Col xs={10} className="d-flex flex-column">
+            
             <Row className="align-self-end mr-2">
               <H4 style={{ width: '100%', margin: '0' }} className="ellipse">
                 {cart[i].name}
               </H4>
             </Row>
+          
             <Row className="align-self-end align-items-end mr-2">
               <p className="mt-2" style={{ margin: '0', padding: '0' }}>
                 ${formatUSD(cart[i].price)} USD
@@ -75,7 +79,9 @@ const CheckoutPreview = ({
                 X
               </button>
             </Row>
+
           </Col>
+
         </Row>
       ))}
     </Container>

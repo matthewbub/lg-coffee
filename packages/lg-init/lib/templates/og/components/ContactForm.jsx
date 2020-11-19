@@ -5,6 +5,7 @@ import { H2 } from './_helpers';
 
 const ContactForm = ({ theme }) => (
   <Form.Row>
+    
     <H2 className="mt-4" theme={theme}>
       Get In Touch
     </H2>
@@ -35,11 +36,11 @@ const ContactForm = ({ theme }) => (
       label="I am not a robot"
       required
     />
+
   </Form.Row>
 );
 
 ContactForm.propTypes = {
-  // eslint-disable-next-line react/require-default-props
   theme: PropTypes.shape({}).isRequired,
 };
 
