@@ -30,7 +30,7 @@ const Footer = ({ data }) => {
               
             </PrimaryModal>
             <PrimaryModal title="Contact" theme={theme}>
-              <Contact store={store} />
+              <Contact store={store} theme={theme} />
             </PrimaryModal>
           </Wrap>
         </SlimWrapper>
