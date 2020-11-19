@@ -19,12 +19,7 @@ exports.data = {
         {
           q: 'What is your policy on refunds?',
           a: 'At this time, we are unable to honor refunds.',
-        },
-        {
-          q:
-            "I never received my purchase or something isn't right with my order. What can I do?",
-          a: 'Reach out to support@visionspeaks.art.',
-        },
+        },     
       ],
     },
     social: {
@@ -52,8 +47,7 @@ exports.data = {
           '/bunns_001.png',
           '/bunns_002.png',
         ],
-        type: 'sticker',
-        qty: 40,
+        type: 'sticker',        
       },
       {
         name: 'Lady In The Void',
@@ -65,8 +59,7 @@ exports.data = {
           '/lady_001.png',
           '/lady_002.png',
         ],
-        type: 'sticker',
-        qty: 40,
+        type: 'sticker',       
       },
     ],
   },
