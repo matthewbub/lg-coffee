@@ -2,10 +2,10 @@
 
 exports[`CheckoutPreview component renders unchanged 1`] = `
 <div
-  className="container-fluid"
+  className="container"
 >
   <h2
-    className="text-light"
+    className="m-4"
   >
     No Products
   </h2>

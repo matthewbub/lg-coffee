@@ -17,12 +17,9 @@ exports[`PageWrapper renders unchanged 1`] = `
       className="navbar-nav"
       onKeyDown={[Function]}
     >
-      <a
-        className="nav-link"
-        data-rb-event-key="/checkout"
-        href="/checkout"
+      <div
         onClick={[Function]}
-        onKeyDown={[Function]}
+        variant="primary"
       >
         <img
           alt="Checkout"
@@ -30,11 +27,11 @@ exports[`PageWrapper renders unchanged 1`] = `
           style={
             Object {
               "cursor": "pointer",
-              "height": "15px",
+              "height": "20px",
             }
           }
         />
-      </a>
+      </div>
     </div>
   </nav>
   <main>
@@ -52,18 +49,39 @@ exports[`PageWrapper renders unchanged 1`] = `
         <div
           className="col-lg-8 col-md-9 col-sm-12"
         >
-          <h5
-            className="text-light m-2"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
+          <h2
+            className="text secondaryText primaryBackground secondaryBackground"
           >
-            Contact
-          </h5>
+            More Info
+          </h2>
+          <div
+            className="d-flex flex-wrap"
+          >
+            <button
+              className="btn btn-outline-dark mr-2 mt-2 lg_pill"
+              id="About"
+              onClick={[Function]}
+              type="button"
+            >
+              About
+            </button>
+            <button
+              className="btn btn-outline-dark mr-2 mt-2 lg_pill"
+              id="FAQ"
+              onClick={[Function]}
+              type="button"
+            >
+              FAQ
+            </button>
+            <button
+              className="btn btn-outline-dark mr-2 mt-2 lg_pill"
+              id="Contact"
+              onClick={[Function]}
+              type="button"
+            >
+              Contact
+            </button>
+          </div>
         </div>
       </div>
       <div
@@ -72,16 +90,12 @@ exports[`PageWrapper renders unchanged 1`] = `
         <div
           className="d-flex justify-content-center col"
         >
-          <span
-            className="text-light m-2"
-            style={
-              Object {
-                "fontSize": "12px",
-              }
-            }
+          <h6
+            className="m-5 text secondaryText primaryBackground secondaryBackground"
           >
+            Copyright 
             2020
-          </span>
+          </h6>
         </div>
       </div>
     </div>
