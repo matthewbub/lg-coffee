@@ -36,7 +36,7 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
                 cursor: 'pointer'
               }}>
               <img
-                src={product.images[1]}
+                src={product.images[0]}
                 alt={product.name}
                 className="product_img_prc"
               />

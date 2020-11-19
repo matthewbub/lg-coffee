@@ -36,16 +36,16 @@ const CheckoutPreview = ({ cart, handleEmptyCartNotice, handleUpdatedCartInState
       {Object.keys(cart).map((i) => (
         <Row
           key={cart[i].sku}
-          className="d-flex align-items-center rounded px-5"
+          className="d-flex align-items-center rounded px-3"
         >
-          <Col xs={4}>
+          <Col xs={2}>
             <img
               src={cart[i].images[0]}
               alt={cart[i].name}
-              style={{ height: '100px', width: '100px' }}
+              style={{ height: '75px', width: '75px' }}
             />
           </Col>
-          <Col xs={8} className="d-flex flex-column">
+          <Col xs={10} className="d-flex flex-column">
             <Row className="align-self-end mr-2">
               <H4
                 style={{ width: '100%', margin: '0' }}

@@ -5,9 +5,9 @@ import Nav from 'react-bootstrap/Nav';
 import CartComponent from '../components/CartComponent';
 
 const Navigation = ({ cart, data, handleUpdatedCartInState }) => (
-  <Navbar
-    bg="light"
+  <Navbar    
     expand="lg"
+    style={{background: '#FFFFFF !important'}}
     sticky="top"
     className="justify-content-between"
   >
