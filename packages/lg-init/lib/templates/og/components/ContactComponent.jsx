@@ -47,7 +47,9 @@ const Contact = ({ store, theme }) => {
   return (
     <>
       <Form onSubmit={handleFormSubmit}>
+
         <ContactFrom theme={theme} />
+        
         <button
           type="submit"
           className="btn btn-outline-dark mb-5 mt-2"

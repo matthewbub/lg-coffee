@@ -3,7 +3,9 @@ import Form from 'react-bootstrap/Form';
 
 const BillingDetailsFields = () => (
   <Form.Row>
+    
     <h2 className="mt-5">Billing Information</h2>
+
     <Form.Control
       className="mt-3"
       type="text"
@@ -57,6 +59,7 @@ const BillingDetailsFields = () => (
       placeholder="94103"
       required
     />
+
   </Form.Row>
 );
 
