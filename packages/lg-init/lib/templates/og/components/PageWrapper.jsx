@@ -27,14 +27,4 @@ PageWrapper.propTypes = {
   }).isRequired,
 };
 
-export async function getStaticProps() {
-  const res = await fetch('/data');
-  const json = await res.json();
-  return {
-    props: {
-      res: json.data,
-    },
-  };
-}
-
 export default PageWrapper;

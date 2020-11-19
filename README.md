@@ -19,9 +19,7 @@
 > Large Commerce</br>
 > Simple Solutions
 
-Bootstrap an Ecommerce App for Physical Goods e.g. Standard ECommerce, Delivery Services
-
-## Prerequisites
+Bootstrap a production ready Ecommerce App.
 
 - [ ] [Stripe Account](https://stripe.com/docs/api)
 - [ ] [SendGrid Accout](https://app.sendgrid.com/)
@@ -38,24 +36,14 @@ $ npx lg-init myAwesomeStore
 
 ### Update your Environment Variables
 
+Rename your `example.env` to `.env.local`, replace the placeholders with your unique keys and restart your server.
+
 ```bash
 PUBLISHABLE_KEY=stripe_api_key
 SECRET_KEY=stripe_secret_key
 NEXT_PUBLIC_FACEBOOK_PIXEL_ID=facbook_pixel_id
 SENDGRID_API_KEY=sendgrid_api_key
 ```
-
-## Microservices 
-
-All services used offer a free teir that is more than enough to get things going.
-
-### Stripe
-
-Used to handle all commerce transactions. _cc input will not render without auth_ so be sure to update the environmental variables in your `.local.env` and restart your server.
-
-### SendGrid
-
-Service used to handle "Contact Us" transactions. Make sure you have your api key in your `.local.env`, and your email under the contact section of the [data object](/example-data.js). 
 
 ## Contributing 
 
@@ -66,6 +54,8 @@ This turned into a full blown app pretty quick, I would love to get some help. C
 This project uses <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> and is enforced using Airbnb's Styleguide. Most breaking changes will be caught in the pre-commit stage. However shit happens and mistakes slide. Those will either be caught in the <a href="https://github.com/hi-matbub/lg-coffee/actions">GitHub Workflow</a> Script or in the <a href="https://travis-ci.com/hi-matbub/lg-coffee">Travis Build</a>.
 
 ## Example Sites
+
+_note: checkout disabled in demo applications_
 
 - https://lg-coffee-og-example.vercel.app/
 
