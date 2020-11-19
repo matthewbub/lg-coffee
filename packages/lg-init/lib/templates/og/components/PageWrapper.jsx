@@ -21,7 +21,6 @@ PageWrapper.propTypes = {
   cart: PropTypes.shape({}).isRequired,
   data: PropTypes.shape({
     store: PropTypes.shape({}).isRequired,
-    navigation: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
     contact: PropTypes.string.isRequired,
     theme: PropTypes.shape({}).isRequired,
   }).isRequired,
