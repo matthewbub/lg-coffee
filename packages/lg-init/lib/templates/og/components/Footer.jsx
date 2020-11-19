@@ -14,8 +14,8 @@ const date = new Date();
 const year = date.getFullYear();
 
 const Footer = ({ data }) => {
-  const {theme, store} = data;
-  return(
+  const { theme, store } = data;
+  return (
     <footer>
       <Container className="my-5">
         <SlimWrapper>
@@ -25,9 +25,7 @@ const Footer = ({ data }) => {
               <AboutComponent theme={theme} store={store} />
             </PrimaryModal>
             <PrimaryModal title="FAQ" theme={theme}>
-              
               <FAQComonent store={store} theme={theme} />
-              
             </PrimaryModal>
             <PrimaryModal title="Contact" theme={theme}>
               <Contact store={store} theme={theme} />
@@ -44,7 +42,8 @@ const Footer = ({ data }) => {
         </Row>
       </Container>
     </footer>
-  )};
+  );
+};
 
 Footer.propTypes = {
   data: PropTypes.shape({

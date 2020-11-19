@@ -11,24 +11,23 @@ const OrderConfirmation = ({ data }) => {
   const [cart, setCart] = useState({});
 
   useEffect(() => {
-    const confirmation = localStorage.getItem('order-confirmation')
+    const confirmation = localStorage.getItem('order-confirmation');
     // eslint-disable-next-line no-unused-expressions
-    confirmation ? setCart(JSON.parse(confirmation)) : null
+    confirmation ? setCart(JSON.parse(confirmation)) : null;
   }, []);
 
   return (
     <PageWrapper data={data} cart={cart}>
       <div style={data.theme.primaryBackground} className="my-5">
         <SlimWrapper className="mb-2 align-items-center justify-content-center">
-          
           <H3 theme={data.theme}>Order Confirmation</H3>
-          
+
           <P theme={data.theme}>
             Thank you for shoppng with us. You should recive a receipt via email
             shortly. If you have any questions, feel free to{' '}
             <Link href="/#contact">Contact Us</Link>
           </P>
-          
+
           <H4 theme={data.theme}>Your Order:</H4>
 
           {Object.keys(cart).map((i) => (
@@ -51,7 +50,6 @@ const OrderConfirmation = ({ data }) => {
               </div>
             </div>
           ))}
-          
         </SlimWrapper>
       </div>
     </PageWrapper>
@@ -72,8 +70,8 @@ OrderConfirmation.defaultProps = {
   data: {
     theme: {
       primaryBackground: { backgroundColor: '#F8F9FA' },
-    }
-  }
-}
+    },
+  },
+};
 
 export default OrderConfirmation;

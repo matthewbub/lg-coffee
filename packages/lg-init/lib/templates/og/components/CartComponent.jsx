@@ -42,12 +42,12 @@ const CartModal = ({
   handleUpdatedCartInState,
 }) => (
   <div className="d-flex flex-column align-items-center">
-    <div>
+    <div style={{ maxWidth: '80%' }}>
       <div className="d-flex flex-column">
         <button
           type="button"
           onClick={handleClose}
-          className="align-self-end mt-4 mr-4 btn btn-outline-dark"
+          className="align-self-end mt-4 btn btn-outline-dark"
           style={{
             border: 'none',
             background: 'none',

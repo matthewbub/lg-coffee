@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Alert from './Alert';
 import { H5 } from './_helpers';
 
-const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {  
+const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
   const [alert, setAlert] = useState(null);
 
   const handleSubmit = (ev) => {
@@ -32,7 +32,7 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
     }
 
     localStorage.setItem('cart', updatedCart);
-    handleUpdatedCartInState(updatedCart)
+    handleUpdatedCartInState(updatedCart);
     setAlert({
       status: 'success',
       message:
@@ -43,7 +43,6 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
     setTimeout(() => {
       setAlert(null);
     }, 3000);
-  
   };
 
   return (
@@ -62,23 +61,23 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
 
       <div className="d-flex flex-column align-items-end mb-3">
         <Form className="d-flex align-items-center" onSubmit={handleSubmit}>
-          <H5 className="p-0 m-0">QTY:</H5>  
-          <Form.Control 
-            type="number" 
+          <H5 className="p-0 m-0">QTY:</H5>
+          <Form.Control
+            type="number"
             label="qty"
-            min="1" 
-            max="40" 
+            min="1"
+            max="40"
             name="qty"
             defaultValue="1"
             className="border-dark mx-3"
             style={{
-              width: 'fit-content'
+              width: 'fit-content',
             }}
-          /> 
+          />
           <button
             type="submit"
             className="btn btn-outline-dark qty_submit"
-            style={{width: '125px !important'}}
+            style={{ width: '125px !important' }}
           >
             Add To Cart
           </button>
@@ -97,9 +96,8 @@ QtyControl.propTypes = {
   handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
-
 QtyControl.defaultProps = {
   cart: {},
-}
+};
 
 export default QtyControl;

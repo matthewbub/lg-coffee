@@ -4,31 +4,35 @@ import PageWrapper from '../components/PageWrapper';
 import ProductRowComponet from '../prebuilts/ProductRowComponent';
 
 const HomePage = ({ data, cart, handleUpdatedCartInState }) => {
-  return(
-    <PageWrapper 
-      data={data} 
-      cart={cart}  
-      handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)}
+  return (
+    <PageWrapper
+      data={data}
+      cart={cart}
+      handleUpdatedCartInState={(updatedCart) =>
+        handleUpdatedCartInState(updatedCart)
+      }
     >
-      { 
-      !data.store.hero ? null :
-        <div 
+      {!data.store.hero ? null : (
+        <div
           className="hero_"
           style={{
             backgroundImage: `url(${data.store.hero})`,
             backgroundPosition: 'bottom',
             backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',          
-          }}/>
-      }
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+      )}
       <ProductRowComponet
         heading={data.products.heading}
         products={data.products.products}
         cart={cart}
-        handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)}
+        handleUpdatedCartInState={(updatedCart) =>
+          handleUpdatedCartInState(updatedCart)
+        }
       />
     </PageWrapper>
-  )
+  );
 };
 
 HomePage.propTypes = {
@@ -46,12 +50,12 @@ HomePage.propTypes = {
 };
 
 HomePage.defaultProps = {
-  cart : {},
+  cart: {},
   data: {
     store: {
-      hero: null
-    }
-  }
-}
+      hero: null,
+    },
+  },
+};
 
 export default HomePage;

@@ -50,7 +50,7 @@ const Contact = ({ store, theme }) => {
         <ContactFrom theme={theme} />
         <button
           type="submit"
-          className="btn btn-outline-dark mb-5 mt-2 mx-5"
+          className="btn btn-outline-dark mb-5 mt-2"
           disabled={status.submitting}
         >
           {
