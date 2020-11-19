@@ -21,7 +21,10 @@
 
 Bootstrap an Ecommerce App for Physical Goods e.g. Standard ECommerce, Delivery Services
 
-## What do I need to know before I attempt this?
+## Prerequisites
+
+- [ ] [Stripe Account](https://stripe.com/docs/api)
+- [ ] [SendGrid Accout](https://app.sendgrid.com/)
 
 This project was built with minimal maintaince/fees in mind. Being familiar with modern javascript would help, however is not required.
 
@@ -33,34 +36,21 @@ More info coming soon :construction:
 $ npx lg-init myAwesomeStore
 ```
 
+### Update your Environment Variables
+
+```bash
+PUBLISHABLE_KEY=stripe_api_key
+SECRET_KEY=stripe_secret_key
+NEXT_PUBLIC_FACEBOOK_PIXEL_ID=facbook_pixel_id
+SENDGRID_API_KEY=sendgrid_api_key
+```
+
 ## Contributing 
 
-### Workflow
+#### Workflow
 
 This project uses <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> and is enforced using Airbnb's Styleguide. Most breaking changes will be caught in the pre-commit stage. However shit happens and mistakes slide. Those will either be caught in the <a href="https://github.com/hi-matbub/lg-coffee/actions">GitHub Workflow</a> Script or in the <a href="https://travis-ci.com/hi-matbub/lg-coffee">Travis Build</a>.
 
-
-### Test
-
-Insure you've completed the Set up instructions above.
-
-``` bash
-# run test suite
-$ npm run test
-
-# watch tests
-$ npm run test:dev
-```
-
-### Environment Variables
-
-```bash
-PUBLIC_URL=https://yourdomainhere.com
-LOCAL_URL=http://localhost:3000
-# Update these with your Stripe credentials
-PUBLISHABLE_KEY=stripe_publishable_key
-SECRET_KEY=stripe_secret_key
-```
 
 ## Example Sites
 

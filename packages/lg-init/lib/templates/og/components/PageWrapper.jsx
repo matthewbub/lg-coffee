@@ -7,7 +7,12 @@ const PageWrapper = ({ children, data, cart }) => (
   <div className="content">
     <Navigation data={data} cart={cart} theme={data.theme} />
     <main>{children}</main>
-    <Footer data={data} contact={data.contact} theme={data.theme} store={data.store}/>
+    <Footer
+      data={data}
+      contact={data.contact}
+      theme={data.theme}
+      store={data.store}
+    />
   </div>
 );
 

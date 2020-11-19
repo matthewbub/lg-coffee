@@ -12,7 +12,7 @@ const HomePage = ({ data, cart }) => {
     if (!data && !cart) setLoading(true);
     else setLoading(false);
   }, [data, cart]);
-  
+
   return (
     <>
       {loading ? (
@@ -31,7 +31,7 @@ const HomePage = ({ data, cart }) => {
 };
 
 HomePage.propTypes = {
-  data: PropTypes.shape({    
+  data: PropTypes.shape({
     products: PropTypes.shape({
       heading: PropTypes.string,
       products: PropTypes.arrayOf(),
