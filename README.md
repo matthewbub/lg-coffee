@@ -1,5 +1,7 @@
 <img src="/public/lg-coffee-logo.png" alt="lg-coffee" />
 
+## :construction: Offical docs coming soon :construction: 
+
 <p align="center">  
   <a href= "https://github.com/prettier/prettier">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" />
@@ -28,7 +30,7 @@ This project was built with minimal maintaince/fees in mind.
 
 ## Set up
 
-Bootstrap a new project.
+Bootstrap a new project, setup your environmental variables and store's information via the data.js file and publish your site!
 
 ```bash
 $ npx lg-init myAwesomeStore
