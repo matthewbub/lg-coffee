@@ -18,9 +18,6 @@ const ContactForm = ({ theme }) => (
           name="email"
           placeholder="jane.doe@example.com"
           required
-          style={{
-            border: '0',
-          }}
         />
 
         <Form.Control
@@ -32,9 +29,6 @@ const ContactForm = ({ theme }) => (
           name="message"
           placeholder="Inquiring about my recent purchase..."
           required
-          style={{
-            border: '0',
-          }}
         />
 
         <Form.Check
@@ -42,9 +36,6 @@ const ContactForm = ({ theme }) => (
           type="checkbox"
           label="I am not a robot"
           required
-          style={{
-            border: '0',
-          }}
         />
       </Form.Row>
     </div>

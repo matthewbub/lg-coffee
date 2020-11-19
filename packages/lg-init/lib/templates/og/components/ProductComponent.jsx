@@ -25,16 +25,17 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
       {loading ? (
         <Loading data={product} />
       ) : (
-        <>     
+        <>
           <SlimWrapper className="mb-2 align-items-center justify-content-center">
-            <button 
-              className="btn btn-outline-dark d-flex w-100"
-              type="button" 
+            <button
+              className="btn btn-outline-dark  d-flex w-100"
+              type="button"
               onClick={handleShow}
               style={{
                 borderRadius: '6px',
-                cursor: 'pointer'
-              }}>
+                cursor: 'pointer',
+              }}
+            >
               <img
                 src={product.images[0]}
                 alt={product.name}
@@ -44,11 +45,10 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
                 <h5 className="mt-3 mb-2 ellipse">{product.name}</h5>
                 <span className="text-muted mb-3">
                   ${formatUSD(product.price)} USD
-                </span>                  
-              </div>              
+                </span>
+              </div>
             </button>
           </SlimWrapper>
-          
 
           <Modal show={show} onHide={handleClose}>
             <button
@@ -59,7 +59,6 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
                 border: 'none',
                 background: 'none',
                 fontSize: '16px',
-                fontFamily: 'Montserrat',
               }}
             >
               Go Back
@@ -69,10 +68,12 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
               <h2>{product.name}</h2>
               <p>{product.description}</p>
               <p>{product ? `$${formatUSD(product.price)}` : null}</p>
-              <QtyControl 
-                product={product} 
-                cart={cart} 
-                handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)} 
+              <QtyControl
+                product={product}
+                cart={cart}
+                handleUpdatedCartInState={(updatedCart) =>
+                  handleUpdatedCartInState(updatedCart)
+                }
               />
             </div>
           </Modal>
@@ -94,7 +95,7 @@ ProductComponent.propTypes = {
 };
 
 ProductComponent.defaultProps = {
-  cart : {}
-}
+  cart: {},
+};
 
 export default ProductComponent;

@@ -85,7 +85,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
     },
   };
   return (
-    <Form onSubmit={handleFormSubmit}>
+    <Form onSubmit={handleFormSubmit} className="d-flex flex-column mb-4">
       <BillingDetailsFields />
       <div
         className="px-5 py-2"
@@ -102,7 +102,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
       <SubmitButton
         disabled={isProcessing}
         title={isProcessing ? 'Processing...' : `Pay $${USD} USD`}
-        className="my-4 mx-5 btn-outline-dark"
+        className="my-4 mx-5 btn-outline-dark align-self-end"
       />
     </Form>
   );
@@ -115,7 +115,7 @@ CheckoutForm.propTypes = {
 };
 
 CheckoutForm.defaultProps = {
-  cart : {}
-}
+  cart: {},
+};
 
 export default CheckoutForm;
