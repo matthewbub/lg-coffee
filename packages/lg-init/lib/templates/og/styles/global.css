@@ -48,18 +48,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media screen and (max-width: 992px) {
-  .hero_ {
-    height: 350px;
-  }
+  
 
   .product_img_prc {
     height: 100px;
     width: 100px;     
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .hero_ {
-    height: 350px;
   }
 }

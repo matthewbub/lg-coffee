@@ -1,8 +1,8 @@
 exports.data = {
   store: {
     name: 'Dog-Gone Goods', 
-    logo: '/logo.png', 
-    hero: '/hero.png',
+    logo: '/logo.svg', 
+    hero: '/hero.svg',
     url: '', 
     description: 'A dog treat shop',
     about: 'Everyone loves a happy dog!',
