@@ -7,12 +7,12 @@ import CheckoutForm from './CheckoutForm';
 import CheckoutPreview from './CheckoutPreview';
 
 const handleSuccessfulCheckout = (cart) => {
-  localStorage.removeItem('cart')
-  localStorage.setItem('order-confirmation', JSON.stringify(cart))
-}
+  localStorage.removeItem('cart');
+  localStorage.setItem('order-confirmation', JSON.stringify(cart));
+};
 
-const CartIcon = ({handleShow}) => (
-  <button     
+const CartIcon = ({ handleShow }) => (
+  <button
     type="button"
     onClick={handleShow}
     style={{
@@ -20,7 +20,7 @@ const CartIcon = ({handleShow}) => (
       border: '0',
     }}
   >
-     <img
+    <img
       src="/cart.png"
       alt="Checkout"
       style={{
@@ -29,13 +29,18 @@ const CartIcon = ({handleShow}) => (
       }}
     />
   </button>
-)
+);
 
-CartIcon.propTypes ={
+CartIcon.propTypes = {
   handleShow: PropTypes.func.isRequired,
 };
 
-const CartModal = ({ cart, handleClose, handleEmptyCartNotice, handleUpdatedCartInState }) => (
+const CartModal = ({
+  cart,
+  handleClose,
+  handleEmptyCartNotice,
+  handleUpdatedCartInState,
+}) => (
   <div className="d-flex flex-column align-items-center">
     <div>
       <div className="d-flex flex-column">
@@ -47,31 +52,31 @@ const CartModal = ({ cart, handleClose, handleEmptyCartNotice, handleUpdatedCart
             border: 'none',
             background: 'none',
             fontSize: '16px',
-            fontFamily: 'Montserrat',
           }}
         >
           Go Back
         </button>
       </div>
-      <CheckoutPreview 
-        cart={cart} 
+      <CheckoutPreview
+        cart={cart}
         handleEmptyCartNotice={handleEmptyCartNotice}
-        handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)}
+        handleUpdatedCartInState={(updatedCart) =>
+          handleUpdatedCartInState(updatedCart)
+        }
       />
       <CheckoutForm
         cart={cart}
         price={calc(cart)}
         onSuccessfulCheckout={() => {
-            handleSuccessfulCheckout(cart)
-            Router.push('/checkout/order-confirmation')
-          }
-        }
+          handleSuccessfulCheckout(cart);
+          Router.push('/checkout/order-confirmation');
+        }}
       />
     </div>
   </div>
 );
 
-CartModal.propTypes ={
+CartModal.propTypes = {
   cart: PropTypes.shape({}),
   handleClose: PropTypes.func.isRequired,
   handleEmptyCartNotice: PropTypes.func.isRequired,
@@ -79,8 +84,8 @@ CartModal.propTypes ={
 };
 
 CartModal.defaultProps = {
-  cart : {}
-}
+  cart: {},
+};
 
 const CartComponent = ({ cart, handleUpdatedCartInState }) => {
   const [isCartEmpty, setCartToEmpty] = useState(true);
@@ -102,15 +107,18 @@ const CartComponent = ({ cart, handleUpdatedCartInState }) => {
       <CartIcon handleShow={handleShow} />
 
       <Modal show={show} onHide={handleClose}>
-        {isCartEmpty ? 
+        {isCartEmpty ? (
           <h2 className="m-4">Nothing in cart</h2>
-         : <CartModal 
-              cart={cart} 
-              handleClose={handleClose} 
-              handleEmptyCartNotice={handleEmptyCartNotice}  
-              handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)}
-            />
-        }
+        ) : (
+          <CartModal
+            cart={cart}
+            handleClose={handleClose}
+            handleEmptyCartNotice={handleEmptyCartNotice}
+            handleUpdatedCartInState={(updatedCart) =>
+              handleUpdatedCartInState(updatedCart)
+            }
+          />
+        )}
       </Modal>
     </>
   );
@@ -123,7 +131,7 @@ CartComponent.propTypes = {
 };
 
 CartComponent.defaultProps = {
-  cart : {}
-}
+  cart: {},
+};
 
 export default CartComponent;

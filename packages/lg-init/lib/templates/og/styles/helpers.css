@@ -2,7 +2,8 @@
   border-radius: 6px !important;
   width: 150px;
   height: 80px;
-  font-family: 'Montserrat', 'Roborto';
+  font-family: 'Open Sans', 'Roborto';
+  font-weight: 800;
   display: flex;
   justify-content: flex-end;
 }
