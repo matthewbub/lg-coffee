@@ -19,7 +19,7 @@ function App({ Component, pageProps }) {
 
   const [cart, setCart] = useState({});
 
-  const handleUpdatedCartInState = (updatedCart) => setCart(updatedCart)
+  const handleUpdatedCartInState = (updatedCart) => setCart(JSON.parse(updatedCart))
 
   useEffect(() => {
     const userCart = localStorage.getItem('cart');
@@ -55,7 +55,7 @@ function App({ Component, pageProps }) {
           description={data.description}
           url={data.url}
         />
-        <Component data={data} cart={cart} handleUpdatedCartInState={handleUpdatedCartInState} {...pageProps} />
+        <Component data={data} cart={cart} handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)} {...pageProps} />
       </FacebookPixelWrapper>
     </StripeWrapper>
   );

@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { formatUSD } from '../utils/formatUSD';
-import { H2, H3, H4 } from './_helpers';
+import { H3, H4 } from './_helpers';
 
-const CheckoutPreview = ({ cart, handleEmptyCartNotice }) => {
+const CheckoutPreview = ({ cart, handleEmptyCartNotice, handleUpdatedCartInState }) => {
   const [cartInStorage, setCartInStorage] = useState(cart);  
-  const [cartIsEmpty, setCartToEmpty] = useState();
-
-  useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    cartInStorage ? setCartToEmpty(false) : setCartToEmpty(true);
-  }, [cartInStorage]);
-
+ 
   const handleRemoveFromCart = (id) => {
     const updatedCart = cartInStorage;
 
@@ -24,10 +18,11 @@ const CheckoutPreview = ({ cart, handleEmptyCartNotice }) => {
 
     if (Object.keys(updatedCart).length === 0) {
       localStorage.removeItem('cart');
-      handleEmptyCartNotice();
-      return setCartToEmpty(true);
+      return handleEmptyCartNotice();      
     // eslint-disable-next-line no-else-return
     } else {
+      // func requires JSON
+      handleUpdatedCartInState(JSON.stringify(updatedCart))
       return localStorage.setItem('cart', JSON.stringify(cartInStorage))
     };
   };
@@ -99,6 +94,8 @@ CheckoutPreview.propTypes = {
     price: PropTypes.string,
     qty: PropTypes.string,
   }),
+  handleEmptyCartNotice: PropTypes.func.isRequired,
+  handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
 CheckoutPreview.defaultProps = {

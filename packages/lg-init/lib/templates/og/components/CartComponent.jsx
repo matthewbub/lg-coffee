@@ -35,7 +35,7 @@ CartIcon.propTypes ={
   handleShow: PropTypes.func.isRequired,
 };
 
-const CartModal = ({ cart, handleClose, handleEmptyCartNotice }) => (
+const CartModal = ({ cart, handleClose, handleEmptyCartNotice, handleUpdatedCartInState }) => (
   <div className="d-flex flex-column align-items-center">
     <div>
       <div className="d-flex flex-column">
@@ -56,6 +56,7 @@ const CartModal = ({ cart, handleClose, handleEmptyCartNotice }) => (
       <CheckoutPreview 
         cart={cart} 
         handleEmptyCartNotice={handleEmptyCartNotice}
+        handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)}
       />
       <CheckoutForm
         cart={cart}
@@ -73,13 +74,15 @@ const CartModal = ({ cart, handleClose, handleEmptyCartNotice }) => (
 CartModal.propTypes ={
   cart: PropTypes.shape({}),
   handleClose: PropTypes.func.isRequired,
+  handleEmptyCartNotice: PropTypes.func.isRequired,
+  handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
 CartModal.defaultProps = {
   cart : {}
 }
 
-const CartComponent = ({ cart }) => {
+const CartComponent = ({ cart, handleUpdatedCartInState }) => {
   const [isCartEmpty, setCartToEmpty] = useState(true);
 
   // modal funcs
@@ -101,7 +104,12 @@ const CartComponent = ({ cart }) => {
       <Modal show={show} onHide={handleClose}>
         {isCartEmpty ? 
           <h2 className="m-4">Nothing in cart</h2>
-         : <CartModal cart={cart} handleClose={handleClose} handleEmptyCartNotice={handleEmptyCartNotice} />
+         : <CartModal 
+              cart={cart} 
+              handleClose={handleClose} 
+              handleEmptyCartNotice={handleEmptyCartNotice}  
+              handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)}
+            />
         }
       </Modal>
     </>
@@ -111,6 +119,7 @@ const CartComponent = ({ cart }) => {
 CartComponent.propTypes = {
   cart: PropTypes.shape({}),
   data: PropTypes.shape({}).isRequired,
+  handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
 CartComponent.defaultProps = {

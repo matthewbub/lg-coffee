@@ -69,7 +69,11 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
               <h2>{product.name}</h2>
               <p>{product.description}</p>
               <p>{product ? `$${formatUSD(product.price)}` : null}</p>
-              <QtyControl product={product} cart={cart} handleUpdatedCartInState={handleUpdatedCartInState} />
+              <QtyControl 
+                product={product} 
+                cart={cart} 
+                handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)} 
+              />
             </div>
           </Modal>
         </>
@@ -86,6 +90,7 @@ ProductComponent.propTypes = {
     price: PropTypes.number.isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
+  handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
 ProductComponent.defaultProps = {

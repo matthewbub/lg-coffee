@@ -11,7 +11,7 @@ const ProductRowComponet = ({ heading, products, cart, handleUpdatedCartInState 
     </SlimWrapper>
 
     {products.map((i) => (
-      <ProductComponent key={i.sku} cart={cart} product={i} handleUpdatedCartInState={handleUpdatedCartInState} />
+      <ProductComponent key={i.sku} cart={cart} product={i} handleUpdatedCartInState={(updatedCart) => handleUpdatedCartInState(updatedCart)} />
     ))}
   </Container>
 );
@@ -23,6 +23,7 @@ ProductRowComponet.propTypes = {
     PropTypes.shape({}).isRequired,
   ).isRequired,
   cart: PropTypes.shape({}),
+  handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
 ProductRowComponet.defaultProps = {

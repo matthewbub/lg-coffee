@@ -5,21 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Alert from './Alert';
 import { H5 } from './_helpers';
 
-const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
-  const [count, setCount] = useState(1);
+const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {  
   const [alert, setAlert] = useState(null);
-
-  // const handleCount = (operator) => {
-  //   if (count === 0) return;
-  //   if (operator === '+') setCount(count + 1);
-  //   else if (operator === '-') setCount(count - 1);
-  //   else {
-  //     setAlert({
-  //       status: 'danger',
-  //       message: 'Unknown error occured. Try again later.',
-  //     });
-  //   }
-  // };
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -49,9 +36,9 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
     setAlert({
       status: 'success',
       message:
-        count === 1
-          ? `added ${count} product to your cart!`
-          : `added ${count} products to your cart!`,
+        ev.target.qty.value === 1
+          ? `added ${ev.target.qty.value} product to your cart!`
+          : `added ${ev.target.qty.value} products to your cart!`,
     });
     setTimeout(() => {
       setAlert(null);
@@ -106,8 +93,13 @@ QtyControl.propTypes = {
     sku: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
   }).isRequired,
-  // eslint-disable-next-line react/require-default-props
   cart: PropTypes.shape({}),
+  handleUpdatedCartInState: PropTypes.func.isRequired,
 };
+
+
+QtyControl.defaultProps = {
+  cart: {},
+}
 
 export default QtyControl;

@@ -14,7 +14,7 @@ const Navigation = ({ cart, data, handleUpdatedCartInState }) => (
     {
       <img
         src={data.store.logo}        
-        height="100"
+        height="75"
         className="d-inline-block align-top"
         alt="React Bootstrap logo"
       /> 
@@ -30,6 +30,7 @@ Navigation.propTypes = {
   data: PropTypes.shape({
     store: PropTypes.shape({
       name: PropTypes.string.isRequired,
+      logo: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
   cart: PropTypes.shape({}),  
