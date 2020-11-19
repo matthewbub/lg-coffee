@@ -10,37 +10,6 @@ exports[`ProductPreview component renders unchanged 1`] = `
   />
   <div
     className="img_previews"
-  >
-    <button
-      className="img_preview_button"
-      onClick={[Function]}
-      type="button"
-    >
-      <img
-        alt="alt product views"
-        src="/path_01.png"
-      />
-    </button>
-    <button
-      className="img_preview_button"
-      onClick={[Function]}
-      type="button"
-    >
-      <img
-        alt="alt product views"
-        src="/path_02.png"
-      />
-    </button>
-    <button
-      className="img_preview_button"
-      onClick={[Function]}
-      type="button"
-    >
-      <img
-        alt="alt product views"
-        src="/path_03.png"
-      />
-    </button>
-  </div>
+  />
 </section>
 `;

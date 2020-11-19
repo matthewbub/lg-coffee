@@ -11,18 +11,44 @@ exports[`Footer component renders unchanged 1`] = `
       <div
         className="col-lg-8 col-md-9 col-sm-12"
       >
-        <h5
-          className="text-light m-2"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+        <h2
+          className=""
           style={
             Object {
-              "cursor": "pointer",
+              "color": "#212529",
             }
           }
         >
-          Contact
-        </h5>
+          More Info
+        </h2>
+        <div
+          className="d-flex flex-wrap"
+        >
+          <button
+            className="btn btn-outline-dark mr-2 mt-2 lg_pill"
+            id="About"
+            onClick={[Function]}
+            type="button"
+          >
+            About
+          </button>
+          <button
+            className="btn btn-outline-dark mr-2 mt-2 lg_pill"
+            id="FAQ"
+            onClick={[Function]}
+            type="button"
+          >
+            FAQ
+          </button>
+          <button
+            className="btn btn-outline-dark mr-2 mt-2 lg_pill"
+            id="Contact"
+            onClick={[Function]}
+            type="button"
+          >
+            Contact
+          </button>
+        </div>
       </div>
     </div>
     <div
@@ -31,16 +57,17 @@ exports[`Footer component renders unchanged 1`] = `
       <div
         className="d-flex justify-content-center col"
       >
-        <span
-          className="text-light m-2"
+        <h6
+          className="m-5"
           style={
             Object {
-              "fontSize": "12px",
+              "color": "#212529",
             }
           }
         >
+          Copyright 
           2020
-        </span>
+        </h6>
       </div>
     </div>
   </div>

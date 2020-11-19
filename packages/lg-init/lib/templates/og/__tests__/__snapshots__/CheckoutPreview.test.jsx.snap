@@ -4,10 +4,98 @@ exports[`CheckoutPreview component renders unchanged 1`] = `
 <div
   className="container"
 >
-  <h2
-    className="m-4"
+  <div
+    className="d-flex align-items-center row"
   >
-    No Products
-  </h2>
+    <h3
+      className="ellipse pb-5"
+      style={
+        Object {
+          "color": "#212529",
+        }
+      }
+    >
+      In Cart
+    </h3>
+  </div>
+  <div
+    className="d-flex align-items-center rounded row"
+  >
+    <div
+      className="col-2"
+    >
+      <img
+        alt="Strawberry Bone"
+        src="/pink.png"
+        style={
+          Object {
+            "height": "75px",
+            "width": "75px",
+          }
+        }
+      />
+    </div>
+    <div
+      className="d-flex flex-column col-10"
+    >
+      <div
+        className="align-self-end mr-2 row"
+      >
+        <h4
+          className="ellipse"
+          style={
+            Object {
+              "color": "#212529",
+            }
+          }
+        >
+          Strawberry Bone
+        </h4>
+      </div>
+      <div
+        className="align-self-end align-items-end mr-2 row"
+      >
+        <p
+          className="mt-2"
+          style={
+            Object {
+              "margin": "0",
+              "padding": "0",
+            }
+          }
+        >
+          $
+          1.97
+           USD
+        </p>
+        <p
+          className="ml-4 mr-2"
+          style={
+            Object {
+              "margin": "0",
+              "padding": "0",
+            }
+          }
+        >
+          Qty: 
+        </p>
+        <button
+          className="btn btn-outline-danger font-weight-bolder ml-4"
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "none",
+              "border": "none",
+              "margin": "0",
+              "padding": "0",
+            }
+          }
+          type="button"
+        >
+          X
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 `;

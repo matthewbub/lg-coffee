@@ -4,37 +4,68 @@ exports[`index renders unchanged 1`] = `
 <div
   className="content"
 >
-  <nav
-    className="justify-content-between navbar navbar-expand-lg navbar-light bg-light sticky-top"
+  <div
+    className="d-flex justify-content-between w-100 fixed-top"
+    style={
+      Object {
+        "background": "#FFFFFF !important",
+      }
+    }
   >
-    <a
-      className="navbar-brand"
-      href="/"
+    <nav
+      className="justify-content-between fixed-top navbar navbar-expand-lg navbar-light fixed-top"
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF !important",
+        }
+      }
     >
-      VisionSpeaks
-    </a>
-    <div
-      className="navbar-nav"
-      onKeyDown={[Function]}
-    >
+      <img
+        alt="React Bootstrap logo"
+        className="d-inline-block align-top"
+        height="75"
+        src="/logo.svg"
+      />
       <div
-        onClick={[Function]}
-        variant="primary"
+        className="navbar-nav"
+        onKeyDown={[Function]}
       >
-        <img
-          alt="Checkout"
-          src="/cart.png"
+        <button
+          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
-              "height": "20px",
+              "background": "none",
+              "border": "0",
             }
           }
-        />
+          type="button"
+        >
+          <img
+            alt="Checkout"
+            src="/cart.png"
+            style={
+              Object {
+                "cursor": "pointer",
+                "height": "20px",
+              }
+            }
+          />
+        </button>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
   <main>
+    <div
+      className="hero_"
+      style={
+        Object {
+          "backgroundImage": "url(/hero.svg)",
+          "backgroundPosition": "bottom",
+          "backgroundRepeat": "no-repeat",
+          "backgroundSize": "cover",
+        }
+      }
+    />
     <div
       className="container"
     >
@@ -47,114 +78,172 @@ exports[`index renders unchanged 1`] = `
           <h2
             className="my-5"
           >
-            New Arrivials
+            Tasty Treats
           </h2>
         </div>
       </div>
       <div
-        onClick={[Function]}
-        role="button"
+        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
       >
         <div
-          className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
+          className="col-lg-8 col-md-9 col-sm-12"
         >
-          <div
-            className="col-lg-8 col-md-9 col-sm-12"
-          >
-            <div
-              className="border"
-              style={
-                Object {
-                  "background": "#FFFFFF",
-                  "borderRadius": "6px",
-                }
+          <button
+            className="btn btn-outline-dark  d-flex w-100"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderRadius": "6px",
+                "cursor": "pointer",
               }
+            }
+            type="button"
+          >
+            <img
+              alt="Strawberry Bone"
+              className="product_img_prc"
+              src="/pink.png"
+            />
+            <div
+              className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
             >
-              <div
-                className="d-flex align-items-end justify-content-between pr-3"
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
+              <h5
+                className="mt-3 mb-2 ellipse"
               >
-                <img
-                  alt="Bunns In The Void"
-                  className="product_img_prc"
-                  src="/bunns_001.png"
-                />
-                <div
-                  className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
-                >
-                  <h5
-                    className="mt-3 mb-2 ellipse"
-                  >
-                    Bunns In The Void
-                  </h5>
-                  <span
-                    className="text-muted mb-3"
-                  >
-                    $
-                    2.87
-                     USD
-                  </span>
-                </div>
-              </div>
+                Strawberry Bone
+              </h5>
+              <span
+                className="text-muted mb-3"
+              >
+                $
+                1.97
+                 USD
+              </span>
             </div>
-          </div>
+          </button>
         </div>
       </div>
       <div
-        onClick={[Function]}
-        role="button"
+        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
       >
         <div
-          className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
+          className="col-lg-8 col-md-9 col-sm-12"
         >
-          <div
-            className="col-lg-8 col-md-9 col-sm-12"
-          >
-            <div
-              className="border"
-              style={
-                Object {
-                  "background": "#FFFFFF",
-                  "borderRadius": "6px",
-                }
+          <button
+            className="btn btn-outline-dark  d-flex w-100"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderRadius": "6px",
+                "cursor": "pointer",
               }
+            }
+            type="button"
+          >
+            <img
+              alt="Chocolate Bone"
+              className="product_img_prc"
+              src="/dark.png"
+            />
+            <div
+              className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
             >
-              <div
-                className="d-flex align-items-end justify-content-between pr-3"
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
+              <h5
+                className="mt-3 mb-2 ellipse"
               >
-                <img
-                  alt="Lady In The Void"
-                  className="product_img_prc"
-                  src="/lady_001.png"
-                />
-                <div
-                  className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
-                >
-                  <h5
-                    className="mt-3 mb-2 ellipse"
-                  >
-                    Lady In The Void
-                  </h5>
-                  <span
-                    className="text-muted mb-3"
-                  >
-                    $
-                    2.87
-                     USD
-                  </span>
-                </div>
-              </div>
+                Chocolate Bone
+              </h5>
+              <span
+                className="text-muted mb-3"
+              >
+                $
+                1.97
+                 USD
+              </span>
             </div>
-          </div>
+          </button>
+        </div>
+      </div>
+      <div
+        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
+      >
+        <div
+          className="col-lg-8 col-md-9 col-sm-12"
+        >
+          <button
+            className="btn btn-outline-dark  d-flex w-100"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderRadius": "6px",
+                "cursor": "pointer",
+              }
+            }
+            type="button"
+          >
+            <img
+              alt="Lemon Bone"
+              className="product_img_prc"
+              src="/yellow.png"
+            />
+            <div
+              className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
+            >
+              <h5
+                className="mt-3 mb-2 ellipse"
+              >
+                Lemon Bone
+              </h5>
+              <span
+                className="text-muted mb-3"
+              >
+                $
+                1.97
+                 USD
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
+      >
+        <div
+          className="col-lg-8 col-md-9 col-sm-12"
+        >
+          <button
+            className="btn btn-outline-dark  d-flex w-100"
+            onClick={[Function]}
+            style={
+              Object {
+                "borderRadius": "6px",
+                "cursor": "pointer",
+              }
+            }
+            type="button"
+          >
+            <img
+              alt="Orange Bone"
+              className="product_img_prc"
+              src="/orange.png"
+            />
+            <div
+              className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
+            >
+              <h5
+                className="mt-3 mb-2 ellipse"
+              >
+                Orange Bone
+              </h5>
+              <span
+                className="text-muted mb-3"
+              >
+                $
+                1.97
+                 USD
+              </span>
+            </div>
+          </button>
         </div>
       </div>
     </div>
@@ -170,7 +259,12 @@ exports[`index renders unchanged 1`] = `
           className="col-lg-8 col-md-9 col-sm-12"
         >
           <h2
-            className="text secondaryText primaryBackground secondaryBackground"
+            className=""
+            style={
+              Object {
+                "color": "#212529",
+              }
+            }
           >
             More Info
           </h2>
@@ -211,7 +305,12 @@ exports[`index renders unchanged 1`] = `
           className="d-flex justify-content-center col"
         >
           <h6
-            className="m-5 text secondaryText primaryBackground secondaryBackground"
+            className="m-5"
+            style={
+              Object {
+                "color": "#212529",
+              }
+            }
           >
             Copyright 
             2020

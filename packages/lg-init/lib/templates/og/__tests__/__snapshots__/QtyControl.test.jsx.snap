@@ -18,51 +18,46 @@ exports[`QtyControl component renders unchanged 1`] = `
   <div
     className="d-flex flex-column align-items-end mb-3"
   >
-    <div
-      className="btn-group"
+    <form
+      className="d-flex align-items-center"
+      onSubmit={[Function]}
     >
+      <h5
+        className="p-0 m-0"
+        style={
+          Object {
+            "color": "#212529",
+          }
+        }
+      >
+        QTY:
+      </h5>
+      <input
+        className="border-dark mx-3 form-control"
+        defaultValue="1"
+        label="qty"
+        max="40"
+        min="1"
+        name="qty"
+        style={
+          Object {
+            "width": "fit-content",
+          }
+        }
+        type="number"
+      />
       <button
-        className="btn btn-outline-dark p-1 pr-3 pl-3"
-        onClick={[Function]}
+        className="btn btn-outline-dark qty_submit"
         style={
           Object {
-            "height": "fit-content",
+            "width": "125px !important",
           }
         }
-        type="button"
+        type="submit"
       >
-        -
+        Add To Cart
       </button>
-      <p
-        className="d-flex pr-3 pl-3"
-        style={
-          Object {
-            "height": "fit-content",
-          }
-        }
-      >
-        1
-      </p>
-      <button
-        className="btn btn-outline-dark p-1 pr-3 pl-3"
-        onClick={[Function]}
-        style={
-          Object {
-            "height": "fit-content",
-          }
-        }
-        type="button"
-      >
-        +
-      </button>
-    </div>
-    <button
-      className="btn btn-outline-dark qty_submit"
-      onClick={[Function]}
-      type="button"
-    >
-      Add To Cart
-    </button>
+    </form>
   </div>
 </div>
 `;

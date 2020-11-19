@@ -18,13 +18,27 @@ const product = {
   qty: 12,
 };
 
+const handleUpdatedCartInState = () => {};
+
 it('QtyControl component renders smoke test without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<QtyControl sku={sku} product={product} />, div);
+  ReactDOM.render(
+    <QtyControl 
+      sku={sku} 
+      product={product}             
+      handleUpdatedCartInState={handleUpdatedCartInState}    
+    />
+  , div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('QtyControl component renders unchanged', () => {
-  const tree = renderer.create(<QtyControl sku={sku} product={product} />).toJSON();
+  const tree = renderer.create(
+    <QtyControl 
+      sku={sku} 
+      product={product}             
+      handleUpdatedCartInState={handleUpdatedCartInState}    
+    />
+    ).toJSON();
   expect(tree).toMatchSnapshot();
 });

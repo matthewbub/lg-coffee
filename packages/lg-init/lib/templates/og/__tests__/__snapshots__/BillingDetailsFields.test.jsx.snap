@@ -2,102 +2,60 @@
 
 exports[`BillingDetailsFields component renders unchanged 1`] = `
 <div
-  className="d-flex flex-column align-items-center"
+  className="form-row"
 >
-  <div
-    style={
-      Object {
-        "maxWidth": "80%",
-      }
-    }
+  <h2
+    className="mt-5"
   >
-    <div
-      className="form-row"
-    >
-      <h2
-        className="mt-5"
-      >
-        Billing Information
-      </h2>
-      <input
-        className="mt-3 form-control"
-        label="name"
-        name="name"
-        placeholder="Jane Doe"
-        required={true}
-        style={
-          Object {
-            "border": "0",
-          }
-        }
-        type="text"
-      />
-      <input
-        className="mt-3 form-control"
-        label="email"
-        name="email"
-        placeholder="jane.doe@example.com"
-        required={true}
-        style={
-          Object {
-            "border": "0",
-          }
-        }
-        type="text"
-      />
-      <input
-        className="mt-3 form-control"
-        label="address"
-        name="address"
-        placeholder="185 Berry St. Suite 550"
-        required={true}
-        style={
-          Object {
-            "border": "0",
-          }
-        }
-        type="text"
-      />
-      <input
-        className="mt-3 form-control"
-        label="city"
-        name="city"
-        placeholder="San Francisco"
-        required={true}
-        style={
-          Object {
-            "border": "0",
-          }
-        }
-        type="text"
-      />
-      <input
-        className="mt-3 form-control"
-        label="state"
-        name="state"
-        placeholder="CA"
-        required={true}
-        style={
-          Object {
-            "border": "0",
-          }
-        }
-        type="text"
-      />
-      <input
-        className="my-3 form-control"
-        label="zip"
-        name="zip"
-        placeholder="94103"
-        required={true}
-        style={
-          Object {
-            "border": "0",
-          }
-        }
-        type="text"
-      />
-    </div>
-  </div>
+    Billing Information
+  </h2>
+  <input
+    className="mt-3 form-control"
+    label="name"
+    name="name"
+    placeholder="Jane Doe"
+    required={true}
+    type="text"
+  />
+  <input
+    className="mt-3 form-control"
+    label="email"
+    name="email"
+    placeholder="jane.doe@example.com"
+    required={true}
+    type="text"
+  />
+  <input
+    className="mt-3 form-control"
+    label="address"
+    name="address"
+    placeholder="185 Berry St. Suite 550"
+    required={true}
+    type="text"
+  />
+  <input
+    className="mt-3 form-control"
+    label="city"
+    name="city"
+    placeholder="San Francisco"
+    required={true}
+    type="text"
+  />
+  <input
+    className="mt-3 form-control"
+    label="state"
+    name="state"
+    placeholder="CA"
+    required={true}
+    type="text"
+  />
+  <input
+    className="my-3 form-control"
+    label="zip"
+    name="zip"
+    placeholder="94103"
+    required={true}
+    type="text"
+  />
 </div>
 `;

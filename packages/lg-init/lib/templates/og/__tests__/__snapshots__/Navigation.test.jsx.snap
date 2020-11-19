@@ -1,37 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StickyTopNavbar component renders unchanged 1`] = `
-<nav
-  className="justify-content-between navbar navbar-expand-lg navbar-light bg-light sticky-top"
+<div
+  className="d-flex justify-content-between w-100 fixed-top"
+  style={
+    Object {
+      "background": "#FFFFFF !important",
+    }
+  }
 >
-  <a
-    className="navbar-brand"
-    href="/"
+  <nav
+    className="justify-content-between fixed-top navbar navbar-expand-lg navbar-light fixed-top"
+    style={
+      Object {
+        "backgroundColor": "#FFFFFF !important",
+      }
+    }
   >
-    VisionSpeaks
-  </a>
-  <div
-    className="navbar-nav"
-    onKeyDown={[Function]}
-  >
-    <a
-      className="nav-link"
-      data-rb-event-key="/checkout"
-      href="/checkout"
-      onClick={[Function]}
+    <img
+      alt="React Bootstrap logo"
+      className="d-inline-block align-top"
+      height="75"
+      src="/logo.svg"
+    />
+    <div
+      className="navbar-nav"
       onKeyDown={[Function]}
     >
-      <img
-        alt="Checkout"
-        src="/cart.png"
+      <button
+        onClick={[Function]}
         style={
           Object {
-            "cursor": "pointer",
-            "height": "15px",
+            "background": "none",
+            "border": "0",
           }
         }
-      />
-    </a>
-  </div>
-</nav>
+        type="button"
+      >
+        <img
+          alt="Checkout"
+          src="/cart.png"
+          style={
+            Object {
+              "cursor": "pointer",
+              "height": "20px",
+            }
+          }
+        />
+      </button>
+    </div>
+  </nav>
+</div>
 `;

@@ -4,36 +4,56 @@ exports[`PageWrapper renders unchanged 1`] = `
 <div
   className="content"
 >
-  <nav
-    className="justify-content-between navbar navbar-expand-lg navbar-light bg-light sticky-top"
+  <div
+    className="d-flex justify-content-between w-100 fixed-top"
+    style={
+      Object {
+        "background": "#FFFFFF !important",
+      }
+    }
   >
-    <a
-      className="navbar-brand"
-      href="/"
+    <nav
+      className="justify-content-between fixed-top navbar navbar-expand-lg navbar-light fixed-top"
+      style={
+        Object {
+          "backgroundColor": "#FFFFFF !important",
+        }
+      }
     >
-      VisionSpeaks
-    </a>
-    <div
-      className="navbar-nav"
-      onKeyDown={[Function]}
-    >
+      <img
+        alt="React Bootstrap logo"
+        className="d-inline-block align-top"
+        height="75"
+        src="/logo.svg"
+      />
       <div
-        onClick={[Function]}
-        variant="primary"
+        className="navbar-nav"
+        onKeyDown={[Function]}
       >
-        <img
-          alt="Checkout"
-          src="/cart.png"
+        <button
+          onClick={[Function]}
           style={
             Object {
-              "cursor": "pointer",
-              "height": "20px",
+              "background": "none",
+              "border": "0",
             }
           }
-        />
+          type="button"
+        >
+          <img
+            alt="Checkout"
+            src="/cart.png"
+            style={
+              Object {
+                "cursor": "pointer",
+                "height": "20px",
+              }
+            }
+          />
+        </button>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
   <main>
     <p>
       Hello World
@@ -50,7 +70,12 @@ exports[`PageWrapper renders unchanged 1`] = `
           className="col-lg-8 col-md-9 col-sm-12"
         >
           <h2
-            className="text secondaryText primaryBackground secondaryBackground"
+            className=""
+            style={
+              Object {
+                "color": "#212529",
+              }
+            }
           >
             More Info
           </h2>
@@ -91,7 +116,12 @@ exports[`PageWrapper renders unchanged 1`] = `
           className="d-flex justify-content-center col"
         >
           <h6
-            className="m-5 text secondaryText primaryBackground secondaryBackground"
+            className="m-5"
+            style={
+              Object {
+                "color": "#212529",
+              }
+            }
           >
             Copyright 
             2020
