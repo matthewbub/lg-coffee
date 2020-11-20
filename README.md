@@ -21,12 +21,12 @@
 > Large Commerce</br>
 > Simple Solutions
 
-Bootstrap a production ready Ecommerce App.
+Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees in mind. 
+
+#### This project depends on
 
 - [ ] [Stripe Account](https://stripe.com/docs/api)
 - [ ] [SendGrid Accout](https://app.sendgrid.com/)
-
-This project was built with minimal maintaince/fees in mind. 
 
 ## Set up
 
