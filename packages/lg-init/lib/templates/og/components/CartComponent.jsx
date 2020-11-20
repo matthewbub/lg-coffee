@@ -11,7 +11,7 @@ const handleSuccessfulCheckout = (cart) => {
   localStorage.setItem('order-confirmation', JSON.stringify(cart));
 };
 
-const CartIcon = ({ handleShow }) => (
+const CartIcon = ({ handleShow, isCartEmpty }) => (
   <button
     type="button"
     onClick={handleShow}
@@ -20,6 +20,19 @@ const CartIcon = ({ handleShow }) => (
       border: '0',
     }}
   >
+    {isCartEmpty ? null : (
+      <div
+        className="bg-warning scale-in-center"
+        style={{
+          width: '15px',
+          height: '15px',
+          borderRadius: '50%',
+          position: 'absolute',
+          top: '28px',
+          right: '14px',
+        }}
+      />
+    )}
     <img
       src="/cart.png"
       alt="Checkout"
@@ -33,6 +46,7 @@ const CartIcon = ({ handleShow }) => (
 
 CartIcon.propTypes = {
   handleShow: PropTypes.func.isRequired,
+  isCartEmpty: PropTypes.bool.isRequired,
 };
 
 const CartModal = ({
@@ -44,7 +58,6 @@ const CartModal = ({
   <div className="d-flex flex-column align-items-center">
     <div style={{ maxWidth: '80%' }}>
       <div className="d-flex flex-column">
-       
         <button
           type="button"
           onClick={handleClose}
@@ -57,9 +70,8 @@ const CartModal = ({
         >
           Go Back
         </button>
-
       </div>
-      
+
       <CheckoutPreview
         cart={cart}
         handleEmptyCartNotice={handleEmptyCartNotice}
@@ -67,7 +79,7 @@ const CartModal = ({
           handleUpdatedCartInState(updatedCart)
         }
       />
-      
+
       <CheckoutForm
         cart={cart}
         price={calc(cart)}
@@ -76,7 +88,6 @@ const CartModal = ({
           Router.push('/checkout/order-confirmation');
         }}
       />
-      
     </div>
   </div>
 );
@@ -109,7 +120,7 @@ const CartComponent = ({ cart, handleUpdatedCartInState }) => {
 
   return (
     <>
-      <CartIcon handleShow={handleShow} />
+      <CartIcon handleShow={handleShow} isCartEmpty={isCartEmpty} />
 
       <Modal show={show} onHide={handleClose}>
         {isCartEmpty ? (

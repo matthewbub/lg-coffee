@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckoutError component renders unchanged 1`] = `
+<button
+  onClick={[Function]}
+  style={
+    Object {
+      "background": "none",
+      "border": "0",
+    }
+  }
+  type="button"
+>
+  <img
+    alt="Checkout"
+    src="/cart.png"
+    style={
+      Object {
+        "cursor": "pointer",
+        "height": "20px",
+      }
+    }
+  />
+</button>
+`;

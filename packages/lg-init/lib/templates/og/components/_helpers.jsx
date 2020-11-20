@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/Modal';
 
-
 const defaultTheme = {
   text: { color: '#212529' },
   secondaryText: { color: '#6C757D' },

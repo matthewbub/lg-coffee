@@ -87,9 +87,8 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
   return (
     <Form onSubmit={handleFormSubmit} className="d-flex flex-column mb-4">
-      
       <BillingDetailsFields />
-      
+
       <div
         className="py-2"
         style={{
@@ -107,7 +106,6 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
         title={isProcessing ? 'Processing...' : `Pay $${USD} USD`}
         className="my-4 btn-outline-dark align-self-end"
       />
-      
     </Form>
   );
 };

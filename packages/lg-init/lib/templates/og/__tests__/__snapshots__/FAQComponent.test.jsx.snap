@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAQComponent component renders unchanged 1`] = `
+<div
+  className="p-4"
+>
+  <div>
+    <h4
+      className=""
+      style={
+        Object {
+          "color": "#212529",
+        }
+      }
+    >
+      Are these treats tasty?
+    </h4>
+    <p
+      className=""
+      style={
+        Object {
+          "color": "#212529",
+        }
+      }
+    >
+      Yes you bet they are!
+    </p>
+  </div>
+  <div>
+    <h4
+      className=""
+      style={
+        Object {
+          "color": "#212529",
+        }
+      }
+    >
+      How long will it take to recieve my purchase?
+    </h4>
+    <p
+      className=""
+      style={
+        Object {
+          "color": "#212529",
+        }
+      }
+    >
+      Unless otherwise stated, All orders go out via Priority Mail.
+    </p>
+  </div>
+  <div>
+    <h4
+      className=""
+      style={
+        Object {
+          "color": "#212529",
+        }
+      }
+    >
+      What is your policy on refunds?
+    </h4>
+    <p
+      className=""
+      style={
+        Object {
+          "color": "#212529",
+        }
+      }
+    >
+      At this time, we are unable to honor refunds.
+    </p>
+  </div>
+</div>
+`;

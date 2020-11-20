@@ -48,9 +48,9 @@ h1, h2, h3, h4, h5, h6 {
   height: 500px;
 }
 
-@media screen and (max-width: 992px) {
-  
+.fixed-top { background: #fff }
 
+@media screen and (max-width: 992px) {
   .product_img_prc {
     height: 100px;
     width: 100px;     

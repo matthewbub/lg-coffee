@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/global.css';
 import '../styles/helpers.css';
 import '../styles/ProductPreview.css';
+import '../styles/animations.css';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 

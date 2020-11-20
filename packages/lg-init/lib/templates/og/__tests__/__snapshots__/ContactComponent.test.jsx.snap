@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact component renders unchanged 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-row"
+  >
+    <h2
+      className="mt-4"
+      style={
+        Object {
+          "color": "#212529",
+        }
+      }
+    >
+      Get In Touch
+    </h2>
+    <input
+      className="mt-3 form-control"
+      label="email"
+      name="email"
+      placeholder="jane.doe@example.com"
+      required={true}
+      type="text"
+    />
+    <textarea
+      className="my-3 form-control"
+      label="message"
+      name="message"
+      placeholder="Inquiring about my recent purchase..."
+      required={true}
+      rows={3}
+      type="text"
+    />
+    <div
+      className="my-3 form-check"
+    >
+      <input
+        className="form-check-input"
+        disabled={false}
+        required={true}
+        type="checkbox"
+      />
+      <label
+        className="form-check-label"
+        title=""
+      >
+        I am not a robot
+      </label>
+    </div>
+  </div>
+  <button
+    className="btn btn-outline-dark mb-5 mt-2"
+    disabled={false}
+    type="submit"
+  >
+    Send Message
+  </button>
+</form>
+`;
