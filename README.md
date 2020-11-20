@@ -49,7 +49,7 @@ SENDGRID_API_KEY=sendgrid_api_key
 
 ## Contributing 
 
-This turned into a full blown app pretty quick, I would love to get some help. Checkout out the [Contributing Guide](/CONTRIBUTING) to get involved.
+This turned into a full blown app pretty quick, I would love to get some help. Checkout out the [Contributing Guide](/CONTRIBUTING.md) to get involved.
 
 #### Workflow
 
