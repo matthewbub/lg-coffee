@@ -1,4 +1,4 @@
-# Example app with MDX
+# Docs coming soon
 
 This example shows using [MDX](https://github.com/mdx-js/mdx) as top level pages for your next.js app.
 
