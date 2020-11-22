@@ -26,6 +26,12 @@ exports[`PageWrapper renders unchanged 1`] = `
         height="75"
         src="/logo.svg"
       />
+      <a
+        className="navbar-brand"
+        href="/"
+      >
+        Dog-Gone Goods
+      </a>
       <div
         className="navbar-nav"
         onKeyDown={[Function]}
@@ -40,6 +46,19 @@ exports[`PageWrapper renders unchanged 1`] = `
           }
           type="button"
         >
+          <div
+            className="bg-warning scale-in-center"
+            style={
+              Object {
+                "borderRadius": "50%",
+                "height": "15px",
+                "position": "absolute",
+                "right": "14px",
+                "top": "28px",
+                "width": "15px",
+              }
+            }
+          />
           <img
             alt="Checkout"
             src="/cart.png"

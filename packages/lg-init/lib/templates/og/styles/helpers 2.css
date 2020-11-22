@@ -1,0 +1,9 @@
+.lg_pill {
+  border-radius: 6px !important;
+  width: 150px;
+  height: 80px;
+  font-family: 'Open Sans', 'Roborto';
+  font-weight: 800;
+  display: flex;
+  justify-content: flex-end;
+}

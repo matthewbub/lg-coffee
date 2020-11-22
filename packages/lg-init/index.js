@@ -7,6 +7,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const inquirer = require('inquirer');
 const emoji = require('node-emoji');
+const { help } = require('commander');
 const engine = require('./package.json').engines.node;
 
 const CWD = process.cwd();
@@ -15,9 +16,28 @@ program.version(engine);
 
 const buildDir = process.cwd();
 
+const handleHelpOptions = (async = () => {
+  return inquirer.prompt([
+    {
+      type: 'list',
+      name: 'Help',
+      message: 'What would you like to do?',
+      choices: ['Generate new project'],
+      validate: (help) => {
+        console.log('yoooo');
+        if (help === 'Generate new project') {
+          console.log('yoooo');
+          return true;
+        } else {
+          console.log('Please enter a project name');
+          return false;
+        }
+      },
+    },
+  ]);
+});
+
 const promptUserForProjectName = async () => {
-  console.log();
-  console.log('lg-coffe setup');
   console.log();
   return inquirer.prompt([
     {
@@ -71,6 +91,9 @@ const moveTemplateToUserCurrentWorkingDirectory = (name) => {
 
 const prepBuild = () => {
   if (!process.argv.slice(2)[0]) {
+    console.log();
+    console.log('lg-coffe setup');
+    console.log();
     // if no args
     return promptUserForProjectName().then((res) =>
       moveTemplateToUserCurrentWorkingDirectory(res.name)
@@ -89,6 +112,14 @@ const prepBuild = () => {
     console.log('e.g. npx lg-init myAwesomeStore');
     console.log(`Run ${chalk.yellow('npx lg-init --help')} for more options`);
     console.log();
+  } else if (process.argv.slice(2)[0] === '--help') {
+    console.log();
+    console.log('lg-coffee setup');
+    console.log();
+    handleHelpOptions().then((data) => {
+      if (data.Help === 'Generate new project') promptUserForProjectName();
+      // future conditionals
+    });
   } else if (process.argv.slice(2)[0]) {
     // if name provided
     console.log();
