@@ -1,7 +1,5 @@
 <img src="/public/lg-coffee-logo.png" alt="lg-coffee" />
 
-## :construction: Offical docs coming soon :construction: 
-
 <p align="center">  
   <a href= "https://github.com/prettier/prettier">
     <img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" />
@@ -17,6 +15,11 @@
 
 </p>
 
+<h2 align="center"> :construction: Offical docs coming soon :construction: </h2>
+
+<br>
+<br>
+<br>
 
 > Large Commerce</br>
 > Simple Solutions
@@ -30,7 +33,7 @@ Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees 
 
 ## Set up
 
-Bootstrap a new project, setup your environmental variables and store's information via the data.js file and publish your site!
+Bootstrap a new project, setup your environmental variables and store's information via the [data.js file](https://github.com/hi-matbub/lg-coffee/blob/main/packages/lg-init/lib/templates/og/utils/data.js) and publish your site!
 
 ```bash
 $ npx lg-init myAwesomeStore
@@ -49,7 +52,11 @@ SENDGRID_API_KEY=sendgrid_api_key
 
 ## Contributing 
 
-This turned into a full blown app pretty quick, I would love to get some help. Checkout out the [Contributing Guide](/CONTRIBUTING.md) to get involved.
+This turned into a full blown app pretty quick, I would love to get some help. Checkout out the [Contributing Guide](/CONTRIBUTING.md) to get involved and learn how to read this repo.
+
+## Issues
+
+Please submit any and all issues/ opinions/ thoughts or concerns [here](https://github.com/hi-matbub/lg-coffee/issues/new)
 
 #### Workflow
 
