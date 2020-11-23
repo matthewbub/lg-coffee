@@ -101,30 +101,104 @@ exports[`PageWrapper renders unchanged 1`] = `
           <div
             className="d-flex flex-wrap"
           >
-            <button
-              className="btn btn-outline-dark mr-2 mt-2 lg_pill"
-              id="About"
-              onClick={[Function]}
-              type="button"
+            <div
+              className="d-flex flex-column"
             >
-              About
-            </button>
-            <button
-              className="btn btn-outline-dark mr-2 mt-2 lg_pill"
-              id="FAQ"
-              onClick={[Function]}
-              type="button"
+              <button
+                className="btn btn-outline-dark mt-2 pl-1 text-left"
+                id="About"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "border": "0",
+                    "padding": "0",
+                    "width": "200px",
+                  }
+                }
+                type="button"
+              >
+                About
+              </button>
+              <button
+                className="btn btn-outline-dark mt-2 pl-1 text-left"
+                id="FAQ"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "border": "0",
+                    "padding": "0",
+                    "width": "200px",
+                  }
+                }
+                type="button"
+              >
+                FAQ
+              </button>
+              <button
+                className="btn btn-outline-dark mt-2 pl-1 text-left"
+                id="Contact"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "border": "0",
+                    "padding": "0",
+                    "width": "200px",
+                  }
+                }
+                type="button"
+              >
+                Contact
+              </button>
+            </div>
+            <div
+              className="d-flex flex-column"
             >
-              FAQ
-            </button>
-            <button
-              className="btn btn-outline-dark mr-2 mt-2 lg_pill"
-              id="Contact"
-              onClick={[Function]}
-              type="button"
-            >
-              Contact
-            </button>
+              <button
+                className="btn btn-outline-dark mt-2 pl-1 text-left"
+                id="Terms and Conditions"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "border": "0",
+                    "padding": "0",
+                    "width": "200px",
+                  }
+                }
+                type="button"
+              >
+                Terms and Conditions
+              </button>
+              <button
+                className="btn btn-outline-dark mt-2 pl-1 text-left"
+                id="Privacy Policy"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "border": "0",
+                    "padding": "0",
+                    "width": "200px",
+                  }
+                }
+                type="button"
+              >
+                Privacy Policy
+              </button>
+              <button
+                className="btn btn-outline-dark mt-2 pl-1 text-left"
+                id="Shipping and Returns"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "border": "0",
+                    "padding": "0",
+                    "width": "200px",
+                  }
+                }
+                type="button"
+              >
+                Shipping and Returns
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -134,8 +208,8 @@ exports[`PageWrapper renders unchanged 1`] = `
         <div
           className="d-flex justify-content-center col"
         >
-          <h6
-            className="m-5"
+          <p
+            className="m-5 text-center"
             style={
               Object {
                 "color": "#212529",
@@ -143,8 +217,10 @@ exports[`PageWrapper renders unchanged 1`] = `
             }
           >
             Copyright 
+            <br />
+             
             2020
-          </h6>
+          </p>
         </div>
       </div>
     </div>
