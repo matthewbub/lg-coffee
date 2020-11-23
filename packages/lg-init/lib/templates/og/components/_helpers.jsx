@@ -162,7 +162,8 @@ const Pill = ({ title, className, handleShow }) => (
     id={title}
     type="button"
     onClick={handleShow}
-    className={clsx('btn btn-outline-dark mr-2 mt-2 lg_pill', className)}
+    style={{ width: '200px', border: '0', padding: '0' }}
+    className={clsx('btn btn-outline-dark mt-2 pl-1 text-left', className)}
   >
     {title}
   </button>

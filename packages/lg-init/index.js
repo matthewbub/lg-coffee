@@ -7,7 +7,6 @@ const fs = require('fs-extra');
 const path = require('path');
 const inquirer = require('inquirer');
 const emoji = require('node-emoji');
-const { help } = require('commander');
 const engine = require('./package.json').engines.node;
 
 const CWD = process.cwd();
