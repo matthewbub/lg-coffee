@@ -31,6 +31,14 @@ Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees 
 - [ ] [Stripe Account](https://stripe.com/docs/api)
 - [ ] [SendGrid Accout](https://app.sendgrid.com/)
 
+
+## 🚨  BREAKING CHANGES COMING IN V1.1.1 🚨  e.t.a 11/25/2020
+
+**We will be removing the "products" section of the data obj in favor of Stripe's Product dashboard.** 
+
+If you are considering using this lg-coffee please "watch" this repo for updates. 
+
+
 ## Set up
 
 Bootstrap a new project, setup your environmental variables and store's information via the [data.js file](https://github.com/hi-matbub/lg-coffee/blob/main/packages/lg-init/lib/templates/og/utils/data.js) and publish your site!
