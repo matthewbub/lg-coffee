@@ -37,7 +37,7 @@ const CheckoutPreview = ({
       </Row>
 
       {Object.keys(cart).map((i) => (
-        <Row key={cart[i].sku} className="d-flex align-items-center rounded">
+        <Row key={cart[i].id} className="d-flex align-items-center rounded">
           <Col xs={2}>
             <img
               src={cart[i].images[0]}

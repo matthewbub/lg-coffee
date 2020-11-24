@@ -18,6 +18,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   useEffect(() => {
     setTotal(price);
     if (total > 0) {
+      console.log('checkoutform', total)
       setUSD(formatUSD(total));
     }
   }, [price, total]);

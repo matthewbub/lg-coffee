@@ -29,7 +29,7 @@ const OrderConfirmation = ({ data }) => {
           <h4>Your Order:</h4>
 
           {Object.keys(cart).map((i) => (
-            <div key={cart[i].sku}>
+            <div key={cart[i].id}>
               <div
                 style={{ cursor: 'pointer' }}
                 className="d-flex align-items-end justify-content-between pr-3"

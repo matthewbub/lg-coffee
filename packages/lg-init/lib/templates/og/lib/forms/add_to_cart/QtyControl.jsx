@@ -14,7 +14,7 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
     if (cart) {
       updatedCart = JSON.stringify({
         ...cart,
-        [product.sku]: {
+        [product.id]: {
           ...product,
           price: product.metadata.price,
           qty: ev.target.qty.value,
@@ -23,7 +23,7 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
     } else {
       // if cart empty, set cart
       updatedCart = JSON.stringify({
-        [product.sku]: {
+        [product.id]: {
           ...product,
           price: product.metadata.price,
           qty: ev.target.qty.value,
@@ -89,7 +89,7 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
 
 QtyControl.propTypes = {
   product: PropTypes.shape({
-    sku: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
     metadata: PropTypes.shape({
       price: PropTypes.number.isRequired,
     }).isRequired,

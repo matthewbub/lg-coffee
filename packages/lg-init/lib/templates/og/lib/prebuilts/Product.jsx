@@ -19,7 +19,7 @@ const Product = ({ product, cart, handleUpdatedCartInState }) => {
       setLoading(false);
     }
   }, [product, cart]);
-
+  console.log('product', product)
   return (
     <>
       {loading ? (
@@ -44,7 +44,7 @@ const Product = ({ product, cart, handleUpdatedCartInState }) => {
               <div className="d-flex w-100 flex-column align-items-end justify-content-center text-right">
                 <h5 className="mt-3 mb-2 ellipse">{product.name}</h5>
                 <span className="text-muted mb-3">
-                  ${formatUSD(product.price)} USD
+                  ${formatUSD(product.metadata.price)} USD
                 </span>
               </div>
             </button>
@@ -67,7 +67,7 @@ const Product = ({ product, cart, handleUpdatedCartInState }) => {
             <div className="p-4">
               <h2>{product.name}</h2>
               <p>{product.description}</p>
-              <p>{product ? `$${formatUSD(product.price)}` : null}</p>
+              <p>{product ? `$${formatUSD(product.metadata.price)}` : null}</p>
               <QtyControl
                 product={product}
                 cart={cart}
