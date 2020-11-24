@@ -15,20 +15,26 @@ import '../styles/animations.css';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function App({ Component, pageProps }) {
+  // grabs data
   const { data, error } = useSwr('/api/data', fetcher);
 
   const [cart, setCart] = useState({});
 
+  // handles cart on event
   const handleUpdatedCartInState = (updatedCart) =>
     setCart(JSON.parse(updatedCart));
 
+
   useEffect(() => {
+    // handles cart on page refresh
     const userCart = localStorage.getItem('cart');
     setCart(JSON.parse(userCart));
   }, []);
 
+  // page failed to load
   if (error) return <div>Something went wrong</div>;
 
+  // if data is pending return loading
   if (!data) {
     return (
       <StripeWrapper>
@@ -40,7 +46,7 @@ function App({ Component, pageProps }) {
   return (
     <StripeWrapper>
       <Head>
-        <title>{data.name}</title>
+        <title>{data.store.name}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -55,9 +61,9 @@ function App({ Component, pageProps }) {
       </Head>
       <FacebookPixelWrapper>
         <NextSEOWrapper
-          name={data.name}
-          description={data.description}
-          url={data.url}
+          name={data.store.name}
+          description={data.store.description}
+          url={data.store.url}
         />
         <Component
           data={data}

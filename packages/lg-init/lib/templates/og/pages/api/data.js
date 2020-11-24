@@ -1,5 +1,5 @@
 const stripe = require('stripe')(process.env.SECRET_KEY);
-const { store } = require('../../utils/store');
+const store = require('../../utils/store');
 
 export default async (req, res) => {
 
@@ -9,7 +9,7 @@ export default async (req, res) => {
     });
 
     const data = {
-      store,
+      store: store.store,
       products: products.data
     }
 

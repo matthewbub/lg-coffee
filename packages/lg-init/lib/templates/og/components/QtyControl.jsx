@@ -18,6 +18,7 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
         ...cart,
         [product.sku]: {
           ...product,
+          price: product.metadata.price,
           qty: ev.target.qty.value,
         },
       });
@@ -26,6 +27,7 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
       updatedCart = JSON.stringify({
         [product.sku]: {
           ...product,
+          price: product.metadata.price,
           qty: ev.target.qty.value,
         },
       });

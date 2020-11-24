@@ -6,11 +6,11 @@ import { data } from '../utils/data';
 
 it('Contact components renders smoke test without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Contact store={data.store} theme={data.theme} />, div);
+  ReactDOM.render(<Contact store={data.store}/>, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('Contact component renders unchanged', () => {
-  const tree = renderer.create(<Contact store={data.store} theme={data.theme} />).toJSON();
+  const tree = renderer.create(<Contact store={data.store}/>).toJSON();
   expect(tree).toMatchSnapshot();
 });

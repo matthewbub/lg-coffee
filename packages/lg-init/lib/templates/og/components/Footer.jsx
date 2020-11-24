@@ -17,32 +17,32 @@ const date = new Date();
 const year = date.getFullYear();
 
 const Footer = ({ data }) => {
-  const { theme, store } = data;
+  const { store } = data;
   return (
     <footer>
       <Container className="my-5">
         <SlimWrapper>
-          <H2 theme={theme}>More Info</H2>
+          <H2>More Info</H2>
           <Wrap>
             <div className="d-flex flex-column">
-              <PrimaryModal title="About" theme={theme}>
-                <AboutComponent theme={theme} store={store} />
+              <PrimaryModal title="About">
+                <AboutComponent store={store} />
               </PrimaryModal>
-              <PrimaryModal title="FAQ" theme={theme}>
-                <FAQComonent store={store} theme={theme} />
+              <PrimaryModal title="FAQ">
+                <FAQComonent store={store}/>
               </PrimaryModal>
-              <PrimaryModal title="Contact" theme={theme}>
-                <Contact store={store} theme={theme} />
+              <PrimaryModal title="Contact">
+                <Contact store={store} />
               </PrimaryModal>
             </div>
             <div className="d-flex flex-column">
-              <PrimaryModal title="Terms and Conditions" theme={theme}>
+              <PrimaryModal title="Terms and Conditions">
                 <TermsAndConditions />
               </PrimaryModal>
-              <PrimaryModal title="Privacy Policy" theme={theme}>
+              <PrimaryModal title="Privacy Policy">
                 <PrivacyPolicy />
               </PrimaryModal>
-              <PrimaryModal title="Shipping and Returns" theme={theme}>
+              <PrimaryModal title="Shipping and Returns">
                 <ShippingAndReturns />
               </PrimaryModal>
             </div>
@@ -51,7 +51,7 @@ const Footer = ({ data }) => {
 
         <Row>
           <Col className="d-flex justify-content-center">
-            <P className="m-5 text-center" theme={theme}>
+            <P className="m-5 text-center">
               Copyright <br /> {year}
             </P>
           </Col>
@@ -64,12 +64,6 @@ const Footer = ({ data }) => {
 Footer.propTypes = {
   data: PropTypes.shape({
     store: PropTypes.shape({}).isRequired,
-    theme: PropTypes.shape({
-      text: PropTypes.shape({}).isRequired,
-      secondaryText: PropTypes.shape({}).isRequired,
-      primaryBackground: PropTypes.shape({}).isRequired,
-      secondaryBackground: PropTypes.shape({}).isRequired,
-    }).isRequired,
   }).isRequired,
 };
 

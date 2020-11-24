@@ -1,11 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import { H2 } from './_helpers';
 
-const ContactForm = ({ theme }) => (
+const ContactForm = () => (
   <Form.Row>
-    <H2 className="mt-4" theme={theme}>
+    <H2 className="mt-4">
       Get In Touch
     </H2>
 
@@ -37,9 +36,5 @@ const ContactForm = ({ theme }) => (
     />
   </Form.Row>
 );
-
-ContactForm.propTypes = {
-  theme: PropTypes.shape({}).isRequired,
-};
 
 export default ContactForm;
