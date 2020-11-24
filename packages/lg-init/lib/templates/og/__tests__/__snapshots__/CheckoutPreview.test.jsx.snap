@@ -38,6 +38,12 @@ exports[`CheckoutPreview component renders unchanged 1`] = `
       >
         <h4
           className="ellipse"
+          style={
+            Object {
+              "margin": "0",
+              "width": "100%",
+            }
+          }
         >
           Strawberry Bone
         </h4>

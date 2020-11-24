@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import ProductComponent from '../components/ProductComponent';
+import Product from '../lib/prebuilts/Product';
 import { testData } from '../utils/testData';
-// product, cart, handleUpdatedCartInState
 
 const handleUpdatedCartInState = () => {};
 
-it('ProductComponent components renders smoke test without crashing', () => {
+it('Product components renders smoke test without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <ProductComponent 
+    <Product
       product={testData.products[0]} 
       cart={testData.products} 
       handleUpdatedCartInState={handleUpdatedCartInState}
@@ -19,9 +18,9 @@ it('ProductComponent components renders smoke test without crashing', () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it('ProductComponent component renders unchanged', () => {
+it('Product component renders unchanged', () => {
   const tree = renderer.create(
-    <ProductComponent 
+    <Product
       product={testData.products[0]} 
       cart={testData.products} 
       handleUpdatedCartInState={handleUpdatedCartInState}

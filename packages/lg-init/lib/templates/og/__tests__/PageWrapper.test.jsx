@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import PageWrapper from '../components/PageWrapper';
+import PageWrapper from '../lib/wrappers/PageWrapper';
 import { testData } from '../utils/testData';
 
 const handleEmptyCartNotice = () => {}

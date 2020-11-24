@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import CartComponent from './CartComponent';
+import Cart from './Cart';
 
 const Navigation = ({ cart, data, handleUpdatedCartInState }) => (
   <div
@@ -23,7 +23,7 @@ const Navigation = ({ cart, data, handleUpdatedCartInState }) => (
       />
       <Navbar.Brand href="/">{data.store.name}</Navbar.Brand>
       <Nav>
-        <CartComponent
+        <Cart
           cart={cart}
           data={data}
           handleUpdatedCartInState={(updatedCart) =>

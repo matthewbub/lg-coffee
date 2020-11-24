@@ -1,16 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AboutComponent component renders unchanged 1`] = `
-Array [
-  <h4
-    className=""
-  >
-    About Us
-  </h4>,
-  <p
-    className=""
-  >
-    Everyone loves a happy dog!
-  </p>,
-]
+<h2>
+  About us
+</h2>
 `;

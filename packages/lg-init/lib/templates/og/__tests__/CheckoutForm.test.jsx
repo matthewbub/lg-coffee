@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from 'next/router';
 import renderer from 'react-test-renderer';
-import StripeWrapper from '../components/StripeWrapper';
-import CheckoutForm from '../components/CheckoutForm';
+import StripeWrapper from '../lib/wrappers/StripeWrapper';
+import CheckoutForm from '../lib/forms/billing/CheckoutForm';
 
 it('CheckoutForm component renders smoke test without crashing', () => {
   const div = document.createElement('div');

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import QtyControl from '../components/QtyControl';
+import QtyControl from '../lib/forms/add_to_cart/QtyControl';
 
 const sku = 'demo_sku';
 

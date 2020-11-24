@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProductComponent component renders unchanged 1`] = `
+exports[`Product component renders unchanged 1`] = `
 <div
   className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
 >

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import ProductPreview from '../components/ProductPreview';
+import ProductPreview from '../lib/prebuilts/ProductPreview';
 
 const product = {
   name: 'product',

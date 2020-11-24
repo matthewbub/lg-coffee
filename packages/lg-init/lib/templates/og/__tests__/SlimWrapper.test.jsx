@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import SlimWrapper from '../components/SlimWrapper';
+import SlimWrapper from '../lib/wrappers/SlimWrapper';
 
 it('SlimWrapper component renders smoke test without crashing', () => {
   const div = document.createElement('div');

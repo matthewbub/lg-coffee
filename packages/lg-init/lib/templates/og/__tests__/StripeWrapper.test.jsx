@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import StripeWrapper from '../components/StripeWrapper';
+import StripeWrapper from '../lib/wrappers/StripeWrapper';
 
 it('StripeWrapper component renders smoke test without crashing', () => {
   const div = document.createElement('div');
