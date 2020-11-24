@@ -9,11 +9,6 @@ exports[`CheckoutPreview component renders unchanged 1`] = `
   >
     <h3
       className="ellipse pb-5"
-      style={
-        Object {
-          "color": "#212529",
-        }
-      }
     >
       In Cart
     </h3>
@@ -43,11 +38,6 @@ exports[`CheckoutPreview component renders unchanged 1`] = `
       >
         <h4
           className="ellipse"
-          style={
-            Object {
-              "color": "#212529",
-            }
-          }
         >
           Strawberry Bone
         </h4>
@@ -65,7 +55,6 @@ exports[`CheckoutPreview component renders unchanged 1`] = `
           }
         >
           $
-          1.97
            USD
         </p>
         <p

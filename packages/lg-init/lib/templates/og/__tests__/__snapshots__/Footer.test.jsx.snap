@@ -13,11 +13,6 @@ exports[`Footer component renders unchanged 1`] = `
       >
         <h2
           className=""
-          style={
-            Object {
-              "color": "#212529",
-            }
-          }
         >
           More Info
         </h2>
@@ -133,11 +128,6 @@ exports[`Footer component renders unchanged 1`] = `
       >
         <p
           className="m-5 text-center"
-          style={
-            Object {
-              "color": "#212529",
-            }
-          }
         >
           Copyright 
           <br />

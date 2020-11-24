@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
-import SlimWrapper from '../components/SlimWrapper';
-import ProductComponent from '../components/ProductComponent';
+import SlimWrapper from '../wrappers/SlimWrapper';
+import Product from './Product';
 
-const ProductRowComponet = ({  
+const Products = ({  
   products,
   cart,
   handleUpdatedCartInState,
@@ -15,7 +15,7 @@ const ProductRowComponet = ({
     </SlimWrapper>
 
     {products.map((i) => (
-      <ProductComponent
+      <Product
         key={i.id}
         cart={cart}
         product={i}
@@ -27,14 +27,14 @@ const ProductRowComponet = ({
   </Container>
 );
 
-ProductRowComponet.propTypes = {
+Products.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
-ProductRowComponet.defaultProps = {
+Products.defaultProps = {
   cart: {},
 };
 
-export default ProductRowComponet;
+export default Products;

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PageWrapper from '../components/PageWrapper';
-import ProductRowComponet from '../prebuilts/ProductRowComponent';
+import PageWrapper from '../lib/wrappers/PageWrapper';
+import Products from '../lib/prebuilts/Products';
 
-const HomePage = ({ data, cart, handleUpdatedCartInState }) => {  
+const Index = ({ data, cart, handleUpdatedCartInState }) => {  
   return (
     <PageWrapper
       data={data}
@@ -23,7 +23,7 @@ const HomePage = ({ data, cart, handleUpdatedCartInState }) => {
           }}
         />
       )}
-      <ProductRowComponet
+      <Products
         products={data.products}
         cart={cart}
         handleUpdatedCartInState={(updatedCart) =>
@@ -34,7 +34,7 @@ const HomePage = ({ data, cart, handleUpdatedCartInState }) => {
   );
 };
 
-HomePage.propTypes = {
+Index.propTypes = {
   data: PropTypes.shape({
     products: PropTypes.shape({
       heading: PropTypes.string.isRequired,
@@ -48,7 +48,7 @@ HomePage.propTypes = {
   handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
-HomePage.defaultProps = {
+Index.defaultProps = {
   cart: {},
   data: {
     store: {
@@ -57,4 +57,4 @@ HomePage.defaultProps = {
   },
 };
 
-export default HomePage;
+export default Index;

@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { formatUSD } from '../utils/formatUSD';
-import { H3, H4 } from './_helpers';
+import { formatUSD } from '../../utils/formatUSD';
 
 const CheckoutPreview = ({
   cart,
@@ -34,7 +33,7 @@ const CheckoutPreview = ({
   return (
     <Container>
       <Row className="d-flex align-items-center">
-        <H3 className="ellipse pb-5">In Cart</H3>
+        <h3 className="ellipse pb-5">In Cart</h3>
       </Row>
 
       {Object.keys(cart).map((i) => (
@@ -49,9 +48,9 @@ const CheckoutPreview = ({
 
           <Col xs={10} className="d-flex flex-column">
             <Row className="align-self-end mr-2">
-              <H4 style={{ width: '100%', margin: '0' }} className="ellipse">
+              <h4 style={{ width: '100%', margin: '0' }} className="ellipse">
                 {cart[i].name}
-              </H4>
+              </h4>
             </Row>
 
             <Row className="align-self-end align-items-end mr-2">

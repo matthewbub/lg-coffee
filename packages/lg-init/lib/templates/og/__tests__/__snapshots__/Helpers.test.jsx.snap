@@ -3,11 +3,6 @@
 exports[`H1 component renders unchanged 1`] = `
 <h1
   className=""
-  style={
-    Object {
-      "color": "#212529",
-    }
-  }
 >
   Hello World
 </h1>
@@ -16,11 +11,6 @@ exports[`H1 component renders unchanged 1`] = `
 exports[`H2 component renders unchanged 1`] = `
 <h2
   className=""
-  style={
-    Object {
-      "color": "#212529",
-    }
-  }
 >
   Hello World
 </h2>
@@ -29,11 +19,6 @@ exports[`H2 component renders unchanged 1`] = `
 exports[`H3 component renders unchanged 1`] = `
 <h3
   className=""
-  style={
-    Object {
-      "color": "#212529",
-    }
-  }
 >
   Hello World
 </h3>
@@ -42,11 +27,6 @@ exports[`H3 component renders unchanged 1`] = `
 exports[`H4 component renders unchanged 1`] = `
 <h4
   className=""
-  style={
-    Object {
-      "color": "#212529",
-    }
-  }
 >
   Hello World
 </h4>
@@ -55,11 +35,6 @@ exports[`H4 component renders unchanged 1`] = `
 exports[`H5 component renders unchanged 1`] = `
 <h5
   className=""
-  style={
-    Object {
-      "color": "#212529",
-    }
-  }
 >
   Hello World
 </h5>
@@ -68,11 +43,6 @@ exports[`H5 component renders unchanged 1`] = `
 exports[`H6 component renders unchanged 1`] = `
 <h6
   className=""
-  style={
-    Object {
-      "color": "#212529",
-    }
-  }
 >
   Hello World
 </h6>
@@ -81,11 +51,6 @@ exports[`H6 component renders unchanged 1`] = `
 exports[`P component renders unchanged 1`] = `
 <p
   className=""
-  style={
-    Object {
-      "color": "#212529",
-    }
-  }
 >
   Hello World
 </p>

@@ -1,12 +1,11 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import { H2 } from './_helpers';
 
 const ContactForm = () => (
   <Form.Row>
-    <H2 className="mt-4">
+    <h2 className="mt-4">
       Get In Touch
-    </H2>
+    </h2>
 
     <Form.Control
       className="mt-3"

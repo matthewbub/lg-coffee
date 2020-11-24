@@ -6,11 +6,6 @@ exports[`Contact component renders unchanged 1`] = `
 >
   <h2
     className="mt-4"
-    style={
-      Object {
-        "color": "#212529",
-      }
-    }
   >
     Get In Touch
   </h2>

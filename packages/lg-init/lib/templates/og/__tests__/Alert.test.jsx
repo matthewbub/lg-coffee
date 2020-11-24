@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import Alert from '../components/Alert';
+import Alert from '../lib/components/Alert';
 
 const alert = {
   status: 'danger',

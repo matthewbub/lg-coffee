@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import CartComponent from '../components/CartComponent';
+import CartComponent from './CartComponent';
 
 const Navigation = ({ cart, data, handleUpdatedCartInState }) => (
   <div

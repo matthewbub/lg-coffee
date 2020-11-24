@@ -4,21 +4,11 @@ exports[`AboutComponent component renders unchanged 1`] = `
 Array [
   <h4
     className=""
-    style={
-      Object {
-        "color": "#212529",
-      }
-    }
   >
     About Us
   </h4>,
   <p
     className=""
-    style={
-      Object {
-        "color": "#212529",
-      }
-    }
   >
     Everyone loves a happy dog!
   </p>,

@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/Modal';
 import ProductPreview from './ProductPreview';
-import QtyControl from './QtyControl';
-import SlimWrapper from './SlimWrapper';
-import Loading from './Loading';
-import { formatUSD } from '../utils/formatUSD';
+import QtyControl from '../forms/add_to_cart/QtyControl';
+import SlimWrapper from '../wrappers/SlimWrapper';
+import Loading from '../components/Loading';
+import { formatUSD } from '../../utils/formatUSD';
 
-const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
+const Product = ({ product, cart, handleUpdatedCartInState }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -83,7 +83,7 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
   );
 };
 
-ProductComponent.propTypes = {
+Product.propTypes = {
   cart: PropTypes.shape({}),
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -94,8 +94,8 @@ ProductComponent.propTypes = {
   handleUpdatedCartInState: PropTypes.func.isRequired,
 };
 
-ProductComponent.defaultProps = {
+Product.defaultProps = {
   cart: {},
 };
 
-export default ProductComponent;
+export default Product;

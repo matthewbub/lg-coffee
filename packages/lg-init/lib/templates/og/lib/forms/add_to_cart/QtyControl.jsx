@@ -1,9 +1,7 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
-import Alert from './Alert';
-import { H5 } from './_helpers';
+import Alert from '../../components/Alert';
 
 const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
   const [alert, setAlert] = useState(null);
@@ -63,7 +61,7 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
 
       <div className="d-flex flex-column align-items-end mb-3">
         <Form className="d-flex align-items-center" onSubmit={handleSubmit}>
-          <H5 className="p-0 m-0">QTY:</H5>
+          <h5 className="p-0 m-0">QTY:</h5>
           <Form.Control
             type="number"
             label="qty"
@@ -92,7 +90,9 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
 QtyControl.propTypes = {
   product: PropTypes.shape({
     sku: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    metadata: PropTypes.shape({
+      price: PropTypes.number.isRequired,
+    }).isRequired,
   }).isRequired,
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,

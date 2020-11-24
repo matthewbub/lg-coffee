@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 
 const ProductPreview = ({ product }) => {
   const [primaryImage, setPrimaryImage] = useState();

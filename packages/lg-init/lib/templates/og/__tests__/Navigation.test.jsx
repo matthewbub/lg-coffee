@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import Navigation from '../prebuilts/Navigation';
-import { data } from '../utils/data';
+import Navigation from '../components/Navigation';
+import { testData } from '../utils/testData';
 
 const handleUpdatedCartInState = () => {}
 
@@ -10,7 +10,7 @@ it('Navigation component renders smoke test without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <Navigation 
-      data={data} 
+      data={testData} 
       handleUpdatedCartInState={handleUpdatedCartInState} 
     />
   , div);
@@ -19,7 +19,7 @@ it('Navigation component renders smoke test without crashing', () => {
 
 it('StickyTopNavbar component renders unchanged', () => {
   const tree = renderer.create(<Navigation 
-    data={data} 
+    data={testData} 
     handleUpdatedCartInState={handleUpdatedCartInState} 
   />).toJSON();
   expect(tree).toMatchSnapshot();

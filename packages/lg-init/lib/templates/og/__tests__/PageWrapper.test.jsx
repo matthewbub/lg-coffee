@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import PageWrapper from '../components/PageWrapper';
-import { data } from '../utils/data';
+import { testData } from '../utils/testData';
 
 const handleEmptyCartNotice = () => {}
 const handleUpdatedCartInState = () => {}
@@ -11,7 +11,7 @@ it('PageWrapper renders smoke test without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <PageWrapper 
-      data={data}
+      data={testData}
       handleEmptyCartNotice={handleEmptyCartNotice}
       handleUpdatedCartInState={handleUpdatedCartInState}
     >
@@ -23,7 +23,7 @@ it('PageWrapper renders smoke test without crashing', () => {
 it('PageWrapper renders unchanged', () => {
   const tree = renderer.create(
     <PageWrapper 
-      data={data}
+      data={testData}
       handleEmptyCartNotice={handleEmptyCartNotice}
       handleUpdatedCartInState={handleUpdatedCartInState}
     >

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Navigation from '../prebuilts/Navigation';
-import Footer from './Footer';
+import Footer from '../prebuilts/Footer';
 
 const PageWrapper = ({ children, data, cart, handleUpdatedCartInState }) => (
   <div className="content">

@@ -4,9 +4,9 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import BillingDetailsFields from './BillingDetailsFields';
-import SubmitButton from './SubmitButton';
-import CheckoutError from './CheckoutError';
-import { formatUSD } from '../utils/formatUSD';
+import SubmitButton from '../../components/SubmitButton';
+import CheckoutError from '../../components/CheckoutError';
+import { formatUSD } from '../../../utils/formatUSD';
 
 const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
