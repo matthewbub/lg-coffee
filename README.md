@@ -27,7 +27,7 @@ Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees 
 
 ## Set up
 
-#### 1. Bootstrap a new project
+### 1. Bootstrap a new project
 
 ```bash
 $ npx lg-init myAwesomeStore
@@ -35,7 +35,7 @@ $ npx lg-init myAwesomeStore
 
 Once install is complete, update your store's information via the [store.js file](https://github.com/hi-matbub/lg-coffee/blob/main/packages/lg-init/lib/templates/og/utils/store.js).
 
-#### 2. Update your Environment Variables
+### 2. Update your Environment Variables
 
 Rename your `example.env` to `.env.local`, replace the placeholders with your unique keys and restart your server.
 
@@ -46,7 +46,7 @@ NEXT_PUBLIC_FACEBOOK_PIXEL_ID=facbook_pixel_id
 SENDGRID_API_KEY=sendgrid_api_key
 ```
 
-#### 3. Adding/ Managing products
+### 3. Adding/ Managing products
 
 Easily manage your products via the [Products section of your Stripe Dashboard](https://dashboard.stripe.com/products)
 
@@ -54,10 +54,21 @@ Easily manage your products via the [Products section of your Stripe Dashboard](
 
 In order for lg-coffee to read product prices, add a `price` key with a _whole integer_ as a value to the metadata of each product. 
 
-Example: </br>
-If your product cost $2.78 USD, you would input `287`
+> Example: </br>
+> If your product cost $2.78 USD, you would input `287`
 
-#### 4. Accept and manage payments via the [Stripe Dashboard](https://dashboard.stripe.com)
+**Another Important Caveat :star:** 
+You won't see your Stripe products on your local machine. This is because we are on `test mode` with Stripe. 
+
+To fix this, go to your [Stripe Dashboard](https://dashboard.stripe.com/products) and toggle the `view test data` switch and add your test products. 
+
+### 4. Accept and manage payments via the [Stripe Dashboard](https://dashboard.stripe.com)
+
+
+While testing on your local machine use 
+> Stripes Test Cards e.g `4242 4242 4242 4242`. 
+
+_All local payment intents will be viewable while viewing the test data on your Stripe Dashboard_
 
 ## Contributing 
 
