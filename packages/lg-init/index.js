@@ -47,7 +47,7 @@ const promptUserForProjectName = async () => {
       validate: (nameInput) => {
         if (nameInput) {
           return true;
-        } else {
+        } else if (nameInput === '') {
           console.log('Please enter a project name');
           return false;
         }
@@ -56,7 +56,19 @@ const promptUserForProjectName = async () => {
   ]);
 };
 
+const handleNameFormatting = (input) => {
+  const specialChars = /\W/;
+  if (specialChars.test(input)) {
+    return true;
+  }
+  return false;
+};
+
 const moveTemplateToUserCurrentWorkingDirectory = (name) => {
+  if (handleNameFormatting(name)) {
+    console.log(`${name} is invalid, no special characters allowed`);
+    return;
+  }
   try {
     fs.moveSync(
       path.resolve(buildDir, 'lib/templates/og'),
@@ -69,7 +81,6 @@ const moveTemplateToUserCurrentWorkingDirectory = (name) => {
         }
       }
     );
-
     console.log();
     console.log(
       name + ' has been successfully created!' + emoji.emojify(':rocket:')
