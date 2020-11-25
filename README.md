@@ -15,32 +15,19 @@
 
 </p>
 
-<h2 align="center"> :construction: Offical docs coming soon :construction: </h2>
-
 <br>
 <br>
-<br>
-
-> Large Commerce</br>
-> Simple Solutions
 
 Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees in mind. 
 
 #### This project depends on
 
-- [ ] [Stripe Account](https://stripe.com/docs/api)
-- [ ] [SendGrid Accout](https://app.sendgrid.com/)
-
-## 🚨  BREAKING CHANGES COMING IN V1.1.1 🚨 
-
-**We will be removing the "products" section of the data obj in favor of Stripe's Product dashboard.** 
-
-If you are considering using this lg-coffee please "watch" this repo for updates. 
-
+- [ ] [Stripe](https://stripe.com/docs/api) for payment intents
+- [ ] [SendGrid](https://app.sendgrid.com/) for the contact form
 
 ## Set up
 
-Bootstrap a new project, setup your environmental variables and store's information via the [data.js file](https://github.com/hi-matbub/lg-coffee/blob/main/packages/lg-init/lib/templates/og/utils/data.js) and publish your site!
+Bootstrap a new project, setup your environmental variables and store's information via the [store.js file](https://github.com/hi-matbub/lg-coffee/blob/main/packages/lg-init/lib/templates/og/utils/store.js) and publish your site!
 
 ```bash
 $ npx lg-init myAwesomeStore
@@ -56,6 +43,17 @@ SECRET_KEY=stripe_secret_key
 NEXT_PUBLIC_FACEBOOK_PIXEL_ID=facbook_pixel_id
 SENDGRID_API_KEY=sendgrid_api_key
 ```
+
+### Adding products to your store
+
+Easily manage your products via the [Products section of your Stripe Dashboard](https://dashboard.stripe.com/products)
+
+**Important Caveat :star:** 
+
+In order for lg-coffee to read product prices, add a `price` key with a _whole integer_ as a value to the metadata of each product. 
+
+Example: </br>
+If your product cost $2.78 USD, you would input `287`
 
 ## Contributing 
 
