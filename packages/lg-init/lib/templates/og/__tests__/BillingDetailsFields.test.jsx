@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import BillingDetailsFields from '../components/BillingDetailsFields';
+import BillingDetailsFields from '../lib/forms/billing/BillingDetailsFields';
 
 it('BillingDetailsFields component renders smoke test without crashing', () => {
   const div = document.createElement('div');

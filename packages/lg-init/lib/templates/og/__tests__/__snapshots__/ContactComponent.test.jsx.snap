@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Contact component renders unchanged 1`] = `
+exports[`Contact renders unchanged 1`] = `
 <form
   className=""
   onSubmit={[Function]}
@@ -10,11 +10,6 @@ exports[`Contact component renders unchanged 1`] = `
   >
     <h2
       className="mt-4"
-      style={
-        Object {
-          "color": "#212529",
-        }
-      }
     >
       Get In Touch
     </h2>

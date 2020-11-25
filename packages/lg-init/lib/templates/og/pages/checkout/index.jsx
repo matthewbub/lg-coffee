@@ -2,11 +2,11 @@ import Router from 'next/router';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { calc } from 'lg-calc';
-import Loading from '../../components/Loading';
-import PageWrapper from '../../components/PageWrapper';
-import SlimWrapper from '../../components/SlimWrapper';
-import CheckoutForm from '../../components/CheckoutForm';
-import CheckoutPreview from '../../components/CheckoutPreview';
+import Loading from '../../lib/components/Loading';
+import PageWrapper from '../../lib/wrappers/PageWrapper';
+import SlimWrapper from '../../lib/wrappers/SlimWrapper';
+import CheckoutForm from '../../lib/forms/billing/CheckoutForm';
+import CheckoutPreview from '../../lib/prebuilts/CheckoutPreview';
 
 const Checkout = ({ data, cart }) => {
   if (!cart || !data) <Loading data={cart} />;
@@ -22,7 +22,7 @@ const Checkout = ({ data, cart }) => {
         <CheckoutPreview cart={cart} />
         <CheckoutForm
           cart={cart}
-          price={calc(total) || 0}
+          price={calc(total)}
           onSuccessfulCheckout={() =>
             Router.push('/checkout/order-confirmation')
           }

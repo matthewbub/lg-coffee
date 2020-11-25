@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import ProductPreview from '../components/ProductPreview';
+import ProductPreview from '../lib/prebuilts/ProductPreview';
 
 const product = {
   name: 'product',
   description: 'this is an awesome product you should buy 2',
   price: '$2.87',
-  sku: 'abc_123',
+  id: 'abc_123',
   images: [
     '/path_01.png',
     '/path_02.png',

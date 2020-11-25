@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PageWrapper from '../components/PageWrapper';
-import ProductRowComponet from '../prebuilts/ProductRowComponent';
+import PageWrapper from '../lib/wrappers/PageWrapper';
+import Products from '../lib/prebuilts/Products';
 
-const HomePage = ({ data, cart, handleUpdatedCartInState }) => {
+const Index = ({ data, cart, handleUpdatedCartInState, currentBill }) => {
   return (
     <PageWrapper
       data={data}
       cart={cart}
+      currentBill={currentBill}
       handleUpdatedCartInState={(updatedCart) =>
         handleUpdatedCartInState(updatedCart)
       }
@@ -23,10 +24,10 @@ const HomePage = ({ data, cart, handleUpdatedCartInState }) => {
           }}
         />
       )}
-      <ProductRowComponet
-        heading={data.products.heading}
-        products={data.products.products}
+      <Products
+        products={data.products}
         cart={cart}
+        currentBill={currentBill}
         handleUpdatedCartInState={(updatedCart) =>
           handleUpdatedCartInState(updatedCart)
         }
@@ -35,27 +36,26 @@ const HomePage = ({ data, cart, handleUpdatedCartInState }) => {
   );
 };
 
-HomePage.propTypes = {
+Index.propTypes = {
   data: PropTypes.shape({
-    products: PropTypes.shape({
-      heading: PropTypes.string.isRequired,
-      products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
-    }).isRequired,
+    products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
     store: PropTypes.shape({
       hero: PropTypes.string,
     }),
   }),
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,
+  currentBill: PropTypes.number,
 };
 
-HomePage.defaultProps = {
+Index.defaultProps = {
   cart: {},
   data: {
     store: {
       hero: null,
     },
   },
+  currentBill: 0,
 };
 
-export default HomePage;
+export default Index;

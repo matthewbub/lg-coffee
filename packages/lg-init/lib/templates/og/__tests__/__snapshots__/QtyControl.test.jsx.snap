@@ -24,11 +24,6 @@ exports[`QtyControl component renders unchanged 1`] = `
     >
       <h5
         className="p-0 m-0"
-        style={
-          Object {
-            "color": "#212529",
-          }
-        }
       >
         QTY:
       </h5>

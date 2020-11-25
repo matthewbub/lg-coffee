@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-bootstrap/Modal';
 import ProductPreview from './ProductPreview';
-import QtyControl from './QtyControl';
-import SlimWrapper from './SlimWrapper';
-import Loading from './Loading';
-import { formatUSD } from '../utils/formatUSD';
+import QtyControl from '../forms/add_to_cart/QtyControl';
+import SlimWrapper from '../wrappers/SlimWrapper';
+import Loading from '../components/Loading';
+import { formatUSD } from '../../utils/formatUSD';
 
-const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
+const Product = ({ product, cart, handleUpdatedCartInState, currentBill }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -44,7 +44,7 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
               <div className="d-flex w-100 flex-column align-items-end justify-content-center text-right">
                 <h5 className="mt-3 mb-2 ellipse">{product.name}</h5>
                 <span className="text-muted mb-3">
-                  ${formatUSD(product.price)} USD
+                  ${formatUSD(product.metadata.price)} USD
                 </span>
               </div>
             </button>
@@ -67,9 +67,10 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
             <div className="p-4">
               <h2>{product.name}</h2>
               <p>{product.description}</p>
-              <p>{product ? `$${formatUSD(product.price)}` : null}</p>
+              <p>{product ? `$${formatUSD(product.metadata.price)}` : null}</p>
               <QtyControl
                 product={product}
+                currentBill={currentBill}
                 cart={cart}
                 handleUpdatedCartInState={(updatedCart) =>
                   handleUpdatedCartInState(updatedCart)
@@ -83,19 +84,23 @@ const ProductComponent = ({ product, cart, handleUpdatedCartInState }) => {
   );
 };
 
-ProductComponent.propTypes = {
+Product.propTypes = {
   cart: PropTypes.shape({}),
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    metadata: PropTypes.shape({
+      price: PropTypes.string.isRequired,
+    }).isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   handleUpdatedCartInState: PropTypes.func.isRequired,
+  currentBill: PropTypes.number,
 };
 
-ProductComponent.defaultProps = {
+Product.defaultProps = {
   cart: {},
+  currentBill: 0,
 };
 
-export default ProductComponent;
+export default Product;

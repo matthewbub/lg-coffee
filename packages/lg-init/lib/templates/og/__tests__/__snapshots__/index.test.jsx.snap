@@ -97,7 +97,7 @@ exports[`index renders unchanged 1`] = `
           <h2
             className="my-5"
           >
-            Tasty Treats
+            Products
           </h2>
         </div>
       </div>
@@ -119,9 +119,9 @@ exports[`index renders unchanged 1`] = `
             type="button"
           >
             <img
-              alt="Strawberry Bone"
+              alt="Large Demo Product"
               className="product_img_prc"
-              src="/pink.png"
+              src="img.jpg"
             />
             <div
               className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
@@ -129,13 +129,13 @@ exports[`index renders unchanged 1`] = `
               <h5
                 className="mt-3 mb-2 ellipse"
               >
-                Strawberry Bone
+                Large Demo Product
               </h5>
               <span
                 className="text-muted mb-3"
               >
                 $
-                1.97
+                2.87
                  USD
               </span>
             </div>
@@ -160,9 +160,9 @@ exports[`index renders unchanged 1`] = `
             type="button"
           >
             <img
-              alt="Chocolate Bone"
+              alt="Demo Product"
               className="product_img_prc"
-              src="/dark.png"
+              src="img.jpg"
             />
             <div
               className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
@@ -170,95 +170,13 @@ exports[`index renders unchanged 1`] = `
               <h5
                 className="mt-3 mb-2 ellipse"
               >
-                Chocolate Bone
+                Demo Product
               </h5>
               <span
                 className="text-muted mb-3"
               >
                 $
-                1.97
-                 USD
-              </span>
-            </div>
-          </button>
-        </div>
-      </div>
-      <div
-        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
-      >
-        <div
-          className="col-lg-8 col-md-9 col-sm-12"
-        >
-          <button
-            className="btn btn-outline-dark  d-flex w-100"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderRadius": "6px",
-                "cursor": "pointer",
-              }
-            }
-            type="button"
-          >
-            <img
-              alt="Lemon Bone"
-              className="product_img_prc"
-              src="/yellow.png"
-            />
-            <div
-              className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
-            >
-              <h5
-                className="mt-3 mb-2 ellipse"
-              >
-                Lemon Bone
-              </h5>
-              <span
-                className="text-muted mb-3"
-              >
-                $
-                1.97
-                 USD
-              </span>
-            </div>
-          </button>
-        </div>
-      </div>
-      <div
-        className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
-      >
-        <div
-          className="col-lg-8 col-md-9 col-sm-12"
-        >
-          <button
-            className="btn btn-outline-dark  d-flex w-100"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderRadius": "6px",
-                "cursor": "pointer",
-              }
-            }
-            type="button"
-          >
-            <img
-              alt="Orange Bone"
-              className="product_img_prc"
-              src="/orange.png"
-            />
-            <div
-              className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
-            >
-              <h5
-                className="mt-3 mb-2 ellipse"
-              >
-                Orange Bone
-              </h5>
-              <span
-                className="text-muted mb-3"
-              >
-                $
-                1.97
+                2.87
                  USD
               </span>
             </div>
@@ -277,14 +195,7 @@ exports[`index renders unchanged 1`] = `
         <div
           className="col-lg-8 col-md-9 col-sm-12"
         >
-          <h2
-            className=""
-            style={
-              Object {
-                "color": "#212529",
-              }
-            }
-          >
+          <h2>
             More Info
           </h2>
           <div
@@ -399,11 +310,6 @@ exports[`index renders unchanged 1`] = `
         >
           <p
             className="m-5 text-center"
-            style={
-              Object {
-                "color": "#212529",
-              }
-            }
           >
             Copyright 
             <br />

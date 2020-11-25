@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import SubmitButton from '../components/SubmitButton';
+import SubmitButton from '../lib/components/SubmitButton';
 
 it('SubmitButton component renders smoke test without crashing', () => {
   const div = document.createElement('div');

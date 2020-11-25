@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProductComponent component renders unchanged 1`] = `
+exports[`Product component renders unchanged 1`] = `
 <div
   className="align-items-center justify-content-center mb-2 align-items-center justify-content-center row"
 >
@@ -19,9 +19,9 @@ exports[`ProductComponent component renders unchanged 1`] = `
       type="button"
     >
       <img
-        alt="Strawberry Bone"
+        alt="Large Demo Product"
         className="product_img_prc"
-        src="/pink.png"
+        src="img.jpg"
       />
       <div
         className="d-flex w-100 flex-column align-items-end justify-content-center text-right"
@@ -29,13 +29,13 @@ exports[`ProductComponent component renders unchanged 1`] = `
         <h5
           className="mt-3 mb-2 ellipse"
         >
-          Strawberry Bone
+          Large Demo Product
         </h5>
         <span
           className="text-muted mb-3"
         >
           $
-          1.97
+          2.87
            USD
         </span>
       </div>

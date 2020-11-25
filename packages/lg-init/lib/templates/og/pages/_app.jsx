@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react';
 import useSwr from 'swr';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import Loading from '../components/Loading';
-import StripeWrapper from '../components/StripeWrapper';
-import FacebookPixelWrapper from '../components/FacebookPixelWrapper';
-import NextSEOWrapper from '../components/NextSEOWrapper';
+import Loading from '../lib/components/Loading';
+import StripeWrapper from '../lib/wrappers/StripeWrapper';
+import FacebookPixelWrapper from '../lib/wrappers/FacebookPixelWrapper';
+import NextSEOWrapper from '../lib/wrappers/NextSEOWrapper';
 import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/global.css';
 import '../styles/ProductPreview.css';
@@ -15,20 +15,39 @@ import '../styles/animations.css';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function App({ Component, pageProps }) {
+  // grabs data
   const { data, error } = useSwr('/api/data', fetcher);
 
   const [cart, setCart] = useState({});
+  const [currentBill, setBilling] = useState();
 
+  // handles cart on event
   const handleUpdatedCartInState = (updatedCart) =>
     setCart(JSON.parse(updatedCart));
 
   useEffect(() => {
+    // handles cart on page refresh
     const userCart = localStorage.getItem('cart');
     setCart(JSON.parse(userCart));
+
+    // handles billing
+    const billingFromStorage = localStorage.getItem('billing');
+    setBilling(JSON.parse(billingFromStorage));
   }, []);
 
-  if (error) return <div>Something went wrong</div>;
+  // page failed to load
+  if (error)
+    return (
+      <div
+        style={{
+          backgroundImage: `url('/404.jpeg')`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+        }}
+      />
+    );
 
+  // if data is pending return loading
   if (!data) {
     return (
       <StripeWrapper>
@@ -36,11 +55,10 @@ function App({ Component, pageProps }) {
       </StripeWrapper>
     );
   }
-
   return (
     <StripeWrapper>
       <Head>
-        <title>{data.name}</title>
+        <title>{data.store.name}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -55,13 +73,14 @@ function App({ Component, pageProps }) {
       </Head>
       <FacebookPixelWrapper>
         <NextSEOWrapper
-          name={data.name}
-          description={data.description}
-          url={data.url}
+          name={data.store.name}
+          description={data.store.description}
+          url={data.store.url}
         />
         <Component
           data={data}
           cart={cart}
+          currentBill={currentBill}
           handleUpdatedCartInState={(updatedCart) =>
             handleUpdatedCartInState(updatedCart)
           }

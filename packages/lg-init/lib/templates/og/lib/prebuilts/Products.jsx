@@ -1,25 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
-import SlimWrapper from '../components/SlimWrapper';
-import ProductComponent from '../components/ProductComponent';
+import SlimWrapper from '../wrappers/SlimWrapper';
+import Product from './Product';
 
-const ProductRowComponet = ({
-  heading,
+const Products = ({
   products,
   cart,
   handleUpdatedCartInState,
+  currentBill,
 }) => (
   <Container>
     <SlimWrapper>
-      <h2 className="my-5">{heading}</h2>
+      <h2 className="my-5">Products</h2>
     </SlimWrapper>
 
     {products.map((i) => (
-      <ProductComponent
-        key={i.sku}
+      <Product
+        key={i.id}
         cart={cart}
         product={i}
+        currentBill={currentBill}
         handleUpdatedCartInState={(updatedCart) =>
           handleUpdatedCartInState(updatedCart)
         }
@@ -28,15 +29,16 @@ const ProductRowComponet = ({
   </Container>
 );
 
-ProductRowComponet.propTypes = {
-  heading: PropTypes.string.isRequired,
+Products.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,
+  currentBill: PropTypes.number,
 };
 
-ProductRowComponet.defaultProps = {
+Products.defaultProps = {
   cart: {},
+  currentBill: 0,
 };
 
-export default ProductRowComponet;
+export default Products;

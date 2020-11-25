@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import CheckoutPreview from '../components/CheckoutPreview';
+import CheckoutPreview from '../lib/prebuilts/CheckoutPreview';
 
 const cart = {
   one: {
     name: 'Strawberry Bone',
     description: 'Super colorful, your dog will love this!',
     price: 197,
-    sku: 'srw_bn_',
+    id: 'srw_bn_',
     images: ['/pink.png'],
   
   }

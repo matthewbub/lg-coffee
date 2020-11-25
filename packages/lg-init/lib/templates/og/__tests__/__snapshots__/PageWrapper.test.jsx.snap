@@ -88,14 +88,7 @@ exports[`PageWrapper renders unchanged 1`] = `
         <div
           className="col-lg-8 col-md-9 col-sm-12"
         >
-          <h2
-            className=""
-            style={
-              Object {
-                "color": "#212529",
-              }
-            }
-          >
+          <h2>
             More Info
           </h2>
           <div
@@ -210,11 +203,6 @@ exports[`PageWrapper renders unchanged 1`] = `
         >
           <p
             className="m-5 text-center"
-            style={
-              Object {
-                "color": "#212529",
-              }
-            }
           >
             Copyright 
             <br />

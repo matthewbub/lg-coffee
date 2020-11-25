@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import CartComponent from '../components/CartComponent';
+import Cart from './Cart';
 
-const Navigation = ({ cart, data, handleUpdatedCartInState }) => (
+const Navigation = ({ cart, data, handleUpdatedCartInState, currentBill }) => (
   <div
     className="d-flex justify-content-between w-100 fixed-top"
     style={{ background: '#FFFFFF !important' }}
@@ -23,9 +23,10 @@ const Navigation = ({ cart, data, handleUpdatedCartInState }) => (
       />
       <Navbar.Brand href="/">{data.store.name}</Navbar.Brand>
       <Nav>
-        <CartComponent
+        <Cart
           cart={cart}
           data={data}
+          currentBill={currentBill}
           handleUpdatedCartInState={(updatedCart) =>
             handleUpdatedCartInState(updatedCart)
           }
@@ -44,10 +45,12 @@ Navigation.propTypes = {
   }).isRequired,
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,
+  currentBill: PropTypes.number,
 };
 
 Navigation.defaultProps = {
   cart: {},
+  currentBill: 0,
 };
 
 export default Navigation;
