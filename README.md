@@ -57,6 +57,8 @@ In order for lg-coffee to read product prices, add a `price` key with a _whole i
 > Example: </br>
 > If your product cost $2.78 USD, you would input `287`
 
+![screenshot](/public/metadata_screen_shot.jpg)
+
 **Another Important Caveat :star:** 
 
 You won't see your Stripe products on your local machine. This is because we are on `test mode` with Stripe. 
