@@ -30,7 +30,7 @@ Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees 
 ### 1. Bootstrap a new project
 
 ```bash
-$ npx lg-init myAwesomeStore
+$ npx lg-init myawesomestore
 ```
 
 Once install is complete, update your store's information via the [store.js file](https://github.com/hi-matbub/lg-coffee/blob/main/packages/lg-init/lib/templates/og/utils/store.js).
@@ -58,6 +58,7 @@ In order for lg-coffee to read product prices, add a `price` key with a _whole i
 > If your product cost $2.78 USD, you would input `287`
 
 **Another Important Caveat :star:** 
+
 You won't see your Stripe products on your local machine. This is because we are on `test mode` with Stripe. 
 
 To fix this, go to your [Stripe Dashboard](https://dashboard.stripe.com/products) and toggle the `view test data` switch and add your test products. 
