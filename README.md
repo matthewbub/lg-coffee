@@ -31,8 +31,7 @@ Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees 
 - [ ] [Stripe Account](https://stripe.com/docs/api)
 - [ ] [SendGrid Accout](https://app.sendgrid.com/)
 
-
-## 🚨  BREAKING CHANGES COMING IN V1.1.1 🚨  e.t.a 11/25/2020
+## 🚨  BREAKING CHANGES COMING IN V1.1.1 🚨 
 
 **We will be removing the "products" section of the data obj in favor of Stripe's Product dashboard.** 
 
@@ -69,12 +68,6 @@ Please submit any and all issues/ opinions/ thoughts or concerns [here](https://
 #### Workflow
 
 This project uses <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> and is enforced using Airbnb's Styleguide. Most breaking changes will be caught in the pre-commit stage. However shit happens and mistakes slide. Those will either be caught in the <a href="https://github.com/hi-matbub/lg-coffee/actions">GitHub Workflow</a> Script or in the <a href="https://travis-ci.com/hi-matbub/lg-coffee">Travis Build</a>.
-
-## Example Sites
-
-_note: checkout disabled in demo applications_
-
-- https://lg-coffee-og-example.vercel.app/
 
 ## Who uses lg-coffee? 
 
