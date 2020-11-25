@@ -27,13 +27,15 @@ Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees 
 
 ## Set up
 
-Bootstrap a new project, setup your environmental variables and store's information via the [store.js file](https://github.com/hi-matbub/lg-coffee/blob/main/packages/lg-init/lib/templates/og/utils/store.js) and publish your site!
+#### 1. Bootstrap a new project
 
 ```bash
 $ npx lg-init myAwesomeStore
 ```
 
-### Update your Environment Variables
+Once install is complete, update your store's information via the [store.js file](https://github.com/hi-matbub/lg-coffee/blob/main/packages/lg-init/lib/templates/og/utils/store.js).
+
+#### 2. Update your Environment Variables
 
 Rename your `example.env` to `.env.local`, replace the placeholders with your unique keys and restart your server.
 
@@ -44,7 +46,7 @@ NEXT_PUBLIC_FACEBOOK_PIXEL_ID=facbook_pixel_id
 SENDGRID_API_KEY=sendgrid_api_key
 ```
 
-### Adding products to your store
+#### 3. Adding/ Managing products
 
 Easily manage your products via the [Products section of your Stripe Dashboard](https://dashboard.stripe.com/products)
 
@@ -55,6 +57,8 @@ In order for lg-coffee to read product prices, add a `price` key with a _whole i
 Example: </br>
 If your product cost $2.78 USD, you would input `287`
 
+#### 4. Accept and manage payments via the [Stripe Dashboard](https://dashboard.stripe.com)
+
 ## Contributing 
 
 This turned into a full blown app pretty quick, I would love to get some help. Checkout out the [Contributing Guide](/CONTRIBUTING.md) to get involved and learn how to read this repo.
@@ -63,15 +67,7 @@ This turned into a full blown app pretty quick, I would love to get some help. C
 
 Please submit any and all issues/ opinions/ thoughts or concerns [here](https://github.com/hi-matbub/lg-coffee/issues/new)
 
-#### Workflow
-
-This project uses <a href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a> and is enforced using Airbnb's Styleguide. Most breaking changes will be caught in the pre-commit stage. However shit happens and mistakes slide. Those will either be caught in the <a href="https://github.com/hi-matbub/lg-coffee/actions">GitHub Workflow</a> Script or in the <a href="https://travis-ci.com/hi-matbub/lg-coffee">Travis Build</a>.
-
 ## Who uses lg-coffee? 
 
 Are you using lg-coffee? I'd love to hear from you! Get in touch with me at <a href="mailto:6matbub@gmail.com">6matbub@gmail.com</a>
 
-## Support
-
-Proud to support? </br>
-<a href="https://www.buymeacoffee.com/himatbub" target="_blank"><img src="/public/buy-me-a-coffee.png" alt="Buy Me A Coffee"></a>
