@@ -20,5 +20,4 @@ Pill.propTypes = {
   handleShow: PropTypes.func.isRequired,
 };
 
-
 export default Pill;

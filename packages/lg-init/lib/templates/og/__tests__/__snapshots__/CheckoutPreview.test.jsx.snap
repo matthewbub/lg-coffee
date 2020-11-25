@@ -61,6 +61,7 @@ exports[`CheckoutPreview component renders unchanged 1`] = `
           }
         >
           $
+          1.97
            USD
         </p>
         <p

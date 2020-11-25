@@ -47,7 +47,7 @@ const Contact = ({ store }) => {
   return (
     <>
       <Form onSubmit={handleFormSubmit}>
-        <ContactFrom/>
+        <ContactFrom />
 
         <button
           type="submit"

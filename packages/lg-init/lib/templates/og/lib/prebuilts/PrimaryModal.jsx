@@ -10,11 +10,7 @@ const PrimaryModal = ({ children, className, title }) => {
 
   return (
     <>
-      <Pill
-        title={title}
-        className={className}
-        handleShow={handleShow}
-      />
+      <Pill title={title} className={className} handleShow={handleShow} />
       <Modal show={show} onHide={handleClose}>
         <div className="d-flex flex-column align-items-center">
           <div className="d-flex flex-column" style={{ maxWidth: '80%' }}>

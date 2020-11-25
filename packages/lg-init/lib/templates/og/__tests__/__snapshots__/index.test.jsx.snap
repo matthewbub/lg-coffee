@@ -135,6 +135,7 @@ exports[`index renders unchanged 1`] = `
                 className="text-muted mb-3"
               >
                 $
+                2.87
                  USD
               </span>
             </div>
@@ -175,6 +176,7 @@ exports[`index renders unchanged 1`] = `
                 className="text-muted mb-3"
               >
                 $
+                2.87
                  USD
               </span>
             </div>

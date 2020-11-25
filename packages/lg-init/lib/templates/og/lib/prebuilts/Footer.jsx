@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import SlimWrapper from '../wrappers/SlimWrapper';
 import PrimaryModal from './PrimaryModal';
 import Contact from '../forms/contact/Contact';
-import Wrap from '../components/Wrap'
+import Wrap from '../components/Wrap';
 import FAQ from '../static/FAQ.mdx';
 import About from '../static/About.mdx';
 import TermsAndConditions from '../static/TermsAndConditions.mdx';

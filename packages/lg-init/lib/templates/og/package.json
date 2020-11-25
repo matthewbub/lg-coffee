@@ -9,8 +9,7 @@
     "build": "next build",
     "test": "jest",
     "test:dev": "jest --watch",
-    "test:ci": "jest --ci",
-    "test:u": "jest --ci -- -u"
+    "test:ci": "jest --ci"
   },
   "keywords": [],
   "author": "",

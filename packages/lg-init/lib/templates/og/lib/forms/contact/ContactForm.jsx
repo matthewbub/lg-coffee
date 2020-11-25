@@ -3,9 +3,7 @@ import Form from 'react-bootstrap/Form';
 
 const ContactForm = () => (
   <Form.Row>
-    <h2 className="mt-4">
-      Get In Touch
-    </h2>
+    <h2 className="mt-4">Get In Touch</h2>
 
     <Form.Control
       className="mt-3"

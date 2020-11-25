@@ -6,7 +6,7 @@ export default async (req, res) => {
   if (req.method === 'POST') {
     try {
       const { amount } = req.body;
-      
+
       const paymentIntent = await stripe.paymentIntents.create({
         amount,
         currency: 'usd',
