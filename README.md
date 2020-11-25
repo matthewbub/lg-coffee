@@ -65,6 +65,8 @@ You won't see your Stripe products on your local machine. This is because we are
 
 To fix this, go to your [Stripe Dashboard](https://dashboard.stripe.com/products) and toggle the `view test data` switch and add your test products. 
 
+![screenshot](/public/view_test_data_screenshot.jpg)
+
 ### 4. Accept and manage payments via the [Stripe Dashboard](https://dashboard.stripe.com)
 
 
