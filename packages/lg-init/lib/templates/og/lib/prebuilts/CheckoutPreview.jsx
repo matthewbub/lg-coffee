@@ -30,6 +30,7 @@ const CheckoutPreview = ({
     }
   };
 
+  console.log(cart);
   return (
     <Container>
       <Row className="d-flex align-items-center">

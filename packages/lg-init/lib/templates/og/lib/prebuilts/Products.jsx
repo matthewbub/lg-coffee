@@ -4,10 +4,11 @@ import Container from 'react-bootstrap/Container';
 import SlimWrapper from '../wrappers/SlimWrapper';
 import Product from './Product';
 
-const Products = ({  
+const Products = ({
   products,
   cart,
   handleUpdatedCartInState,
+  currentBill,
 }) => (
   <Container>
     <SlimWrapper>
@@ -19,6 +20,7 @@ const Products = ({
         key={i.id}
         cart={cart}
         product={i}
+        currentBill={currentBill}
         handleUpdatedCartInState={(updatedCart) =>
           handleUpdatedCartInState(updatedCart)
         }
@@ -31,10 +33,12 @@ Products.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,
+  currentBill: PropTypes.number,
 };
 
 Products.defaultProps = {
   cart: {},
+  currentBill: 0,
 };
 
 export default Products;

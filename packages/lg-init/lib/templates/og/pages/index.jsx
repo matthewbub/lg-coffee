@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import PageWrapper from '../lib/wrappers/PageWrapper';
 import Products from '../lib/prebuilts/Products';
 
-const Index = ({ data, cart, handleUpdatedCartInState }) => {  
+const Index = ({ data, cart, handleUpdatedCartInState, currentBill }) => {
   return (
     <PageWrapper
       data={data}
       cart={cart}
+      currentBill={currentBill}
       handleUpdatedCartInState={(updatedCart) =>
         handleUpdatedCartInState(updatedCart)
       }
@@ -26,6 +27,7 @@ const Index = ({ data, cart, handleUpdatedCartInState }) => {
       <Products
         products={data.products}
         cart={cart}
+        currentBill={currentBill}
         handleUpdatedCartInState={(updatedCart) =>
           handleUpdatedCartInState(updatedCart)
         }
@@ -36,16 +38,14 @@ const Index = ({ data, cart, handleUpdatedCartInState }) => {
 
 Index.propTypes = {
   data: PropTypes.shape({
-    products: PropTypes.shape({
-      heading: PropTypes.string.isRequired,
-      products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
-    }).isRequired,
+    products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
     store: PropTypes.shape({
       hero: PropTypes.string,
     }),
   }),
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,
+  currentBill: PropTypes.number,
 };
 
 Index.defaultProps = {
@@ -55,6 +55,7 @@ Index.defaultProps = {
       hero: null,
     },
   },
+  currentBill: 0,
 };
 
 export default Index;

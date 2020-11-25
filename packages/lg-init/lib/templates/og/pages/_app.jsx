@@ -19,20 +19,33 @@ function App({ Component, pageProps }) {
   const { data, error } = useSwr('/api/data', fetcher);
 
   const [cart, setCart] = useState({});
+  const [currentBill, setBilling] = useState();
 
   // handles cart on event
   const handleUpdatedCartInState = (updatedCart) =>
     setCart(JSON.parse(updatedCart));
 
-
   useEffect(() => {
     // handles cart on page refresh
     const userCart = localStorage.getItem('cart');
     setCart(JSON.parse(userCart));
+
+    // handles billing
+    const billingFromStorage = localStorage.getItem('billing');
+    setBilling(JSON.parse(billingFromStorage));
   }, []);
 
   // page failed to load
-  if (error) return <div>Something went wrong</div>;
+  if (error)
+    return (
+      <div
+        style={{
+          backgroundImage: `url('/404.jpeg')`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+        }}
+      />
+    );
 
   // if data is pending return loading
   if (!data) {
@@ -42,7 +55,6 @@ function App({ Component, pageProps }) {
       </StripeWrapper>
     );
   }
-
   return (
     <StripeWrapper>
       <Head>
@@ -68,6 +80,7 @@ function App({ Component, pageProps }) {
         <Component
           data={data}
           cart={cart}
+          currentBill={currentBill}
           handleUpdatedCartInState={(updatedCart) =>
             handleUpdatedCartInState(updatedCart)
           }

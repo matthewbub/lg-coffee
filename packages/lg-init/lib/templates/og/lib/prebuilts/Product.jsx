@@ -7,7 +7,7 @@ import SlimWrapper from '../wrappers/SlimWrapper';
 import Loading from '../components/Loading';
 import { formatUSD } from '../../utils/formatUSD';
 
-const Product = ({ product, cart, handleUpdatedCartInState }) => {
+const Product = ({ product, cart, handleUpdatedCartInState, currentBill }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -19,7 +19,7 @@ const Product = ({ product, cart, handleUpdatedCartInState }) => {
       setLoading(false);
     }
   }, [product, cart]);
-  console.log('product', product)
+
   return (
     <>
       {loading ? (
@@ -70,6 +70,7 @@ const Product = ({ product, cart, handleUpdatedCartInState }) => {
               <p>{product ? `$${formatUSD(product.metadata.price)}` : null}</p>
               <QtyControl
                 product={product}
+                currentBill={currentBill}
                 cart={cart}
                 handleUpdatedCartInState={(updatedCart) =>
                   handleUpdatedCartInState(updatedCart)
@@ -88,14 +89,18 @@ Product.propTypes = {
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    metadata: PropTypes.shape({
+      price: PropTypes.string.isRequired,
+    }).isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   handleUpdatedCartInState: PropTypes.func.isRequired,
+  currentBill: PropTypes.number,
 };
 
 Product.defaultProps = {
   cart: {},
+  currentBill: 0,
 };
 
 export default Product;

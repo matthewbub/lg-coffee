@@ -22,7 +22,7 @@ const Checkout = ({ data, cart }) => {
         <CheckoutPreview cart={cart} />
         <CheckoutForm
           cart={cart}
-          price={calc(total) || 0}
+          price={calc(total)}
           onSuccessfulCheckout={() =>
             Router.push('/checkout/order-confirmation')
           }

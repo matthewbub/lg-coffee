@@ -1,16 +1,16 @@
 import Router from 'next/router';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { calc } from 'lg-calc';
 import CheckoutForm from '../forms/billing/CheckoutForm';
 import CheckoutPreview from './CheckoutPreview';
-import { handleSuccessfulCheckout } from '../handlers/handleSuccessfulCheckout';
+import { handleSuccessfulCheckout } from '../handleSuccessfulCheckout';
 
 const CartModal = ({
   cart,
   handleClose,
   handleEmptyCartNotice,
   handleUpdatedCartInState,
+  currentBill,
 }) => (
   <div className="d-flex flex-column align-items-center">
     <div style={{ maxWidth: '80%' }}>
@@ -39,7 +39,7 @@ const CartModal = ({
 
       <CheckoutForm
         cart={cart}
-        price={calc(cart)}
+        price={currentBill}
         onSuccessfulCheckout={() => {
           handleSuccessfulCheckout(cart);
           Router.push('/checkout/order-confirmation');
@@ -54,10 +54,12 @@ CartModal.propTypes = {
   handleClose: PropTypes.func.isRequired,
   handleEmptyCartNotice: PropTypes.func.isRequired,
   handleUpdatedCartInState: PropTypes.func.isRequired,
+  currentBill: PropTypes.number,
 };
 
 CartModal.defaultProps = {
   cart: {},
+  currentBill: 0,
 };
 
 export default CartModal;

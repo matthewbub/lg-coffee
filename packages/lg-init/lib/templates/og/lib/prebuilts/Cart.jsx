@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import CartPlaceholder from '../components/CartPlaceholder';
 import CartModal from './CartModal';
 
-const Cart = ({ cart, handleUpdatedCartInState }) => {
+const Cart = ({ cart, handleUpdatedCartInState, currentBill }) => {
   const [isCartEmpty, setCartToEmpty] = useState(true);
 
   // modal funcs
@@ -29,6 +29,7 @@ const Cart = ({ cart, handleUpdatedCartInState }) => {
         ) : (
           <CartModal
             cart={cart}
+            currentBill={currentBill}
             handleClose={handleClose}
             handleEmptyCartNotice={handleEmptyCartNotice}
             handleUpdatedCartInState={(updatedCart) =>
@@ -45,10 +46,12 @@ Cart.propTypes = {
   cart: PropTypes.shape({}),
   data: PropTypes.shape({}).isRequired,
   handleUpdatedCartInState: PropTypes.func.isRequired,
+  currentBill: PropTypes.number,
 };
 
 Cart.defaultProps = {
   cart: {},
+  currentBill: 0,
 };
 
 export default Cart;
