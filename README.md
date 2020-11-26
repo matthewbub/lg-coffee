@@ -23,7 +23,6 @@ Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees 
 #### This project depends on
 
 - [ ] [Stripe](https://stripe.com/docs/api) for payment intents
-- [ ] [SendGrid](https://app.sendgrid.com/) for the contact form
 
 ## Set up
 
@@ -43,7 +42,6 @@ Rename your `example.env` to `.env.local`, replace the placeholders with your un
 PUBLISHABLE_KEY=stripe_api_key
 SECRET_KEY=stripe_secret_key
 NEXT_PUBLIC_FACEBOOK_PIXEL_ID=facbook_pixel_id
-SENDGRID_API_KEY=sendgrid_api_key
 ```
 
 ### 3. Adding/ Managing products
