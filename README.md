@@ -85,5 +85,7 @@ Please submit any and all issues/ opinions/ thoughts or concerns [here](https://
 
 ## Who uses lg-coffee? 
 
+- [VisionSpeaks](https://visionspeaks.art)
+
 Are you using lg-coffee? I'd love to hear from you! Get in touch with me at <a href="mailto:6matbub@gmail.com">6matbub@gmail.com</a>
 
