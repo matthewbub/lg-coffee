@@ -36,7 +36,7 @@ const Footer = ({ data }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Pill title="contact" />
+                <Pill title="Contact" />
               </a>
             </div>
             <div className="d-flex flex-column">
