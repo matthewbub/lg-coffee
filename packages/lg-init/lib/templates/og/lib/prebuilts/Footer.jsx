@@ -5,13 +5,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import SlimWrapper from '../wrappers/SlimWrapper';
 import PrimaryModal from './PrimaryModal';
-import Contact from '../forms/contact/Contact';
 import Wrap from '../components/Wrap';
 import FAQ from '../static/FAQ.mdx';
 import About from '../static/About.mdx';
 import TermsAndConditions from '../static/TermsAndConditions.mdx';
 import ShippingAndReturns from '../static/ShippingAndReturns.mdx';
 import PrivacyPolicy from '../static/PrivacyPolicy.mdx';
+import Pill from '../components/Pill';
 
 const date = new Date();
 const year = date.getFullYear();
@@ -31,9 +31,13 @@ const Footer = ({ data }) => {
               <PrimaryModal title="FAQ">
                 <FAQ />
               </PrimaryModal>
-              <PrimaryModal title="Contact">
-                <Contact store={store} />
-              </PrimaryModal>
+              <a
+                href={`mailto:${store.contact}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Pill title="contact" />
+              </a>
             </div>
             <div className="d-flex flex-column">
               <PrimaryModal title="Terms and Conditions">
@@ -63,7 +67,9 @@ const Footer = ({ data }) => {
 
 Footer.propTypes = {
   data: PropTypes.shape({
-    store: PropTypes.shape({}).isRequired,
+    store: PropTypes.shape({
+      contact: PropTypes.shape({}).isRequired,
+    }).isRequired,
   }).isRequired,
 };
 
