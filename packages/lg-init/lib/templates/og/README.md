@@ -11,12 +11,7 @@
 
 </p>
 
-
-Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees in mind. 
-
-#### This project depends on
-
-- [ ] [Stripe](https://stripe.com/docs/api) for payment intents
+Bootstrap a production ready Ecommerce App. Built with minimal maintaince/ fees in mind. _Note: This project depends on [Stripe](https://stripe.com/docs/api) for payment intents_
 
 ## Set up
 
@@ -40,29 +35,13 @@ NEXT_PUBLIC_FACEBOOK_PIXEL_ID=facbook_pixel_id
 
 ### 3. Adding/ Managing products
 
-Easily manage your products via the [Products section of your Stripe Dashboard](https://dashboard.stripe.com/products)
+Easily manage your products via the [Products section of your Stripe Dashboard](https://dashboard.stripe.com/products). Updates to Stripe Produts will automatically reflect to your lg-coffee app.
 
-**Important Caveat :star:** 
-
-In order for lg-coffee to read product prices, add a `price` key with a _whole integer_ as a value to the metadata of each product. 
-
-> Example: </br>
-> If your product cost $2.78 USD, you would input `287`
-
-![screenshot](/public/metadata_screen_shot.jpg)
-
-**Another Important Caveat :star:** 
-
-You won't see your Stripe products on your local machine. This is because we are on `test mode` with Stripe. 
-
-To fix this, go to your [Stripe Dashboard](https://dashboard.stripe.com/products) and toggle the `view test data` switch and add your test products. 
-
-![screenshot](/public/view_test_data_screenshot.jpg)
-
-### 4. Accept and manage payments via the [Stripe Dashboard](https://dashboard.stripe.com)
-
+### Accept and manage payments via the [Stripe Dashboard](https://dashboard.stripe.com)
 
 While testing on your local machine use 
 > Stripes Test Cards e.g `4242 4242 4242 4242`. 
 
 _All local payment intents will be viewable while viewing the test data on your Stripe Dashboard_
+
+Learn more about [testing Stripe payments](https://stripe.com/docs/testing)

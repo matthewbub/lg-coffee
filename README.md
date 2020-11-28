@@ -44,7 +44,7 @@ NEXT_PUBLIC_FACEBOOK_PIXEL_ID=facbook_pixel_id
 
 Easily manage your products via the [Products section of your Stripe Dashboard](https://dashboard.stripe.com/products). Updates to Stripe Produts will automatically reflect to your lg-coffee app.
 
-### 4. Accept and manage payments via the [Stripe Dashboard](https://dashboard.stripe.com)
+### Accept and manage payments via the [Stripe Dashboard](https://dashboard.stripe.com)
 
 While testing on your local machine use 
 > Stripes Test Cards e.g `4242 4242 4242 4242`. 
