@@ -5,9 +5,7 @@ exports.testData = {
     name: 'Dog-Gone Goods',
     logo: '/logo.svg',
     hero: '/hero.svg',
-    url: '',
     description: 'A dog treat shop',
-    about: 'Everyone loves a happy dog!',
     contact: 'youremail@here.com',
     social: { facebook: '', twitter: '', instagram: '' },
   },
@@ -49,4 +47,17 @@ exports.testData = {
       updated: 1606153221,
     },
   ],
+};
+
+exports.testCart = {
+  one: {
+    product: {
+      name: 'Strawberry Bone',
+      description: 'Super colorful, your dog will love this!',
+      id: 'srw_bn_',
+      images: ['/pink.png'],
+    },
+    qty: 2,
+    price: 197,
+  },
 };

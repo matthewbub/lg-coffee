@@ -90,7 +90,7 @@ Product.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     metadata: PropTypes.shape({
-      price: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
     }).isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,

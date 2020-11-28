@@ -91,7 +91,7 @@ QtyControl.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
     metadata: PropTypes.shape({
-      price: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
     }).isRequired,
   }).isRequired,
   cart: PropTypes.shape({}),

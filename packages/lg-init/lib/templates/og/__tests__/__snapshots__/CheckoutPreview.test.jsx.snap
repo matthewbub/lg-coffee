@@ -74,6 +74,7 @@ exports[`CheckoutPreview component renders unchanged 1`] = `
           }
         >
           Qty: 
+          2
         </p>
         <button
           className="btn btn-outline-danger font-weight-bolder ml-4"

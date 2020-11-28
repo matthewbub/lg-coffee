@@ -6,11 +6,21 @@ import { testData } from '../utils/testData';
 
 it('index renders smoke test without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Index data={testData} />, div);
+  ReactDOM.render(
+    <Index 
+      data={testData} 
+      handleUpdatedCartInState={() => {}}
+    />,
+  div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('index renders unchanged', () => {
-  const tree = renderer.create(<Index data={testData} />).toJSON();
+  const tree = renderer.create(
+    <Index 
+      data={testData} 
+      handleUpdatedCartInState={() => {}}
+    />
+  ).toJSON();
   expect(tree).toMatchSnapshot();
 });
