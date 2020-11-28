@@ -31,8 +31,6 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
       });
     }
 
-    localStorage.setItem('cart', updatedCart);
-
     handleUpdatedCartInState(updatedCart);
 
     setAlert({

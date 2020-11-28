@@ -68,7 +68,7 @@ const Footer = ({ data }) => {
 Footer.propTypes = {
   data: PropTypes.shape({
     store: PropTypes.shape({
-      contact: PropTypes.shape({}).isRequired,
+      contact: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
 };
