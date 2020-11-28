@@ -14,12 +14,12 @@ const Products = ({
     <SlimWrapper>
       <h2 className="mb-4">Products</h2>
     </SlimWrapper>
-
-    {products.map((i) => (
+    {Object.keys(products).map((i) => (
       <Product
-        key={i.id}
+        key={products[i].product.id}
         cart={cart}
-        product={i}
+        product={products[i].product}
+        price={products[i].price.unit_amount}
         currentBill={currentBill}
         handleUpdatedCartInState={(updatedCart) =>
           handleUpdatedCartInState(updatedCart)
@@ -30,7 +30,7 @@ const Products = ({
 );
 
 Products.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+  products: PropTypes.shape({}).isRequired,
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,
   currentBill: PropTypes.number,

@@ -154,7 +154,7 @@ exports[`index renders unchanged 1`] = `
             type="button"
           >
             <img
-              alt="Demo Product"
+              alt="Large Demo Product"
               className="product_img_prc"
               src="img.jpg"
             />
@@ -164,7 +164,7 @@ exports[`index renders unchanged 1`] = `
               <h5
                 className="mt-3 mb-2 ellipse"
               >
-                Demo Product
+                Large Demo Product
               </h5>
               <span
                 className="text-muted mb-3"
