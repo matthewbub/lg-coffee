@@ -1,10 +1,13 @@
 exports.store = {
-  name: 'Dog-Gone Goods',
-  logo: '/logo.png',
-  hero: '/hero.png',
-  url: '',
-  description: 'A dog treat shop',
-  about: 'Everyone loves a happy dog!',
+  name: 'lg-coffee',
+  /**
+   * logo & hero are OPTIONAL.
+   * add images to your public directory
+   * e.g logo: '/logo.png',
+   */
+  logo: '',
+  hero: '',
+  description: 'made with coffee.',
   contact: 'youremail@here.com',
   social: {
     facebook: '',
