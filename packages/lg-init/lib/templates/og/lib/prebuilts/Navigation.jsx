@@ -15,13 +15,16 @@ const Navigation = ({ cart, data, handleUpdatedCartInState, currentBill }) => (
       fixed="top"
       className="justify-content-between fixed-top"
     >
-      <img
-        src={data.store.logo}
-        height="75"
-        className="d-inline-block align-top"
-        alt="React Bootstrap logo"
-      />
-      <Navbar.Brand href="/">{data.store.name}</Navbar.Brand>
+      {data.store.logo !== '' ? (
+        <img
+          src={data.store.logo}
+          height="50"
+          className="d-inline-block align-top"
+          alt={data.store.name}
+        />
+      ) : (
+        <Navbar.Brand href="/">{data.store.name}</Navbar.Brand>
+      )}
       <Nav>
         <Cart
           cart={cart}
