@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import useSwr from 'swr';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import { calc } from 'lg-calc';
 import Loading from '../lib/components/Loading';
 import StripeWrapper from '../lib/wrappers/StripeWrapper';
 import FacebookPixelWrapper from '../lib/wrappers/FacebookPixelWrapper';
@@ -15,23 +16,28 @@ import '../styles/animations.css';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function App({ Component, pageProps }) {
-  // grabs data
+  // grabs app data
   const { data, error } = useSwr('/api/data', fetcher);
-
   const [cart, setCart] = useState({});
   const [currentBill, setBilling] = useState();
 
-  // handles cart on event
-  const handleUpdatedCartInState = (updatedCart) =>
-    setCart(JSON.parse(updatedCart));
+  // handles cart and billing on event
+  const handleUpdatedCartInState = (updatedCart) => {
+    const parsedCart = JSON.parse(updatedCart);
+
+    setCart(parsedCart); // updates cart state
+    setBilling(calc(parsedCart)); // updates billing state
+
+    localStorage.setItem('cart', updatedCart); // updates cart storage
+    localStorage.setItem('billing', JSON.stringify(calc(parsedCart))); // updates cart storage
+  };
 
   useEffect(() => {
-    // handles cart on page refresh
+    // handles refresh events
     const userCart = localStorage.getItem('cart');
-    setCart(JSON.parse(userCart));
-
-    // handles billing
     const billingFromStorage = localStorage.getItem('billing');
+
+    setCart(JSON.parse(userCart));
     setBilling(JSON.parse(billingFromStorage));
   }, []);
 

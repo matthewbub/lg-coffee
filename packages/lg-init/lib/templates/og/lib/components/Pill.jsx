@@ -16,8 +16,13 @@ const Pill = ({ title, className, handleShow }) => (
 
 Pill.propTypes = {
   title: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
-  handleShow: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  handleShow: PropTypes.func,
+};
+
+Pill.defaultProps = {
+  className: '',
+  handleShow: () => {},
 };
 
 export default Pill;

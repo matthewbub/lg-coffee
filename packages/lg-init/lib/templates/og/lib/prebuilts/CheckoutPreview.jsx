@@ -17,20 +17,18 @@ const CheckoutPreview = ({
 
     delete updatedCart[id];
 
-    setCartInStorage(updatedCart);
-
     if (Object.keys(updatedCart).length === 0) {
       localStorage.removeItem('cart');
       return handleEmptyCartNotice();
       // eslint-disable-next-line no-else-return
     } else {
-      // func requires JSON
       handleUpdatedCartInState(JSON.stringify(updatedCart));
-      return localStorage.setItem('cart', JSON.stringify(cartInStorage));
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
     }
+
+    return setCartInStorage(updatedCart);
   };
 
-  console.log(cart);
   return (
     <Container>
       <Row className="d-flex align-items-center">
@@ -38,11 +36,14 @@ const CheckoutPreview = ({
       </Row>
 
       {Object.keys(cart).map((i) => (
-        <Row key={cart[i].id} className="d-flex align-items-center rounded">
+        <Row
+          key={cart[i].product.id}
+          className="d-flex align-items-center rounded"
+        >
           <Col xs={2}>
             <img
-              src={cart[i].images[0]}
-              alt={cart[i].name}
+              src={cart[i].product.images[0]}
+              alt={cart[i].product.name}
               style={{ height: '75px', width: '75px' }}
             />
           </Col>
@@ -50,7 +51,7 @@ const CheckoutPreview = ({
           <Col xs={10} className="d-flex flex-column">
             <Row className="align-self-end mr-2">
               <h4 style={{ width: '100%', margin: '0' }} className="ellipse">
-                {cart[i].name}
+                {cart[i].product.name}
               </h4>
             </Row>
 

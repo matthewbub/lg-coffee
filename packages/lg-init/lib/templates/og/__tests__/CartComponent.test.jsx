@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import Cart from '../lib/prebuilts/Cart';
+import testData from '../utils/testData';
 
 const product = {
   name: 'product',
@@ -22,6 +23,7 @@ it('CheckoutError component renders smoke test without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <Cart 
+      data={testData}
       cart={{product}} 
       handleUpdatedCartInState={handleUpdatedCartInState} 
     />
@@ -32,6 +34,7 @@ it('CheckoutError component renders smoke test without crashing', () => {
 it('CheckoutError component renders unchanged', () => {
   const tree = renderer.create(
     <Cart
+      data={testData}
       cart={{product}} 
       handleUpdatedCartInState={handleUpdatedCartInState} 
     />

@@ -5,25 +5,26 @@ import CheckoutPreview from '../lib/prebuilts/CheckoutPreview';
 
 const cart = {
   one: {
-    name: 'Strawberry Bone',
-    description: 'Super colorful, your dog will love this!',
-    price: 197,
-    id: 'srw_bn_',
-    images: ['/pink.png'],
-  
+    product: {
+      name: 'Strawberry Bone',
+      description: 'Super colorful, your dog will love this!',
+      id: 'srw_bn_',
+      images: ['/pink.png'],
+    },
+    qty: 2,
+    price: 197,    
   }
 };
 
-const handleEmptyCartNotice = () => {}
-const handleUpdatedCartInState = () => {}
+const fn = () => {}
 
 it('CheckoutPreview component renders smoke test without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
     <CheckoutPreview 
       cart={cart}  
-      handleEmptyCartNotice={handleEmptyCartNotice}
-      handleUpdatedCartInState={handleUpdatedCartInState}
+      handleEmptyCartNotice={fn}
+      handleUpdatedCartInState={fn}
     />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
@@ -32,8 +33,8 @@ it('CheckoutPreview component renders unchanged', () => {
   const tree = renderer.create(
     <CheckoutPreview 
       cart={cart}  
-      handleEmptyCartNotice={handleEmptyCartNotice}
-      handleUpdatedCartInState={handleUpdatedCartInState}
+      handleEmptyCartNotice={fn}
+      handleUpdatedCartInState={fn}
     />
   ).toJSON();
   expect(tree).toMatchSnapshot();
