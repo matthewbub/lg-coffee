@@ -35,7 +35,7 @@ exports[`Product component renders unchanged 1`] = `
           className="text-muted mb-3"
         >
           $
-          2.87
+          2.34
            USD
         </span>
       </div>
