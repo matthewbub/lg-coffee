@@ -38,7 +38,7 @@ const Index = ({ data, cart, handleUpdatedCartInState, currentBill }) => {
 
 Index.propTypes = {
   data: PropTypes.shape({
-    products: PropTypes.arrayOf(PropTypes.shape({}).isRequired).isRequired,
+    products: PropTypes.shape({}).isRequired,
     store: PropTypes.shape({
       hero: PropTypes.string,
     }),

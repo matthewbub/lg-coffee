@@ -61,6 +61,7 @@ function App({ Component, pageProps }) {
       </StripeWrapper>
     );
   }
+
   return (
     <StripeWrapper>
       <Head>

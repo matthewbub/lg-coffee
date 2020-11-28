@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Alert from '../../components/Alert';
 
-const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
+const QtyControl = ({ product, price, cart, handleUpdatedCartInState }) => {
   const [alert, setAlert] = useState(null);
 
   const handleSubmit = (ev) => {
@@ -16,8 +16,8 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
         ...cart,
         [product.id]: {
           product,
-          price: product.metadata.price,
-          qty: ev.target.qty.value,
+          price, // required for lg-calc
+          qty: ev.target.qty.value, // required for lg-calc
         },
       });
     } else {
@@ -25,8 +25,8 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
       updatedCart = JSON.stringify({
         [product.id]: {
           product,
-          price: product.metadata.price,
-          qty: ev.target.qty.value,
+          price, // required for lg-calc
+          qty: ev.target.qty.value, // required for lg-calc
         },
       });
     }
@@ -90,10 +90,8 @@ const QtyControl = ({ product, cart, handleUpdatedCartInState }) => {
 QtyControl.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    metadata: PropTypes.shape({
-      price: PropTypes.number.isRequired,
-    }).isRequired,
   }).isRequired,
+  price: PropTypes.number.isRequired,
   cart: PropTypes.shape({}),
   handleUpdatedCartInState: PropTypes.func.isRequired,
 };

@@ -7,7 +7,13 @@ import SlimWrapper from '../wrappers/SlimWrapper';
 import Loading from '../components/Loading';
 import { formatUSD } from '../../utils/formatUSD';
 
-const Product = ({ product, cart, handleUpdatedCartInState, currentBill }) => {
+const Product = ({
+  product,
+  price,
+  cart,
+  handleUpdatedCartInState,
+  currentBill,
+}) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -43,9 +49,7 @@ const Product = ({ product, cart, handleUpdatedCartInState, currentBill }) => {
               />
               <div className="d-flex w-100 flex-column align-items-end justify-content-center text-right">
                 <h5 className="mt-3 mb-2 ellipse">{product.name}</h5>
-                <span className="text-muted mb-3">
-                  ${formatUSD(product.metadata.price)} USD
-                </span>
+                <span className="text-muted mb-3">${formatUSD(price)} USD</span>
               </div>
             </button>
           </SlimWrapper>
@@ -67,9 +71,10 @@ const Product = ({ product, cart, handleUpdatedCartInState, currentBill }) => {
             <div className="p-4">
               <h2>{product.name}</h2>
               <p>{product.description}</p>
-              <p>{product ? `$${formatUSD(product.metadata.price)}` : null}</p>
+              <p>{product ? `$${formatUSD(price)}` : null}</p>
               <QtyControl
                 product={product}
+                price={price}
                 currentBill={currentBill}
                 cart={cart}
                 handleUpdatedCartInState={(updatedCart) =>
@@ -86,12 +91,10 @@ const Product = ({ product, cart, handleUpdatedCartInState, currentBill }) => {
 
 Product.propTypes = {
   cart: PropTypes.shape({}),
+  price: PropTypes.number.isRequired,
   product: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    metadata: PropTypes.shape({
-      price: PropTypes.number.isRequired,
-    }).isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   handleUpdatedCartInState: PropTypes.func.isRequired,
