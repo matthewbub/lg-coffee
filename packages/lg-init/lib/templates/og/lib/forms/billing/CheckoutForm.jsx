@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -12,15 +12,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
   const [isProcessing, setProcessingTo] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [checkoutError, setCheckoutError] = useState();
-  const [total, setTotal] = useState();
-  const [USD, setUSD] = useState();
 
-  useEffect(() => {
-    setTotal(price);
-    if (total > 0) {
-      setUSD(formatUSD(total));
-    }
-  }, [price, total]);
   const stripe = useStripe();
   const elements = useElements();
 
@@ -102,7 +94,7 @@ const CheckoutForm = ({ price, onSuccessfulCheckout }) => {
 
       <SubmitButton
         disabled={isProcessing}
-        title={isProcessing ? 'Processing...' : `Pay $${USD} USD`}
+        title={isProcessing ? 'Processing...' : `Pay $${formatUSD(price)} USD`}
         className="my-4 btn-outline-dark align-self-end"
       />
     </Form>

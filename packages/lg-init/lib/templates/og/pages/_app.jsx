@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import useSwr from 'swr';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
+import { calc } from 'lg-calc';
 import Loading from '../lib/components/Loading';
 import StripeWrapper from '../lib/wrappers/StripeWrapper';
 import FacebookPixelWrapper from '../lib/wrappers/FacebookPixelWrapper';
@@ -22,8 +23,10 @@ function App({ Component, pageProps }) {
   const [currentBill, setBilling] = useState();
 
   // handles cart on event
-  const handleUpdatedCartInState = (updatedCart) =>
+  const handleUpdatedCartInState = (updatedCart) => {
     setCart(JSON.parse(updatedCart));
+    setBilling(calc(cart));
+  };
 
   useEffect(() => {
     // handles cart on page refresh
