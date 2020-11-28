@@ -50,21 +50,26 @@ exports[`Footer component renders unchanged 1`] = `
             >
               FAQ
             </button>
-            <button
-              className="btn btn-outline-dark mt-2 pl-1 text-left"
-              id="Contact"
-              onClick={[Function]}
-              style={
-                Object {
-                  "border": "0",
-                  "padding": "0",
-                  "width": "200px",
-                }
-              }
-              type="button"
+            <a
+              href="mailto:youremail@here.com"
+              rel="noreferrer"
+              target="_blank"
             >
-              Contact
-            </button>
+              <button
+                className="btn btn-outline-dark mt-2 pl-1 text-left"
+                id="Contact"
+                style={
+                  Object {
+                    "border": "0",
+                    "padding": "0",
+                    "width": "200px",
+                  }
+                }
+                type="button"
+              >
+                Contact
+              </button>
+            </a>
           </div>
           <div
             className="d-flex flex-column"

@@ -18,17 +18,11 @@ exports[`StickyTopNavbar component renders unchanged 1`] = `
     }
   >
     <img
-      alt="React Bootstrap logo"
+      alt="Dog-Gone Goods"
       className="d-inline-block align-top"
-      height="75"
+      height="50"
       src="/logo.svg"
     />
-    <a
-      className="navbar-brand"
-      href="/"
-    >
-      Dog-Gone Goods
-    </a>
     <div
       className="navbar-nav"
       onKeyDown={[Function]}
