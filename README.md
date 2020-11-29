@@ -59,7 +59,7 @@ This turned into a full blown app pretty quick, I would love to get some help. C
 
 ## Issues
 
-Please submit any and all issues/ opinions/ thoughts or concerns [here](https://github.com/hi-matbub/lg-coffee/issues/new)
+Please submit any and all issues/ opinions/ thoughts or concerns [here](https://github.com/hi-matbub/lg-coffee/issues/new/choose)
 
 ## Who uses lg-coffee? 
 
