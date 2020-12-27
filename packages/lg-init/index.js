@@ -22,10 +22,8 @@ const handleHelpOptions = (async = () => {
       name: 'Help',
       message: 'What would you like to do?',
       choices: ['Generate new project'],
-      validate: (help) => {
-        console.log('yoooo');
-        if (help === 'Generate new project') {
-          console.log('yoooo');
+      validate: (help) => {        
+        if (help === 'Generate new project') {          
           return true;
         } else {
           console.log('Please enter a project name');
@@ -70,7 +68,7 @@ const moveTemplateToUserCurrentWorkingDirectory = (name) => {
   }
   try {
     fs.moveSync(
-      path.resolve(buildDir, 'lib/templates/og'),
+      path.resolve(buildDir, 'lib/og'),
       path.resolve(CWD, name),
       (err) => {
         if (err) {
