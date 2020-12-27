@@ -7,14 +7,8 @@
     "packages/*",
     "packages/lg-calc"
   ],
-  "scripts": {
-    "start": "next start",
-    "dev": "npm run build:packages && next dev",
-    "build": "next build",
-    "build:packages": "lerna run build --no-private",
-    "test": "jest",
-    "test:dev": "jest --watch",
-    "test:ci": "jest --ci",
+  "scripts": {    
+    "build:packages": "lerna run build --no-private",    
     "publish:packages": "lerna publish",
     "prettier": "prettier --config .prettierrc --write \"**/*.{js,jsx}\"",
     "lint:fix": "eslint --fix \"**/*.{js,jsx}\"",
@@ -27,7 +21,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hi-matbub/lg-coffee/issues"
   },
