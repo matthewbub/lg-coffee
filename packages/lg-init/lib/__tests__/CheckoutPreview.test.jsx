@@ -16,7 +16,8 @@ const cart = {
   }
 };
 
-const fn = () => {}
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const fn = () => {};
 
 it('CheckoutPreview component renders smoke test without crashing', () => {
   const div = document.createElement('div');
