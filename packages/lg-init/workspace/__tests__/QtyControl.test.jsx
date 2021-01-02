@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
@@ -26,7 +27,7 @@ it('QtyControl component renders smoke test without crashing', () => {
       price={287}
       handleUpdatedCartInState={() => {}}
     />
-  , div);
+    , div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
@@ -52,6 +53,6 @@ it('QtyControl component renders unchanged', () => {
       price={287}
       handleUpdatedCartInState={() => {}}
     />
-    ).toJSON();
+  ).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
@@ -11,7 +12,7 @@ it('index renders smoke test without crashing', () => {
       data={testData} 
       handleUpdatedCartInState={() => {}}
     />,
-  div);
+    div);
   ReactDOM.unmountComponentAtNode(div);
 });
 

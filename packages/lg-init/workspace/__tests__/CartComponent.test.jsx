@@ -17,6 +17,7 @@ const product = {
   qty: 12,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 const handleUpdatedCartInState = () => {};
 
 it('CheckoutError component renders smoke test without crashing', () => {
@@ -26,8 +27,7 @@ it('CheckoutError component renders smoke test without crashing', () => {
       data={testData}
       cart={{product}} 
       handleUpdatedCartInState={handleUpdatedCartInState} 
-    />
-  , div);
+    />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 

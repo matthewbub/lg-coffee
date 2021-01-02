@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
@@ -29,7 +30,7 @@ it('Product components renders smoke test without crashing', () => {
       cart={testCart} 
       handleUpdatedCartInState={handleUpdatedCartInState}
     />
-  , div);
+    , div);
   ReactDOM.unmountComponentAtNode(div);
 });
 

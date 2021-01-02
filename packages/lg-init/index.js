@@ -68,7 +68,7 @@ const moveTemplateToUserCurrentWorkingDirectory = (name) => {
   }
   try {
     fs.moveSync(
-      path.resolve(buildDir, 'lib'),
+      path.resolve(buildDir, 'workspace'),
       path.resolve(CWD, name),
       (err) => {
         if (err) {

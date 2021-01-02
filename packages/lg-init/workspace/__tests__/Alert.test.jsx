@@ -15,6 +15,6 @@ it('Alert component renders smoke test without crashing', () => {
 });
 
 it('Alert component renders unchanged', () => {
-const tree = renderer.create(<Alert status={alert.status}>{alert.message}</Alert>).toJSON();
+  const tree = renderer.create(<Alert status={alert.status}>{alert.message}</Alert>).toJSON();
   expect(tree).toMatchSnapshot();
 });

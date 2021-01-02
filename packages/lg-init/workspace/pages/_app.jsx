@@ -46,7 +46,7 @@ function App({ Component, pageProps }) {
     return (
       <div
         style={{
-          backgroundImage: `url('/404.jpeg')`,
+          backgroundImage: 'url(\'/404.jpeg\')',
           backgroundPosition: 'center',
           backgroundSize: 'cover',
         }}
