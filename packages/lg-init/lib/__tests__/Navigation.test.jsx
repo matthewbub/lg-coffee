@@ -4,7 +4,8 @@ import renderer from 'react-test-renderer';
 import Navigation from '../lib/prebuilts/Navigation';
 import { testData } from '../utils/testData';
 
-const handleUpdatedCartInState = () => {}
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const handleUpdatedCartInState = () => {};
 
 it('Navigation component renders smoke test without crashing', () => {
   const div = document.createElement('div');
@@ -12,8 +13,7 @@ it('Navigation component renders smoke test without crashing', () => {
     <Navigation 
       data={testData} 
       handleUpdatedCartInState={handleUpdatedCartInState} 
-    />
-  , div);
+    />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
