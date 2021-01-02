@@ -19,7 +19,7 @@ Super easy setup where ever you go.
 
 What are you looking to work on?
 
-- [Website Templates](https://github.com/hi-matbub/lg-coffee/tree/main/packages/lg-init/lib/templates)
+- [Website Templates](https://github.com/hi-matbub/lg-coffee/tree/main/packages/lg-init/workspace)
 - [Documentation](https://github.com/hi-matbub/lg-coffee/tree/main/packages/lg-docs)
 - [lg-calc](https://github.com/hi-matbub/lg-coffee/tree/main/packages/lg-calc)
 - [lg-init](https://github.com/hi-matbub/lg-coffee/tree/main/packages/lg-init)
