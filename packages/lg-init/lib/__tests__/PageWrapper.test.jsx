@@ -28,7 +28,6 @@ it('PageWrapper renders unchanged', () => {
       handleUpdatedCartInState={handleUpdatedCartInState}
     >
       <p>Hello World</p>
-    </PageWrapper>
-    ).toJSON();
+    </PageWrapper>).toJSON();
   expect(tree).toMatchSnapshot();
 });
