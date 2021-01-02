@@ -8,6 +8,7 @@
   "scripts": {
     "build:packages": "lerna run build --no-private",
     "publish:packages": "lerna publish",
+    "lint:fix:js": "eslint --fix \"**/*.{js,jsx,ts,tsx}\"",
     "lint:js": "eslint --cache \"**/*.{js,jsx,ts,tsx}\""
   },
   "license": "MIT",

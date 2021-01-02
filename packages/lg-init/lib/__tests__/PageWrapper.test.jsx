@@ -1,11 +1,12 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import PageWrapper from '../lib/wrappers/PageWrapper';
 import { testData } from '../utils/testData';
 
-const handleEmptyCartNotice = () => {}
-const handleUpdatedCartInState = () => {}
+const handleEmptyCartNotice = () => {};
+const handleUpdatedCartInState = () => {};
 
 it('PageWrapper renders smoke test without crashing', () => {
   const div = document.createElement('div');

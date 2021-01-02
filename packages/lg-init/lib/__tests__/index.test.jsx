@@ -11,7 +11,7 @@ it('index renders smoke test without crashing', () => {
       data={testData} 
       handleUpdatedCartInState={() => {}}
     />,
-  div);
+    div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
